@@ -5,15 +5,4 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class FavoritosService {
-  private apiUrl = ""
-
-  constructor(private HTTP: HttpClient) {}
-
-  getPelicula() {
-
-    //comentario para probar commit
-
-//cambio nuevo
-  }
-}
+export class FavoritosService{}
