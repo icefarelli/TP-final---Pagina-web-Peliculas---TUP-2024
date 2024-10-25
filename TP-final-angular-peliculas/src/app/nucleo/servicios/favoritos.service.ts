@@ -10,7 +10,10 @@ export class FavoritosService {
 
   constructor(private HTTP: HttpClient) {}
 
-  getPeliculas(): Observable<any[]> {
+  getPelicula() {
 
+    //comentario para probar commit
+
+//cambio nuevo
   }
 }
