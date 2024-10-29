@@ -1,17 +1,18 @@
 import { Component, ComponentRef, ViewContainerRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AuthService, Usuario } from './nucleo/servicios/auth.service';
-import { AuthDialogComponent } from './compartido/auth-dialog/auth-dialog/auth-dialog.component';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
-import { AlertComponent } from './compartido/alert/alert.component';
-import { NavbarComponent } from './compartido/navbar/navbar.component';
+import { AlertComponent } from './compartidos/alert/alert.component';
+import { NavbarComponent } from './compartidos/navbar/navbar.component';
+import { AuthDialogComponent } from './compartidos/auth-dialog/auth-dialog/auth-dialog.component';
+
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, AlertComponent,NavbarComponent],
+  imports: [RouterOutlet, CommonModule,AlertComponent, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
