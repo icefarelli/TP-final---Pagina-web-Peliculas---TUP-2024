@@ -1,1 +1,18 @@
-<p>detalle-peliculas works!</p>
+<!-- detalle-peliculas.component.html -->
+<div class="detalle-container" *ngIf="pelicula">
+    <div class="poster">
+      <img [src]="obtenerUrlImagen(pelicula.poster_path)" [alt]="pelicula.title">
+    </div>
+    <div class="info">
+      <h1>{{ pelicula.title }}</h1>
+      <div class="metadata">
+        <span class="rating">⭐ {{ pelicula.vote_average | number:'1.1-1' }}/10</span>
+        <span class="fecha">{{ pelicula.release_date | date:'yyyy' }}</span>
+      </div>
+      <div class="sinopsis">
+        <h2>Sinopsis</h2>
+        <p>{{ pelicula.overview }}</p>
+      </div>
+      <button class="volver" routerLink="/peliculas">Volver a la lista</button>
+    </div>
+  </div>

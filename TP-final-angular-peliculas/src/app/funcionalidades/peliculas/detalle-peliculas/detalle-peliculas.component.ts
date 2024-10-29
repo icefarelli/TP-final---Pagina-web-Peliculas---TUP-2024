@@ -1,12 +1,35 @@
-import { Component } from '@angular/core';
-
+// detalle-peliculas.component.ts
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { PeliculasService } from '../../../nucleo/servicios/peliculas.service';
+import { Pelicula } from '../../../nucleo/modelos/pelicula.interface';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-detalle-peliculas',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, RouterLink],
   templateUrl: './detalle-peliculas.component.html',
-  styleUrl: './detalle-peliculas.component.css'
+  styleUrls: ['./detalle-peliculas.component.css']
 })
-export class DetallePeliculasComponent {
+export class DetallePeliculasComponent implements OnInit {
+  pelicula?: Pelicula;
 
+  constructor(
+    private route: ActivatedRoute,
+    private peliculasService: PeliculasService
+  ) {}
+
+  ngOnInit() {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    if (id) {
+      this.peliculasService.obtenerDetallePelicula(id).subscribe(
+        pelicula => this.pelicula = pelicula
+      );
+    }
+  }
+
+  obtenerUrlImagen(path: string): string {
+    return `https://image.tmdb.org/t/p/w500${path}`;
+  }
 }
