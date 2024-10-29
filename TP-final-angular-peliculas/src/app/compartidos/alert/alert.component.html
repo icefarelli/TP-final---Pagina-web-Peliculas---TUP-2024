@@ -1,0 +1,8 @@
+<!-- src/app/compartido/componentes/alert/alert.component.html -->
+<div *ngIf="visible" 
+     class="alert" 
+     [ngClass]="{'alert-success': tipo === 'success', 
+                 'alert-error': tipo === 'error', 
+                 'alert-info': tipo === 'info'}">
+  {{ mensaje }}
+</div>
