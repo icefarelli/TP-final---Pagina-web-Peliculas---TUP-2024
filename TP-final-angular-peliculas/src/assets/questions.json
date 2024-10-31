@@ -1,0 +1,549 @@
+[
+  {
+    "category": "Film & TV",
+    "question": "¿Qué actor ha aparecido en películas como Harry Potter y la piedra filosofal y Gladiador?",
+    "correctAnswer": "Richard Harris",
+    "incorrectAnswers": [
+      "Sam Shepard",
+      "James Hong",
+      "Jon Bernthal"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "category": "Film & TV",
+    "question": "¿Quién dirigió la película Inception (2010)?",
+    "correctAnswer": "Christopher Nolan",
+    "incorrectAnswers": [
+      "Martin Scorsese",
+      "Steven Spielberg",
+      "James Cameron"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "category": "Film & TV",
+    "question": "¿En qué año se estrenó la primera película de Star Wars?",
+    "correctAnswer": "1977",
+    "incorrectAnswers": [
+      "1975",
+      "1980",
+      "1973"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "category": "Film & TV",
+    "question": "¿Qué actor interpreta a Tony Stark/Iron Man en el Universo Cinematográfico de Marvel?",
+    "correctAnswer": "Robert Downey Jr.",
+    "incorrectAnswers": [
+      "Chris Evans",
+      "Chris Hemsworth",
+      "Mark Ruffalo"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "category": "Film & TV",
+    "question": "¿Qué película ganó el Oscar a Mejor Película en 2020?",
+    "correctAnswer": "Parasite",
+    "incorrectAnswers": [
+      "1917",
+      "Joker",
+      "Once Upon a Time in Hollywood"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "category": "Film & TV",
+    "question": "¿Quién interpretó a Jack Dawson en Titanic?",
+    "correctAnswer": "Leonardo DiCaprio",
+    "incorrectAnswers": [
+      "Brad Pitt",
+      "Johnny Depp",
+      "Matt Damon"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "category": "Film & TV",
+    "question": "¿Cuál fue la primera película de Pixar?",
+    "correctAnswer": "Toy Story",
+    "incorrectAnswers": [
+      "Monsters Inc.",
+      "A Bug's Life",
+      "Finding Nemo"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "category": "Film & TV",
+    "question": "¿En qué película aparece el personaje de Tyler Durden?",
+    "correctAnswer": "Fight Club",
+    "incorrectAnswers": [
+      "American Psycho",
+      "The Matrix",
+      "Memento"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "category": "Film & TV",
+    "question": "¿Quién dirigió Pulp Fiction?",
+    "correctAnswer": "Quentin Tarantino",
+    "incorrectAnswers": [
+      "Martin Scorsese",
+      "David Fincher",
+      "Stanley Kubrick"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "category": "Film & TV",
+    "question": "¿Qué actor interpreta a Batman en la trilogía de Christopher Nolan?",
+    "correctAnswer": "Christian Bale",
+    "incorrectAnswers": [
+      "Michael Keaton",
+      "Ben Affleck",
+      "George Clooney"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "category": "Film & TV",
+    "question": "¿Cuál es el nombre del personaje principal en Matrix?",
+    "correctAnswer": "Neo",
+    "incorrectAnswers": [
+      "Trinity",
+      "Morpheus",
+      "Smith"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "category": "Film & TV",
+    "question": "¿En qué año se estrenó El Padrino?",
+    "correctAnswer": "1972",
+    "incorrectAnswers": [
+      "1970",
+      "1974",
+      "1976"
+    ],
+    "difficulty": "medium"
+  },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué clásico de Hitchcock de 1945 Gregory Peck no recuerda si cometió un asesinato?",
+      "correctAnswer": "Spellbound",
+      "incorrectAnswers": [
+        "Vertigo",
+        "Psycho",
+        "Rear Window"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál era la matrícula del Delorean en Back to the Future?",
+      "correctAnswer": "OUTATIME",
+      "incorrectAnswers": [
+        "GOINBACK",
+        "SEEYAL8R",
+        "NOROADS"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actor ha interpretado papeles importantes en películas como El lobo de Wall Street y Dallas Buyers Club?",
+      "correctAnswer": "Matthew McConaughey",
+      "incorrectAnswers": [
+        "Ryan Reynolds",
+        "Jim Carrey",
+        "Hugh Jackman"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué película aparece el personaje 'Gollum'?",
+      "correctAnswer": "El Señor de los Anillos",
+      "incorrectAnswers": [
+        "The Searchers",
+        "Ghost",
+        "My Favorite Year"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actor interpretó a 'Mad' Max Rockatansky en Mad Max?",
+      "correctAnswer": "Mel Gibson",
+      "incorrectAnswers": [
+        "Michael Douglas",
+        "Al Pacino",
+        "Arnold Schwarzenegger"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actor interpretó a Howard Beale en la película Network?",
+      "correctAnswer": "Peter Finch",
+      "incorrectAnswers": [
+        "Jaye Davidson",
+        "Malcolm McDowell",
+        "Jeff Bridges"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actor de Hollywood ha aparecido en programas de TV como Los Soprano y Boardwalk Empire?",
+      "correctAnswer": "Steve Buscemi",
+      "incorrectAnswers": [
+        "Christopher Lee",
+        "Arnold Schwarzenegger",
+        "Anthony Hopkins"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué película aparece el personaje 'Lt. Col. Bill Kilgore'?",
+      "correctAnswer": "Apocalypse Now",
+      "incorrectAnswers": [
+        "Citizen Kane",
+        "Austin Powers: International Man of Mystery",
+        "Pirates of the Caribbean"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "category": "Film & TV",
+      "question": "En el Universo Cinematográfico de Marvel, ¿qué personaje es interpretado por Tom Hiddleston?",
+      "correctAnswer": "Loki",
+      "incorrectAnswers": [
+        "Iron Man",
+        "Black Panther",
+        "Spiderman"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actor ha aparecido en películas como Harry Potter y la piedra filosofal y Gladiador?",
+      "correctAnswer": "Richard Harris",
+      "incorrectAnswers": [
+        "Sam Shepard",
+        "James Hong",
+        "Jon Bernthal"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actor ha protagonizado tanto Apollo 13 como X-Men: First Class?",
+      "correctAnswer": "Kevin Bacon",
+      "incorrectAnswers": [
+        "Richard Harris",
+        "Anthony Quinn",
+        "Hugo Weaving"
+      ]
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué popular sitcom apareció por primera vez en 1951 y se emitió hasta 1957?",
+      "correctAnswer": "I Love Lucy",
+      "incorrectAnswers": [
+        "The Brady Bunch",
+        "Sanford and Son",
+        "My Favourite Martian"
+      ]
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién ganó el Premio de la Academia a Mejor Actriz de Reparto en 2005 por su papel de Tessa Quayle en The Constant Gardener?",
+      "correctAnswer": "Rachel Weisz",
+      "incorrectAnswers": [
+        "Amy Adams",
+        "Catherine Keener",
+        "Frances McDormand"
+      ]
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué programa de televisión sigue al anfitrión Bear Grylls mientras sobrevive en entornos hostiles en distintas partes del mundo?",
+      "correctAnswer": "Man vs. Wild",
+      "incorrectAnswers": [
+        "Survivor",
+        "The Amazing Race",
+        "Naked and Afraid"
+      ]
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actor interpretó el papel de Sam Spade en El halcón maltés?",
+      "correctAnswer": "Humphrey Bogart",
+      "incorrectAnswers": [
+        "James Stewart",
+        "John Belushi",
+        "Kevin Spacey"
+      ]
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál de estas frases es de la película Scarface?",
+      "correctAnswer": "¡Saluda a mi pequeño amigo!",
+      "incorrectAnswers": [
+        "Soy el tipo que hace su trabajo. Debes ser el otro tipo.",
+        "¡Despierta!",
+        "Diles que salgan y lo den todo y ganen solo una vez para el Gipper."
+      ]
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué popular serie de televisión estadounidense aparece el personaje Jesse Pinkman?",
+      "correctAnswer": "Breaking Bad",
+      "incorrectAnswers": [
+        "SpongeBob Squarepants",
+        "Brooklyn 99",
+        "American Vandals"
+      ]
+    },
+    {
+      "category": "Film & TV",
+      "question": "Nombra la película que corresponde a la siguiente sinopsis: \"La historia de un oficial inglés que unió y lideró exitosamente a las tribus árabes durante la Primera Guerra Mundial.\"",
+      "correctAnswer": "Lawrence de Arabia",
+      "incorrectAnswers": [
+        "City Lights",
+        "Sunset Blvd.",
+        "Braveheart"
+      ]
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién ganó el Premio de la Academia a Mejor Actor Protagonista en 2007 por su papel de Daniel Plainview en There Will Be Blood?",
+      "correctAnswer": "Daniel Day-Lewis",
+      "incorrectAnswers": [
+        "George Clooney",
+        "Johnny Depp",
+        "Tommy Lee Jones"
+      ]
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actor ha interpretado papeles tanto en Twin Peaks como en Pulp Fiction?",
+      "correctAnswer": "Tim Roth",
+      "incorrectAnswers": [
+        "Paul Newman",
+        "Tobey Maguire",
+        "Elijah Wood"
+      ]
+    },
+    {
+    "category": "Películas y TV",
+    "id": "624dba55cd90beeca353156c",
+    "correctAnswer": "Daniel Craig",
+    "incorrectAnswers": [
+      "Sean Connery",
+      "Roger Moore",
+      "Timothy Dalton"
+    ],
+    "question": "¿Quién interpretó el papel de James Bond en Skyfall?",
+    "tags": [
+      "james_bond",
+      "cine",
+      "actuación",
+      "películas_y_tv"
+    ],
+    "type": "Opción Múltiple",
+    "difficulty": "fácil",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Películas y TV",
+    "id": "645f9528541c4d4fc8cf2ebc",
+    "correctAnswer": "Valkyrie",
+    "incorrectAnswers": [
+      "Dunkerque",
+      "Rescatando al Soldado Ryan",
+      "La Lista de Schindler"
+    ],
+    "question": "¿Cuál es el nombre de la película de la Segunda Guerra Mundial de 2008 con el lema \"Muchos vieron la maldad. Ellos se atrevieron a detenerla\"?",
+    "tags": [
+      "cine",
+      "películas_y_tv"
+    ],
+    "type": "Opción Múltiple",
+    "difficulty": "difícil",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Películas y TV",
+    "id": "64909c3c58265893a0c86d86",
+    "correctAnswer": "Speed",
+    "incorrectAnswers": [
+      "Matrix",
+      "John Wick",
+      "Las Alucinantes Aventuras de Bill y Ted"
+    ],
+    "question": "¿Cuál secuela de película de Keanu Reeves tiene el subtítulo \"2: Control de Crucero\"?",
+    "tags": [
+      "películas_y_tv",
+      "cine"
+    ],
+    "type": "Opción Múltiple",
+    "difficulty": "media",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Películas y TV",
+    "id": "646140f34d46e537ca8cda1a",
+    "correctAnswer": "Deliverance",
+    "incorrectAnswers": [
+      "La Cabaña en el Bosque",
+      "La Noche de los Muertos Vivientes",
+      "Saw"
+    ],
+    "question": "¿Cuál es el nombre de la película de 1972 en la que un viaje en canoa por el bosque de Georgia se convierte en una pesadilla para cuatro amigos?",
+    "tags": [
+      "cine",
+      "terror",
+      "películas_y_tv"
+    ],
+    "type": "Opción Múltiple",
+    "difficulty": "difícil",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Películas y TV",
+    "id": "624dba1cde6018633d31f6b4",
+    "correctAnswer": "Casino Royale",
+    "incorrectAnswers": [
+      "Alta Tensión",
+      "Sin Tiempo Para Morir",
+      "Operación Trueno"
+    ],
+    "question": "¿Qué tema musical de James Bond fue interpretado por Chris Cornell?",
+    "tags": [
+      "james_bond",
+      "cine",
+      "bandas_sonoras",
+      "películas_y_tv"
+    ],
+    "type": "Opción Múltiple",
+    "difficulty": "difícil",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Películas y TV",
+    "id": "622a1c377cc59eab6f950688",
+    "correctAnswer": "Sarah Paulson",
+    "incorrectAnswers": [
+      "Keira Knightley",
+      "Naomi Watts",
+      "Salma Hayek"
+    ],
+    "question": "¿Qué actriz ha aparecido en películas como American Horror Story y 12 Años de Esclavitud?",
+    "tags": [
+      "actuación",
+      "cine",
+      "películas_y_tv"
+    ],
+    "type": "Opción Múltiple",
+    "difficulty": "difícil",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Películas y TV",
+    "id": "625698f79da29df7b05f72a9",
+    "correctAnswer": "Letitia Wright",
+    "incorrectAnswers": [
+      "Karen Gillan",
+      "Zendaya",
+      "Marisa Tomei"
+    ],
+    "question": "¿Qué actriz interpreta a Shuri en el Universo Cinematográfico de Marvel?",
+    "tags": [
+      "mcu",
+      "cine",
+      "actuación",
+      "marvel",
+      "cómics",
+      "películas_y_tv"
+    ],
+    "type": "Opción Múltiple",
+    "difficulty": "difícil",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Películas y TV",
+    "id": "622a1c347cc59eab6f94faac",
+    "correctAnswer": "Whoopi Goldberg",
+    "incorrectAnswers": [
+      "Annette Bening",
+      "Lorraine Bracco",
+      "Diane Ladd"
+    ],
+    "question": "¿Quién ganó el Premio de la Academia a la Mejor Actriz de Reparto en 1990 por interpretar a Oda Mae Brown en Ghost?",
+    "tags": [
+      "premios_academia",
+      "cine",
+      "actuación",
+      "películas_y_tv"
+    ],
+    "type": "Opción Múltiple",
+    "difficulty": "media",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Películas y TV",
+    "id": "649557392cb69a84d2527400",
+    "correctAnswer": "Doctor Who",
+    "incorrectAnswers": [
+      "Star Trek",
+      "Expediente X",
+      "La Dimensión Desconocida"
+    ],
+    "question": "¿Qué popular programa de ciencia ficción incluye una máquina llamada La TARDIS?",
+    "tags": [
+      "películas_y_tv",
+      "ciencia_ficción",
+      "tv"
+    ],
+    "type": "Opción Múltiple",
+    "difficulty": "media",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Películas y TV",
+    "id": "647f9ded3a4302a719271682",
+    "correctAnswer": "Los Borg",
+    "incorrectAnswers": [
+      "Los Klingon",
+      "Los Romulanos",
+      "El Dominio"
+    ],
+    "question": "¿Qué raza enemiga mortal en Star Trek era conocida por su frase: \"La resistencia es inútil\"?",
+    "tags": [
+      "tv",
+      "ciencia_ficción",
+      "star_trek",
+      "películas_y_tv"
+    ],
+    "type": "Opción Múltiple",
+    "difficulty": "difícil",
+    "regions": [],
+    "isNiche": false
+  }
+]

@@ -1,3 +1,4 @@
+// app.component.ts
 import { Component, ComponentRef, ViewContainerRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AuthService, Usuario } from './nucleo/servicios/auth.service';
@@ -7,28 +8,23 @@ import { AlertComponent } from './compartidos/alert/alert.component';
 import { NavbarComponent } from './compartidos/navbar/navbar.component';
 import { AuthDialogComponent } from './compartidos/auth-dialog/auth-dialog/auth-dialog.component';
 
-
-
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule,AlertComponent, NavbarComponent],
+  imports: [RouterOutlet, CommonModule, AlertComponent, NavbarComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'TP-final-angular-peliculas';
 
-
-  usuarioActual$: Observable<Usuario | null>; // Cambia a Observable<Usuario | null>
+  usuarioActual$: Observable<Usuario | null>;
 
   private authDialogRef: ComponentRef<AuthDialogComponent> | null = null;
 
   constructor(private authService: AuthService, private viewContainerRef: ViewContainerRef) {
-    // Inicializar usuarioActual$ en el constructor
     this.usuarioActual$ = this.authService.getUsuarioActual();
 
-    // Escuchar el evento de cierre del diálogo
     window.addEventListener('cerrarDialog', () => {
       this.cerrarAuthDialog();
     });
@@ -49,5 +45,4 @@ export class AppComponent {
   cerrarSesion() {
     this.authService.cerrarSesion();
   }
-
 }

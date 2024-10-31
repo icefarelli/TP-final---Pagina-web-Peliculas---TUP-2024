@@ -1,0 +1,11 @@
+<div class="quiz-result-container">
+  <h1>Resultado del Movie Challenge</h1>
+  <div class="score-display">
+    <span class="score">{{ score }}</span>
+    <span class="total">/{{ totalQuestions }}</span>
+  </div>
+  <p class="result-message">{{ resultMessage }}</p>
+  <button (click)="restartQuiz()" class="restart-button">
+    Jugar de nuevo
+  </button>
+</div>

@@ -1,13 +1,13 @@
-<!-- menu.component.html -->
+<!-- navbar.component.html -->
 <nav class="navbar">
   <div class="navbar-container">
     <a href="#" class="navbar-logo">Menu</a>
     <div class="menu-icon" (click)="toggleMenu()">
-      <i class="fas fa-bars"></i> <!-- Icono de 3 rayitas -->
+      <i class="fas fa-bars"></i>
     </div>
     <ul [class.active]="isMenuOpen" class="nav-menu">
       <li class="nav-item">
-        <a routerLink="/" routerLinkActive="active" class="nav-links">Home</a>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-links">Home</a>
       </li>
       <li class="nav-item">
         <a routerLink="/peliculas" routerLinkActive="active" class="nav-links">Películas</a>
@@ -18,7 +18,13 @@
       <li class="nav-item">
         <a routerLink="/resenas" routerLinkActive="active" class="nav-links">Reseñas</a>
       </li>
+      <!-- Nuevo elemento para el quiz -->
+      <li class="nav-item">
+        <a routerLink="/quiz" routerLinkActive="active" class="nav-links quiz-link">
+          Movie Challenge
+          <span class="quiz-badge">¡Nuevo!</span>
+        </a>
+      </li>
     </ul>
   </div>
 </nav>
-

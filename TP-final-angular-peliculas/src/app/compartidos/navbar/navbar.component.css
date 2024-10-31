@@ -69,3 +69,50 @@
     display: flex;
   }
 }
+.quiz-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  /* Mantiene los mismos estilos base de .nav-links */
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.quiz-badge {
+  position: absolute;
+  top: -8px;
+  right: -30px;
+  background-color: #e91e63; /* Usando el mismo color de hover que tienes definido */
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Mantiene el comportamiento de hover consistente con los otros enlaces */
+.quiz-link:hover {
+  color: #e91e63;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .quiz-badge {
+    right: auto;
+    left: 100px; /* Ajusta según necesites para el diseño móvil */
+  }
+}

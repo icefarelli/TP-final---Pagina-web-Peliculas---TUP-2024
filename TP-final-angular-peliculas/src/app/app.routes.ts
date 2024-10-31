@@ -22,6 +22,9 @@ export const routes: Routes = [
   {
     path: 'resenas',
     component: AdministrarReseniasComponent
-
+  },
+  {
+    path: 'quiz',
+    loadChildren: () => import('./quiz/quiz.module').then(m => m.QuizModule)
   }
 ];

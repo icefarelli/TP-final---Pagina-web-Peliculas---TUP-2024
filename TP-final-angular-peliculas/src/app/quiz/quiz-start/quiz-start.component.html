@@ -1,0 +1,15 @@
+<div class="quiz-start-container">
+  <h1>Movie Challenge</h1>
+  <p>¡Pon a prueba tus conocimientos cinematográficos!</p>
+
+  <div class="difficulty-selection">
+    <h3>Selecciona la dificultad:</h3>
+    <button (click)="selectDifficulty('easy')" [class.selected]="selectedDifficulty === 'easy'">Fácil</button>
+    <button (click)="selectDifficulty('medium')" [class.selected]="selectedDifficulty === 'medium'">Medio</button>
+    <button (click)="selectDifficulty('hard')" [class.selected]="selectedDifficulty === 'hard'">Difícil</button>
+  </div>
+
+  <button (click)="startQuiz()" class="start-button">
+    <span>Iniciar Quiz</span>
+  </button>
+</div>
