@@ -1,18 +1,33 @@
-<!-- detalle-peliculas.component.html -->
-<div class="detalle-container" *ngIf="pelicula">
-    <div class="poster">
-      <img [src]="obtenerUrlImagen(pelicula.poster_path)" [alt]="pelicula.title">
-    </div>
-    <div class="info">
-      <h1>{{ pelicula.title }}</h1>
+<div class="detalle-container movie-detail-page" *ngIf="pelicula">
+  <div class="content-wrapper">
+    <!-- Columna Izquierda -->
+    <div class="left-column">
+      <div class="poster">
+        <img [src]="obtenerUrlImagen(pelicula.poster_path)" [alt]="pelicula.title">
+      </div>
       <div class="metadata">
         <span class="rating">⭐ {{ pelicula.vote_average | number:'1.1-1' }}/10</span>
         <span class="fecha">{{ pelicula.release_date | date:'yyyy' }}</span>
       </div>
-      <div class="sinopsis">
-        <h2>Sinopsis</h2>
-        <p>{{ pelicula.overview }}</p>
-      </div>
       <button class="volver" routerLink="/peliculas">Volver a la lista</button>
     </div>
+
+    <!-- Columna Derecha -->
+    <div class="right-column">
+      <div class="movie-info">
+        <h1 class="movie-title">{{ pelicula.title }}</h1>
+        <div class="sinopsis-section">
+          <h2>Sinopsis</h2>
+          <p>{{ pelicula.overview }}</p>
+        </div>
+      </div>
+
+      <div class="reviews-section">
+        <!--<h2 class="reviews-title">Reseñas</h2>-->
+        <div class="movie-reviews">
+          <app-administrar-resenias *ngIf="pelicula" [movieId]="pelicula.id"></app-administrar-resenias>
+        </div>
+      </div>
+    </div>
   </div>
+</div>

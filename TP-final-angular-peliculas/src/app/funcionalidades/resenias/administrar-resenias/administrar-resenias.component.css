@@ -1,0 +1,238 @@
+.reviews-container {
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 900px;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.reviews-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.reviews-header h2 {
+  font-size: 28px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.add-review-btn {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+.add-review-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+.review-form {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  font-size: 15px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.review-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  position: relative;
+  margin: 20px 0;
+}
+
+.review-card {
+  border: none;
+  border-radius: 15px;
+  padding: 30px;
+  background-color: white;
+  width: 100%;
+  max-width: 700px;
+  min-height: 200px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.review-header h3 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.nav-button {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+.nav-button:hover:not(:disabled) {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+}
+
+.nav-button:disabled {
+  background: linear-gradient(135deg, #bdc3c7 0%, #95a5a6 100%);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.review-content {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #34495e;
+  margin-bottom: 20px;
+}
+
+.review-date {
+  color: #7f8c8d;
+  font-size: 0.9em;
+}
+
+.review-counter {
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 0.9em;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.loading, .error, .no-reviews {
+  text-align: center;
+  padding: 30px;
+  font-size: 18px;
+  color: #7f8c8d;
+  background-color: white;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.error {
+  color: #e74c3c;
+  background-color: #fdeaea;
+  border: 1px solid #fadbd8;
+}
+
+/* Animación para el cambio de reseñas */
+.review-card {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+}
+.button-container {
+  display: flex;             /* Activa Flexbox */
+  gap: 10px;                /* Espacio entre los botones */
+}
+
+.edit-btn, .delete-btn {
+  padding: 10px 15px;          /* Espaciado interno */
+  border: none;                /* Sin borde */
+  border-radius: 5px;         /* Bordes redondeados */
+  font-size: 16px;             /* Tamaño de fuente */
+  cursor: pointer;             /* Cambia el cursor al pasar el mouse */
+  transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+/* Estilo para el botón de editar */
+.edit-btn {
+  background-color: #4CAF50;  /* Color de fondo verde */
+  color: white;                /* Color del texto */
+}
+
+/* Hover para el botón de editar */
+.edit-btn:hover {
+  background-color: #45a049;  /* Color más oscuro al pasar el mouse */
+}
+
+/* Estilo para el botón de eliminar */
+.delete-btn {
+  background-color: #f44336;  /* Color de fondo rojo */
+  color: white;                /* Color del texto */
+}
+
+/* Hover para el botón de eliminar */
+.delete-btn:hover {
+  background-color: #da190b;  /* Color más oscuro al pasar el mouse */
+}
+

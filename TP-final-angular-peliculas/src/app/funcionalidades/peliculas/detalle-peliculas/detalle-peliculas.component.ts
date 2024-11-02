@@ -5,10 +5,10 @@ import { ActivatedRoute } from '@angular/router';
 import { PeliculasService } from '../../../nucleo/servicios/peliculas.service';
 import { Pelicula } from '../../../nucleo/modelos/pelicula.interface';
 import { RouterLink } from '@angular/router';
-@Component({
+import { AdministrarReseniasComponent } from '../../resenias/administrar-resenias/administrar-resenias.component';@Component({
   selector: 'app-detalle-peliculas',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, AdministrarReseniasComponent],
   templateUrl: './detalle-peliculas.component.html',
   styleUrls: ['./detalle-peliculas.component.css']
 })
