@@ -8,6 +8,15 @@
       "apellido": "admin",
       "email": "admin@utn.com.ar",
       "fechaNacimiento": "1955-12-31"
+    },
+    {
+      "id": "1731098826438",
+      "usuario": "icefarelli",
+      "contrasenia": "ivan1234",
+      "nombre": "Ivan",
+      "apellido": "Cefarelli",
+      "email": "ivan.cefarelli@gmail.com",
+      "fechaNacimiento": "1995-03-06"
     }
   ],
   "reseñas": [
