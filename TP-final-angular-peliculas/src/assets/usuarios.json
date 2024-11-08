@@ -9,5 +9,31 @@
       "email": "admin@utn.com.ar",
       "fechaNacimiento": "1955-12-31"
     }
+  ],
+  "reseñas": [
+    {
+      "id": "e67e",
+      "movieId": 1184918,
+      "author": "admin",
+      "content": "asad",
+      "created_at": "2024-11-08T19:15:26.785Z",
+      "isLocal": true
+    },
+    {
+      "id": "b2a7",
+      "movieId": 1184918,
+      "author": "admin",
+      "content": "sadasdasd",
+      "created_at": "2024-11-08T19:18:23.373Z",
+      "isLocal": true
+    },
+    {
+      "id": "5bf3",
+      "movieId": 1034541,
+      "author": "admin",
+      "content": "reseña de prueba en pelicula Terrifier 3\n",
+      "created_at": "2024-11-08T20:39:05.507Z",
+      "isLocal": true
+    }
   ]
 }
