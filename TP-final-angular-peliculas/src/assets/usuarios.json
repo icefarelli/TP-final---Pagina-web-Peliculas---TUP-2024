@@ -1,32 +1,13 @@
 {
   "usuarios": [
     {
-      "id": "1",
+      "id": "1731093925129",
       "usuario": "admin",
-      "contraseña": "admin123"
-    },
-    {
-      "id": "2",
-      "usuario": "icefarelli",
-      "contraseña": "ivan123"
-    }
-  ],
-  "reseñas": [
-    {
-      "id": "e67e",
-      "movieId": 1184918,
-      "author": "admin",
-      "content": "asad",
-      "created_at": "2024-11-08T19:15:26.785Z",
-      "isLocal": true
-    },
-    {
-      "id": "b2a7",
-      "movieId": 1184918,
-      "author": "admin",
-      "content": "sadasdasd",
-      "created_at": "2024-11-08T19:18:23.373Z",
-      "isLocal": true
+      "contrasenia": "admin",
+      "nombre": "admin",
+      "apellido": "admin",
+      "email": "admin@utn.com.ar",
+      "fechaNacimiento": "1955-12-31"
     }
   ]
 }
