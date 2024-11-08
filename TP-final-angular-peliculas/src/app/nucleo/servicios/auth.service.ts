@@ -7,7 +7,11 @@ import { AlertService } from './alert.service';
 export interface Usuario {
   id?: string;
   usuario: string;
-  contraseña: string;
+  contrasenia: string;
+  nombre: string;
+  apellido: string;
+  email: string;
+  fechaNacimiento: string;
 }
 
 @Injectable({
@@ -21,30 +25,27 @@ export class AuthService {
     private http: HttpClient,
     private alertService: AlertService
   ) {
-    // Verificar si hay una sesión activa en localStorage
     const sesionActual = localStorage.getItem('sesionActual');
     if (sesionActual) {
       this.usuarioActual.next(JSON.parse(sesionActual));
     }
   }
 
-  registrarUsuario(usuario: string, contraseña: string): Observable<boolean> {
-    // Primero verificar si el usuario ya existe
-    return this.http.get<Usuario[]>(`${this.apiUrl}?usuario=${usuario}`).pipe(
+  registrarUsuario(usuario: Usuario): Observable<boolean> {
+    if (!/^[a-zA-Z0-9]+$/.test(usuario.usuario)) {
+      this.alertService.mostrarAlerta('error', 'El nombre de usuario no debe contener caracteres especiales');
+      return of(false);
+    }
+
+    return this.http.get<Usuario[]>(`${this.apiUrl}?usuario=${usuario.usuario}`).pipe(
       switchMap(usuarios => {
         if (usuarios.length > 0) {
           this.alertService.mostrarAlerta('error', 'El usuario ya existe');
           return of(false);
         }
 
-        // Si no existe, crear el nuevo usuario
-        const nuevoUsuario: Usuario = {
-          usuario,
-          contraseña,
-          id: Date.now().toString()
-        };
-
-        return this.http.post<Usuario>(this.apiUrl, nuevoUsuario).pipe(
+        usuario.id = Date.now().toString();
+        return this.http.post<Usuario>(this.apiUrl, usuario).pipe(
           tap(() => {
             this.alertService.mostrarAlerta('success', '¡Usuario registrado exitosamente!');
           }),
@@ -63,14 +64,19 @@ export class AuthService {
   }
 
   iniciarSesion(usuario: string, contraseña: string): Observable<boolean> {
-    return this.http.get<Usuario[]>(`${this.apiUrl}?usuario=${usuario}&contraseña=${contraseña}`).pipe(
+    return this.http.get<Usuario[]>(`${this.apiUrl}?usuario=${usuario}`).pipe(
       map(usuarios => {
         if (usuarios.length === 0) {
-          this.alertService.mostrarAlerta('error', 'Usuario o contraseña incorrectos');
+          this.alertService.mostrarAlerta('error', 'Usuario no encontrado');
           return false;
         }
-
+  
         const usuarioEncontrado = usuarios[0];
+        if (usuarioEncontrado.contrasenia !== contraseña) {
+          this.alertService.mostrarAlerta('error', 'Contraseña incorrecta');
+          return false;
+        }
+  
         this.usuarioActual.next(usuarioEncontrado);
         localStorage.setItem('sesionActual', JSON.stringify(usuarioEncontrado));
         this.alertService.mostrarAlerta('success', '¡Inicio de sesión exitoso!');
@@ -97,13 +103,29 @@ export class AuthService {
     return this.usuarioActual.value !== null;
   }
 
+  recuperarContraseña(email: string): Observable<boolean> {
+    return this.http.get<Usuario[]>(`${this.apiUrl}?email=${email}`).pipe(
+      map(usuarios => {
+        if (usuarios.length === 0) {
+          this.alertService.mostrarAlerta('error', 'No se encontró ningún usuario con ese email');
+          return false;
+        }
+        // Aquí iría la lógica para enviar un email de recuperación
+        this.alertService.mostrarAlerta('success', 'Se ha enviado un email con instrucciones para recuperar tu contraseña');
+        return true;
+      }),
+      catchError((error) => {
+        this.handleError(error);
+        return of(false);
+      })
+    );
+  }
+
   private handleError(error: HttpErrorResponse): Observable<never> {
     let mensajeError = 'Ha ocurrido un error';
     if (error.error instanceof ErrorEvent) {
-      // Error del cliente
       mensajeError = `Error: ${error.error.message}`;
     } else {
-      // Error del servidor
       mensajeError = `Error del servidor: ${error.status}, mensaje: ${error.message}`;
     }
     this.alertService.mostrarAlerta('error', mensajeError);

@@ -1,43 +1,72 @@
 <div class="auth-dialog-overlay" (click)="cerrarDialog($event)">
   <div class="auth-dialog">
-    <button class="cerrar-btn" (click)="cerrar()">×</button>
+    <h2 class="dialog-title">
+      @if (modoRegistro) {
+        Registro
+      } @else if (modoRecuperacion) {
+        Recuperar contraseña
+      } @else {
+        Iniciar sesión
+      }
+    </h2>
 
-    <div class="auth-tabs">
-      <button [class.active]="!modoRegistro" (click)="cambiarModo()">
-        Iniciar Sesión
+    <form (ngSubmit)="enviarFormulario()" class="dialog-form">
+      @if (!modoRecuperacion) {
+        <div class="form-group">
+          <label for="usuario">Nombre de usuario:</label>
+          <input type="text" id="usuario" [(ngModel)]="usuario.usuario" name="usuario" required (click)="$event.stopPropagation()">
+        </div>
+        <div class="form-group">
+          <label for="contraseña">Contraseña:</label>
+          <input type="password" id="contraseña" [(ngModel)]="usuario.contrasenia" name="contraseña" required (click)="$event.stopPropagation()">
+        </div>
+      }
+
+      @if (modoRegistro) {
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" [(ngModel)]="usuario.nombre" name="nombre" required >
+        </div>
+        <div class="form-group">
+          <label for="apellido">Apellido:</label>
+          <input type="text" id="apellido" [(ngModel)]="usuario.apellido" name="apellido" required >
+        </div>
+        <div class="form-group">
+          <label for="fechaNacimiento">Fecha de nacimiento:</label>
+          <input type="date" id="fechaNacimiento" [(ngModel)]="usuario.fechaNacimiento" name="fechaNacimiento" >
+        </div>
+      }
+
+      @if (modoRecuperacion || modoRegistro) {
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" [(ngModel)]="usuario.email" name="email" required >
+        </div>
+      }
+
+      <button type="submit" class="dialog-button">
+        @if (modoRegistro) {
+          Registrar
+        } @else if (modoRecuperacion) {
+          Recuperar contraseña
+        } @else {
+          Iniciar sesión
+        }
       </button>
-      <button [class.active]="modoRegistro" (click)="cambiarModo()">
-        Registrarse
-      </button>
-    </div>
 
-    <form class="auth-form" (ngSubmit)="modoRegistro ? registrar() : iniciarSesion()">
-      <div *ngIf="mensaje" class="mensaje-exito">{{ mensaje }}</div>
-      <div *ngIf="error" class="mensaje-error">{{ error }}</div>
-
-      <div class="form-group">
-        <label for="usuario">Usuario:</label>
-        <input
-          type="text"
-          id="usuario"
-          [(ngModel)]="usuario"
-          name="usuario"
-          required>
-      </div>
-
-      <div class="form-group">
-        <label for="contraseña">Contraseña:</label>
-        <input
-          type="password"
-          id="contraseña"
-          [(ngModel)]="contrasenia"
-          name="contrasenia"
-          required>
-      </div>
-
-      <button type="submit" class="submit-btn" [disabled]="cargando">
-        {{ cargando ? 'Cargando...' : (modoRegistro ? 'Registrarse' : 'Iniciar Sesión') }}
-      </button>
+      @if (!modoRegistro && !modoRecuperacion) {
+        <div class="register-prompt">
+          <p>¿No tiene usuario?</p>
+          <button (click)="cambiarModo('registro')" class="register-button">Registrarse</button>
+        </div>
+      }
+      
     </form>
+
+    <p *ngIf="!modoRecuperacion" class="dialog-link">¿Olvidó su contraseña? <a (click)="cambiarModo('recuperacion')">Recuperar contraseña</a></p>
+    <p *ngIf="modoRecuperacion" class="dialog-link">¿No tiene una cuenta? <a (click)="cambiarModo('registro')">Registrarse</a></p>
+
+    <p *ngIf="mensaje" class="mensaje">{{ mensaje }}</p>
+    <p *ngIf="cargando" class="loading">Cargando...</p>
   </div>
-</div>
+</div> 
