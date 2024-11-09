@@ -10,7 +10,7 @@ import { Pelicula } from '../../../nucleo/modelos/pelicula.interface';
 @Component({
   selector: 'app-listar-peliculas',
   standalone: true,
-  imports: [CommonModule, RouterLink, FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './listar-peliculas.component.html',
   styleUrls: ['./listar-peliculas.component.css']
 })

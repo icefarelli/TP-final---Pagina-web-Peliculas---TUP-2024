@@ -21,6 +21,18 @@
           <p>{{ pelicula.overview }}</p>
         </div>
       </div>
+      <div class="elenco-section">
+
+        <div class="elenco-section">
+          <h2>Elenco</h2>
+          <div *ngFor="let actor of elenco">
+            <a [routerLink]="['/actor', actor.id]"> <!-- Enlace al detalle del actor -->
+              <!-- <img [src]="obtenerUrlImagen(actor.profile_path)" alt="{{ actor.name }}" /> -->
+              <p>{{ actor.name }}</p>
+            </a>
+          </div>
+        </div>
+
 
       <div class="reviews-section">
         <!--<h2 class="reviews-title">Reseñas</h2>-->

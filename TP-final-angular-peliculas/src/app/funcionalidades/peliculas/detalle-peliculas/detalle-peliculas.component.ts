@@ -1,19 +1,20 @@
-// detalle-peliculas.component.ts
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { PeliculasService } from '../../../nucleo/servicios/peliculas.service';
 import { Pelicula } from '../../../nucleo/modelos/pelicula.interface';
-import { RouterLink } from '@angular/router';
-import { AdministrarReseniasComponent } from '../../resenias/administrar-resenias/administrar-resenias.component';@Component({
+import { AdministrarReseniasComponent } from "../../resenias/administrar-resenias/administrar-resenias.component";
+import { CommonModule } from '@angular/common';
+
+@Component({
   selector: 'app-detalle-peliculas',
-  standalone: true,
-  imports: [CommonModule, RouterLink, AdministrarReseniasComponent],
   templateUrl: './detalle-peliculas.component.html',
-  styleUrls: ['./detalle-peliculas.component.css']
+  standalone:true,
+  styleUrls: ['./detalle-peliculas.component.css'],
+  imports: [AdministrarReseniasComponent, CommonModule, RouterLink]
 })
 export class DetallePeliculasComponent implements OnInit {
   pelicula?: Pelicula;
+  elenco: any[] = []; // Nueva propiedad para el elenco
 
   constructor(
     private route: ActivatedRoute,
@@ -24,9 +25,23 @@ export class DetallePeliculasComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     if (id) {
       this.peliculasService.obtenerDetallePelicula(id).subscribe(
-        pelicula => this.pelicula = pelicula
+        pelicula => {
+          this.pelicula = pelicula;
+          this.cargarElenco(id); // Llama a cargar el elenco
+        }
       );
     }
+  }
+
+  cargarElenco(id: number) {
+    this.peliculasService.obtenerElencoPelicula(id).subscribe(
+      response => {
+        this.elenco = response.cast; // Asigna el elenco a la propiedad
+      },
+      error => {
+        console.error('Error al cargar el elenco:', error);
+      }
+    );
   }
 
   obtenerUrlImagen(path: string): string {

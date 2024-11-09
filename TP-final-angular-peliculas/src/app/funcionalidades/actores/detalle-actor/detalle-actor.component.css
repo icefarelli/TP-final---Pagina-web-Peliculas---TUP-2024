@@ -1,0 +1,16 @@
+.peliculas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .peliculas-grid img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+  
+  .peliculas-grid img:hover {
+    transform: scale(1.05);
+  }

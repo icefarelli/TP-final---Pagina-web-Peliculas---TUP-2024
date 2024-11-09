@@ -40,4 +40,24 @@ export class PeliculasService {
       `${this.baseUrl}/genre/movie/list?api_key=${this.apiKey}&language=es-ES`
     );
   }
+
+  obtenerElencoPelicula(movieId: number): Observable<any> {
+    return this.http.get<any>(
+      `${this.baseUrl}/movie/${movieId}/credits?api_key=${this.apiKey}&language=es-ES`
+    );
+  }
+
+
+  obtenerActor(id: number): Observable<any> {
+  return this.http.get<any>(
+    `${this.baseUrl}/person/${id}?api_key=${this.apiKey}&language=es-ES`
+  );
+}
+
+obtenerPeliculasPorActor(actorId: number): Observable<any> {
+  return this.http.get<any>(
+    `${this.baseUrl}/person/${actorId}/movie_credits?api_key=${this.apiKey}&language=es-ES`
+  );
+}
+  
 }
