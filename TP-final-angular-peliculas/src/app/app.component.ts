@@ -45,4 +45,5 @@ export class AppComponent {
   cerrarSesion() {
     this.authService.cerrarSesion();
   }
+  
 }

@@ -4,6 +4,7 @@ import { DetallePeliculasComponent } from './funcionalidades/peliculas/detalle-p
 import { HomeComponent } from './pages/home/home.component';
 import { ListaFavoritosComponent } from './funcionalidades/favoritos/lista-favoritos/lista-favoritos.component';
 import { AdministrarReseniasComponent } from './funcionalidades/resenias/administrar-resenias/administrar-resenias.component';
+import { DetalleActorComponent } from './funcionalidades/actores/detalle-actor/detalle-actor.component';
 
 export const routes: Routes = [
   { path: '',
@@ -26,5 +27,7 @@ export const routes: Routes = [
   {
     path: 'quiz',
     loadChildren: () => import('./quiz/quiz.module').then(m => m.QuizModule)
-  }
+  },
+  { path: 'actor/:id', component: DetalleActorComponent },
+  
 ];
