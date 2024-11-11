@@ -22,20 +22,29 @@
         </div>
       </div>
       <div class="elenco-section">
-
-        <div class="elenco-section">
-          <h2>Elenco</h2>
-          <div *ngFor="let actor of elenco">
-            <a [routerLink]="['/actor', actor.id]"> <!-- Enlace al detalle del actor -->
-              <!-- <img [src]="obtenerUrlImagen(actor.profile_path)" alt="{{ actor.name }}" /> -->
-              <p>{{ actor.name }}</p>
-            </a>
-          </div>
+        <h2>Elenco</h2>
+        <div *ngFor="let actor of elenco">
+          <a [routerLink]="['/actor', actor.id]">
+            <p>{{ actor.name }}</p>
+          </a>
         </div>
+      </div>
 
+      <!-- Nueva Sección: Agregar a Favoritos -->
+      <div class="favoritos-section">
+        <h2>Agregar a Favoritos</h2>
+        <div class="form-group">
+          <label for="listaFavoritos">Selecciona una lista:</label>
+          <select id="listaFavoritos" [(ngModel)]="listaSeleccionada" class="form-control">
+            <option *ngFor="let lista of listasFavoritos" [ngValue]="lista">
+              {{ lista.nombre }}
+            </option>
+          </select>
+        </div>
+        <button (click)="agregarPeliculaAFavoritos()" class="btn btn-primary">Agregar a Lista</button>
+      </div>
 
       <div class="reviews-section">
-        <!--<h2 class="reviews-title">Reseñas</h2>-->
         <div class="movie-reviews">
           <app-administrar-resenias *ngIf="pelicula" [movieId]="pelicula.id"></app-administrar-resenias>
         </div>

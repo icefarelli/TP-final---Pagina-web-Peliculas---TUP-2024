@@ -1,1 +1,38 @@
-<p>lista-favoritos works!</p>
+<div class="container">
+  <h2>Listas de Favoritos</h2>
+
+  <!-- Mensaje si no hay listas de favoritos -->
+  <div *ngIf="listas.length === 0" class="alert alert-info mt-3">
+    No hay listas de favoritos disponibles.
+  </div>
+
+  <!-- Listado de las listas de favoritos -->
+  <div *ngFor="let lista of listas" class="card mt-3">
+    <div class="card-body">
+      <h5 class="card-title">{{ lista.nombre }}</h5>
+      <p class="card-text">{{ lista.descripcion }}</p>
+
+      <!-- Listado de Películas -->
+      <div *ngIf="lista.peliculas && lista.peliculas.length > 0">
+        <h6>Películas en la lista:</h6>
+        <ul class="peliculas-lista">
+          <li *ngFor="let pelicula of lista.peliculas">
+            <!-- Enlace al detalle de la película -->
+            <a [routerLink]="['/pelicula', pelicula.id]" class="pelicula-link">
+              🎬 {{ pelicula.title || 'Título no disponible' }}
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="!lista.peliculas || lista.peliculas.length === 0">
+        <p class="text-muted">No hay películas en esta lista.</p>
+      </div>
+
+      <!-- Botón Modificar -->
+      <button (click)="modificarLista(lista)" class="btn btn-warning">Modificar</button>
+
+      <!-- Botón Eliminar -->
+      <button (click)="eliminarLista(lista.id)" class="btn btn-danger">Eliminar</button>
+    </div>
+  </div>
+</div>
