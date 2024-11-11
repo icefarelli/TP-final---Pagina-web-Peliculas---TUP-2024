@@ -94,11 +94,17 @@ export class AuthDialogComponent {
       this.mostrarRegistro = false; // Ocultar el botón de registro
       return;
     }
-  
+
     this.cargando = true;
     this.authService.iniciarSesion(this.usuario.usuario, this.usuario.contrasenia).subscribe({
       next: (exito) => {
         if (exito) {
+          const usuarioActual = JSON.parse(localStorage.getItem('sesionActual') || '{}');
+
+          // Guardar el userId (ID del usuario) en localStorage como clave separada
+          if (usuarioActual && usuarioActual.id) {
+            localStorage.setItem('userId', usuarioActual.id.toString());
+          }
           this.mensaje = '¡Inicio de sesión exitoso!';
           this.error = '';
           this.mostrarRegistro = false; // Ocultar el botón de registro
