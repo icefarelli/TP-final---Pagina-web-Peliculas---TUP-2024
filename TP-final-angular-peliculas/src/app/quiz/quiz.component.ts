@@ -8,4 +8,6 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule]
 })
-export class QuizComponent { }
+export class QuizComponent {
+
+}
