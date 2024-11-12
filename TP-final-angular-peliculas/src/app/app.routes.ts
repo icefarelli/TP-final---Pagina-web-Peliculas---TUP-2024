@@ -13,6 +13,7 @@ import { QuizInicioComponent } from './quiz/quiz-inicio/quiz-inicio.component';
 import { QuizPreguntasComponent } from './quiz/quiz-preguntas/quiz-preguntas.component';
 import { QuizResultadosComponent } from './quiz/quiz-resultados/quiz-resultados.component';
 import { PreguntasMakerComponent } from './quiz/preguntas-maker/preguntas-maker.component';
+import { EditarPerfilComponent } from "./editar-perfil/editar-perfil.component";
 
 export const routes: Routes = [
   { path: '',
@@ -34,20 +35,28 @@ export const routes: Routes = [
   },
   {
     path: 'quiz', component: QuizComponent, children: [
-      { path: '', component: QuizInicioComponent }, // Ruta para el inicio del quiz
-      { path: 'question', component: QuizPreguntasComponent }, // Ruta para las preguntas
-      { path: 'result', component: QuizResultadosComponent }, // Ruta para los resultados
-      { path: 'preguntasMaker', component: PreguntasMakerComponent } // Ruta para crear preguntas
+    { path: '', component: QuizInicioComponent }, // Ruta para el inicio del quiz
+    { path: 'question', component: QuizPreguntasComponent }, // Ruta para las preguntas
+    { path: 'result', component: QuizResultadosComponent }, // Ruta para los resultados
+    { path: 'preguntasMaker', component: PreguntasMakerComponent } // Ruta para crear preguntas
     ]
   },
-  { path: 'actor/:id', component: DetalleActorComponent },
+  { path: 'actor/:id', 
+    component: DetalleActorComponent },
   {
     path:'favoritos/agregar',
-     component : AgregarFavoritosComponent
+    component : AgregarFavoritosComponent
    },
    {
-     path:'favoritos/modificar/:id',
-      component : ModificarFavoritosComponent
+    path:'favoritos/modificar/:id',
+    component : ModificarFavoritosComponent
     },
-    { path: 'mi-perfil', component: UserProfileComponent },
+    { 
+    path: 'mi-perfil', 
+    component: UserProfileComponent 
+    },
+    { 
+    path: 'editar-perfil', 
+    component: EditarPerfilComponent 
+    }, 
 ];

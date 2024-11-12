@@ -149,4 +149,52 @@ export class AuthDialogComponent {
       }
     });
   }
+
+   // Método para cambiar la contraseña
+   cambiarContrasenia(nuevaContrasenia: string) {
+    if (!this.usuario.id || !nuevaContrasenia) {
+      this.error = 'Por favor, ingrese una nueva contraseña';
+      return;
+    }
+
+    this.authService.cambiarContrasenia(this.usuario.id, nuevaContrasenia).subscribe({
+      next: (exito) => {
+        if (exito) {
+          this.mensaje = 'Contraseña cambiada exitosamente';
+          setTimeout(() => this.cerrar(), 2000);
+        } else {
+          this.error = 'Error al cambiar la contraseña';
+        }
+      },
+      error: (error) => {
+        this.error = 'Error al cambiar la contraseña';
+        console.error(error);
+      }
+    });
+  }
+
+  // Método para eliminar el usuario
+  eliminarUsuario() {
+    if (!this.usuario.id) {
+      this.error = 'No se puede eliminar el usuario';
+      return;
+    }
+
+    if (confirm('¿Estás seguro de que deseas eliminar tu cuenta?')) {
+      this.authService.eliminarUsuario(this.usuario.id).subscribe({
+        next: (exito) => {
+          if (exito) {
+            this.mensaje = 'Usuario eliminado exitosamente';
+            this.cerrar(); // Cerrar el diálogo
+          } else {
+            this.error = 'Error al eliminar el usuario';
+          }
+        },
+        error: (error) => {
+          this.error = 'Error al eliminar el usuario';
+          console.error(error);
+        }
+      });
+    }
+  }
 }

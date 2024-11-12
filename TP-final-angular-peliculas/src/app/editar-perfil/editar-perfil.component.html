@@ -1,0 +1,38 @@
+<div class="form-container">
+  <h2>Modificar Datos del Usuario</h2>
+  <form [formGroup]="perfilForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" formControlName="nombre" required class="form-control">
+      <div *ngIf="perfilForm.get('nombre')?.invalid && perfilForm.get('nombre')?.touched">
+        <small *ngIf="perfilForm.get('nombre')?.errors?.['required']">El nombre es requerido.</small>
+        <small *ngIf="perfilForm.get('nombre')?.errors?.['minlength']">El nombre debe tener al menos 2 caracteres.</small>
+        <small *ngIf="perfilForm.get('nombre')?.errors?.['pattern']">El nombre solo debe contener letras y espacios.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="apellido">Apellido:</label>
+      <input id="apellido" formControlName="apellido" required class="form-control">
+      <div *ngIf="perfilForm.get('apellido')?.invalid && perfilForm.get('apellido')?.touched">
+        <small *ngIf="perfilForm.get('apellido')?.errors?.['required']">El apellido es requerido.</small>
+        <small *ngIf="perfilForm.get('apellido')?.errors?.['minlength']">El apellido debe tener al menos 2 caracteres.</small>
+        <small *ngIf="perfilForm.get('apellido')?.errors?.['pattern']">El apellido solo debe contener letras y espacios.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email" required class="form-control">
+      <div *ngIf="perfilForm.get('email')?.invalid && perfilForm.get('email')?.touched">
+        <small *ngIf="perfilForm.get('email')?.errors?.['required']">El email es requerido.</small>
+        <small *ngIf="perfilForm.get('email')?.errors?.['email']">El email debe ser válido.</small>
+        <small *ngIf="perfilForm.get('email')?.errors?.['pattern']">El email no debe contener espacios ni caracteres especiales.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+      <input id="fechaNacimiento" type="date" formControlName="fechaNacimiento" required class="form-control">
+      
+    </div>
+    <button type="submit" [disabled]="perfilForm.invalid" class="btn btn-guardar">Guardar Cambios</button>
+  </form>
+</div>
