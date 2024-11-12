@@ -1,8 +1,8 @@
 .app-header {
-  background: #1a1a1a;
+  background: #460808;
   color: white;
   padding: 1rem 2rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav {
@@ -13,8 +13,8 @@ nav {
   margin: 0 auto;
 }
 
-h1 {
-  margin: 0;
+.logo {
+  height: 50px;
   cursor: pointer;
 }
 
@@ -26,20 +26,21 @@ h1 {
 
 .auth-btn {
   padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  background-color: #460808;
+  color: white;
   font-weight: 500;
   transition: background-color 0.3s;
 }
 
 .auth-btn:not(.logout) {
-  background: #007bff;
+  background: #460808;
   color: white;
 }
 
 .auth-btn:not(.logout):hover {
-  background: #0056b3;
+  background: #8b1c11;
 }
 
 .auth-btn.logout {

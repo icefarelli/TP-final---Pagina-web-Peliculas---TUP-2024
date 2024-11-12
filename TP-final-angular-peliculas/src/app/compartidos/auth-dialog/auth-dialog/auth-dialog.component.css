@@ -49,7 +49,7 @@
 }
 
 .form-group input:focus {
-  border-color: #007bff;
+  border-color: #460808;
   outline: none;
 }
 
@@ -79,21 +79,21 @@ button {
 }
 
 button[type="submit"] {
-  background-color: #007bff;
+  background-color: #460808;
   color: white;
 }
 
 button[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #460808;
 }
 
 button[type="button"] {
-  background-color: #6c757d;
+  background-color: #d4edda;
   color: white;
 }
 
 button[type="button"]:hover {
-  background-color: #5a6268;
+  background-color: #d4edda;
 }
 
 .dialog-link {
@@ -103,7 +103,7 @@ button[type="button"]:hover {
 }
 
 .dialog-link a {
-  color: #007bff;
+  color: #460808;
   text-decoration: none;
   cursor: pointer;
 }

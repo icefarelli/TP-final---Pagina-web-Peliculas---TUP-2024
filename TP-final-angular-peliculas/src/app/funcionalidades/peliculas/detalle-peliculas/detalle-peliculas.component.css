@@ -1,7 +1,5 @@
-/* Página de detalles */
 .movie-detail-page {
-  margin-top: 80px;
-  background-color: #f8f9fa;
+  background-color: #460808;
   min-height: 100vh;
 }
 
@@ -13,7 +11,6 @@
   gap: 40px;
 }
 
-/* Columna Izquierda */
 .left-column {
   flex: 0 0 300px;
   display: flex;
@@ -21,14 +18,55 @@
   gap: 20px;
 }
 
+.poster {
+  width: 100%;
+  position: static;
+}
+
 .poster img {
   width: 100%;
+  height: auto;
   border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
 
-/* Columna Derecha */
+.poster img:hover {
+  transform: scale(1.02);
+}
+
+.metadata {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 1.1em;
+  color: #d4d3d3;
+}
+
+.rating {
+  font-weight: bold;
+  color: #f5c518;
+}
+
+.volver {
+  padding: 12px 24px;
+  background-color: #8b1c11;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.volver:hover {
+  background-color: #8b1b119f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
 .right-column {
   flex: 1;
   display: flex;
@@ -37,90 +75,103 @@
 }
 
 .movie-info {
-  background-color: white;
+  background-color: #460808;
+  border: 4px solid #ffffff;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-/* Sección Favoritos */
-.favoritos-section {
-  background-color: #e3f2fd;
-  border: 1px solid #90caf9;
-  border-radius: 8px;
+.movie-title {
+  font-size: 2.5em;
+  color: #d4d3d3;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.sinopsis-section h2 {
+  font-size: 1.5em;
+  color: #d4d3d3;
+  margin-bottom: 15px;
+}
+
+.sinopsis-section p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #d4d3d3;
+}
+
+.elenco-section {
+  background-color: #8b1b119f;
   padding: 20px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  margin-top: 20px; /* Margen superior */
-  width: 100%;
-  color: #0d47a1;
-  text-align: left;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
 }
 
-/* Título de la sección */
-.favoritos-section h2 {
-  font-size: 1.5rem;
-  color: #0d47a1;
-  margin-bottom: 16px;
-  border-bottom: 2px solid #1976d2;
-  padding-bottom: 8px;
+.elenco-section h2 {
+  font-size: 1.8em;
+  color: #d4d3d3;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #d4d3d3;
+  padding-bottom: 5px;
 }
 
-/* Estilo para el label */
-.favoritos-section label {
-  font-size: 1rem;
-  color: #1a237e;
+.actor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.actor-card {
+  background-color: #600000;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+}
+
+.actor-card a {
+  font-size: 1em;
+  color: #d4d3d3;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.actor-card a:hover {
+  background-color: #000000;
+  color: #f5c518;
   font-weight: 600;
 }
 
-/* Estilo para el select */
-.favoritos-section .form-control {
+.reviews-section {
+  background-color: #8b1b119f;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   width: 100%;
-  padding: 10px;
-  border: 1px solid #90caf9;
-  border-radius: 4px;
-  margin-top: 8px;
-  margin-bottom: 16px;
-  background-color: #ffffff;
-  font-size: 1rem;
-  color: #0d47a1;
 }
 
-/* Estilo para el botón */
-.favoritos-section .btn-primary {
-  background-color: #0d47a1;
-  border-color: #0d47a1;
-  color: #ffffff;
-  width: 100%;
-  padding: 12px;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 6px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+.reviews-title {
+  font-size: 1.8em;
+  color: #d4d3d3;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
 }
 
-.favoritos-section .btn-primary:hover {
-  background-color: #1565c0;
-  transform: scale(1.05);
+.reviews-container {
+  padding: 0;
+  margin-top: 0;
 }
 
-/* Efecto de sombra en el botón */
-.favoritos-section .btn-primary:active {
-  background-color: #0d47a1;
-  box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 0.2);
-  transform: scale(0.98);
-}
-
-/* Responsivo para dispositivos móviles */
 @media (max-width: 768px) {
   .content-wrapper {
     flex-direction: column;
   }
-  .left-column,
-  .right-column {
-    width: 100%;
-  }
-  .favoritos-section {
-    margin: 20px auto;
-    width: 100%;
+
+  .left-column {
+    flex: 0 0 auto;
+    max-width: 400px;
+    margin: 0 auto;
   }
 }

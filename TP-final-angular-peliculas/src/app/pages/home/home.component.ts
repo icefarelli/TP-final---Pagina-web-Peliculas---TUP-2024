@@ -5,11 +5,12 @@ import { PeliculasService } from '../../nucleo/servicios/peliculas.service';
 import { Pelicula, PeliculaResponse } from '../../nucleo/modelos/pelicula.interface';
 import { RouterLink } from '@angular/router';
 import { ListarPeliculasComponent } from '../../funcionalidades/peliculas/listar-peliculas/listar-peliculas.component';
+import { CarouselComponent } from '../../funcionalidades/carrusel/carrusel.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterModule],
+  imports: [CommonModule, RouterLink, RouterModule, CarouselComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -28,6 +29,8 @@ export class HomeComponent {
     this.route.navigate(['/peliculas']);
   }
 }
+
+
 
 
 

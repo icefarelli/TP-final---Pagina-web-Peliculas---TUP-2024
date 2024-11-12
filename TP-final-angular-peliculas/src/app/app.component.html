@@ -1,7 +1,7 @@
 <app-alert></app-alert>
 <header class="app-header">
   <nav>
-    <h1 routerLink="/">🎬 Cinema Max UTN</h1>
+    <img src="/assets/images/LOGO.png" alt="Cinema Max UTN" class="logo" routerLink="/">
     <div class="auth-buttons">
       <ng-container *ngIf="!(usuarioActual$ | async); else usuarioLogueado">
         <button (click)="mostrarAuthDialog()" class="auth-btn">

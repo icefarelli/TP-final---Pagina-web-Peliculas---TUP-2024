@@ -2,8 +2,8 @@
   <div class="header-section">
     <h2>Películas</h2>
     <div class="buscador">
-      <input 
-        type="text" 
+      <input
+        type="text"
         placeholder="Buscar películas..."
         [(ngModel)]="terminoBusqueda"
         (input)="buscar($event)"
@@ -40,13 +40,13 @@
       <!-- Filtro por calificación -->
       <div class="filtro-item">
         <label for="calificacion">Calificación mínima: {{filtros.calificacionMinima}}</label>
-        <input 
-          type="range" 
-          id="calificacion" 
-          [(ngModel)]="filtros.calificacionMinima" 
+        <input
+          type="range"
+          id="calificacion"
+          [(ngModel)]="filtros.calificacionMinima"
           (input)="aplicarFiltros()"
-          min="0" 
-          max="10" 
+          min="0"
+          max="10"
           step="0.5"
         >
       </div>

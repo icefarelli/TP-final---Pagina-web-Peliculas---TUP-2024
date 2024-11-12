@@ -2,10 +2,11 @@
   padding: 30px;
   margin: 20px auto;
   max-width: 900px;
-  background-color: #f8f9fa;
+  background-color: #d4d3d3;
   border-radius: 15px;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
+
 
 .reviews-header {
   display: flex;
@@ -13,12 +14,12 @@
   align-items: center;
   margin-bottom: 30px;
   padding-bottom: 20px;
-  border-bottom: 2px solid #e9ecef;
+  border-bottom: 2px solid #333;
 }
 
 .reviews-header h2 {
   font-size: 28px;
-  color: #2c3e50;
+  color: #333;
   font-weight: 600;
 }
 
@@ -71,7 +72,7 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #4CAF50;
+  border-color: #155017;
 }
 
 .form-group textarea {
@@ -92,7 +93,7 @@
   border: none;
   border-radius: 15px;
   padding: 30px;
-  background-color: white;
+  background-color: #d4d3d3;
   width: 100%;
   max-width: 700px;
   min-height: 200px;
@@ -115,13 +116,13 @@
 
 .review-header h3 {
   margin: 0;
-  color: #2c3e50;
+  color: #000;
   font-size: 20px;
   font-weight: 600;
 }
 
 .nav-button {
-  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  background: #da190b;
   color: white;
   border: none;
   border-radius: 50%;
@@ -150,12 +151,12 @@
 .review-content {
   font-size: 16px;
   line-height: 1.8;
-  color: #34495e;
+  color: #000;
   margin-bottom: 20px;
 }
 
 .review-date {
-  color: #7f8c8d;
+  color: #000;
   font-size: 0.9em;
 }
 
@@ -183,7 +184,6 @@
   border: 1px solid #fadbd8;
 }
 
-/* Animación para el cambio de reseñas */
 .review-card {
   animation: fadeIn 0.3s ease-in-out;
 }
@@ -201,38 +201,34 @@
 
 }
 .button-container {
-  display: flex;             /* Activa Flexbox */
-  gap: 10px;                /* Espacio entre los botones */
+  display: flex;
+  gap: 10px;
 }
 
 .edit-btn, .delete-btn {
-  padding: 10px 15px;          /* Espaciado interno */
-  border: none;                /* Sin borde */
-  border-radius: 5px;         /* Bordes redondeados */
-  font-size: 16px;             /* Tamaño de fuente */
-  cursor: pointer;             /* Cambia el cursor al pasar el mouse */
-  transition: background-color 0.3s; /* Transición suave para el color de fondo */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-/* Estilo para el botón de editar */
 .edit-btn {
-  background-color: #4CAF50;  /* Color de fondo verde */
-  color: white;                /* Color del texto */
+  background-color: #4CAF50;
+  color: white;
 }
 
-/* Hover para el botón de editar */
 .edit-btn:hover {
-  background-color: #45a049;  /* Color más oscuro al pasar el mouse */
+  background-color: #45a049;
 }
 
-/* Estilo para el botón de eliminar */
 .delete-btn {
-  background-color: #f44336;  /* Color de fondo rojo */
-  color: white;                /* Color del texto */
+  background-color: #f44336;
+  color: white;
 }
 
-/* Hover para el botón de eliminar */
 .delete-btn:hover {
-  background-color: #da190b;  /* Color más oscuro al pasar el mouse */
+  background-color: #da190b;
 }
 

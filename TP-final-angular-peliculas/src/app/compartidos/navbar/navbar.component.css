@@ -1,6 +1,6 @@
-/* styles.css o menu.component.css */
 .navbar {
   background-color: #111;
+  border: 1px solid #ffffff;
   height: 60px;
   display: flex;
   align-items: center;
@@ -27,7 +27,7 @@
 .nav-menu {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 280px;
 }
 
 .nav-item {
@@ -42,38 +42,17 @@
 }
 
 .nav-links:hover {
-  color: #e91e63;
+  color: #8b1c11;
 }
 
 .active {
-  color: #e91e63;
+  color: #8b1c11;
 }
 
-/* Estilos para pantalla pequeña (responsive) */
-@media screen and (max-width: 768px) {
-  .menu-icon {
-    display: block;
-  }
-
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: #111;
-  }
-
-  .nav-menu.active {
-    display: flex;
-  }
-}
 .quiz-link {
   position: relative;
   display: inline-flex;
   align-items: center;
-  /* Mantiene los mismos estilos base de .nav-links */
   text-decoration: none;
   color: white;
   font-size: 1rem;
@@ -84,7 +63,7 @@
   position: absolute;
   top: -8px;
   right: -30px;
-  background-color: #e91e63; /* Usando el mismo color de hover que tienes definido */
+  background-color: #8b1c11;
   color: white;
   font-size: 0.7rem;
   padding: 2px 8px;
@@ -104,15 +83,26 @@
   }
 }
 
-/* Mantiene el comportamiento de hover consistente con los otros enlaces */
 .quiz-link:hover {
-  color: #e91e63;
+  color: #8b1c11;
 }
 
-/* Ajuste para pantallas pequeñas */
 @media screen and (max-width: 768px) {
-  .quiz-badge {
-    right: auto;
-    left: 100px; /* Ajusta según necesites para el diseño móvil */
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #111;
+  }
+
+  .nav-menu.active {
+    display: flex;
   }
 }
