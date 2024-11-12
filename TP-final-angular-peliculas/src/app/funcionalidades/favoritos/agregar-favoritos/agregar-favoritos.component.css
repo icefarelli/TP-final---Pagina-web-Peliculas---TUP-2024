@@ -1,9 +1,11 @@
 .container-form {
   max-width: 600px;
   margin: 0 auto;
-  padding: 30px;
+  margin-top: 20px;
+  padding: 50px 20px;
   border-radius: 10px;
-  background-color: #f9f9f9;
+  border: 2px solid #8b1c11;
+  background-color: #d4d3d3;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -11,7 +13,7 @@
   font-size: 1.8em;
   margin-bottom: 20px;
   text-align: center;
-  color: #333;
+  color: #460808;
 }
 
 .styled-form .form-group {
@@ -20,7 +22,7 @@
 
 .form-label {
   font-weight: 600;
-  color: #555;
+  color: #460808;
 }
 
 .form-control {
@@ -34,9 +36,9 @@
 }
 
 .form-control:focus {
-  border-color: #007bff;
+  border-color: #f5c518;
   outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .is-invalid {
@@ -54,7 +56,7 @@
   padding: 10px;
   font-size: 1.1em;
   color: #fff;
-  background-color: #007bff;
+  background-color: #8b1c11;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -67,5 +69,5 @@
 }
 
 .btn-submit:hover:not(:disabled) {
-  background-color: #0056b3;
+  background-color: #f5c518;
 }
