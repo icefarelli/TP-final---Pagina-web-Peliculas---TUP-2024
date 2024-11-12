@@ -1,28 +1,27 @@
-/* Contenedor principal */
 .container {
   max-width: 600px;
   margin: 0 auto;
+  margin-top: 20px;
   padding: 20px;
-  background-color: #f9f9f9;
+  border: 2px solid #8b1c11;
+  background-color: #d4d3d3;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Título */
 h2 {
   text-align: center;
-  color: #333;
+  color: #460808;
   margin-bottom: 20px;
 }
 
-/* Estilo para los campos de entrada del formulario */
 .form-group {
   margin-bottom: 15px;
 }
 
 .form-group label {
   font-weight: bold;
-  color: #555;
+  color: #460808;
 }
 
 .form-control {
@@ -32,14 +31,12 @@ h2 {
   transition: border-color 0.3s;
 }
 
-/* Efecto de hover en los campos de entrada */
 .form-control:focus {
-  border-color: #007bff;
+  border-color: #f5c518;
   outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Mensaje de validación para campos inválidos */
 .is-invalid {
   border-color: #e74c3c;
 }
@@ -49,9 +46,8 @@ h2 {
   font-size: 0.9em;
 }
 
-/* Estilo del botón de guardar cambios */
 .btn-primary {
-  background-color: #007bff;
+  background-color: #8b1c11;
   border: none;
   color: #fff;
   padding: 10px 20px;
@@ -59,22 +55,19 @@ h2 {
   width: 100%;
   font-size: 1.1em;
   transition: background-color 0.3s, transform 0.2s;
-  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.4);
+  box-shadow: 0 4px 6px #8b1b1151;
 }
 
-/* Efecto hover para el botón */
 .btn-primary:hover {
-  background-color: #0056b3;
+  background-color: #8b1c11;
   transform: scale(1.05);
 }
 
-/* Efecto active para el botón */
 .btn-primary:active {
-  background-color: #004494;
+  background-color: #f5c518;
   transform: scale(1);
 }
 
-/* Margen superior para el botón */
 .mt-3 {
   margin-top: 20px;
 }

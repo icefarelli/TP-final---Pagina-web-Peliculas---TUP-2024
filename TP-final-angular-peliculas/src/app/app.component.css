@@ -15,7 +15,7 @@ nav {
 
 .logo {
   height: 50px;
-  cursor: pointer;
+  cursor: default;
 }
 
 .auth-buttons {

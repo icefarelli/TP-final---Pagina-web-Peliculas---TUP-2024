@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { PeliculasService } from './../../nucleo/servicios/peliculas.service';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule], // Asegúrate de importar RouterModule aquí
   templateUrl: './carrusel.component.html',
   styleUrls: ['./carrusel.component.css']
 })
