@@ -1,4 +1,3 @@
-<!-- navbar.component.html -->
 <nav class="navbar">
   <div class="navbar-container">
     <ul [class.active]="isMenuOpen" class="nav-menu">
@@ -14,12 +13,22 @@
       <li class="nav-item">
         <a routerLink="/resenas" routerLinkActive="active" class="nav-links">Reseñas</a>
       </li>
-      <!-- Nuevo elemento para el quiz -->
       <li class="nav-item">
         <a routerLink="/quiz" routerLinkActive="active" class="nav-links quiz-link">
           Movie Challenge
           <span class="quiz-badge">¡Nuevo!</span>
         </a>
+      </li>
+      <!-- Nuevo botón 'Mis datos' -->
+      <li class="nav-item" *ngIf="usuarioActual">
+        <div class="dropdown">
+          <button class="nav-links dropdown-button">Mis datos</button>
+          <div class="dropdown-content">
+            <a routerLink="/mi-perfil" class="nav-links">Mi perfil</a>
+            <a routerLink="/mis-resenas" class="nav-links">Mis reseñas</a>
+            <a routerLink="/mis-favoritos" class="nav-links">Mis favoritos</a>
+          </div>
+        </div>
       </li>
     </ul>
   </div>

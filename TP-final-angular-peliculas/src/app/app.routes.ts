@@ -8,7 +8,7 @@ import { DetalleActorComponent } from './funcionalidades/actores/detalle-actor/d
 import { FavoritosComponent } from './pages/favoritos/favoritos.component';
 import { AgregarFavoritosComponent } from './funcionalidades/favoritos/agregar-favoritos/agregar-favoritos.component';
 import { ModificarFavoritosComponent } from './funcionalidades/favoritos/modificar-favoritos/modificar-favoritos.component';
-
+import { UserProfileComponent } from './user-profile/user-profile.component';
 export const routes: Routes = [
   { path: '',
     component: HomeComponent, pathMatch: 'full'
@@ -40,4 +40,5 @@ export const routes: Routes = [
      path:'favoritos/modificar/:id',
       component : ModificarFavoritosComponent
     },
+    { path: 'mi-perfil', component: UserProfileComponent },
 ];

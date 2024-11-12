@@ -1,0 +1,31 @@
+.perfil-details {
+  background-color: #7c2b2b; /* Mismo color de fondo */
+  padding: 20px; /* Espaciado similar */
+  color: #d4d3d3; /* Color del texto */
+  margin: 20px auto 0; /* Margen superior de 20px, centrar el contenido */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+  border-radius: 15px; /* Bordes redondeados */
+}
+
+.perfil-details h2 {
+  font-size: 2.5em; /* Tamaño de fuente similar al encabezado */
+  margin-bottom: 20px; /* Espaciado inferior */
+  color: #ffffff; /* Color blanco para el encabezado */
+}
+
+.perfil-details p {
+  font-size: 1.1em; /* Tamaño de fuente para párrafos */
+  line-height: 1.6; /* Espaciado entre líneas */
+  margin-bottom: 10px; /* Espaciado inferior */
+}
+
+@media (max-width: 768px) {
+  .perfil-details {
+    padding: 15px; /* Ajustar el espaciado en pantallas más pequeñas */
+    margin: 15px auto 0; /* Ajustar margen superior en pantallas más pequeñas */
+  }
+
+  .perfil-details h2 {
+    font-size: 2em; /* Ajustar tamaño de fuente en pantallas más pequeñas */
+  }
+}

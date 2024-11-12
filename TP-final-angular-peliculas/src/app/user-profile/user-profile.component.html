@@ -1,0 +1,10 @@
+<div *ngIf="userInfo; else loading" class="perfil-details">
+  <h2>Mi Perfil</h2>
+  <p><strong>Nombre:</strong> {{ userInfo.nombre }}</p>
+  <p><strong>Apellido:</strong> {{ userInfo.apellido }}</p>
+  <p><strong>Email:</strong> {{ userInfo.email }}</p>
+  <p><strong>Fecha de Nacimiento:</strong> {{ userInfo.fechaNacimiento }}</p>
+</div>
+<ng-template #loading>
+  <p>Cargando...</p>
+</ng-template>
