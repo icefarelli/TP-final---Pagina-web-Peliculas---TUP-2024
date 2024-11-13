@@ -47,17 +47,8 @@
   ],
   "favoritos": [
     {
-      "nombre": "hola ",
-      "descripcion": "aaaaaaaaaaaa",
-      "peliculas": [],
-      "userId": 1731098826438,
-      "id": "1"
-    },
-    {
-      "id": "2",
-      "userId": 1731098826438,
-      "nombre": "prueba de nuevo id 2",
-      "descripcion": "hhhhhhhhhhhhhhhhh",
+      "nombre": "asdasd",
+      "descripcion": "asadd",
       "peliculas": [
         {
           "adult": false,
@@ -248,7 +239,16 @@
           "vote_average": 6.019,
           "vote_count": 414
         }
-      ]
+      ],
+      "userId": 1731098826438,
+      "id": "2"
+    },
+    {
+      "id": 3,
+      "userId": 1731098826438,
+      "nombre": "Peliculas",
+      "descripcion": "Todas las peliculas",
+      "peliculas": []
     }
   ]
 }
