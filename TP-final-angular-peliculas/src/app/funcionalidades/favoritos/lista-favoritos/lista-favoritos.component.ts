@@ -44,7 +44,7 @@ export class ListaFavoritosComponent implements OnInit{
   }
 
   // Eliminar la lista seleccionada
-  eliminarLista(id: number): void {
+  eliminarLista(id: string): void {
     if (confirm('¿Estás seguro de que deseas eliminar esta lista?')) {
       console.log('Intentando eliminar lista con id:', id); // Verifico el id en consola
       this.favoritosService.deleteLista(id).subscribe({

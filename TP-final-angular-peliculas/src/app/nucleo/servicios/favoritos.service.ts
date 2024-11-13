@@ -26,13 +26,13 @@ export class FavoritosService {
     }
 
     // Modifica una lista de favoritos existente
-    putLista(id: number, lista: Partial<Favoritos>): Observable<Favoritos> {
+    putLista(id: string, lista: Partial<Favoritos>): Observable<Favoritos> {
       const url = `${this.localUrl}/${id}`;
       return this.http.put<Favoritos>(url, lista)
     }
 
     // Elimina una lista de favoritos
-    deleteLista(id: number): Observable<Favoritos> {
+    deleteLista(id: string): Observable<Favoritos> {
       const url = `${this.localUrl}/${id}`;
       return this.http.delete<Favoritos>(url).pipe(
         catchError((error) => {
@@ -41,7 +41,7 @@ export class FavoritosService {
         })
       );
     }
-    getListaporId(id: number): Observable<Favoritos> {
+    getListaporId(id: string): Observable<Favoritos> {
       const url = `${this.localUrl}/${id}`;
       console.log('URL de solicitud GET:', url);
       return this.http.get<Favoritos>(url).pipe(

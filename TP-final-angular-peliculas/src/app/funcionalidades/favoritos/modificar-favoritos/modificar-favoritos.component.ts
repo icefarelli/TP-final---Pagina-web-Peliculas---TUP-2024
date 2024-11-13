@@ -38,7 +38,7 @@ export class ModificarFavoritosComponent implements OnInit{
  // Método para cargar la lista de favoritos por ID
  cargarListaFavoritos(): void {
 
-  const id = Number(this.route.snapshot.paramMap.get('id'));
+  const id = this.route.snapshot.paramMap.get('id') || '';
   console.log('Intentando modificar lista con id:', id); // Verifico el id en consola
   this.favoritosService.getListaporId(id).subscribe({
     next: (lista) => {
