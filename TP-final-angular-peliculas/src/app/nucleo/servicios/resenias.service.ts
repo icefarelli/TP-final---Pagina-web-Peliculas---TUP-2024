@@ -85,5 +85,24 @@ export class ReseniasService {
   updateLocalReview(reviewId: number, content: string): Observable<LocalReview> {
     return this.http.patch<LocalReview>(`${this.localReviewsUrl}/${reviewId}`, { content });
 }
+async getReviewsByAuthor(author: string): Promise<LocalReview[]> {
+  try {
+    const response = await this.http.get<LocalReview[]>(this.localReviewsUrl).toPromise();
+
+    if (response) {
+      // Filtra las reseñas solo por author
+      return response
+        .filter(review => review.author === author) // Filtra por author
+        .map(review => ({
+          ...review,
+          isLocal: true
+        }));
+    }
+    return [];
+  } catch (error) {
+    console.error('Error al obtener las reseñas por author:', error);
+    return [];
+  }
+}
 
 }

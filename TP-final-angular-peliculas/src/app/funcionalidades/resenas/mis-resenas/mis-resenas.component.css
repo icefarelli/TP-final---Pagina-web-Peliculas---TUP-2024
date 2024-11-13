@@ -1,0 +1,65 @@
+.mis-resenas-container {
+  background-color: #7c2b2b; /* Color de fondo similar */
+  padding: 20px; /* Espaciado interno */
+  color: #d4d3d3; /* Color del texto */
+  margin: 20px auto; /* Centrar el contenido */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+  border-radius: 15px; /* Bordes redondeados */
+}
+
+.mis-resenas-container h2 {
+  font-size: 2.5em; /* Tamaño de fuente para el encabezado */
+  margin-bottom: 20px; /* Espaciado inferior */
+  color: #ffffff; /* Color blanco para el encabezado */
+}
+
+.mis-resenas-container p {
+  font-size: 1.1em; /* Tamaño de fuente para párrafos */
+  line-height: 1.6; /* Espaciado entre líneas */
+  margin-bottom: 10px; /* Espaciado inferior */
+  color: #460808;
+}
+
+.reseña-card {
+  background-color: #d4d3d3; /* Color de fondo para cada reseña */
+  padding: 15px; /* Espaciado interno para la reseña */
+  border-radius: 10px; /* Bordes redondeados */
+  margin-bottom: 15px; /* Espaciado entre reseñas */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.2s; /* Transición suave para el hover */
+}
+
+.reseña-card:hover {
+  transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+}
+
+.reseña-card h4 {
+  font-size: 1.5em; /* Tamaño de fuente para el título de la reseña */
+  color: #460808; /* Color del título */
+  margin-bottom: 10px; /* Espaciado inferior */
+}
+
+.reseña-card small {
+  color: #777; /* Color más suave para la fecha */
+  font-size: 0.9em; /* Tamaño de fuente más pequeño */
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  .mis-resenas-container {
+    padding: 15px; /* Ajustar espaciado en pantallas más pequeñas */
+    margin: 15px auto; /* Ajustar margen superior en pantallas más pequeñas */
+  }
+
+  .mis-resenas-container h2 {
+    font-size: 2em; /* Ajustar tamaño de fuente en pantallas más pequeñas */
+  }
+
+  .reseña-card {
+    padding: 10px; /* Ajustar espaciado interno para reseñas en pantallas más pequeñas */
+  }
+
+  .reseña-card h4 {
+    font-size: 1.3em; /* Ajustar tamaño de fuente para el título en pantallas más pequeñas */
+  }
+}

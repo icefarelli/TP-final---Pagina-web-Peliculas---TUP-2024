@@ -14,7 +14,7 @@ import { QuizPreguntasComponent } from './quiz/quiz-preguntas/quiz-preguntas.com
 import { QuizResultadosComponent } from './quiz/quiz-resultados/quiz-resultados.component';
 import { PreguntasMakerComponent } from './quiz/preguntas-maker/preguntas-maker.component';
 import { EditarPerfilComponent } from "./editar-perfil/editar-perfil.component";
-
+import { MisResenasComponent } from "./funcionalidades/resenas/mis-resenas/mis-resenas.component";
 export const routes: Routes = [
   { path: '',
     component: HomeComponent, pathMatch: 'full'
@@ -41,7 +41,7 @@ export const routes: Routes = [
     { path: 'preguntasMaker', component: PreguntasMakerComponent } // Ruta para crear preguntas
     ]
   },
-  { path: 'actor/:id', 
+  { path: 'actor/:id',
     component: DetalleActorComponent },
   {
     path:'favoritos/agregar',
@@ -51,12 +51,13 @@ export const routes: Routes = [
     path:'favoritos/modificar/:id',
     component : ModificarFavoritosComponent
     },
-    { 
-    path: 'mi-perfil', 
-    component: UserProfileComponent 
+    {
+    path: 'mi-perfil',
+    component: UserProfileComponent
     },
-    { 
-    path: 'editar-perfil', 
-    component: EditarPerfilComponent 
-    }, 
+    {
+    path: 'editar-perfil',
+    component: EditarPerfilComponent
+    },
+    { path: 'mis-resenas', component: MisResenasComponent }
 ];

@@ -1,0 +1,11 @@
+<div class="mis-resenas-container">
+  <h2>Mis Reseñas</h2>
+  <div *ngIf="resenas.length === 0">
+    <p>No has realizado reseñas aún.</p>
+  </div>
+  <div *ngFor="let resena of resenas" class="reseña-card">
+    <h4>{{ resena.movieId }}</h4> <!-- Aquí puedes mostrar más detalles de la película si tienes acceso a ellos -->
+    <p>{{ resena.content }}</p>
+    <p><small>Escrita el: {{ resena.created_at | date:'short' }}</small></p>
+  </div>
+</div>
