@@ -6,6 +6,15 @@
   <div *ngFor="let resena of resenas" class="reseña-card">
     <h4>{{ resena.movieId }}</h4> <!-- Aquí puedes mostrar más detalles de la película si tienes acceso a ellos -->
     <p>{{ resena.content }}</p>
+    <div class="review-rating">
+      <span class="stars">
+        <!-- Mostrar las estrellas rellenas según la calificación -->
+        <span *ngFor="let star of [].constructor(resena.rating); let i = index"
+              [class.filled]="i < resena.rating">
+          ★
+        </span>
+      </span>
+    </div>
     <p><small>Escrita el: {{ resena.created_at | date:'short' }}</small></p>
   </div>
 </div>

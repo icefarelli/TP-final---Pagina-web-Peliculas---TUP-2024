@@ -27,7 +27,7 @@
 .nav-menu {
   list-style: none;
   display: flex;
-  gap: 20px; /* Ajustado para ser más pequeño */
+  gap: 360px; /* Ajustado para ser más pequeño */
 }
 
 .nav-item {

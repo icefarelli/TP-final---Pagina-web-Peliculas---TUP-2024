@@ -44,6 +44,20 @@
   font-size: 0.9em; /* Tamaño de fuente más pequeño */
 }
 
+.reseña-card .review-rating .stars {
+  font-size: 1.5em; /* Tamaño de las estrellas */
+}
+
+.reseña-card .review-rating .stars span {
+  color: #d4d3d3; /* Color por defecto (vacía) */
+  margin-right: 5px; /* Espacio entre las estrellas */
+}
+
+.reseña-card .review-rating .stars span.filled {
+  color: #ffbc00; /* Color de las estrellas llenas (amarillo dorado) */
+}
+
+
 /* Media Queries para pantallas pequeñas */
 @media (max-width: 768px) {
   .mis-resenas-container {

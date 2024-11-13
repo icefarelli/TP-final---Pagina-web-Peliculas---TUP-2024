@@ -5,11 +5,12 @@ import { map } from 'rxjs/operators';
 
 interface LocalReview {
   movieId: number;
-  author: string;      // Nombre de usuario del autor
+  author: string;
   content: string;
   created_at: string;
-  isLocal?: boolean;   // Para identificar reseñas locales
-  userId?: string;     // ID del usuario que creó la reseña
+  rating: number;    // Agregar puntuación a la reseña
+  isLocal?: boolean;
+  userId?: string;
 }
 
 @Injectable({
@@ -57,17 +58,19 @@ export class ReseniasService {
   }
 
   // Agrega una reseña local al JSON en el servidor local
-  addLocalReview(movieId: number, author: string, content: string): Observable<LocalReview> {
+  addLocalReview(movieId: number, author: string, content: string, rating: number): Observable<LocalReview> {
     const newReview: LocalReview = {
       movieId,
-      author,          // Ahora author será el nombre de usuario
+      author,
       content,
       created_at: new Date().toISOString(),
+      rating, // Incluir puntuación
       isLocal: true
     };
 
     return this.http.post<LocalReview>(this.localReviewsUrl, newReview);
   }
+
 
   // Opcional: Método para eliminar una reseña (solo si el usuario es el autor)
   deleteReview(reviewId: number): Observable<any> {

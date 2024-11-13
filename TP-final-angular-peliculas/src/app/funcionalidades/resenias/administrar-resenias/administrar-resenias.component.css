@@ -188,6 +188,43 @@
   animation: fadeIn 0.3s ease-in-out;
 }
 
+.stars {
+  font-size: 24px;
+  color: lightgray; /* Color de las estrellas vacías */
+}
+
+.stars .filled {
+  color: gold; /* Color de las estrellas llenas */
+}
+
+
+.stars span {
+  font-size: 30px;
+  color: #ccc; /* Color base de las estrellas */
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.stars span.filled {
+  color: #ff9900; /* Color de las estrellas cuando están seleccionadas */
+}
+
+/* Estilos de las estrellas en las reseñas */
+.review-rating .stars {
+  display: inline-flex;
+  gap: 5px;
+}
+
+.review-rating .stars span {
+  font-size: 20px;
+  color: #ff9900; /* Color de las estrellas en las reseñas */
+}
+
+.review-rating .stars span.filled {
+  color: #ff9900; /* Mantener el color dorado cuando la estrella esté llena */
+}
+
+
 @keyframes fadeIn {
   from {
     opacity: 0;
