@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { forkJoin, map, Observable } from 'rxjs';
 import { Pelicula, PeliculaResponse } from '../modelos/pelicula.interface';
 
 export interface Genero {
@@ -17,7 +17,7 @@ export class PeliculasService {
 
   constructor(private http: HttpClient) { }
 
-  obtenerPeliculasPopulares(pagina: number = 1): Observable<PeliculaResponse> {
+  obtenerPeliculasPopulares(pagina: number =  1): Observable<PeliculaResponse> {
     return this.http.get<PeliculaResponse>(
       `${this.baseUrl}/movie/popular?api_key=${this.apiKey}&language=es-ES&page=${pagina}`
     );
@@ -57,6 +57,25 @@ export class PeliculasService {
 obtenerPeliculasPorActor(actorId: number): Observable<any> {
   return this.http.get<any>(
     `${this.baseUrl}/person/${actorId}/movie_credits?api_key=${this.apiKey}&language=es-ES`
+  );
+}
+
+obtenerTodasLasPeliculas(): Observable<Pelicula[]> {
+  const totalPaginas = 250; // Cambia esto según el número total de páginas que esperas
+  const peticiones: Observable<PeliculaResponse>[] = [];
+
+  for (let i = 1; i <= totalPaginas; i++) {
+    peticiones.push(this.http.get<PeliculaResponse>(
+      `${this.baseUrl}/movie/popular?api_key=${this.apiKey}&language=es-ES&page=${i}`
+    ));
+  }
+
+  // Utiliza forkJoin para combinar todas las solicitudes
+  return forkJoin(peticiones).pipe(
+    map(respuestas => {
+      // Combina todos los resultados en un solo array
+      return respuestas.flatMap(respuesta => respuesta.results);
+    })
   );
 }
   
