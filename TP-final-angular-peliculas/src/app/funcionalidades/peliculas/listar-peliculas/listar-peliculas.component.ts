@@ -28,18 +28,18 @@ export class ListarPeliculasComponent implements OnInit, OnDestroy {
     anio: '',
     calificacionMinima: 0
   };
+  cantidadAMostrar: number = 200; //de aca se modifica la cantidad de peliculas que quiero mostrar por pantalla
 
   constructor(
     private peliculasService: PeliculasService,
     private router: Router
   ) {
-    // Generar array de años desde 1900 hasta el año actual
+
     const añoActual = new Date().getFullYear();
     for (let año = añoActual; año >= 1900; año--) {
       this.anios.push(año);
     }
 
-    // Configurar el observable de búsqueda
     this.busquedaSubject.pipe(
       debounceTime(300),
       distinctUntilChanged(),
@@ -52,7 +52,6 @@ export class ListarPeliculasComponent implements OnInit, OnDestroy {
       })
     ).subscribe(response => {
       this.peliculas = response.results;
-      this.peliculasFiltradas = [...this.peliculas];
       this.aplicarFiltros();
     });
   }
@@ -66,17 +65,23 @@ export class ListarPeliculasComponent implements OnInit, OnDestroy {
   }
 
   cargarPeliculasYGeneros() {
-    forkJoin({
-      peliculas: this.peliculasService.obtenerPeliculasPopulares(this.paginaActual),
-      generos: this.peliculasService.obtenerGeneros()
-    }).subscribe({
+    this.peliculasService.obtenerTodasLasPeliculas().subscribe({
       next: (resultado) => {
-        this.peliculas = resultado.peliculas.results;
-        this.peliculasFiltradas = [...this.peliculas];
-        this.generos = resultado.generos.genres;
+        this.peliculas = resultado; 
+        this.peliculasFiltradas = this.peliculas.slice(0, this.cantidadAMostrar); // aca se modifica la cantidad que quiero mostrar
       },
       error: (error) => {
         console.error('Error al cargar datos:', error);
+      }
+    });
+
+
+    this.peliculasService.obtenerGeneros().subscribe({
+      next: (resultado) => {
+        this.generos = resultado.genres; 
+      },
+      error: (error) => {
+        console.error('Error al cargar géneros:', error);
       }
     });
   }
@@ -105,24 +110,24 @@ export class ListarPeliculasComponent implements OnInit, OnDestroy {
     this.peliculasFiltradas = this.peliculas.filter(pelicula => {
       let cumpleFiltros = true;
 
-      // Filtro por género
+
       if (this.filtros.genero) {
         cumpleFiltros = cumpleFiltros && pelicula.genre_ids.includes(Number(this.filtros.genero));
       }
 
-      // Filtro por año
+
       if (this.filtros.anio) {
         const añoPelicula = new Date(pelicula.release_date).getFullYear();
         cumpleFiltros = cumpleFiltros && añoPelicula === Number(this.filtros.anio);
       }
 
-      // Filtro por calificación
+
       if (this.filtros.calificacionMinima > 0) {
         cumpleFiltros = cumpleFiltros && pelicula.vote_average >= this.filtros.calificacionMinima;
       }
 
       return cumpleFiltros;
-    });
+    }).slice(0, this.cantidadAMostrar); 
   }
 
   limpiarFiltros() {

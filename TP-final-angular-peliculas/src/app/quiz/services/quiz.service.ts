@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Question } from '../models/question.model';
 
@@ -8,60 +8,87 @@ import { Question } from '../models/question.model';
   providedIn: 'root'
 })
 export class QuizService {
-  private questions: Question[] = [];
-  private currentQuestionIndex = 0;
-  private score = 0;
-  private difficulty: string = 'medium'; // Dificultad por defecto
+  private preguntasFinales: Question[] = [];
+  private preguntaActual = 0;
+  private puntaje = 0;
+  private dificultad: string = 'medium'; // Dificultad por defecto
 
   constructor(private http: HttpClient) {}
 
-  setDifficulty(difficulty: string) {
-    this.difficulty = difficulty;
+  setDificultad(opcionDificultad: string) {
+    this.dificultad = opcionDificultad;
   }
 
-  loadQuestions(): Observable<Question[]> {
-    return this.http.get<Question[]>('assets/questions.json').pipe(
-      map(allQuestions => {
-        // Filtramos las preguntas por dificultad
-        const filteredQuestions = allQuestions.filter(q => q.difficulty === this.difficulty);
-        // Mezclamos y seleccionamos 10 preguntas
-        this.questions = this.shuffleArray(filteredQuestions).slice(0, 10);
-        return this.questions;
+  loadPreguntas(): Observable<Question[]> {
+    return this.http.get<Question[]>('http://localhost:3000/preguntas').pipe(
+      map(todasLasPreguntas => {
+        // Filtrar por dificultad
+        const preguntasFiltradas = todasLasPreguntas.filter(p => p.difficulty === this.dificultad);
+        // Mezclar y seleccionar 10 preguntas
+        this.preguntasFinales = this.mixPreguntas(preguntasFiltradas).slice(0, 10);
+        return this.preguntasFinales;
       })
     );
   }
 
-  getCurrentQuestion(): Question {
-    return this.questions[this.currentQuestionIndex];
+  private apiUrlrevision = 'http://localhost:3000/revision';
+
+  addPreguntas(question: any): Observable<any> {
+    return this.http.post<Question>(this.apiUrlrevision, question);
   }
 
-  answerQuestion(answer: string): boolean {
-    const correct = answer === this.getCurrentQuestion().correctAnswer;
-    if (correct) {
-      this.score++;
+  private apiUrlfromUsuarios = 'http://localhost:3000/revision';
+
+
+
+  loadPreguntas2(): Observable<Question[]> {
+    return this.http.get<Question[]>('http://localhost:3000/preguntas').pipe(
+      map(todasLasPreguntas => {
+        // Filtrar por dificultad
+        const preguntasFiltradas = todasLasPreguntas.filter(p => p.difficulty === this.dificultad);
+        // Mezclar y seleccionar 10 preguntas
+        this.preguntasFinales = this.mixPreguntas(preguntasFiltradas).slice(0, 10);
+        return this.preguntasFinales;
+      })
+    );
+  }
+  addPreguntasAprobadas(question: any): Observable<any>{
+    return this.http.post<Question>(this.apiUrlfromUsuarios, question);
+  }
+
+
+  getPreguntaActual(): Question {
+    return this.preguntasFinales[this.preguntaActual];
+  }
+
+  respuestaPreguntas(respuesta: string): boolean {
+    const correcta = respuesta === this.getPreguntaActual().correctAnswer;
+    if (correcta) {
+      this.puntaje++;
     }
-    return correct;
+    return correcta;
   }
 
-  nextQuestion(): boolean {
-    this.currentQuestionIndex++;
-    return this.currentQuestionIndex < this.questions.length;
+  nextPregunta(): boolean {
+    this.preguntaActual++;
+    return this.preguntaActual < this.preguntasFinales.length;
   }
 
-  getScore(): number {
-    return this.score;
+  getPuntuacion(): number {
+    return this.puntaje;
   }
 
   resetQuiz(): void {
-    this.currentQuestionIndex = 0;
-    this.score = 0;
+    this.preguntaActual = 0;
+    this.puntaje = 0;
   }
 
-  private shuffleArray(array: any[]): any[] {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+  // Funcion para mezclar aleatoriamente las preguntas
+  private mixPreguntas(arrayPreguntas: any[]): any[] {
+    for (let i = arrayPreguntas.length - 1; i > 0; i--) {
+        const iRandom = Math.floor(Math.random() * (i + 1));
+        [arrayPreguntas[i], arrayPreguntas[iRandom]] = [arrayPreguntas[iRandom], arrayPreguntas[i]];
     }
-    return array;
+    return arrayPreguntas;
   }
 }

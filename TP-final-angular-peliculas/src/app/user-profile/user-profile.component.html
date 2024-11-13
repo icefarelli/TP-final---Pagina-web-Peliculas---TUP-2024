@@ -1,9 +1,14 @@
+<!-- user-profile.component.html -->
 <div *ngIf="userInfo; else loading" class="perfil-details">
   <h2>Mi Perfil</h2>
   <p><strong>Nombre:</strong> {{ userInfo.nombre }}</p>
   <p><strong>Apellido:</strong> {{ userInfo.apellido }}</p>
   <p><strong>Email:</strong> {{ userInfo.email }}</p>
   <p><strong>Fecha de Nacimiento:</strong> {{ userInfo.fechaNacimiento }}</p>
+
+  <!-- Botón para eliminar cuenta -->
+  <button (click)="eliminarCuenta()" class="btn btn-danger">Eliminar Cuenta</button>
+  <button routerLink="/editar-perfil" class="btn btn-primary">Modificar Datos</button>
 </div>
 <ng-template #loading>
   <p>Cargando...</p>

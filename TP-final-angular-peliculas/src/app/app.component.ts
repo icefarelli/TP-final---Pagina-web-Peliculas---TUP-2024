@@ -1,6 +1,5 @@
-// app.component.ts
 import { Component, ComponentRef, ViewContainerRef } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { AuthService, Usuario } from './nucleo/servicios/auth.service';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
@@ -22,7 +21,8 @@ export class AppComponent {
 
   private authDialogRef: ComponentRef<AuthDialogComponent> | null = null;
 
-  constructor(private authService: AuthService, private viewContainerRef: ViewContainerRef) {
+  constructor(private authService: AuthService, private viewContainerRef: ViewContainerRef, private router: Router) {
+    
     this.usuarioActual$ = this.authService.getUsuarioActual();
 
     window.addEventListener('cerrarDialog', () => {
@@ -44,6 +44,7 @@ export class AppComponent {
 
   cerrarSesion() {
     this.authService.cerrarSesion();
+    this.router.navigate(['']);
   }
   
 }

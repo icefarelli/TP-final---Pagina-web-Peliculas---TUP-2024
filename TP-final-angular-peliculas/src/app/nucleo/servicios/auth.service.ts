@@ -131,4 +131,47 @@ export class AuthService {
     this.alertService.mostrarAlerta('error', mensajeError);
     return throwError(() => new Error(mensajeError));
   }
+
+  // Método para cambiar la contraseña
+cambiarContrasenia(usuarioId: string, nuevaContrasenia: string): Observable<boolean> {
+  return this.http.patch<Usuario>(`${this.apiUrl}/${usuarioId}`, { contrasenia: nuevaContrasenia }).pipe(
+    map(() => {
+      this.alertService.mostrarAlerta('success', 'Contraseña cambiada exitosamente');
+      return true;
+    }),
+    catchError((error) => {
+      this.handleError(error);
+      return of(false);
+    })
+  );
+}
+
+// Método para eliminar un usuario
+eliminarUsuario(usuarioId: string | undefined): Observable<boolean> {
+  return this.http.delete<Usuario>(`${this.apiUrl}/${usuarioId}`).pipe(
+    map(() => {
+      this.alertService.mostrarAlerta('success', 'Usuario eliminado exitosamente');
+      return true;
+    }),
+    catchError((error) => {
+      this.handleError(error);
+      return of(false);
+    })
+  );
+}
+
+cambiarDatosUsuario(usuario: Usuario): Observable<boolean> {
+  return this.http.patch<Usuario>(`${this.apiUrl}/${usuario.id}`, usuario).pipe(
+    map((updatedUser) => {
+      this.alertService.mostrarAlerta('success', 'Datos actualizados exitosamente');
+      this.usuarioActual.next(updatedUser ); // Emitir el nuevo usuario
+
+      return true;
+    }),
+    catchError((error) => {
+      this.handleError(error);
+      return of(false);
+    })
+  );
+}
 }
