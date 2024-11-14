@@ -23,7 +23,8 @@
         </div>
       </div>
 
-      <!-- Nueva Sección: Agregar a Favoritos -->
+      @if(usuarioConectado() == true) {
+      <!-- Nueva Sección: Agregar a Favoritos, solo se muestra si el usuario esta logueado -->
   <div class="favoritos-section">
     <h2>Agregar a Favoritos</h2>
     <div class="form-group">
@@ -36,7 +37,8 @@
     </div>
     <button (click)="agregarPeliculaAFavoritos()" class="btn btn-primary">Agregar a Lista</button>
   </div>
-
+      }
+      
       <!-- Sección de Elenco -->
       <div class="elenco-section">
         <h2>Elenco</h2>

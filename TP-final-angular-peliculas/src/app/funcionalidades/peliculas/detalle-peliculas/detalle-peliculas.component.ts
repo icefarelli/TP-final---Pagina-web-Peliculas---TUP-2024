@@ -8,6 +8,7 @@ import { Favoritos } from '../../../nucleo/modelos/favoritos';
 import id from '@angular/common/locales/id';
 import { FavoritosService } from '../../../nucleo/servicios/favoritos.service';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from '../../../nucleo/servicios/auth.service';
 
 @Component({
   selector: 'app-detalle-peliculas',
@@ -26,7 +27,8 @@ export class DetallePeliculasComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private peliculasService: PeliculasService,
-    private favoritosService: FavoritosService
+    private favoritosService: FavoritosService,
+    private authService: AuthService
   ) {
 
     this.userId = Number(localStorage.getItem('userId'))
@@ -101,5 +103,9 @@ export class DetallePeliculasComponent implements OnInit {
 
   obtenerUrlImagen(path: string): string {
     return `https://image.tmdb.org/t/p/w500${path}`;
+  }
+  
+  usuarioConectado(){
+    return this.authService.estaAutenticado();
   }
 }
