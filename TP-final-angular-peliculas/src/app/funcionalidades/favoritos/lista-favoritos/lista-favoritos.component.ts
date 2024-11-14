@@ -62,5 +62,21 @@ export class ListaFavoritosComponent implements OnInit{
       });
     }
   }
+
+
+  eliminarPeliculadeLista(lista: Favoritos, peliculaId: number): void {
+    // Filtrar las películas de la lista específica para quitar la que quiero eliminar
+    lista.peliculas = lista.peliculas.filter(pelicula => pelicula.id !== peliculaId);
+
+    // Actualizo la lista en el servidor
+    this.favoritosService.putLista(lista.id, lista).subscribe({
+      next: () => {
+        console.log('Película eliminada de la lista de favoritos');
+      },
+      error: (err) => {
+        console.error('Error al eliminar la película de la lista', err);
+      }
+    });
+  }
 }
 

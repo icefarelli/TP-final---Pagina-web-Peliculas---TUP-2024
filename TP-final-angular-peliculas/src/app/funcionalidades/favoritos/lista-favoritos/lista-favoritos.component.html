@@ -21,6 +21,9 @@
             <a [routerLink]="['/pelicula', pelicula.id]" class="pelicula-link">
               🎬 {{ pelicula.title || 'Título no disponible' }}
             </a>
+            <span (click)="eliminarPeliculadeLista(lista,pelicula.id)" class="eliminar-cruz" title="Eliminar película">
+              ✖️
+            </span>
           </li>
         </ul>
       </div>
