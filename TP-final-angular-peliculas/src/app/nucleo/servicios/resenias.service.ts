@@ -8,7 +8,7 @@ interface LocalReview {
   author: string;
   content: string;
   created_at: string;
-  rating: number;    // Agregar puntuación a la reseña
+  rating: number;
   isLocal?: boolean;
   userId?: string;
 }
@@ -64,7 +64,7 @@ export class ReseniasService {
       author,
       content,
       created_at: new Date().toISOString(),
-      rating, // Incluir puntuación
+      rating,
       isLocal: true
     };
 
@@ -78,16 +78,21 @@ export class ReseniasService {
   }
 
   // Opcional: Método para editar una reseña (solo si el usuario es el autor)
-  updateReview(reviewId: number, content: string): Observable<LocalReview> {
+  updateReview(reviewId: number, content: string, rating: number): Observable<LocalReview> {
     return this.http.patch<LocalReview>(`${this.localReviewsUrl}/${reviewId}`, {
       content,
+      rating,
       updated_at: new Date().toISOString()
     });
   }
 
-  updateLocalReview(reviewId: number, content: string): Observable<LocalReview> {
-    return this.http.patch<LocalReview>(`${this.localReviewsUrl}/${reviewId}`, { content });
-}
+  updateLocalReview(reviewId: number, content: string, rating: number): Observable<LocalReview> {
+    return this.http.patch<LocalReview>(`${this.localReviewsUrl}/${reviewId}`, {
+      content,
+      rating
+    });
+  }
+
 async getReviewsByAuthor(author: string): Promise<LocalReview[]> {
   try {
     const response = await this.http.get<LocalReview[]>(this.localReviewsUrl).toPromise();
