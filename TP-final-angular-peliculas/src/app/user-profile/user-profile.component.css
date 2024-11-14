@@ -1,77 +1,77 @@
 .perfil-details {
-  background-color: #7c2b2b; /* Mismo color de fondo */
-  padding: 20px; /* Espaciado similar */
-  color: #d4d3d3; /* Color del texto */
-  margin: 20px auto 0; /* Margen superior de 20px, centrar el contenido */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
-  border-radius: 15px; /* Bordes redondeados */
+  background-color: #7c2b2b;
+  padding: 20px;
+  color: #d4d3d3; 
+  margin: 20px auto 0; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
 }
 
 .perfil-details h2 {
-  font-size: 2.5em; /* Tamaño de fuente similar al encabezado */
-  margin-bottom: 20px; /* Espaciado inferior */
-  color: #ffffff; /* Color blanco para el encabezado */
+  font-size: 2.5em; 
+  margin-bottom: 20px;
+  color: #ffffff;
 }
 
 .perfil-details p {
-  font-size: 1.1em; /* Tamaño de fuente para párrafos */
-  line-height: 1.6; /* Espaciado entre líneas */
-  margin-bottom: 10px; /* Espaciado inferior */
+  font-size: 1.1em; 
+  line-height: 1.6; 
+  margin-bottom: 10px;
 }
 .btn-danger {
-  background-color: #dc3545; /* Color de fondo para el botón de eliminar */
-  color: #fff; /* Color del texto */
-  padding: 10px 20px; /* Espaciado interno */
-  border: none; /* Sin borde */
-  border-radius: 5px; /* Bordes redondeados */
-  cursor: pointer; /* Cambiar cursor al pasar el mouse */
-  font-size: 1.1em; /* Tamaño de fuente */
-  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+  background-color: #dc3545; 
+  color: #fff; 
+  padding: 10px 20px;
+  border: none; 
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em; 
+  transition: background-color 0.3s, transform 0.2s; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
 }
 
 .btn-danger:hover {
-  background-color: #c82333; /* Color de fondo al pasar el mouse */
-  transform: scale(1.05); /* Aumentar tamaño ligeramente */
+  background-color: #c82333; 
+  transform: scale(1.05); 
 }
 
 .btn-danger:active {
-  background-color: #bd2130; /* Color de fondo al hacer clic */
-  transform: scale(1); /* Volver al tamaño original */
+  background-color: #bd2130; 
+  transform: scale(1); 
 }
 
 
 .btn-primary {
-  background-color: #3583dc; /* Color de fondo para el botón de eliminar */
-  color: #fff; /* Color del texto */
-  padding: 10px 20px; /* Espaciado interno */
-  border: none; /* Sin borde */
-  border-radius: 5px; /* Bordes redondeados */
-  cursor: pointer; /* Cambiar cursor al pasar el mouse */
-  font-size: 1.1em; /* Tamaño de fuente */
-  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+  background-color: #ffc107;
+  color: #fff;
+  padding: 10px 20px;
+  border: none; 
+  border-radius: 5px;
+  cursor: pointer; 
+  font-size: 1.1em; 
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
   margin-left: 15px;
 }
 
 .btn-primary:hover {
-  background-color: #2b6db9; /* Color de fondo al pasar el mouse */
-  transform: scale(1.05); /* Aumentar tamaño ligeramente */
+  background-color: #ca9907; 
+  transform: scale(1.05); 
 }
 
 .btn-primary:active {
-  background-color: #3583dc; /* Color de fondo al hacer clic */
-  transform: scale(1); /* Volver al tamaño original */
+  background-color: #ffc107; 
+  transform: scale(1);
 }
 
 @media (max-width: 768px) {
   .perfil-details {
-    padding: 15px; /* Ajustar el espaciado en pantallas más pequeñas */
-    margin: 15px auto 0; /* Ajustar margen superior en pantallas más pequeñas */
+    padding: 15px; 
+    margin: 15px auto 0;
   }
 
   .perfil-details h2 {
-    font-size: 2em; /* Ajustar tamaño de fuente en pantallas más pequeñas */
+    font-size: 2em; 
   }
 
 
