@@ -108,4 +108,18 @@ async getReviewsByAuthor(author: string): Promise<LocalReview[]> {
   }
 }
 
+getMovieDetails(movieId: number): Observable<any> {
+  return this.http.get<any>(`${this.baseUrl}/movie/${movieId}?api_key=${this.apiKey}&language=es-ES`)
+    .pipe(
+      map(response => ({
+        id: response.id,
+        title: response.title,
+        posterUrl: response.poster_path ? `https://image.tmdb.org/t/p/w500${response.poster_path}` : null,
+        overview: response.overview,
+        release_date: response.release_date,
+        // Puedes agregar más campos según sea necesario
+      }))
+    );
 }
+}
+

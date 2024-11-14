@@ -18,18 +18,26 @@ export class MisResenasComponent implements OnInit {
   constructor(private reseniasService: ReseniasService, private authService: AuthService) {}
 
   ngOnInit(): void {
-    // Al iniciar el componente, obtenemos el usuario actual y cargamos sus reseñas
     this.authService.getUsuarioActual().subscribe(usuario => {
       this.usuarioActual = usuario;
-      this.cargarResenas(); // Llamamos a cargarResenas aquí
+      this.cargarResenas();
     });
   }
 
   async cargarResenas(): Promise<void> {
-    if (this.usuarioActual && this.usuarioActual.usuario) { // Asegúrate de que el campo 'usuario' esté disponible
-      const author = this.usuarioActual.usuario; // Usar el nombre de usuario como author
+    if (this.usuarioActual && this.usuarioActual.usuario) {
+      const author = this.usuarioActual.usuario;
       try {
-        this.resenas = await this.reseniasService.getReviewsByAuthor(author); // Llamar al nuevo método
+        this.resenas = await this.reseniasService.getReviewsByAuthor(author);
+        // Obtener detalles de la película para cada reseña
+        for (const resena of this.resenas) {
+          try {
+            resena.movieDetails = await this.reseniasService.getMovieDetails(resena.movieId).toPromise();
+          } catch (error) {
+            console.error(`Error al obtener detalles de la película para movieId ${resena.movieId}:`, error);
+            resena.movieDetails = null; // Manejar el error según sea necesario
+          }
+        }
       } catch (error) {
         console.error('Error al cargar las reseñas:', error);
       }
