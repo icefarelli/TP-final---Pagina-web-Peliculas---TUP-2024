@@ -90,6 +90,7 @@
 }
 
 .review-card {
+  position: relative;
   border: none;
   border-radius: 15px;
   padding: 30px;
@@ -104,7 +105,6 @@
 .review-card:hover {
   transform: translateY(-5px);
 }
-
 .review-header {
   display: flex;
   justify-content: space-between;
@@ -146,6 +146,15 @@
   background: linear-gradient(135deg, #bdc3c7 0%, #95a5a6 100%);
   cursor: not-allowed;
   box-shadow: none;
+}
+
+
+.nav-button.prev {
+  margin-left: 10px;
+}
+
+.nav-button.next {
+  margin-right: 10px;
 }
 
 .review-content {
@@ -190,26 +199,25 @@
 
 .stars {
   font-size: 24px;
-  color: lightgray; /* Color de las estrellas vacías */
+  color: lightgray;
 }
 
 .stars .filled {
-  color: gold; /* Color de las estrellas llenas */
+  color: gold;
 }
 
 
 .stars span {
   font-size: 30px;
-  color: #ccc; /* Color base de las estrellas */
+  color: #ccc;
   cursor: pointer;
   transition: color 0.2s;
 }
 
 .stars span.filled {
-  color: #ff9900; /* Color de las estrellas cuando están seleccionadas */
+  color: #ff9900;
 }
 
-/* Estilos de las estrellas en las reseñas */
 .review-rating .stars {
   display: inline-flex;
   gap: 5px;
@@ -217,13 +225,12 @@
 
 .review-rating .stars span {
   font-size: 20px;
-  color: #ff9900; /* Color de las estrellas en las reseñas */
+  color: #ff9900;
 }
 
 .review-rating .stars span.filled {
-  color: #ff9900; /* Mantener el color dorado cuando la estrella esté llena */
+  color: #ff9900;
 }
-
 
 @keyframes fadeIn {
   from {
@@ -237,13 +244,14 @@
 
 
 }
+
 .button-container {
   display: flex;
   gap: 10px;
 }
 
 .edit-btn, .delete-btn {
-  padding: 10px 15px;
+  padding: 8px 15px;
   border: none;
   border-radius: 5px;
   font-size: 16px;

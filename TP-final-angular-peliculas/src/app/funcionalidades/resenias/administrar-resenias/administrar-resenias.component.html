@@ -30,7 +30,6 @@
         </div>
       </div>
 
-
       <button
         type="submit"
         [disabled]="!reviewForm.valid || newReview.rating === 0"
@@ -71,7 +70,6 @@
       <!-- Mostrar las estrellas para las reseñas guardadas -->
       <div class="review-rating">
         <span class="stars">
-          <!-- Mostrar las estrellas rellenas hasta el número de rating -->
           <span *ngFor="let star of [].constructor(getCurrentReview().rating); let i = index"
                 [class.filled]="i < getCurrentReview().rating">
             ★
@@ -79,18 +77,25 @@
         </span>
       </div>
 
-
+      <!-- Agregar dentro de review-card si quieres permitir editar/eliminar -->
+      <div class="review-actions" class="button-container" *ngIf="canEditReview(getCurrentReview())">
+        <button class="edit-btn" (click)="editReview(getCurrentReview())">Editar </button>
+        <button class="delete-btn" (click)="deleteReview(getCurrentReview().id)"> Eliminar</button>
+      </div>
 
       <div class="review-counter">
         {{ currentIndex + 1 }} / {{ getAllReviews().length }}
       </div>
+
     </div>
 
     <button
-      class="nav-button next"
-      (click)="nextReview()"
-      [disabled]="currentIndex === getAllReviews().length - 1">
-      →
-    </button>
+    class="nav-button next"
+    (click)="nextReview()"
+    [disabled]="currentIndex === getAllReviews().length - 1">
+    →
+  </button>
+
   </div>
+
 </div>
