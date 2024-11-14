@@ -39,6 +39,7 @@ export class DetallePeliculasComponent implements OnInit {
         pelicula => {
           this.pelicula = pelicula;
           this.cargarElenco(id); // Llama a cargar el elenco
+          this.cargarListasFavoritos(); // Llama a cargar listas de favoritos
 
         }
       );
@@ -68,6 +69,15 @@ export class DetallePeliculasComponent implements OnInit {
 
   agregarPeliculaAFavoritos() {
     if (this.listaSeleccionada && this.pelicula) {
+      // Verifica si la película ya está en la lista
+    const peliculaYaEnLista = this.listaSeleccionada.peliculas.some(
+      (p: Pelicula) => p.id === this.pelicula?.id
+    );
+
+    if (peliculaYaEnLista) {
+      alert('La película ya está en la lista de favoritos.');
+      return; // Detenemos la ejecución si ya está en la lista
+    }
       const peliculasActualizadas = [...this.listaSeleccionada.peliculas, this.pelicula];
 
       const listaConPelicula = {
