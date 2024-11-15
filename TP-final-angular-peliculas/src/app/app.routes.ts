@@ -15,6 +15,7 @@ import { QuizResultadosComponent } from './quiz/quiz-resultados/quiz-resultados.
 import { PreguntasMakerComponent } from './quiz/preguntas-maker/preguntas-maker.component';
 import { EditarPerfilComponent } from "./editar-perfil/editar-perfil.component";
 import { MisResenasComponent } from "./funcionalidades/resenas/mis-resenas/mis-resenas.component";
+import { CambioContraseniaComponent } from "./compartidos/cambio-contrasenia/cambio-contrasenia.component";
 export const routes: Routes = [
   { path: '',
     component: HomeComponent, pathMatch: 'full'
@@ -59,5 +60,9 @@ export const routes: Routes = [
     path: 'editar-perfil',
     component: EditarPerfilComponent
     },
-    { path: 'mis-resenas', component: MisResenasComponent }
+    { path: 'mis-resenas', component: MisResenasComponent },
+    {
+      path: 'cambiar-contrasenia',
+      component: CambioContraseniaComponent
+    }
 ];
