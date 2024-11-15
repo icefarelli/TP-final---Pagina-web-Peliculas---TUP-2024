@@ -90,6 +90,7 @@ export class DetallePeliculasComponent implements OnInit {
       this.favoritosService.putLista(this.listaSeleccionada.id, listaConPelicula).subscribe({
         next: () => {
           alert('Película agregada a la lista de favoritos');
+          this.cargarListasFavoritos();
         },
         error: (err) => {
           console.error('Error al agregar la película a la lista de favoritos', err);
