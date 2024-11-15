@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReseniasService } from '../../../nucleo/servicios/resenias.service';
 import { AuthService } from '../../../nucleo/servicios/auth.service';
+import { AlertService } from '../../../nucleo/servicios/alert.service';
 
 @Component({
   selector: 'app-administrar-resenias',
@@ -28,7 +29,8 @@ export class AdministrarReseniasComponent implements OnInit {
 
   constructor(
     private reseniasService: ReseniasService,
-    private authService: AuthService
+    private authService: AuthService,
+    private alertService: AlertService
   ) {}
 
   ngOnInit() {
@@ -51,7 +53,7 @@ export class AdministrarReseniasComponent implements OnInit {
             this.loadLocalReviews();
           },
           error: (error) => {
-            this.error = 'Error al cargar las reseñas de TMDb';
+            this.alertService.mostrarAlerta('error', 'Error al cargar las reseñas de TMDb');
             this.loading = false;
           }
         });
@@ -63,7 +65,7 @@ export class AdministrarReseniasComponent implements OnInit {
       this.localReviews = await this.reseniasService.getLocalReviews(this.movieId);
       this.loading = false;
     } catch (error) {
-      this.error = 'Error al cargar las reseñas locales';
+      this.alertService.mostrarAlerta('error', 'Error al cargar las reseñas locales');
       this.loading = false;
     }
   }
@@ -90,7 +92,7 @@ export class AdministrarReseniasComponent implements OnInit {
 
   toggleReviewForm() {
     if (!this.currentUser) {
-      this.error = 'Debes iniciar sesión para escribir una reseña';
+      this.alertService.mostrarAlerta('error', 'Debes iniciar sesión para escribir una reseña');
       return;
     }
     this.showReviewForm = !this.showReviewForm;
@@ -110,10 +112,11 @@ export class AdministrarReseniasComponent implements OnInit {
             if (index !== -1) {
               this.localReviews[index] = updatedReview; // Reemplaza la reseña editada
             }
+            this.alertService.mostrarAlerta('success', 'Reseña actualizada con éxito');
             this.resetForm(); // Reinicia el formulario
           },
           error: (error) => {
-            this.error = 'Error al actualizar la reseña';
+            this.alertService.mostrarAlerta('error', 'Error al actualizar la reseña');
           }
         });
       } else {
@@ -126,10 +129,11 @@ export class AdministrarReseniasComponent implements OnInit {
         ).subscribe({
           next: (newReview) => {
             this.localReviews.push(newReview);  // Agrega la nueva reseña a la lista local
+            this.alertService.mostrarAlerta('success', 'Reseña guardada con éxito');
             this.resetForm();  // Reinicia el formulario
           },
           error: (error) => {
-            this.error = 'Error al guardar la reseña';
+            this.alertService.mostrarAlerta('error', 'Error al guardar la reseña');
           }
         });
       }
@@ -154,9 +158,10 @@ deleteReview(reviewId: number) {
     this.reseniasService.deleteReview(reviewId).subscribe({
       next: () => {
         this.loadLocalReviews();
+        this.alertService.mostrarAlerta('success', 'Reseña eliminada con éxito');
       },
       error: (error) => {
-        this.error = 'Error al eliminar la reseña';
+        this.alertService.mostrarAlerta('error', 'Error al eliminar la reseña');
       }
     });
   }
@@ -165,9 +170,10 @@ deleteReview(reviewId: number) {
 currentReviewId: number | null = null; // Agrega esta propiedad para almacenar el ID de la reseña actual
 
 editReview(review: any): void {
-this.newReview.content = review.content; // Cargar el contenido de la reseña en el formulario
-this.showReviewForm = true; // Mostrar el formulario de reseña para editar
-this.currentReviewId = review.id; // Guardar el ID de la reseña actual
+  this.newReview.content = review.content; // Cargar el contenido de la reseña en el formulario
+  this.newReview.rating = review.rating;   // Cargar la puntuación en el formulario
+  this.showReviewForm = true;              // Mostrar el formulario de reseña para editar
+  this.currentReviewId = review.id;        // Guardar el ID de la reseña actual
 }
 
 setRating(rating: number) {
