@@ -7,8 +7,12 @@
   <p><strong>Fecha de Nacimiento:</strong> {{ userInfo.fechaNacimiento }}</p>
 
   <!-- Botón para eliminar cuenta -->
-  <button (click)="eliminarCuenta()" class="btn btn-danger">Eliminar Cuenta</button>
-  <button routerLink="/editar-perfil" class="btn btn-primary">Modificar Datos</button>
+  <button (click)="eliminarCuenta()" class="btn btn-eliminar">Eliminar Cuenta</button>
+  <button routerLink="/editar-perfil" class="btn btn-editar">Modificar Datos</button>
+  <button routerLink="/cambiar-contrasenia" class="btn btn-cambioContra">Cambiar contraseña</button>
+
+  <!-- Sección para cambiar contraseña -->
+  
 </div>
 <ng-template #loading>
   <p>Cargando...</p>

@@ -4,18 +4,21 @@ import { Subscription } from 'rxjs';
 import { Usuario } from '../nucleo/servicios/auth.service';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AlertService } from '../nucleo/servicios/alert.service';
+import { ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.css'],
   standalone: true,
-  imports: [RouterModule, CommonModule]
+  imports: [RouterModule, CommonModule, ReactiveFormsModule]
 })
 export class UserProfileComponent implements OnInit {
   userInfo: Usuario | null = null;
   private userSubscription: Subscription | null = null; // Para gestionar la suscripción
 
-  constructor(private authService: AuthService, private router: Router) {}
+
+  constructor(private authService: AuthService, private router: Router, private alertService: AlertService) {}
 
   ngOnInit(): void {
     this.getUser ();
@@ -55,4 +58,7 @@ export class UserProfileComponent implements OnInit {
       this.userSubscription.unsubscribe();
     }
   }
+
+
+
 }

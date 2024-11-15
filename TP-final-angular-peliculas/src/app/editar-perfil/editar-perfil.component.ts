@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { AuthService, Usuario } from '../nucleo/servicios/auth.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AlertService } from '../nucleo/servicios/alert.service';
 
 @Component({
   selector: 'app-editar-perfil',
@@ -16,7 +17,7 @@ export class EditarPerfilComponent implements OnInit {
   perfilForm!: FormGroup;
   usuarioActual!: Usuario | null;
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {}
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router, private alertService: AlertService) { }
 
   ngOnInit(): void {
     this.authService.getUsuarioActual().subscribe(usuario => {
@@ -43,12 +44,12 @@ export class EditarPerfilComponent implements OnInit {
 
       this.authService.cambiarDatosUsuario(updated).subscribe({
         next: () => {
-          alert('Datos actualizados exitosamente');
-          this.router.navigate(['/mi-perfil']); // Redirigir al perfil
+          this.alertService.mostrarAlerta('success', 'Datos actualizados exitosamente')
+          this.router.navigate(['/mi-perfil']);
         },
         error: (error) => {
           console.error('Error al actualizar los datos', error);
-          alert('Error al actualizar los datos');
+          this.alertService.mostrarAlerta('error', 'Error al actualizar los datos')
         }
       });
     }

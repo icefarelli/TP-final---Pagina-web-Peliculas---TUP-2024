@@ -18,7 +18,7 @@
   line-height: 1.6; 
   margin-bottom: 10px;
 }
-.btn-danger {
+.btn-eliminar {
   background-color: #dc3545; 
   color: #fff; 
   padding: 10px 20px;
@@ -30,18 +30,18 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
 }
 
-.btn-danger:hover {
+.btn-eliminar:hover {
   background-color: #c82333; 
   transform: scale(1.05); 
 }
 
-.btn-danger:active {
+.btn-eliminar:active {
   background-color: #bd2130; 
   transform: scale(1); 
 }
 
 
-.btn-primary {
+.btn-editar {
   background-color: #ffc107;
   color: #fff;
   padding: 10px 20px;
@@ -54,13 +54,36 @@
   margin-left: 15px;
 }
 
-.btn-primary:hover {
+.btn-editar:hover {
   background-color: #ca9907; 
   transform: scale(1.05); 
 }
 
-.btn-primary:active {
+.btn-editar:active {
   background-color: #ffc107; 
+  transform: scale(1);
+}
+
+.btn-cambioContra {
+  background-color: #0787ff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none; 
+  border-radius: 5px;
+  cursor: pointer; 
+  font-size: 1.1em; 
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  margin-left: 15px;
+}
+
+.btn-cambioContra:hover {
+  background-color: #075fb1; 
+  transform: scale(1.05); 
+}
+
+.btn-cambioContra:active {
+  background-color: #0787ff; 
   transform: scale(1);
 }
 

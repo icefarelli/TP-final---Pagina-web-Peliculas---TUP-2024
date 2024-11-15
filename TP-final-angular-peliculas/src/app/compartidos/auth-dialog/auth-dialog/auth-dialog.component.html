@@ -69,7 +69,7 @@
     <p *ngIf="mensaje" class="mensaje">{{ mensaje }}</p>
     <p *ngIf="cargando" class="loading">Cargando...</p>
 
-    <!-- Sección para cambiar contraseña -->
+    <!-- Sección para cambiar contraseña
     <div *ngIf="usuario.id">
       <h2>Cambiar Contraseña</h2>
       <div class="form-group">
@@ -81,13 +81,13 @@
       <div *ngIf="mensaje" class="alert alert-success">{{ mensaje }}</div>
     </div>
 
-    <!-- Sección para eliminar usuario -->
+    Sección para eliminar usuario 
     <div *ngIf="usuario.id">
       <h2>Eliminar Cuenta</h2>
       <p>¿Estás seguro de que deseas eliminar tu cuenta? Esta acción no se puede deshacer.</p>
       <button (click)="eliminarUsuario()">Eliminar Cuenta</button>
       <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
       <div *ngIf="mensaje" class="alert alert-success">{{ mensaje }}</div>
-    </div>
+    </div> -->
 
   </div>

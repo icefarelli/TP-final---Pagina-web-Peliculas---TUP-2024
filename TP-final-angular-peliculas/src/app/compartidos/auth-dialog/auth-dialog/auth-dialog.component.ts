@@ -73,7 +73,7 @@ export class AuthDialogComponent {
     this.authService.registrarUsuario(this.usuario).subscribe({
       next: (exito) => {
         if (exito) {
-          this.mensaje = '¡Usuario registrado exitosamente!';
+          /* this.mensaje = '¡Usuario registrado exitosamente!'; */
           this.error = '';
           setTimeout(() => this.cerrar(), 2000);
         }
@@ -91,7 +91,7 @@ export class AuthDialogComponent {
   iniciarSesion() {
     if (!this.usuario.usuario || !this.usuario.contrasenia) {
       this.error = 'Por favor complete todos los campos obligatorios';
-      this.mostrarRegistro = false; // Ocultar el botón de registro
+      this.mostrarRegistro = false; // Ocultar el boton de registro
       return;
     }
 
@@ -105,7 +105,7 @@ export class AuthDialogComponent {
           if (usuarioActual && usuarioActual.id) {
             localStorage.setItem('userId', usuarioActual.id.toString());
           }
-          this.mensaje = '¡Inicio de sesión exitoso!';
+          /* this.mensaje = '¡Inicio de sesión exitoso!'; */
           this.error = '';
           this.mostrarRegistro = false; // Ocultar el botón de registro
           setTimeout(() => this.cerrar(), 2000);
@@ -135,7 +135,7 @@ export class AuthDialogComponent {
     this.authService.recuperarContraseña(this.usuario.email).subscribe({
       next: (exito) => {
         if (exito) {
-          this.mensaje = 'Se ha enviado un email con instrucciones para recuperar tu contraseña';
+          /* this.mensaje = 'Se ha enviado un email con instrucciones para recuperar tu contraseña'; */
           this.error = '';
           setTimeout(() => this.cerrar(), 2000);
         }
