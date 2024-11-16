@@ -20,6 +20,22 @@
 .delete-button:hover {
   background-color: #c9302c; /* Color más oscuro al pasar el mouse */
 }
+
+.edit-button {
+  background-color: #5cb85c; /* Color verde para el botón */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 15px; /* Espaciado interno */
+  cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+  margin-top: 10px; /* Espacio superior */
+  transition: background-color 0.3s; /* Transición suave para el cambio de color */
+}
+
+.edit-button:hover {
+  background-color: #4cae4c; /* Color más oscuro al pasar el mouse */
+}
+
 .mis-resenas-container h2 {
   font-size: 2.5em; /* Tamaño de fuente para el encabezado */
   margin-bottom: 20px; /* Espaciado inferior */
@@ -112,4 +128,98 @@
   .review-info {
     margin-right: 0; /* Eliminar margen a la derecha en pantallas más pequeñas */
   }
+}
+
+.review-form {
+  background-color: #7c2b2b; /* Color de fondo similar al contenedor de reseñas */
+  padding: 25px; /* Espaciado interno */
+  border-radius: 12px; /* Bordes redondeados */
+  margin-bottom: 30px; /* Espacio inferior */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.review-form h3 {
+  margin-bottom: 20px; /* Espacio inferior */
+  color: #ffffff; /* Color blanco para el encabezado */
+  font-weight: 600; /* Peso de la fuente */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Espacio inferior entre grupos de formulario */
+}
+
+.form-group label {
+  display: block; /* Mostrar como bloque */
+  margin-bottom: 8px; /* Espacio inferior */
+  font-weight: 500; /* Peso de la fuente */
+  color: #d4d3d3; /* Color del texto del label */
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%; /* Ancho completo */
+  padding: 12px; /* Espaciado interno */
+  border: 2px solid #e9ecef; /* Borde ligero */
+  border-radius: 8px; /* Bordes redondeados */
+  transition: border-color 0.3s ease; /* Transición suave para el borde */
+  font-size: 15px; /* Tamaño de fuente */
+  background-color: #ffffff; /* Fondo blanco para los inputs */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none; /* Sin contorno */
+  border-color: #4cae4c; /* Color verde al enfocar */
+}
+
+.form-group textarea {
+  height: 120px; /* Altura fija para el textarea */
+  resize: vertical; /* Permitir redimensionar verticalmente */
+}
+
+.button-container {
+  display: flex; /* Usar flexbox para el contenedor de botones */
+  gap: 10px; /* Espacio entre botones */
+}
+
+.add-review-btn {
+  padding: 12px 24px; /* Espaciado interno */
+  background: linear-gradient(135deg, #5cb85c 0%, #4cae4c 100%); /* Color verde */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 25px; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar cursor al pasar el mouse */
+  font-weight: 500; /* Peso de la fuente */
+  transition: all 0.3s ease; /* Transición suave */
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3); /* Sombra */
+}
+
+.add-review-btn:hover {
+  transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4); /* Sombra más intensa al pasar el mouse */
+}
+
+.nav-button {
+  background: #da190b; /* Color rojo para el botón de cancelar */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 25px; /* Bordes redondeados */
+  padding: 12px 24px; /* Espaciado interno */
+  cursor: pointer; /* Cambiar cursor al pasar el mouse */
+  font-weight: 500; /* Peso de la fuente */
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+.nav-button:hover {
+  transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+  box-shadow: 0 4px 12px rgba(218, 25, 11, 0.4); /* Sombra más intensa al pasar el mouse */
+}
+.stars {
+  font-size: 2em; /* Tamaño de las estrellas */
+  color: #d4d3d3; /* Color de las estrellas vacías */
+  cursor: pointer; /* Cambiar cursor al pasar el mouse */
+}
+
+.stars .filled {
+  color: #ffbc00; /* Color de las estrellas llenas (amarillo dorado) */
 }

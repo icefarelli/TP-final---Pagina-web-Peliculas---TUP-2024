@@ -4,22 +4,26 @@ import { AuthService } from '../../../nucleo/servicios/auth.service';
 import { Usuario } from '../../../nucleo/servicios/auth.service';
 import { CommonModule } from '@angular/common';
 import { AlertService } from '../../../nucleo/servicios/alert.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-mis-resenas',
   templateUrl: './mis-resenas.component.html',
   styleUrls: ['./mis-resenas.component.css'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule, FormsModule]
 })
 export class MisResenasComponent implements OnInit {
   resenas: any[] = [];
   usuarioActual: Usuario | null = null;
+  editingReview: any = null;
+  stars: number[] = [1, 2, 3, 4, 5,6,7,8,9,10]; // Array para las estrellas
 
   constructor(
     private reseniasService: ReseniasService,
     private authService: AuthService,
-    private alertService: AlertService // Inyección del servicio AlertService
+    private alertService: AlertService// Inyección del servicio AlertService
+
   ) {}
 
   ngOnInit(): void {
@@ -64,4 +68,32 @@ export class MisResenasComponent implements OnInit {
       });
     }
   }
+
+  editReview(resena: any) {
+    this.editingReview = { ...resena }; // Clonamos la reseña para editar
+  }
+
+  saveEdit() {
+    if (this.editingReview) {
+      this.reseniasService.updateReview(this.editingReview.id, this.editingReview.content, this.editingReview.rating).subscribe({
+        next: () => {
+          this.cargarResenas(); // Recargar las reseñas después de la edición
+          this.alertService.mostrarAlerta('success', 'Reseña editada con éxito');
+          this.editingReview = null; // Reiniciar el formulario de edición
+        },
+        error: (error) => {
+          this.alertService.mostrarAlerta('error', 'Error al editar la reseña');
+        }
+      });
+    }
+  }
+
+  cancelEdit() {
+    this.editingReview = null; // Reiniciar el formulario de edición
+  }
+
+  setRating(rating: number): void {
+    this.editingReview.rating = rating; // Actualiza la calificación en la reseña en edición
+  }
 }
+
