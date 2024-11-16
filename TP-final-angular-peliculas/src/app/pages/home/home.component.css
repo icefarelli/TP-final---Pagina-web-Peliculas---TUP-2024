@@ -70,7 +70,7 @@
   background-color: #000;
   border-radius: 10px;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: none;
 }
 
 .card i {
@@ -84,7 +84,8 @@
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: none;
+  transition: none;
 }
 
 .carousel {
