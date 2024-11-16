@@ -13,7 +13,7 @@
       "id": "1731098826438",
       "usuario": "icefarelli",
       "contrasenia": "ivan1234",
-      "nombre": "Ivan Ernesto",
+      "nombre": "Ivan Ernestoo",
       "apellido": "Cefarelli",
       "email": "ivan.cefarelli@gmail.com",
       "fechaNacimiento": "1995-03-06"
@@ -54,212 +54,16 @@
       "isLocal": true
     },
     {
-      "id": "116a",
-      "movieId": 1118031,
+      "id": "c203",
+      "movieId": 1034541,
       "author": "icefarelli",
-      "content": "sdsfsdfs",
-      "created_at": "2024-11-13T19:08:39.135Z",
+      "content": "dasdasda",
+      "created_at": "2024-11-16T16:50:32.071Z",
+      "rating": 3,
       "isLocal": true
     }
   ],
   "favoritos": [
-    {
-      "nombre": "asdasd",
-      "descripcion": "asadd",
-      "peliculas": [
-        {
-          "adult": false,
-          "backdrop_path": "/18TSJF1WLA4CkymvVUcKDBwUJ9F.jpg",
-          "belongs_to_collection": {
-            "id": 727761,
-            "name": "Terrifier - Colección",
-            "poster_path": "/xKtEDkPuaL0xGbm2oqrwKRVoYqg.jpg",
-            "backdrop_path": "/zREjCmCHIHdEF6ufPoDQjhl4Wdm.jpg"
-          },
-          "budget": 2000000,
-          "genres": [
-            {
-              "id": 27,
-              "name": "Terror"
-            },
-            {
-              "id": 53,
-              "name": "Suspense"
-            },
-            {
-              "id": 9648,
-              "name": "Misterio"
-            }
-          ],
-          "homepage": "",
-          "id": 1034541,
-          "imdb_id": "tt27911000",
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_title": "Terrifier 3",
-          "overview": "El payaso Art desata el caos entre los desprevenidos habitantes del condado de Miles mientras duermen plácidamente en Nochebuena. Tras sobrevivir a la masacre de Halloween perpetrada por el peor asesino en serie desde Jack el Destripador, Sienna y su hermano se esfuerzan por reconstruir sus vidas destrozadas. A medida que se acercan las fiestas de Navidad, intentan abrazar el espíritu navideño y dejar atrás los horrores del pasado. Pero justo cuando creen que están a salvo, el payaso Art regresa, decidido a convertir su alegría navideña en una nueva pesadilla. La temporada festiva se desmorona rápidamente mientras el payaso Art desata su retorcido terror marca de la casa, demostrando que ninguna festividad es segura.",
-          "popularity": 5023.112,
-          "poster_path": "/iaGfB2itLC8exBvfLUoadS0Q6tP.jpg",
-          "production_companies": [
-            {
-              "id": 238902,
-              "logo_path": "/jLAg5fOlAw1Jl8Q7WoyKxh1H22y.png",
-              "name": "Cineverse",
-              "origin_country": "US"
-            },
-            {
-              "id": 15157,
-              "logo_path": "/yezzLb9RbKNtQUsyYySAqC9TQr7.png",
-              "name": "Bloody Disgusting",
-              "origin_country": "US"
-            },
-            {
-              "id": 84591,
-              "logo_path": null,
-              "name": "Dark Age Cinema",
-              "origin_country": "US"
-            },
-            {
-              "id": 114220,
-              "logo_path": "/b5n3DtfUySREkq4Xi962zMg69qq.png",
-              "name": "Fuzz on the Lens Productions",
-              "origin_country": "US"
-            },
-            {
-              "id": 213025,
-              "logo_path": "/bFz17QGqfF8wiQAH3T4kfzKC8dU.png",
-              "name": "The Coven",
-              "origin_country": "US"
-            },
-            {
-              "id": 121204,
-              "logo_path": "/vbtvY4IxgUZk713rkmoTO4MHIac.png",
-              "name": "BondIt Media Capital",
-              "origin_country": "US"
-            }
-          ],
-          "production_countries": [
-            {
-              "iso_3166_1": "US",
-              "name": "United States of America"
-            }
-          ],
-          "release_date": "2024-10-09",
-          "revenue": 77036702,
-          "runtime": 125,
-          "spoken_languages": [
-            {
-              "english_name": "English",
-              "iso_639_1": "en",
-              "name": "English"
-            }
-          ],
-          "status": "Released",
-          "tagline": "",
-          "title": "Terrifier 3",
-          "video": false,
-          "vote_average": 6.995,
-          "vote_count": 833
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/9s9o9RT9Yj6nDuRJjnJm78WFoFl.jpg",
-          "belongs_to_collection": null,
-          "budget": 0,
-          "genres": [
-            {
-              "id": 28,
-              "name": "Acción"
-            },
-            {
-              "id": 27,
-              "name": "Terror"
-            },
-            {
-              "id": 53,
-              "name": "Suspense"
-            },
-            {
-              "id": 878,
-              "name": "Ciencia ficción"
-            }
-          ],
-          "homepage": "",
-          "id": 1051896,
-          "imdb_id": "tt22939186",
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_title": "Arcadian",
-          "overview": "Un padre y sus hijos mellizos intentan sobrevivir al asedio de unas criaturas feroces que atacan su remota granja.",
-          "popularity": 1739.729,
-          "poster_path": "/spWV1eRzlDxvai8LbxwAWR0Vst4.jpg",
-          "production_companies": [
-            {
-              "id": 76991,
-              "logo_path": "/pQjdvbv4y9yuIDSHDEHc9ijJKaS.png",
-              "name": "Highland Film Group",
-              "origin_country": "US"
-            },
-            {
-              "id": 159010,
-              "logo_path": null,
-              "name": "Redline Entertainment",
-              "origin_country": "US"
-            },
-            {
-              "id": 129815,
-              "logo_path": "/qbCmnVTQEuFqrVkbxn3i9P7Jrcw.png",
-              "name": "Wild Atlantic Pictures",
-              "origin_country": "IE"
-            },
-            {
-              "id": 125584,
-              "logo_path": "/56Lrmj9izLx7SEa0uPp0fVvssea.png",
-              "name": "Aperture Media Partners",
-              "origin_country": "US"
-            },
-            {
-              "id": 831,
-              "logo_path": "/vLENXiYTyITnMDrTKabUXhgTKX2.png",
-              "name": "Saturn Films",
-              "origin_country": "US"
-            }
-          ],
-          "production_countries": [
-            {
-              "iso_3166_1": "IE",
-              "name": "Ireland"
-            },
-            {
-              "iso_3166_1": "US",
-              "name": "United States of America"
-            }
-          ],
-          "release_date": "2024-04-12",
-          "revenue": 859453,
-          "runtime": 92,
-          "spoken_languages": [
-            {
-              "english_name": "English",
-              "iso_639_1": "en",
-              "name": "English"
-            }
-          ],
-          "status": "Released",
-          "tagline": "",
-          "title": "Arcadian",
-          "video": false,
-          "vote_average": 6.019,
-          "vote_count": 414
-        }
-      ],
-      "userId": 1731098826438,
-      "id": "2"
-    },
     {
       "id": "3",
       "userId": 1731098826438,
