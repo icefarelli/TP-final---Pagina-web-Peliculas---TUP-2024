@@ -18,6 +18,7 @@
           </span>
         </div>
         <p><small>Escrita el: {{ resena.created_at | date:'short' }}</small></p>
+        <button (click)="deleteReview(resena.id)" class="delete-button">Eliminar</button> <!-- Botón para eliminar -->
       </div>
       <img *ngIf="resena.movieDetails?.posterUrl" [src]="resena.movieDetails.posterUrl" alt="{{ resena.movieDetails?.title }}" class="movie-poster" />
     </div>

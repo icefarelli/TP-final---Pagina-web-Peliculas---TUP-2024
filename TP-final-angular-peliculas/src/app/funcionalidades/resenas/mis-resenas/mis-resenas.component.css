@@ -7,6 +7,19 @@
   border-radius: 15px; /* Bordes redondeados */
 }
 
+.delete-button {
+  background-color: #d9534f; /* Color rojo para el botón */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 15px; /* Espaciado interno */
+  cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+  margin-top: 10px; /* Espacio superior */
+}
+
+.delete-button:hover {
+  background-color: #c9302c; /* Color más oscuro al pasar el mouse */
+}
 .mis-resenas-container h2 {
   font-size: 2.5em; /* Tamaño de fuente para el encabezado */
   margin-bottom: 20px; /* Espaciado inferior */

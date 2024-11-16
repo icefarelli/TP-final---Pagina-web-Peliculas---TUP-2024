@@ -3,6 +3,7 @@ import { ReseniasService } from '../../../nucleo/servicios/resenias.service';
 import { AuthService } from '../../../nucleo/servicios/auth.service';
 import { Usuario } from '../../../nucleo/servicios/auth.service';
 import { CommonModule } from '@angular/common';
+import { AlertService } from '../../../nucleo/servicios/alert.service';
 
 @Component({
   selector: 'app-mis-resenas',
@@ -15,7 +16,11 @@ export class MisResenasComponent implements OnInit {
   resenas: any[] = [];
   usuarioActual: Usuario | null = null;
 
-  constructor(private reseniasService: ReseniasService, private authService: AuthService) {}
+  constructor(
+    private reseniasService: ReseniasService,
+    private authService: AuthService,
+    private alertService: AlertService // Inyección del servicio AlertService
+  ) {}
 
   ngOnInit(): void {
     this.authService.getUsuarioActual().subscribe(usuario => {
@@ -43,6 +48,20 @@ export class MisResenasComponent implements OnInit {
       }
     } else {
       console.error('Usuario no autenticado o nombre de usuario no disponible');
+    }
+  }
+
+  deleteReview(reviewId: number) {
+    if (confirm('¿Estás seguro de que deseas eliminar esta reseña?')) {
+      this.reseniasService.deleteReview(reviewId).subscribe({
+        next: () => {
+          this.cargarResenas(); // Recargar las reseñas locales
+          this.alertService.mostrarAlerta('success', 'Reseña eliminada con éxito'); // Mensaje de éxito
+        },
+        error: (error) => {
+          this.alertService.mostrarAlerta('error', 'Error al eliminar la reseña');
+        }
+      });
     }
   }
 }
