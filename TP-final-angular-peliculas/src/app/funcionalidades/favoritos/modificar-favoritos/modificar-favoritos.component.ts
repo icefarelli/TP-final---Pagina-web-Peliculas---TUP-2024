@@ -5,6 +5,7 @@ import { Favoritos } from '../../../nucleo/modelos/favoritos';
 import { FavoritosService } from '../../../nucleo/servicios/favoritos.service';
 import { CommonModule } from '@angular/common';
 import { ListaFavoritosComponent } from '../lista-favoritos/lista-favoritos.component';
+import { AlertService } from '../../../nucleo/servicios/alert.service';
 
 @Component({
   selector: 'app-modificar-favoritos',
@@ -22,7 +23,8 @@ export class ModificarFavoritosComponent implements OnInit{
     private favoritosService: FavoritosService,
     private route: ActivatedRoute,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private alertService : AlertService
   ) {
     // Inicializar el formulario con validaciones
     this.listaForm = this.fb.group({
@@ -44,14 +46,18 @@ export class ModificarFavoritosComponent implements OnInit{
     next: (lista) => {
       if(lista){
         this.listaFavoritos = lista;
+        this.listaForm.patchValue({
+          nombre: lista.nombre,
+          descripcion: lista.descripcion,
+        });
       } else {
-        alert('No se encontró la lista de favoritos con el ID especificado.');
+        this.alertService.mostrarAlerta('error', 'No se encontró la lista de favoritos con el ID especificado');
         this.router.navigate(['/favoritos']); // por si no se encuentra la lista
       }
     },
     error: (err) => {
       console.error('Error al cargar la lista de favoritos', err);
-      alert('Error al cargar la lista de favoritos.');
+      this.alertService.mostrarAlerta('error', 'Error al cargar la lista de favoritos');
       this.router.navigate(['/favoritos']); //  en caso de error
     }
   });
@@ -70,7 +76,7 @@ export class ModificarFavoritosComponent implements OnInit{
 
       this.favoritosService.putLista(this.listaFavoritos.id, cambios).subscribe({
         next: () => {
-          alert('Lista de favoritos actualizada');
+          this.alertService.mostrarAlerta('success', 'Lista de favoritos actualizada con éxito');
           this.router.navigate(['/favoritos']);
         },
         error: (err) => {

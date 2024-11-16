@@ -9,6 +9,7 @@ import id from '@angular/common/locales/id';
 import { FavoritosService } from '../../../nucleo/servicios/favoritos.service';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../../nucleo/servicios/auth.service';
+import { AlertService } from '../../../nucleo/servicios/alert.service';
 
 @Component({
   selector: 'app-detalle-peliculas',
@@ -28,7 +29,8 @@ export class DetallePeliculasComponent implements OnInit {
     private route: ActivatedRoute,
     private peliculasService: PeliculasService,
     private favoritosService: FavoritosService,
-    private authService: AuthService
+    private authService: AuthService,
+    private alertService: AlertService
   ) {
 
     this.userId = Number(localStorage.getItem('userId'))
@@ -71,14 +73,14 @@ export class DetallePeliculasComponent implements OnInit {
 
   agregarPeliculaAFavoritos() {
     if (this.listaSeleccionada && this.pelicula) {
-      // Verifica si la película ya está en la lista
+      // Verifico si la película ya está en la lista
     const peliculaYaEnLista = this.listaSeleccionada.peliculas.some(
       (p: Pelicula) => p.id === this.pelicula?.id
     );
 
     if (peliculaYaEnLista) {
-      alert('La película ya está en la lista de favoritos.');
-      return; // Detenemos la ejecución si ya está en la lista
+      this.alertService.mostrarAlerta('error', 'La pelicula ya fue cargada en la lista de favoritos');
+      return;
     }
       const peliculasActualizadas = [...this.listaSeleccionada.peliculas, this.pelicula];
 
@@ -89,7 +91,7 @@ export class DetallePeliculasComponent implements OnInit {
 
       this.favoritosService.putLista(this.listaSeleccionada.id, listaConPelicula).subscribe({
         next: () => {
-          alert('Película agregada a la lista de favoritos');
+          this.alertService.mostrarAlerta('success', 'Pelicula agregada con éxito a la lista');
           this.cargarListasFavoritos();
         },
         error: (err) => {
@@ -97,7 +99,7 @@ export class DetallePeliculasComponent implements OnInit {
         }
       });
     } else {
-      alert('Por favor, selecciona una lista de favoritos y asegúrate de que la película está cargada.');
+      this.alertService.mostrarAlerta('error', 'Seleccione una lista ');
     }
   }
 
@@ -105,7 +107,7 @@ export class DetallePeliculasComponent implements OnInit {
   obtenerUrlImagen(path: string): string {
     return `https://image.tmdb.org/t/p/w500${path}`;
   }
-  
+
   usuarioConectado(){
     return this.authService.estaAutenticado();
   }

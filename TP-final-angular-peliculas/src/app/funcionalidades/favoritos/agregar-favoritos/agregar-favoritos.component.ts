@@ -4,6 +4,7 @@ import { Router, RouterModule } from '@angular/router';
 import { FavoritosService } from '../../../nucleo/servicios/favoritos.service';
 import { Favoritos } from '../../../nucleo/modelos/favoritos';
 import { CommonModule } from '@angular/common';
+import { AlertService } from '../../../nucleo/servicios/alert.service';
 
 @Component({
   selector: 'app-agregar-favoritos',
@@ -19,7 +20,8 @@ export class AgregarFavoritosComponent implements OnInit{
   constructor(
     private fb: FormBuilder,
     private favoritosService: FavoritosService,
-    private router: Router
+    private router: Router,
+    private alertService: AlertService
   ) {
 
     // Inicialización del formulario
@@ -57,13 +59,14 @@ export class AgregarFavoritosComponent implements OnInit{
           // Llama a postListas para agregar la nueva lista
       this.favoritosService.postListasPorUsuario(this.userId,nuevaLista).subscribe({
         next: (lista) => {
-
-        console.log('Lista agregada:', lista);
+        //console.log('Lista agregada:', lista);
+        this.alertService.mostrarAlerta('success', 'Lista agregada con éxito');
         // Navegar de regreso a la página de listas de favoritos
          this.router.navigate(['/favoritos']);
             },
         error: (err) => {
         console.error('Error al agregar la lista:', err);
+        this.alertService.mostrarAlerta('error', 'Error al agregar la lista');
             },
           });
         },
