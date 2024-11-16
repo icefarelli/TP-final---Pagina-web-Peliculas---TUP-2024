@@ -1,0 +1,39 @@
+
+<div class="container">
+  <h2>Modificar Lista de Favoritos</h2>
+  <form [formGroup]="listaForm" (ngSubmit)="guardarCambios()">
+    <!-- Campo de nombre -->
+    <div class="form-group">
+      <label for="nombre">Nombre de la Lista</label>
+      <input
+        type="text"
+        id="nombre"
+        formControlName="nombre"
+        class="form-control"
+        [class.is-invalid]="listaForm.get('nombre')?.invalid && listaForm.get('nombre')?.touched"
+
+      />
+      <div *ngIf="listaForm.get('nombre')?.invalid && listaForm.get('nombre')?.touched" class="invalid-feedback">
+        El nombre es requerido.
+      </div>
+    </div>
+
+    <!-- Campo de descripción -->
+    <div class="form-group">
+      <label for="descripcion">Descripción</label>
+      <textarea
+        id="descripcion"
+        formControlName="descripcion"
+        class="form-control"
+        [class.is-invalid]="listaForm.get('descripcion')?.invalid && listaForm.get('descripcion')?.touched"
+
+      ></textarea>
+      <div *ngIf="listaForm.get('descripcion')?.invalid && listaForm.get('descripcion')?.touched" class="invalid-feedback">
+        La descripción es requerida.
+      </div>
+    </div>
+
+    <!-- Botón de guardar cambios -->
+    <button type="submit" class="btn btn-primary mt-3" [disabled]="listaForm.invalid">Guardar Cambios</button>
+  </form>
+</div>

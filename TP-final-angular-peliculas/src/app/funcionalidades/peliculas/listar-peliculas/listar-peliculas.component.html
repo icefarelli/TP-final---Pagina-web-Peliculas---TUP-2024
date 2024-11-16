@@ -1,0 +1,77 @@
+<div class="peliculas-container">
+  <div class="header-section">
+    <h2>Películas</h2>
+    <div class="buscador">
+      <input
+        type="text"
+        placeholder="Buscar películas..."
+        [(ngModel)]="terminoBusqueda"
+        (input)="buscar($event)"
+        class="buscador-input"
+      >
+      <span class="icono-buscar">🔍</span>
+    </div>
+  </div>
+
+  <!-- Sección de filtros -->
+  <div class="filtros-section">
+    <h3>Filtros</h3>
+    <div class="filtros-grid">
+      <!-- Filtro por género -->
+      <div class="filtro-item">
+        <label for="genero">Género:</label>
+        <select id="genero" [(ngModel)]="filtros.genero" (change)="aplicarFiltros()">
+          <option value="">Todos los géneros</option>
+          <option *ngFor="let genero of generos" [value]="genero.id">
+            {{genero.name}}
+          </option>
+        </select>
+      </div>
+
+      <!-- Filtro por año -->
+      <div class="filtro-item">
+        <label for="año">Año:</label>
+        <select id="año" [(ngModel)]="filtros.anio" (change)="aplicarFiltros()">
+          <option value="">Todos los años</option>
+          <option *ngFor="let anio of anios" [value]="anio">{{anio}}</option>
+        </select>
+      </div>
+
+      <!-- Filtro por calificación -->
+      <div class="filtro-item">
+        <label for="calificacion">Calificación mínima: {{filtros.calificacionMinima}}</label>
+        <input
+          type="range"
+          id="calificacion"
+          [(ngModel)]="filtros.calificacionMinima"
+          (input)="aplicarFiltros()"
+          min="0"
+          max="10"
+          step="0.5"
+        >
+      </div>
+
+      <!-- Botón para limpiar filtros -->
+      <button class="limpiar-filtros" (click)="limpiarFiltros()">
+        Limpiar filtros
+      </button>
+    </div>
+  </div>
+
+  <div class="peliculas-grid">
+    <div *ngFor="let pelicula of peliculasFiltradas" class="pelicula-card" (click)="verDetalle(pelicula.id)">
+      <img [src]="obtenerUrlImagen(pelicula.poster_path)" [alt]="pelicula.title">
+      <div class="pelicula-info">
+        <h3>{{pelicula.title}}</h3>
+        <p class="generos">{{obtenerNombresGeneros(pelicula.genre_ids)}}</p>
+        <p class="rating">⭐ {{pelicula.vote_average | number:'1.1-1'}}</p>
+        <p class="año">{{pelicula.release_date | date:'yyyy'}}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mensaje cuando no hay resultados -->
+  <div *ngIf="peliculasFiltradas.length === 0" class="no-resultados">
+    <p>No se encontraron películas que coincidan con los filtros seleccionados.</p>
+  </div>
+</div>

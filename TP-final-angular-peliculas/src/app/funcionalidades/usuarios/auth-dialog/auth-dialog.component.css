@@ -1,0 +1,113 @@
+.auth-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.auth-dialog {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+  transition: transform 0.3s ease;
+}
+
+.auth-dialog h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #460808;
+  outline: none;
+}
+
+.error {
+  color: #d9534f;
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.mensaje {
+  color: #5cb85c;
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+button[type="submit"] {
+  background-color: #460808;
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #460808;
+}
+
+button[type="button"] {
+  background-color: #d4edda;
+  color: white;
+}
+
+button[type="button"]:hover {
+  background-color: #d4edda;
+}
+
+.dialog-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.dialog-link a {
+  color: #460808;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dialog-link a:hover {
+  text-decoration: underline;
+}

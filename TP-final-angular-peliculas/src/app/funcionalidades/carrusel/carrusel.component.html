@@ -1,0 +1,18 @@
+<div class="carousel-container">
+  <h2 class="carousel-title">Las 5 películas más populares de la semana</h2>
+
+  <div class="carousel-frame">
+    <button class="carousel-btn prev" (click)="anterior()">&#10094;</button>
+
+    <div class="carousel">
+      <div class="carousel-item" *ngIf="popularMovies.length > 0">
+        <a [routerLink]="['/pelicula', popularMovies[currentIndex]?.id]">
+          <img [src]="obtenerUrlImagen(popularMovies[currentIndex]?.poster_path)" alt="Película {{ popularMovies[currentIndex]?.title }}">
+          <div class="carousel-caption">{{ popularMovies[currentIndex]?.title }}</div>
+        </a>
+      </div>
+    </div>
+
+    <button class="carousel-btn next" (click)="siguiente()">&#10095;</button>
+  </div>
+</div>

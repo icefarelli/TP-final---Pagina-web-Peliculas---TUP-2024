@@ -1,0 +1,17 @@
+<div class="favoritos-page container-fluid py-4">
+  <div class="row">
+    <!-- Sidebar Izquierdo con el botón de Agregar -->
+    <div class="col-md-3 sidebar d-flex flex-column align-items-start p-3">
+      <button (click)="agregarFavorito()" class="btn btn-add-favorite w-100 mb-3">
+        ➕ Agregar nueva lista de Favoritos
+      </button>
+    </div>
+
+    <!-- Área principal para mostrar las listas de favoritos -->
+    <div class="col-md-9">
+      <app-lista-favoritos></app-lista-favoritos>
+    </div>
+  </div>
+</div>
+
+
