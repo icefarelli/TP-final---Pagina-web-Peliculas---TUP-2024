@@ -6,10 +6,12 @@ export interface Question {
 }
 
 export interface QuestionUser{
+  usuarioCreador: string;
+  id?: string;
   question: string;
   correctAnswer: string;
   incorrectAnswers: string[];
   difficulty: string;
-  idUsersVotos: number[];
-  countVotos: number;
+  idUsersVotos: string[];
+  contadorVotos: number;
 }

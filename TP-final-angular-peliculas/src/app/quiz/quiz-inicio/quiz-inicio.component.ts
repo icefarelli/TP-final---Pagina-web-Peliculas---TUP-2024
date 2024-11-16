@@ -31,11 +31,11 @@ export class QuizInicioComponent {
   }
 
   startMaker(){
-    this.router.navigate(['./quiz/preguntasMaker']);
+    this.router.navigate(['./quiz/qMaker']);
   }
 
   startVote(){
-    this.router.navigate(['./quiz/preguntasMaker']);
+    this.router.navigate(['./quiz']);
   }
 
 }

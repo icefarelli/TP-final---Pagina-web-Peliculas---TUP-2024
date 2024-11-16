@@ -1,0 +1,96 @@
+<div class="maker-user">
+  <h2 class="title">Formulario Nueva Pregunta</h2>
+  <button (click)="toggleForm()" class="toggle-button">
+    {{ showForm ? 'Ocultar Formulario' : 'Crear Pregunta' }}
+  </button>
+
+  <div *ngIf="showForm" class="auth-dialog-overlay">
+    <div>
+      <form [formGroup]="quizForm" (ngSubmit)="onSubmit()" class="auth-dialog">
+        <h2 class="form-title">Crear Pregunta</h2>
+
+        <div class="form-group">
+          <label for="question">Pregunta:</label>
+          <input id="question" formControlName="question" type="text" class="form-input" placeholder="Escribe la pregunta aquí"/>
+          <div *ngIf="quizForm.get('question')?.invalid && quizForm.get('question')?.touched">
+            <p class="errorPregunta">La pregunta es requerida.</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="correctAnswer">Respuesta Correcta:</label>
+          <input id="correctAnswer" formControlName="correctAnswer" type="text" class="form-input" placeholder="Escribe la respuesta correcta aquí"/>
+          <div *ngIf="quizForm.get('correctAnswer')?.invalid && quizForm.get('correctAnswer')?.touched">
+            <p class="errorRespuestaCor">La respuesta correcta es requerida.</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Respuestas Incorrectas:</label>
+          <div formArrayName="incorrectAnswers">
+            <div *ngFor="let incorrectAnswer of getIncorrectAnswersControls(); let i = index">
+              <input [formControlName]="i" type="text" class="form-input" placeholder="Respuesta Incorrecta {{ i + 1 }}"/>
+              <div *ngIf="incorrectAnswer?.invalid && incorrectAnswer?.touched">
+                <p class="errorRespuestaInc">La respuesta incorrecta es requerida.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="difficulty">Dificultad:</label>
+          <select id="difficulty" formControlName="difficulty" class="form-select">
+            <option value="" disabled>Selecciona una dificultad</option>
+            <option value="easy">Fácil</option>
+            <option value="medium">Media</option>
+            <option value="hard">Difícil</option>
+          </select>
+          <div *ngIf="quizForm.get('difficulty')?.invalid && quizForm.get('difficulty')?.touched">
+            <p class="errorDificultad">La dificultad es requerida.</p>
+          </div>
+        </div>
+
+        <button type="submit" [disabled]="quizForm.invalid" class="crear-button">Guardar</button>
+        <button type="button" (click)="toggleForm()" class="cancel-button">Cancelar</button>
+
+        <div *ngIf="errorMessage" class="error">
+          {{ errorMessage }}
+        </div>
+
+        <div *ngIf="successMessage" class="success">
+          {{ successMessage }}
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<div *ngIf="questions.length > 0; else noQuestions" class="questions-container">
+  <h2 class="title">Mis Preguntas</h2>
+  <div *ngFor="let question of questions" class="question-card">
+    <h3 class="question-title">{{ question.question }}</h3>
+    <div class="answer-section">
+      <p class="correct-answer"><strong>✔ Respuesta Correcta:</strong> {{ question.correctAnswer }}</p>
+      <p class="incorrect-answers"><strong>✘ Respuestas Incorrectas:</strong> {{ question.incorrectAnswers?.join(', ') }}</p>
+    </div>
+    <p class="difficulty">
+      <strong>Dificultad:</strong>
+      {{
+        question.difficulty === 'easy' ? 'Fácil' :
+        question.difficulty === 'medium' ? 'Media' :
+        'Difícil'
+      }}
+    </p>
+    <div class="actions">
+      <button *ngIf="question.id" (click)="eliminarPregunta(question.id)" class="delete-button">Eliminar</button>
+      <button (click)="editarPregunta(question)" class="edit-button">Editar</button>
+    </div>
+  </div>
+</div>
+<ng-template #noQuestions>
+  <p class="no-questions-message">No tienes preguntas creadas.</p>
+</ng-template>
+
+
+
+

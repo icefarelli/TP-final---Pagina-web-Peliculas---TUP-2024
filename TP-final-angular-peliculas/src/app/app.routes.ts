@@ -12,10 +12,12 @@ import { QuizComponent } from './quiz/quiz.component'
 import { QuizInicioComponent } from './quiz/quiz-inicio/quiz-inicio.component';
 import { QuizPreguntasComponent } from './quiz/quiz-preguntas/quiz-preguntas.component';
 import { QuizResultadosComponent } from './quiz/quiz-resultados/quiz-resultados.component';
-import { PreguntasMakerComponent } from './quiz/preguntas-maker/preguntas-maker.component';
 import { EditarPerfilComponent } from "./editar-perfil/editar-perfil.component";
 import { MisResenasComponent } from "./funcionalidades/resenas/mis-resenas/mis-resenas.component";
 import { CambioContraseniaComponent } from "./compartidos/cambio-contrasenia/cambio-contrasenia.component";
+import { QuizMakerComponent } from './quiz/quiz-maker/quiz-maker.component';
+import { VisualUserComponent } from "./quiz/quiz-visual-user/quiz-visual-user.component";
+
 export const routes: Routes = [
   { path: '',
     component: HomeComponent, pathMatch: 'full'
@@ -36,10 +38,12 @@ export const routes: Routes = [
   },
   {
     path: 'quiz', component: QuizComponent, children: [
-    { path: '', component: QuizInicioComponent }, // Ruta para el inicio del quiz
-    { path: 'question', component: QuizPreguntasComponent }, // Ruta para las preguntas
-    { path: 'result', component: QuizResultadosComponent }, // Ruta para los resultados
-    { path: 'preguntasMaker', component: PreguntasMakerComponent } // Ruta para crear preguntas
+      { path: '', component: QuizInicioComponent }, // Ruta para el inicio del quiz
+      { path: 'question', component: QuizPreguntasComponent }, // Ruta para las preguntas
+      { path: 'result', component: QuizResultadosComponent }, // Ruta para los resultados
+      { path: 'qMaker', component: QuizMakerComponent},
+      { path: 'userVisual', component: VisualUserComponent },
+
     ]
   },
   { path: 'actor/:id',
