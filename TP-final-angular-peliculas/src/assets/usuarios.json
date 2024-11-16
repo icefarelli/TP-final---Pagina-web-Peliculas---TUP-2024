@@ -13,7 +13,7 @@
       "id": "1731098826438",
       "usuario": "icefarelli",
       "contrasenia": "ivan1234",
-      "nombre": "Ivan",
+      "nombre": "Ivan Ernesto",
       "apellido": "Cefarelli",
       "email": "ivan.cefarelli@gmail.com",
       "fechaNacimiento": "1995-03-06"
@@ -52,21 +52,20 @@
       "content": "reseña de prueba en pelicula Terrifier 3\n",
       "created_at": "2024-11-08T20:39:05.507Z",
       "isLocal": true
+    },
+    {
+      "id": "116a",
+      "movieId": 1118031,
+      "author": "icefarelli",
+      "content": "sdsfsdfs",
+      "created_at": "2024-11-13T19:08:39.135Z",
+      "isLocal": true
     }
   ],
   "favoritos": [
     {
-      "nombre": "hola ",
-      "descripcion": "aaaaaaaaaaaa",
-      "peliculas": [],
-      "userId": 1731098826438,
-      "id": "1"
-    },
-    {
-      "id": "2",
-      "userId": 1731098826438,
-      "nombre": "prueba de nuevo id 2",
-      "descripcion": "hhhhhhhhhhhhhhhhh",
+      "nombre": "asdasd",
+      "descripcion": "asadd",
       "peliculas": [
         {
           "adult": false,
@@ -257,7 +256,16 @@
           "vote_average": 6.019,
           "vote_count": 414
         }
-      ]
+      ],
+      "userId": 1731098826438,
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "userId": 1731098826438,
+      "nombre": "Peliculas",
+      "descripcion": "Todas las peliculas",
+      "peliculas": []
     }
   ],
   "preguntas": [

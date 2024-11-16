@@ -1,9 +1,9 @@
-// administrar-resenias.component.ts
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReseniasService } from '../../../nucleo/servicios/resenias.service';
 import { AuthService } from '../../../nucleo/servicios/auth.service';
+import { AlertService } from '../../../nucleo/servicios/alert.service';
 
 @Component({
   selector: 'app-administrar-resenias',
@@ -21,13 +21,16 @@ export class AdministrarReseniasComponent implements OnInit {
   currentIndex: number = 0;
   showReviewForm: boolean = false;
   newReview = {
-    content: ''
+    content: '',
+    rating: 0
   };
   currentUser: any = null;
+  stars: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   constructor(
     private reseniasService: ReseniasService,
-    private authService: AuthService
+    private authService: AuthService,
+    private alertService: AlertService
   ) {}
 
   ngOnInit() {
@@ -42,7 +45,7 @@ export class AdministrarReseniasComponent implements OnInit {
   loadReviews() {
     if (this.movieId) {
       this.loading = true;
-      // Cargar reseñas de TMDB
+       // Cargar el usuario actual
       this.reseniasService.getMovieReviews(this.movieId)
         .subscribe({
           next: (response) => {
@@ -50,7 +53,7 @@ export class AdministrarReseniasComponent implements OnInit {
             this.loadLocalReviews();
           },
           error: (error) => {
-            this.error = 'Error al cargar las reseñas de TMDb';
+            this.alertService.mostrarAlerta('error', 'Error al cargar las reseñas de TMDb');
             this.loading = false;
           }
         });
@@ -62,7 +65,7 @@ export class AdministrarReseniasComponent implements OnInit {
       this.localReviews = await this.reseniasService.getLocalReviews(this.movieId);
       this.loading = false;
     } catch (error) {
-      this.error = 'Error al cargar las reseñas locales';
+      this.alertService.mostrarAlerta('error', 'Error al cargar las reseñas locales');
       this.loading = false;
     }
   }
@@ -89,12 +92,12 @@ export class AdministrarReseniasComponent implements OnInit {
 
   toggleReviewForm() {
     if (!this.currentUser) {
-      this.error = 'Debes iniciar sesión para escribir una reseña';
+      this.alertService.mostrarAlerta('error', 'Debes iniciar sesión para escribir una reseña');
       return;
     }
     this.showReviewForm = !this.showReviewForm;
     if (!this.showReviewForm) {
-      this.newReview = { content: '' };
+      this.newReview = { content: '', rating: 0,};
     }
   }
 
@@ -102,17 +105,18 @@ export class AdministrarReseniasComponent implements OnInit {
     if (this.newReview.content && this.currentUser) {
       if (this.currentReviewId) {
         // Si hay un ID de reseña actual, significa que se está editando
-        this.reseniasService.updateLocalReview(this.currentReviewId, this.newReview.content).subscribe({
+        this.reseniasService.updateLocalReview(this.currentReviewId, this.newReview.content, this.newReview.rating).subscribe({
           next: (updatedReview) => {
             // Actualiza la reseña en la lista local
             const index = this.localReviews.findIndex(review => review.id === this.currentReviewId);
             if (index !== -1) {
               this.localReviews[index] = updatedReview; // Reemplaza la reseña editada
             }
+            this.alertService.mostrarAlerta('success', 'Reseña actualizada con éxito');
             this.resetForm(); // Reinicia el formulario
           },
           error: (error) => {
-            this.error = 'Error al actualizar la reseña';
+            this.alertService.mostrarAlerta('error', 'Error al actualizar la reseña');
           }
         });
       } else {
@@ -120,52 +124,61 @@ export class AdministrarReseniasComponent implements OnInit {
         this.reseniasService.addLocalReview(
           this.movieId,
           this.currentUser.usuario,
-          this.newReview.content
+          this.newReview.content,
+          this.newReview.rating
         ).subscribe({
           next: (newReview) => {
-            this.localReviews.push(newReview); // Agrega la nueva reseña a la lista local
-            this.resetForm(); // Reinicia el formulario
+            this.localReviews.push(newReview);  // Agrega la nueva reseña a la lista local
+            this.alertService.mostrarAlerta('success', 'Reseña guardada con éxito');
+            this.resetForm();  // Reinicia el formulario
           },
           error: (error) => {
-            this.error = 'Error al guardar la reseña';
+            this.alertService.mostrarAlerta('error', 'Error al guardar la reseña');
           }
         });
       }
     }
   }
 
-  // Agrega un método para reiniciar el formulario
-  resetForm() {
-    this.newReview = { content: '' };
-    this.showReviewForm = false;
-    this.currentReviewId = null; // Reinicia el ID de la reseña actual
-  }
+// Agrega un método para reiniciar el formulario
+resetForm() {
+  this.newReview = { content: '' , rating: 0};
+  this.showReviewForm = false;
+  this.currentReviewId = null; // Reinicia el ID de la reseña actual
+}
 
-  // Opcional: Métodos para editar y eliminar reseñas
-  canEditReview(review: any): boolean {
-    return review.isLocal && this.currentUser &&
-           review.author === this.currentUser.usuario;
-  }
+// Opcional: Métodos para editar y eliminar reseñas
+canEditReview(review: any): boolean {
+  return review.isLocal && this.currentUser &&
+         review.author === this.currentUser.usuario;
+}
 
-  deleteReview(reviewId: number) {
-    if (confirm('¿Estás seguro de que deseas eliminar esta reseña?')) {
-      this.reseniasService.deleteReview(reviewId).subscribe({
-        next: () => {
-          this.loadLocalReviews();
-        },
-        error: (error) => {
-          this.error = 'Error al eliminar la reseña';
-        }
-      });
-    }
+deleteReview(reviewId: number) {
+  if (confirm('¿Estás seguro de que deseas eliminar esta reseña?')) {
+    this.reseniasService.deleteReview(reviewId).subscribe({
+      next: () => {
+        this.loadLocalReviews();
+        this.alertService.mostrarAlerta('success', 'Reseña eliminada con éxito');
+      },
+      error: (error) => {
+        this.alertService.mostrarAlerta('error', 'Error al eliminar la reseña');
+      }
+    });
   }
+}
 
-  currentReviewId: number | null = null; // Agrega esta propiedad para almacenar el ID de la reseña actual
+currentReviewId: number | null = null; // Agrega esta propiedad para almacenar el ID de la reseña actual
 
 editReview(review: any): void {
   this.newReview.content = review.content; // Cargar el contenido de la reseña en el formulario
-  this.showReviewForm = true; // Mostrar el formulario de reseña para editar
-  this.currentReviewId = review.id; // Guardar el ID de la reseña actual
+  this.newReview.rating = review.rating;   // Cargar la puntuación en el formulario
+  this.showReviewForm = true;              // Mostrar el formulario de reseña para editar
+  this.currentReviewId = review.id;        // Guardar el ID de la reseña actual
+}
+
+setRating(rating: number) {
+  this.newReview.rating = rating; // Actualiza la puntuación seleccionada
 }
 
 }
+

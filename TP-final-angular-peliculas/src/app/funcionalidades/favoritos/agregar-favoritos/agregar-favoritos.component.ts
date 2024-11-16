@@ -4,6 +4,7 @@ import { Router, RouterModule } from '@angular/router';
 import { FavoritosService } from '../../../nucleo/servicios/favoritos.service';
 import { Favoritos } from '../../../nucleo/modelos/favoritos';
 import { CommonModule } from '@angular/common';
+import { AlertService } from '../../../nucleo/servicios/alert.service';
 
 @Component({
   selector: 'app-agregar-favoritos',
@@ -19,7 +20,8 @@ export class AgregarFavoritosComponent implements OnInit{
   constructor(
     private fb: FormBuilder,
     private favoritosService: FavoritosService,
-    private router: Router
+    private router: Router,
+    private alertService: AlertService
   ) {
 
     // Inicialización del formulario
@@ -38,11 +40,11 @@ export class AgregarFavoritosComponent implements OnInit{
   agregarLista() {
     if (this.listaForm.valid) {
       // Primero, obtengo la lista actual de favoritos para calcular el siguiente ID
-      this.favoritosService.getListasPorUsuario(this.userId,).subscribe({
+      this.favoritosService.getListasPorUsuario(this.userId).subscribe({
         next: (listas) => {
           // Calcula el siguiente ID basado en el ID más alto de las listas existentes
-          const maxId = listas.length > 0 ? Math.max(...listas.map(lista => lista.id)) : 0;
-          const nuevoId = maxId + 1;
+          const maxId = listas.length > 0 ? Math.max(...listas.map(lista => parseInt(lista.id))) : 0;
+          const nuevoId = (maxId + 1).toString();
 
           // Crea la nueva lista con el ID incrementado
 
@@ -57,13 +59,14 @@ export class AgregarFavoritosComponent implements OnInit{
           // Llama a postListas para agregar la nueva lista
       this.favoritosService.postListasPorUsuario(this.userId,nuevaLista).subscribe({
         next: (lista) => {
-
-        console.log('Lista agregada:', lista);
+        //console.log('Lista agregada:', lista);
+        this.alertService.mostrarAlerta('success', 'Lista agregada con éxito');
         // Navegar de regreso a la página de listas de favoritos
          this.router.navigate(['/favoritos']);
             },
         error: (err) => {
         console.error('Error al agregar la lista:', err);
+        this.alertService.mostrarAlerta('error', 'Error al agregar la lista');
             },
           });
         },

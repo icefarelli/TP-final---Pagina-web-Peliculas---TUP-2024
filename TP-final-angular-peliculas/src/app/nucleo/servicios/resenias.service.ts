@@ -5,11 +5,12 @@ import { map } from 'rxjs/operators';
 
 interface LocalReview {
   movieId: number;
-  author: string;      // Nombre de usuario del autor
+  author: string;
   content: string;
   created_at: string;
-  isLocal?: boolean;   // Para identificar reseñas locales
-  userId?: string;     // ID del usuario que creó la reseña
+  rating: number;
+  isLocal?: boolean;
+  userId?: string;
 }
 
 @Injectable({
@@ -57,17 +58,19 @@ export class ReseniasService {
   }
 
   // Agrega una reseña local al JSON en el servidor local
-  addLocalReview(movieId: number, author: string, content: string): Observable<LocalReview> {
+  addLocalReview(movieId: number, author: string, content: string, rating: number): Observable<LocalReview> {
     const newReview: LocalReview = {
       movieId,
-      author,          // Ahora author será el nombre de usuario
+      author,
       content,
       created_at: new Date().toISOString(),
+      rating,
       isLocal: true
     };
 
     return this.http.post<LocalReview>(this.localReviewsUrl, newReview);
   }
+
 
   // Opcional: Método para eliminar una reseña (solo si el usuario es el autor)
   deleteReview(reviewId: number): Observable<any> {
@@ -75,15 +78,53 @@ export class ReseniasService {
   }
 
   // Opcional: Método para editar una reseña (solo si el usuario es el autor)
-  updateReview(reviewId: number, content: string): Observable<LocalReview> {
+  updateReview(reviewId: number, content: string, rating: number): Observable<LocalReview> {
     return this.http.patch<LocalReview>(`${this.localReviewsUrl}/${reviewId}`, {
       content,
+      rating,
       updated_at: new Date().toISOString()
     });
   }
 
-  updateLocalReview(reviewId: number, content: string): Observable<LocalReview> {
-    return this.http.patch<LocalReview>(`${this.localReviewsUrl}/${reviewId}`, { content });
+  updateLocalReview(reviewId: number, content: string, rating: number): Observable<LocalReview> {
+    return this.http.patch<LocalReview>(`${this.localReviewsUrl}/${reviewId}`, {
+      content,
+      rating
+    });
+  }
+
+async getReviewsByAuthor(author: string): Promise<LocalReview[]> {
+  try {
+    const response = await this.http.get<LocalReview[]>(this.localReviewsUrl).toPromise();
+
+    if (response) {
+      // Filtra las reseñas solo por author
+      return response
+        .filter(review => review.author === author) // Filtra por author
+        .map(review => ({
+          ...review,
+          isLocal: true
+        }));
+    }
+    return [];
+  } catch (error) {
+    console.error('Error al obtener las reseñas por author:', error);
+    return [];
+  }
 }
 
+getMovieDetails(movieId: number): Observable<any> {
+  return this.http.get<any>(`${this.baseUrl}/movie/${movieId}?api_key=${this.apiKey}&language=es-ES`)
+    .pipe(
+      map(response => ({
+        id: response.id,
+        title: response.title,
+        posterUrl: response.poster_path ? `https://image.tmdb.org/t/p/w500${response.poster_path}` : null,
+        overview: response.overview,
+        release_date: response.release_date,
+        // Puedes agregar más campos según sea necesario
+      }))
+    );
 }
+}
+

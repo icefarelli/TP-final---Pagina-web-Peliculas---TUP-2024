@@ -1,0 +1,25 @@
+<div class="mis-resenas-container">
+  <h2>Mis Reseñas</h2>
+  <div *ngIf="resenas.length === 0">
+    <p>No has realizado reseñas aún.</p>
+  </div>
+  <div *ngFor="let resena of resenas" class="reseña-card">
+    <div class="reseña-content">
+      <div class="review-info">
+        <h4>{{ resena.movieDetails?.title }}</h4> <!-- Nombre de la película -->
+        <p>{{ resena.content }}</p>
+        <div class="review-rating">
+          <span class="stars">
+            <!-- Mostrar las estrellas rellenas según la calificación -->
+            <span *ngFor="let star of [].constructor(resena.rating); let i = index"
+                  [class.filled]="i < resena.rating">
+              ★
+            </span>
+          </span>
+        </div>
+        <p><small>Escrita el: {{ resena.created_at | date:'short' }}</small></p>
+      </div>
+      <img *ngIf="resena.movieDetails?.posterUrl" [src]="resena.movieDetails.posterUrl" alt="{{ resena.movieDetails?.title }}" class="movie-poster" />
+    </div>
+  </div>
+</div>

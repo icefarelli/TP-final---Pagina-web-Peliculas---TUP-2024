@@ -6,6 +6,13 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
+  width: 100%;
+}
+
+.navbar-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .navbar-logo {
@@ -27,7 +34,9 @@
 .nav-menu {
   list-style: none;
   display: flex;
-  gap: 20px; /* Ajustado para ser más pequeño */
+  gap: 20px;
+  width: 100%;
+  justify-content: space-evenly;
 }
 
 .nav-item {

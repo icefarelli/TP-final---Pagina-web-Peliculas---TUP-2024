@@ -21,18 +21,22 @@
             <a [routerLink]="['/pelicula', pelicula.id]" class="pelicula-link">
               🎬 {{ pelicula.title || 'Título no disponible' }}
             </a>
+            <span (click)="eliminarPeliculadeLista(lista,pelicula.id)" class="eliminar-cruz" title="Eliminar película">
+              ✖️
+            </span>
           </li>
         </ul>
       </div>
       <div *ngIf="!lista.peliculas || lista.peliculas.length === 0">
         <p class="text-muted">No hay películas en esta lista.</p>
       </div>
-
-      <!-- Botón Modificar -->
-      <button (click)="modificarLista(lista)" class="btn btn-warning">Modificar</button>
-
+      
       <!-- Botón Eliminar -->
       <button (click)="eliminarLista(lista.id)" class="btn btn-danger">Eliminar</button>
+    
+      <!-- Botón Modificar -->
+      <button (click)="modificarLista(lista)" class="btn btn-warning">Modificar</button>
+    
     </div>
   </div>
 </div>

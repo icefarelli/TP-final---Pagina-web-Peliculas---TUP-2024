@@ -73,7 +73,7 @@ export class AuthDialogComponent {
     this.authService.registrarUsuario(this.usuario).subscribe({
       next: (exito) => {
         if (exito) {
-          this.mensaje = '¡Usuario registrado exitosamente!';
+          /* this.mensaje = '¡Usuario registrado exitosamente!'; */
           this.error = '';
           setTimeout(() => this.cerrar(), 2000);
         }
@@ -91,7 +91,7 @@ export class AuthDialogComponent {
   iniciarSesion() {
     if (!this.usuario.usuario || !this.usuario.contrasenia) {
       this.error = 'Por favor complete todos los campos obligatorios';
-      this.mostrarRegistro = false; // Ocultar el botón de registro
+      this.mostrarRegistro = false; // Ocultar el boton de registro
       return;
     }
 
@@ -105,7 +105,7 @@ export class AuthDialogComponent {
           if (usuarioActual && usuarioActual.id) {
             localStorage.setItem('userId', usuarioActual.id.toString());
           }
-          this.mensaje = '¡Inicio de sesión exitoso!';
+          /* this.mensaje = '¡Inicio de sesión exitoso!'; */
           this.error = '';
           this.mostrarRegistro = false; // Ocultar el botón de registro
           setTimeout(() => this.cerrar(), 2000);
@@ -135,7 +135,7 @@ export class AuthDialogComponent {
     this.authService.recuperarContraseña(this.usuario.email).subscribe({
       next: (exito) => {
         if (exito) {
-          this.mensaje = 'Se ha enviado un email con instrucciones para recuperar tu contraseña';
+          /* this.mensaje = 'Se ha enviado un email con instrucciones para recuperar tu contraseña'; */
           this.error = '';
           setTimeout(() => this.cerrar(), 2000);
         }
@@ -148,5 +148,53 @@ export class AuthDialogComponent {
         this.cargando = false;
       }
     });
+  }
+
+   // Método para cambiar la contraseña
+   cambiarContrasenia(nuevaContrasenia: string) {
+    if (!this.usuario.id || !nuevaContrasenia) {
+      this.error = 'Por favor, ingrese una nueva contraseña';
+      return;
+    }
+
+    this.authService.cambiarContrasenia(this.usuario.id, nuevaContrasenia).subscribe({
+      next: (exito) => {
+        if (exito) {
+          this.mensaje = 'Contraseña cambiada exitosamente';
+          setTimeout(() => this.cerrar(), 2000);
+        } else {
+          this.error = 'Error al cambiar la contraseña';
+        }
+      },
+      error: (error) => {
+        this.error = 'Error al cambiar la contraseña';
+        console.error(error);
+      }
+    });
+  }
+
+  // Método para eliminar el usuario
+  eliminarUsuario() {
+    if (!this.usuario.id) {
+      this.error = 'No se puede eliminar el usuario';
+      return;
+    }
+
+    if (confirm('¿Estás seguro de que deseas eliminar tu cuenta?')) {
+      this.authService.eliminarUsuario(this.usuario.id).subscribe({
+        next: (exito) => {
+          if (exito) {
+            this.mensaje = 'Usuario eliminado exitosamente';
+            this.cerrar(); // Cerrar el diálogo
+          } else {
+            this.error = 'Error al eliminar el usuario';
+          }
+        },
+        error: (error) => {
+          this.error = 'Error al eliminar el usuario';
+          console.error(error);
+        }
+      });
+    }
   }
 }

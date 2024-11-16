@@ -58,7 +58,7 @@ h2 {
   background-color: #ffc107;
   color: #fff;
   border: none;
-  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .btn-warning:hover {
@@ -82,4 +82,8 @@ h2 {
   background-color: #e9ecef;
   padding: 10px;
   border-radius: 5px;
+}
+
+.pelicula-link {
+  color:black;
 }

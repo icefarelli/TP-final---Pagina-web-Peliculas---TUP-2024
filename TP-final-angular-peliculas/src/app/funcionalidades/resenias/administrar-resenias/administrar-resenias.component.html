@@ -17,13 +17,26 @@
           name="content"
           required></textarea>
       </div>
+
+      <!-- Puntuación con estrellas -->
+      <div class="form-group">
+        <label>Puntuación:</label>
+        <div class="stars">
+          <span *ngFor="let star of stars; let i = index"
+                [class.filled]="i < newReview.rating"
+                (click)="setRating(i + 1)">
+            ★
+          </span>
+        </div>
+      </div>
+
       <button
-      type="submit"
-      [disabled]="!reviewForm.valid"
-      class="edit-btn">
-      Publicar Reseña
-    </button>
-        </form>
+        type="submit"
+        [disabled]="!reviewForm.valid || newReview.rating === 0"
+        class="edit-btn">
+        Publicar Reseña
+      </button>
+    </form>
   </div>
 
   <div *ngIf="loading" class="loading">
@@ -38,6 +51,7 @@
     No hay reseñas disponibles para esta película.
   </div>
 
+  <!-- Mostrar reseñas guardadas -->
   <div *ngIf="getAllReviews().length > 0" class="review-slider">
     <button
       class="nav-button prev"
@@ -52,22 +66,36 @@
         <span class="review-date">{{ getCurrentReview().created_at | date }}</span>
       </div>
       <p class="review-content">{{ getCurrentReview().content }}</p>
-      <div class="review-counter">
-        {{ currentIndex + 1 }} / {{ getAllReviews().length }}
+
+      <!-- Mostrar las estrellas para las reseñas guardadas -->
+      <div class="review-rating">
+        <span class="stars">
+          <span *ngFor="let star of [].constructor(getCurrentReview().rating); let i = index"
+                [class.filled]="i < getCurrentReview().rating">
+            ★
+          </span>
+        </span>
       </div>
+
       <!-- Agregar dentro de review-card si quieres permitir editar/eliminar -->
       <div class="review-actions" class="button-container" *ngIf="canEditReview(getCurrentReview())">
         <button class="edit-btn" (click)="editReview(getCurrentReview())">Editar </button>
         <button class="delete-btn" (click)="deleteReview(getCurrentReview().id)"> Eliminar</button>
       </div>
 
+      <div class="review-counter">
+        {{ currentIndex + 1 }} / {{ getAllReviews().length }}
+      </div>
+
     </div>
 
     <button
-      class="nav-button next"
-      (click)="nextReview()"
-      [disabled]="currentIndex === getAllReviews().length - 1">
-      →
-    </button>
+    class="nav-button next"
+    (click)="nextReview()"
+    [disabled]="currentIndex === getAllReviews().length - 1">
+    →
+  </button>
+
   </div>
+
 </div>

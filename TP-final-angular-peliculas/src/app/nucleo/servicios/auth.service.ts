@@ -36,11 +36,51 @@ export class AuthService {
       this.alertService.mostrarAlerta('error', 'El nombre de usuario no debe contener caracteres especiales');
       return of(false);
     }
+    if (usuario.usuario.length < 4) {
+      this.alertService.mostrarAlerta('error', 'El nombre de usuario debe tener al menos 4 caracteres');
+      return of(false);
+    }
+  
+    if (usuario.contrasenia.length < 4) {
+      this.alertService.mostrarAlerta('error', 'La contraseña debe tener al menos 4 caracteres');
+      return of(false);
+    }
+
+    if (!/^[a-zA-Z0-9]+$/.test(usuario.nombre)) {
+      this.alertService.mostrarAlerta('error', 'El nombre no debe contener caracteres especiales');
+      return of(false);
+    }
+
+    if (!/^[a-zA-Z0-9]+$/.test(usuario.apellido)) {
+      this.alertService.mostrarAlerta('error', 'El apellido no debe contener caracteres especiales');
+      return of(false);
+    }
+
 
     return this.http.get<Usuario[]>(`${this.apiUrl}?usuario=${usuario.usuario}`).pipe(
       switchMap(usuarios => {
         if (usuarios.length > 0) {
           this.alertService.mostrarAlerta('error', 'El usuario ya existe');
+          return of(false);
+        }
+
+        if (this.validarFechaNacimiento(usuario.fechaNacimiento) === 'Fecha>hoy') {
+          this.alertService.mostrarAlerta('error', 'La fecha de nacimiento no puede ser mayor a hoy');
+          return of(false);
+        }
+
+        if (this.validarFechaNacimiento(usuario.fechaNacimiento) === 'Fecha<hace100anos') {
+          this.alertService.mostrarAlerta('error', 'La fecha de nacimiento no puede ser anterior a 100 años');
+          return of(false);
+        }
+
+        if (this.validarFechaNacimiento(usuario.fechaNacimiento) === 'Fecha>hace10anos') {
+          this.alertService.mostrarAlerta('error', 'La fecha de nacimiento no puede ser menor a 10 años');
+          return of(false);
+        } 
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(usuario.email)) {
+          this.alertService.mostrarAlerta('error', 'El correo electrónico no es válido');
           return of(false);
         }
 
@@ -62,6 +102,8 @@ export class AuthService {
       })
     );
   }
+
+
 
   iniciarSesion(usuario: string, contraseña: string): Observable<boolean> {
     return this.http.get<Usuario[]>(`${this.apiUrl}?usuario=${usuario}`).pipe(
@@ -131,4 +173,71 @@ export class AuthService {
     this.alertService.mostrarAlerta('error', mensajeError);
     return throwError(() => new Error(mensajeError));
   }
+
+  validarFechaNacimiento(fechaNacimiento: string): string {
+    const fecha = new Date(fechaNacimiento);
+    const hoy = new Date();
+    hoy.setHours(0, 0, 0, 0);
+
+    const hace10Anos = new Date();
+    hace10Anos.setFullYear(hace10Anos.getFullYear() - 10);
+
+    const hace100Anos = new Date();
+    hace100Anos.setFullYear(hace100Anos.getFullYear() - 100);
+    
+    if(fecha > hoy){
+      return 'Fecha>hoy'
+    }
+    if(fecha < hace100Anos){
+      return 'Fecha<hace100anos'
+      }
+    if(fecha > hace10Anos){
+      return 'Fecha>hace10anos'
+      }
+      return 'fechaOK'
+    ;
+  }
+
+  // Método para cambiar la contraseña
+cambiarContrasenia(usuarioId: string|null, nuevaContrasenia: string): Observable<boolean> {
+  return this.http.patch<Usuario>(`${this.apiUrl}/${usuarioId}`, { contrasenia: nuevaContrasenia }).pipe(
+    map(() => {
+      this.alertService.mostrarAlerta('success', 'Contraseña cambiada exitosamente');
+      return true;
+    }),
+    catchError((error) => {
+      this.handleError(error);
+      return of(false);
+    })
+  );
+}
+
+// Método para eliminar un usuario
+eliminarUsuario(usuarioId: string | undefined): Observable<boolean> {
+  return this.http.delete<Usuario>(`${this.apiUrl}/${usuarioId}`).pipe(
+    map(() => {
+      this.alertService.mostrarAlerta('success', 'Usuario eliminado exitosamente');
+      return true;
+    }),
+    catchError((error) => {
+      this.handleError(error);
+      return of(false);
+    })
+  );
+}
+
+cambiarDatosUsuario(usuario: Usuario): Observable<boolean> {
+  return this.http.patch<Usuario>(`${this.apiUrl}/${usuario.id}`, usuario).pipe(
+    map((updatedUser) => {
+      this.alertService.mostrarAlerta('success', 'Datos actualizados exitosamente');
+      this.usuarioActual.next(updatedUser );
+
+      return true;
+    }),
+    catchError((error) => {
+      this.handleError(error);
+      return of(false);
+    })
+  );
+}
 }

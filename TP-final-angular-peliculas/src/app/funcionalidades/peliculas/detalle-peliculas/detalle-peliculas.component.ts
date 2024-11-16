@@ -8,6 +8,8 @@ import { Favoritos } from '../../../nucleo/modelos/favoritos';
 import id from '@angular/common/locales/id';
 import { FavoritosService } from '../../../nucleo/servicios/favoritos.service';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from '../../../nucleo/servicios/auth.service';
+import { AlertService } from '../../../nucleo/servicios/alert.service';
 
 @Component({
   selector: 'app-detalle-peliculas',
@@ -26,7 +28,9 @@ export class DetallePeliculasComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private peliculasService: PeliculasService,
-    private favoritosService: FavoritosService
+    private favoritosService: FavoritosService,
+    private authService: AuthService,
+    private alertService: AlertService
   ) {
 
     this.userId = Number(localStorage.getItem('userId'))
@@ -39,6 +43,7 @@ export class DetallePeliculasComponent implements OnInit {
         pelicula => {
           this.pelicula = pelicula;
           this.cargarElenco(id); // Llama a cargar el elenco
+          this.cargarListasFavoritos(); // Llama a cargar listas de favoritos
 
         }
       );
@@ -68,6 +73,15 @@ export class DetallePeliculasComponent implements OnInit {
 
   agregarPeliculaAFavoritos() {
     if (this.listaSeleccionada && this.pelicula) {
+      // Verifico si la película ya está en la lista
+    const peliculaYaEnLista = this.listaSeleccionada.peliculas.some(
+      (p: Pelicula) => p.id === this.pelicula?.id
+    );
+
+    if (peliculaYaEnLista) {
+      this.alertService.mostrarAlerta('error', 'La pelicula ya fue cargada en la lista de favoritos');
+      return;
+    }
       const peliculasActualizadas = [...this.listaSeleccionada.peliculas, this.pelicula];
 
       const listaConPelicula = {
@@ -77,19 +91,24 @@ export class DetallePeliculasComponent implements OnInit {
 
       this.favoritosService.putLista(this.listaSeleccionada.id, listaConPelicula).subscribe({
         next: () => {
-          alert('Película agregada a la lista de favoritos');
+          this.alertService.mostrarAlerta('success', 'Pelicula agregada con éxito a la lista');
+          this.cargarListasFavoritos();
         },
         error: (err) => {
           console.error('Error al agregar la película a la lista de favoritos', err);
         }
       });
     } else {
-      alert('Por favor, selecciona una lista de favoritos y asegúrate de que la película está cargada.');
+      this.alertService.mostrarAlerta('error', 'Seleccione una lista ');
     }
   }
 
 
   obtenerUrlImagen(path: string): string {
     return `https://image.tmdb.org/t/p/w500${path}`;
+  }
+
+  usuarioConectado(){
+    return this.authService.estaAutenticado();
   }
 }
