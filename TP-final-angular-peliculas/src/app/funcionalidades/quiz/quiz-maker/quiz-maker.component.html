@@ -28,7 +28,7 @@
         <div formArrayName="incorrectAnswers" *ngFor="let control of getIncorrectAnswersControls(); let i = index">
           <div class="form-group">
             <label [attr.for]="'incorrectAnswer' + i">Respuesta Incorrecta {{ i + 1 }}:</label>
-            <input [attr.id]="'incorrectAnswer' + i" [formControlName]="i" type="text" class="form-input" placeholder="Escribe la respuesta incorrecta aquí"/>
+            <input [attr.id]="'incorrectAnswer' + i" [formControlName]="i" type="text" class="form-input" placeholder="Escribe la respuesta incorrecta aquí" required/>
             <div *ngIf="control.invalid && control.touched">
               <p class="errorRespuestaCor">Campo Obligatorio.</p>
             </div>
