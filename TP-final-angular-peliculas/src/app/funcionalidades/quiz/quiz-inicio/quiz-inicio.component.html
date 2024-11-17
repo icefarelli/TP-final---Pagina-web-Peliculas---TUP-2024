@@ -1,14 +1,19 @@
 <div class="cinema-background">
   <div class="quiz-inicio-container">
-    <div class="maker-vote">
+    <div class="maker">
       @if(usuarioConectado() == true){
-        <p></p>
         <button class="boton-maker" (click)="startMaker()">QUIZ MAKER</button>
-        <button class="boton-vote" (click)="startVote()">VOTAR PREGUNTAS</button>
       }
     </div>
     <h1>Movie Challenge</h1>
     <p>¡Pon a prueba tus conocimientos cinematográficos!</p>
+
+    <!-- Mensaje informativo -->
+    <p class="info-message">
+      Selecciona la dificultad del quiz y el tipo de preguntas que deseas responder.
+      Puedes elegir entre preguntas predefinidas o aquellas creadas por otros usuarios.
+      ¡Diviértete y aprende mientras juegas!
+    </p>
 
     <div class="opcion-dificultad">
       <h3>Selecciona la dificultad:</h3>
@@ -17,8 +22,14 @@
       <button class="hard" (click)="selectDificultad('hard')" [class.selected]="dificultadBase === 'hard'">Difícil</button>
     </div>
 
-    <button (click)="startQuiz()" class="start-button">
-      <span>Iniciar Quiz</span>
-    </button>
+    <div>
+      <label for="fuentePreguntas">Selecciona el modo de Challenge:</label>
+      <select id="fuentePreguntas" [(ngModel)]="fuentePreguntas">
+        <option value="predefinidas">Movie Challenge</option>
+        <option value="creadasPorUsuario">Preguntas de la Comunidad</option>
+      </select>
+    </div>
+
+    <button class="start-button" (click)="startQuiz()">Iniciar Quiz</button>
   </div>
 </div>

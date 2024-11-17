@@ -210,14 +210,13 @@ p {
 }
 
 .errorPregunta, .errorRespuestaCor, .errorRespuestaInc, .errorDificultad, .success {
-  display: flex;
-  justify-self: center;
-  border: 2px solid #ffa600;
-  border-radius: 8px;
-  background-color: #444;
-  color: whitesmoke;
-  margin-top: 5px;
-  padding: 10px;
+  transform: translate(-50%, -50%);
+  background-color: rgb(73, 45, 45);
+  border: 1px solid #9c0000;
+  border-radius: 5px;
+  padding: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
 }
 
 .error {
@@ -227,26 +226,26 @@ p {
 
 .errorPregunta {
   position:absolute;
-  top: 50%;
-  left: 43%;
+  top: 26%;
+  left: 36%;
 }
 
 .errorRespuestaCor {
   position:absolute;
-  top: 50%;
-  left: 41%;
+  top: 39.5%;
+  left: 36%;
 }
 
 .errorRespuestaInc {
   position:absolute;
-  top: 50%;
-  left: 43%;
+  top: 57%;
+  left: 50%;
 }
 
 .errorDificultad {
   position:absolute;
-  top: 50%;
-  left: 43%;
+  top: 83%;
+  left: 49%;
 }
 .maker-user{
   background-color: rgba(0, 0, 0, 0.651);
@@ -279,6 +278,8 @@ p {
   border-radius: 8px;
   border-color: #ffa600;
   border-style: groove;
+  font-variant: small-caps;
+  font-style: italic;
 }
 
 .question-card {
@@ -481,3 +482,15 @@ button {
   background: #0056b3;
 }
 
+.confirm-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(73, 45, 45);
+  border: 1px solid #9c0000;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}

@@ -13,7 +13,6 @@ import { QuizPreguntasComponent } from './funcionalidades/quiz/quiz-preguntas/qu
 import { QuizResultadosComponent } from './funcionalidades/quiz/quiz-resultados/quiz-resultados.component';
 import { MisResenasComponent } from "./funcionalidades/resenas/mis-resenias/mis-resenias.component";
 import { QuizMakerComponent } from './funcionalidades/quiz/quiz-maker/quiz-maker.component';
-import { VisualUserComponent } from "./funcionalidades/quiz/quiz-visual-user/quiz-visual-user.component";
 import { DetalleActorComponent } from "./funcionalidades/actores/detalle-actor.component";
 import { CambioContraseniaComponent } from "./funcionalidades/usuarios/cambio-contrasenia/cambio-contrasenia.component";
 import { EditarPerfilComponent } from "./funcionalidades/usuarios/editar-perfil/editar-perfil.component";
@@ -42,7 +41,6 @@ export const routes: Routes = [
       { path: 'question', component: QuizPreguntasComponent }, // Ruta para las preguntas
       { path: 'result', component: QuizResultadosComponent }, // Ruta para los resultados
       { path: 'qMaker', component: QuizMakerComponent},
-      { path: 'userVisual', component: VisualUserComponent },
 
     ]
   },
