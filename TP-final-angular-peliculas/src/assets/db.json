@@ -53,7 +53,182 @@
       "userId": 1731093925129,
       "nombre": "Peliculas",
       "descripcion": "Lista de favoritos de usuario admin",
-      "peliculas": []
+      "peliculas": [
+        {
+          "adult": false,
+          "backdrop_path": "/8mjYwWT50GkRrrRdyHzJorfEfcl.jpg",
+          "belongs_to_collection": {
+            "id": 1069584,
+            "name": "Gladiator - Colección",
+            "poster_path": "/r7uyUOB6fmmPumWwHiV7Hn2kUbL.jpg",
+            "backdrop_path": "/1VdLvSIeHuwqCT13H9EafxCacGB.jpg"
+          },
+          "budget": 310000000,
+          "genres": [
+            {
+              "id": 28,
+              "name": "Acción"
+            },
+            {
+              "id": 12,
+              "name": "Aventura"
+            },
+            {
+              "id": 18,
+              "name": "Drama"
+            }
+          ],
+          "homepage": "",
+          "id": 558449,
+          "imdb_id": "tt9218128",
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_title": "Gladiator II",
+          "overview": "Años después de presenciar la muerte del admirado héroe Máximo a manos de su tío, Lucio se ve forzado a entrar en el Coliseo tras ser testigo de la conquista de su hogar por parte de los tiránicos emperadores que dirigen Roma con puño de hierro. Con un corazón desbordante de furia y el futuro del imperio en juego, Lucio debe rememorar su pasado en busca de la fuerza y el honor que devuelvan al pueblo la gloria perdida de Roma.",
+          "popularity": 2185.274,
+          "poster_path": "/vK1sK1B3WglfgVWPn6Xj4nNsw1q.jpg",
+          "production_companies": [
+            {
+              "id": 4,
+              "logo_path": "/gz66EfNoYPqHTYI4q9UEN4CbHRc.png",
+              "name": "Paramount Pictures",
+              "origin_country": "US"
+            },
+            {
+              "id": 14440,
+              "logo_path": "/5QbaGiuxc91D6qf75JZGX6OKXoU.png",
+              "name": "Red Wagon Entertainment",
+              "origin_country": "US"
+            },
+            {
+              "id": 49325,
+              "logo_path": "/R05WCoCJcPWGSDaKaYgx3AeVuR.png",
+              "name": "Parkes+MacDonald Image Nation",
+              "origin_country": "US"
+            },
+            {
+              "id": 221347,
+              "logo_path": "/6Ry6uNBaa0IbbSs1XYIgX5DkA9r.png",
+              "name": "Scott Free Productions",
+              "origin_country": "US"
+            }
+          ],
+          "production_countries": [
+            {
+              "iso_3166_1": "US",
+              "name": "United States of America"
+            }
+          ],
+          "release_date": "2024-11-13",
+          "revenue": 0,
+          "runtime": 148,
+          "spoken_languages": [
+            {
+              "english_name": "English",
+              "iso_639_1": "en",
+              "name": "English"
+            }
+          ],
+          "status": "Released",
+          "tagline": "",
+          "title": "Gladiator II",
+          "video": false,
+          "vote_average": 6.8,
+          "vote_count": 273
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/3V4kLQg0kSqPLctI5ziYWabAZYF.jpg",
+          "belongs_to_collection": {
+            "id": 558216,
+            "name": "Venom - Colección",
+            "poster_path": "/lzQgrRH0xkhlY0eTg8kFXlKd7KT.jpg",
+            "backdrop_path": "/vq340s8DxA5Q209FT8PHA6CXYOx.jpg"
+          },
+          "budget": 120000000,
+          "genres": [
+            {
+              "id": 878,
+              "name": "Ciencia ficción"
+            },
+            {
+              "id": 28,
+              "name": "Acción"
+            },
+            {
+              "id": 12,
+              "name": "Aventura"
+            }
+          ],
+          "homepage": "https://www.sonypictures.es/pelicula/venom-el-ultimo-baile",
+          "id": 912649,
+          "imdb_id": "tt16366836",
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_title": "Venom: The Last Dance",
+          "overview": "Eddie y Venom están a la fuga. Perseguidos por sus sendos mundos y cada vez más cercados, el dúo se ve abocado a tomar una decisión devastadora que hará que caiga el telón sobre el último baile de Venom y Eddie.",
+          "popularity": 3979.853,
+          "poster_path": "/b0obWWCLRVRqRzlSK1LSGtADkLM.jpg",
+          "production_companies": [
+            {
+              "id": 5,
+              "logo_path": "/71BqEFAF4V3qjjMPCpLuyJFB9A.png",
+              "name": "Columbia Pictures",
+              "origin_country": "US"
+            },
+            {
+              "id": 84041,
+              "logo_path": "/nw4kyc29QRpNtFbdsBHkRSFavvt.png",
+              "name": "Pascal Pictures",
+              "origin_country": "US"
+            },
+            {
+              "id": 53462,
+              "logo_path": "/nx8B3Phlcse02w86RW4CJqzCnfL.png",
+              "name": "Matt Tolmach Productions",
+              "origin_country": "US"
+            },
+            {
+              "id": 91797,
+              "logo_path": null,
+              "name": "Hutch Parker Entertainment",
+              "origin_country": "US"
+            },
+            {
+              "id": 14439,
+              "logo_path": null,
+              "name": "Arad Productions",
+              "origin_country": "US"
+            }
+          ],
+          "production_countries": [
+            {
+              "iso_3166_1": "US",
+              "name": "United States of America"
+            }
+          ],
+          "release_date": "2024-10-22",
+          "revenue": 394000000,
+          "runtime": 109,
+          "spoken_languages": [
+            {
+              "english_name": "English",
+              "iso_639_1": "en",
+              "name": "English"
+            }
+          ],
+          "status": "Released",
+          "tagline": "Hasta que la muerte los separe.",
+          "title": "Venom: El último baile",
+          "video": false,
+          "vote_average": 6.432,
+          "vote_count": 729
+        }
+      ]
     }
   ],
   "preguntas": [
