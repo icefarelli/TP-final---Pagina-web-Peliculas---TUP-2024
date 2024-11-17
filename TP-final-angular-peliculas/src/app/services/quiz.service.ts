@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map, BehaviorSubject, of, forkJoin } from 'rxjs';
+import { Observable, map, BehaviorSubject, of, forkJoin, from } from 'rxjs';
+import { Question } from '../interfaces/question.interface';
 import { Usuario } from '../interfaces/auth.interface';
-import { Question, QuestionUser } from '../interfaces/question.interface';
+import { QuestionUser } from '../interfaces/question.interface';
 import { AuthService } from './auth.service';
-
 
 @Injectable({
   providedIn: 'root'
@@ -71,13 +71,7 @@ export class QuizService {
     });
   }
 
-  crearPregunta(pregunta: QuestionUser ): Observable<QuestionUser | null > {
-    // Verificar que el ID no sea null o undefined
-    if (!pregunta.id) {
-      console.error('El ID de la pregunta no puede ser null o undefined.');
-      return of(null); // Retornar un observable vacío o null
-    }
-
+  crearPregunta(pregunta: QuestionUser ): Observable<QuestionUser > {
     return this.http.post<QuestionUser >(this.apiUrlpreguntasUsers, pregunta).pipe(
       map((nuevaPregunta) => {
         this.loadUserQuestions(); // Actualiza las preguntas del usuario después de crear

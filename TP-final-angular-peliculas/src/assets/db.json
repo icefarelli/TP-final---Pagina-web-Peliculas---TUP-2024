@@ -2550,62 +2550,6 @@
       "id": "86e1"
     },
     {
-      "usuarioCreador": "1731432907075",
-      "question": "¿Qué actor interpreta a Ken en la película \"Barbie\" (2023)?",
-      "correctAnswer": "Ryan Gosling",
-      "incorrectAnswers": [
-        "Ryan Reynolds",
-        "Chris Evans",
-        "Henry Cavill"
-      ],
-      "difficulty": "easy",
-      "idUsersVotos": [],
-      "contadorVotos": 0,
-      "id": "c54f"
-    },
-    {
-      "usuarioCreador": "1731432907075",
-      "question": "¿En qué país se desarrolla la película \"Oppenheimer\" (2023)?",
-      "correctAnswer": "Estados Unidos",
-      "incorrectAnswers": [
-        "Japón",
-        "Alemania",
-        "Reino Unido"
-      ],
-      "difficulty": "easy",
-      "idUsersVotos": [],
-      "contadorVotos": 0,
-      "id": "0a9b"
-    },
-    {
-      "id": "4370",
-      "usuarioCreador": "1731432907075",
-      "question": "¿En qué película aparece el personaje Groot?",
-      "correctAnswer": "\"Guardianes de la Galaxia\"",
-      "incorrectAnswers": [
-        "\"Avengers: Endgame\"",
-        "\"Capitán América: Civil War\"",
-        "\"Thor: Ragnarok\""
-      ],
-      "difficulty": "easy",
-      "idUsersVotos": [],
-      "contadorVotos": 0
-    },
-    {
-      "id": "5a5c",
-      "usuarioCreador": "1731432907075",
-      "question": "¿Quién interpreta a Mario en la película animada \"Super Mario Bros.\" (2023)?",
-      "correctAnswer": "Chris Pratt",
-      "incorrectAnswers": [
-        "Tom Holland",
-        "Jack Black",
-        "Chris Evans"
-      ],
-      "difficulty": "easy",
-      "idUsersVotos": [],
-      "contadorVotos": 0
-    },
-    {
       "id": "8f2b",
       "usuarioCreador": "1731093925129",
       "question": "¿Cómo se llama la película de Pixar estrenada en 2023 que trata sobre elementos de la naturaleza?",
@@ -2648,16 +2592,44 @@
       "contadorVotos": 0
     },
     {
-      "id": "025e",
-      "usuarioCreador": "1731093925129",
-      "question": "¿Qué personaje de Marvel es conocido por decir \"Soy Groot\"?",
-      "correctAnswer": "Groot",
+      "usuarioCreador": "1731432907075",
+      "question": "asaaaaaaaaaaaaaaaaaaaaaa",
+      "correctAnswer": "vcxvxd",
       "incorrectAnswers": [
-        "Rocket",
-        "Thor",
-        "Loki"
+        "vxvd",
+        "xvdv",
+        "xvdxv"
       ],
       "difficulty": "easy",
+      "idUsersVotos": [],
+      "contadorVotos": 0,
+      "id": "ab61"
+    },
+    {
+      "id": "2816",
+      "usuarioCreador": "1731432907075",
+      "question": "ijoij",
+      "correctAnswer": "oijoij",
+      "incorrectAnswers": [
+        "oijoij",
+        "oijo",
+        "ijo"
+      ],
+      "difficulty": "easy",
+      "idUsersVotos": [],
+      "contadorVotos": 0
+    },
+    {
+      "id": "af09",
+      "usuarioCreador": "1731432907075",
+      "question": "lijlij",
+      "correctAnswer": "lijlij",
+      "incorrectAnswers": [
+        null,
+        null,
+        null
+      ],
+      "difficulty": "medium",
       "idUsersVotos": [],
       "contadorVotos": 0
     }

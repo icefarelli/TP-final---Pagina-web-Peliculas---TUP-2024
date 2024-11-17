@@ -1,12 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../../services/auth.service';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormArray } from '@angular/forms';
 import { QuestionUser } from '../../../interfaces/question.interface';
-import { AlertService } from '../../../services/alert.service';
-import { AuthService } from '../../../services/auth.service';
 import { QuizService } from '../../../services/quiz.service';
-
+import { AlertService } from '../../../services/alert.service';
 
 @Component({
   selector: 'app-preguntas-maker',
@@ -28,7 +27,7 @@ export class QuizMakerComponent implements OnInit {
   private authService = inject(AuthService);
   private quizService = inject(QuizService);
 
-  constructor(private fb: FormBuilder, private alertService : AlertService) {}
+  constructor(private fb: FormBuilder, private alertService: AlertService) {}
 
   ngOnInit() {
     this.initializeForm();
@@ -36,7 +35,7 @@ export class QuizMakerComponent implements OnInit {
     this.subscribeToQuizService();
   }
 
-  private initializeForm() {
+  initializeForm() {
     this.quizForm = this.fb.group({
       question: ['', Validators.required],
       correctAnswer: ['', Validators.required],
@@ -81,7 +80,7 @@ export class QuizMakerComponent implements OnInit {
               correctAnswer,
               incorrectAnswers,
               difficulty,
-              id // Asegúrate de que el ID esté incluido aquí
+              id
             }));
         } else {
           console.error('La respuesta no es un arreglo:', data);
@@ -97,10 +96,10 @@ export class QuizMakerComponent implements OnInit {
   onSubmit() {
     this.errorMessage = '';
 
+    // Verifica si el formulario es inválido
     if (this.quizForm.invalid) {
         this.errorMessage = this.getInvalidFieldsMessage();
-
-        return
+        return;
     }
 
     const pregunta: QuestionUser  = {
@@ -114,16 +113,17 @@ export class QuizMakerComponent implements OnInit {
     };
 
     if (this.currentQuestionId) {
+        // Si hay un ID de pregunta actual, se está editando
         pregunta.id = this.currentQuestionId;
 
         this.quizService.actualizarPregunta(pregunta).subscribe({
             next: (response) => {
                 console.log('Pregunta actualizada con éxito', response);
-                this.alertService.mostrarAlerta("success","Pregunta actualizada correctamente!")
+                this.alertService.mostrarAlerta("success", "Pregunta actualizada correctamente!");
                 this.quizForm.reset();
-                this.currentQuestionId = null; // Reiniciar el ID de la pregunta actual
+                this.currentQuestionId = null;
                 this.hideSuccessMessageAfterDelay();
-                this.fetchQuestions(); // Actualizar la lista de preguntas después de actualizar
+                this.fetchQuestions();
             },
             error: (error) => {
                 this.alertService.mostrarAlerta("error", "Ocurrió un error al actualizar la pregunta. Intenta de nuevo más tarde.");
@@ -132,14 +132,13 @@ export class QuizMakerComponent implements OnInit {
         });
     } else {
         // Si no hay un ID de pregunta actual, se está creando una nueva
-        // servicio para crear la pregunta
         this.quizService.crearPregunta(pregunta).subscribe({
             next: (response) => {
                 console.log('Pregunta creada con éxito', response);
                 this.alertService.mostrarAlerta("success", "Pregunta guardada correctamente!");
                 this.quizForm.reset();
                 this.hideSuccessMessageAfterDelay();
-                this.fetchQuestions(); // Actualizar la lista de preguntas después de crear
+                this.fetchQuestions();
             },
             error: (error) => {
                 console.error('Error al crear pregunta', error);
@@ -172,7 +171,6 @@ export class QuizMakerComponent implements OnInit {
 
   toggleForm() {
     if (this.showForm) {
-      // Si el formulario se está cerrando, resetea el formulario
       this.quizForm.reset();
       this.currentQuestionId = null;
     }
@@ -184,34 +182,35 @@ export class QuizMakerComponent implements OnInit {
   }
 
   showConfirmDialog: boolean = false;
-questionToDeleteId: string | null = null;
+  questionToDeleteId: string | null = null;
 
-eliminarPregunta(id: string | undefined): void {
-  if (!id) {
-    this.alertService.mostrarAlerta("error", "No se pudo eliminar la pregunta. ID no válido.");
-    console.error('El ID de la pregunta no está definido.');
-    return;
-  }
-  this.showConfirmDialog = true;
-  this.questionToDeleteId = id; 
-}
+  eliminarPregunta(id: string | undefined): void {
+    if (!id) {
+      this.alertService.mostrarAlerta("error", "No se pudo eliminar la pregunta. ID no válido.");
+      console.error('El ID de la pregunta no está definido.');
+      return;
+    }
 
-confirmDelete(confirm: boolean): void {
-  if (confirm && this.questionToDeleteId) {
-    this.quizService.deleteQuestion(this.questionToDeleteId).subscribe({
-      next: () => {
-        this.alertService.mostrarAlerta("success", "Pregunta eliminada correctamente!");
-        this.fetchQuestions(); // Actualiza la lista de preguntas después de eliminar
-        this.hideSuccessMessageAfterDelay();
-      },
-      error: (error) => {
-        this.alertService.mostrarAlerta("error", "Ocurrió un error al eliminar la pregunta. Intenta de nuevo más tarde.");
-      },
-    });
+    this.showConfirmDialog = true;
+    this.questionToDeleteId = id;
   }
-  this.showConfirmDialog = false;
-  this.questionToDeleteId = null;
-}
+
+  confirmDelete(confirm: boolean): void {
+    if (confirm && this.questionToDeleteId) {
+      this.quizService.deleteQuestion(this.questionToDeleteId).subscribe({
+        next: () => {
+          this.alertService.mostrarAlerta("success", "Pregunta eliminada correctamente!");
+          this.fetchQuestions();
+          this.hideSuccessMessageAfterDelay();
+        },
+        error: (error) => {
+          this.alertService.mostrarAlerta("error", "Ocurrió un error al eliminar la pregunta. Intenta de nuevo más tarde.");
+        },
+      });
+    }
+    this.showConfirmDialog = false;
+    this.questionToDeleteId = null;
+  }
 
   editarPregunta(question: any) {
     this.quizForm.patchValue({
@@ -220,17 +219,13 @@ confirmDelete(confirm: boolean): void {
       difficulty: question.difficulty,
     });
 
-    // Limpiar las respuestas incorrectas y agregar las existentes
     const incorrectAnswersArray = this.quizForm.get('incorrectAnswers') as FormArray;
     incorrectAnswersArray.clear();
     question.incorrectAnswers.forEach((answer: string) => {
       incorrectAnswersArray.push(this.fb.control(answer, Validators.required));
     });
 
-    this.showForm = true; // Mostrar el formulario
+    this.showForm = true;
     this.currentQuestionId = question.id; // Guardar el ID de la pregunta actual
   }
-
-
-
 }

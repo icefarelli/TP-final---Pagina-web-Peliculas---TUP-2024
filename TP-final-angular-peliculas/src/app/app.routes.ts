@@ -28,10 +28,8 @@ export const routes: Routes = [
     canActivate: [authGuard] },
   { path: 'quiz', component: QuizComponent, children: [
       { path: '', component: QuizInicioComponent }, // Ruta para el inicio del quiz
-      { path: 'question', component: QuizPreguntasComponent,
-        canActivate: [authGuard] }, // Ruta para las preguntas
-      { path: 'result', component: QuizResultadosComponent,
-        canActivate: [authGuard] }, // Ruta para los resultados
+      { path: 'question', component: QuizPreguntasComponent }, // Ruta para las preguntas
+      { path: 'result', component: QuizResultadosComponent }, // Ruta para los resultados
       { path: 'qMaker',
         component: QuizMakerComponent,
         canActivate: [authGuard]
@@ -39,8 +37,7 @@ export const routes: Routes = [
     ]
   },
   { path: 'actor/:id',
-    component: DetalleActorComponent,
-    canActivate: [authGuard] },
+    component: DetalleActorComponent },
   {
     path:'favoritos/agregar',
     component : AgregarFavoritosComponent,
