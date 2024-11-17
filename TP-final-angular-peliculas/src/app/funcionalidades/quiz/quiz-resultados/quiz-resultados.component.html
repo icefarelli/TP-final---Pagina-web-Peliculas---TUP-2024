@@ -1,0 +1,13 @@
+<div class="quiz-result-container">
+  <h1>Resultado del Movie Challenge</h1>
+  <div class="display-puntuacion">
+    <span class="puntuacionClase">{{ puntuacion }}</span>
+    <span class="totalClase">/{{ maximoDePreguntas }}</span>
+  </div>
+  <p class="mensajeFinalClase">
+    <span class="emoji">{{ mensajeFinal }}</span>
+  </p>
+  <button (click)="resetearQuiz()" class="restart-button">
+    Jugar de nuevo
+  </button>
+</div>

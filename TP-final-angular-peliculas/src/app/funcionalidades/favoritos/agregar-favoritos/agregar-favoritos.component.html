@@ -1,0 +1,45 @@
+<div class="container-form">
+  <h2 class="form-title">Agregar Nueva Lista de Favoritos</h2>
+  <form [formGroup]="listaForm" (ngSubmit)="agregarLista()" class="styled-form">
+    <!-- Campo Nombre de la Lista -->
+    <div class="form-group">
+      <label for="nombre" class="form-label">Nombre de la Lista</label>
+      <input
+        type="text"
+        id="nombre"
+        formControlName="nombre"
+        class="form-control"
+        [class.is-invalid]="listaForm.get('nombre')?.invalid && listaForm.get('nombre')?.touched"
+        placeholder="Ej. Películas favoritas"
+      />
+      <div *ngIf="listaForm.get('nombre')?.invalid && listaForm.get('nombre')?.touched" class="invalid-feedback">
+        <div *ngIf="listaForm.get('nombre')?.errors?.['required']">El nombre es requerido.</div>
+        <div *ngIf="listaForm.get('nombre')?.errors?.['minlength']">
+          El nombre debe tener al menos 5 caracteres.
+        </div>
+      </div>
+    </div>
+
+    <!-- Campo Descripción -->
+    <div class="form-group">
+      <label for="descripcion" class="form-label">Descripción</label>
+      <textarea
+        id="descripcion"
+        formControlName="descripcion"
+        class="form-control"
+        [class.is-invalid]="listaForm.get('descripcion')?.invalid && listaForm.get('descripcion')?.touched"
+        placeholder="Ej. Lista de todas las películas que quiero ver este año"
+      ></textarea>
+      <div *ngIf="listaForm.get('descripcion')?.invalid && listaForm.get('descripcion')?.touched" class="invalid-feedback">
+        <div *ngIf="listaForm.get('descripcion')?.errors?.['required']">La descripción es requerida.</div>
+        <div *ngIf="listaForm.get('descripcion')?.errors?.['minlength']">
+          La descripción debe tener al menos 10 caracteres.
+        </div>
+      </div>
+    </div>
+
+    <!-- Botón Agregar -->
+    <button type="submit" class="btn-submit" [disabled]="listaForm.invalid">Agregar Lista</button>
+  </form>
+</div>
+

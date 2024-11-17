@@ -1,0 +1,59 @@
+.app-header {
+  background: #460808;
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  height: 50px;
+  cursor: default;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.auth-btn {
+  padding: 0.5rem 1rem;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  background-color: #460808;
+  color: white;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.auth-btn:not(.logout) {
+  background: #460808;
+  color: white;
+}
+
+.auth-btn:not(.logout):hover {
+  background: #8b1c11;
+}
+
+.auth-btn.logout {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.auth-btn.logout:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.usuario-nombre {
+  color: #fff;
+  font-weight: 500;
+}

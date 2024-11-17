@@ -1,0 +1,101 @@
+<div class="reviews-container">
+  <div class="reviews-header">
+    <h2>Reseñas</h2>
+    <button class="add-review-btn" (click)="toggleReviewForm()" *ngIf="currentUser">
+      {{ showReviewForm ? 'Cancelar' : 'Crear Reseña' }}
+    </button>
+  </div>
+
+  <!-- Formulario para crear reseña -->
+  <div class="review-form" *ngIf="showReviewForm && currentUser">
+    <form (ngSubmit)="submitReview()" #reviewForm="ngForm">
+      <div class="form-group">
+        <label for="content">Reseña:</label>
+        <textarea
+          id="content"
+          [(ngModel)]="newReview.content"
+          name="content"
+          required></textarea>
+      </div>
+
+      <!-- Puntuación con estrellas -->
+      <div class="form-group">
+        <label>Puntuación:</label>
+        <div class="stars">
+          <span *ngFor="let star of stars; let i = index"
+                [class.filled]="i < newReview.rating"
+                (click)="setRating(i + 1)">
+            ★
+          </span>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="!reviewForm.valid || newReview.rating === 0"
+        class="edit-btn">
+        Publicar Reseña
+      </button>
+    </form>
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    Cargando reseñas...
+  </div>
+
+  <div *ngIf="error" class="error">
+    {{ error }}
+  </div>
+
+  <div *ngIf="!loading && !error && getAllReviews().length === 0" class="no-reviews">
+    No hay reseñas disponibles para esta película.
+  </div>
+
+  <!-- Mostrar reseñas guardadas -->
+  <div *ngIf="getAllReviews().length > 0" class="review-slider">
+    <button
+      class="nav-button prev"
+      (click)="previousReview()"
+      [disabled]="currentIndex === 0">
+      ←
+    </button>
+
+    <div class="review-card">
+      <div class="review-header">
+        <h3>{{ getCurrentReview().author || getCurrentReview().username }}</h3>
+        <span class="review-date">{{ getCurrentReview().created_at | date }}</span>
+      </div>
+      <p class="review-content">{{ getCurrentReview().content }}</p>
+
+      <!-- Mostrar las estrellas para las reseñas guardadas -->
+      <div class="review-rating">
+        <span class="stars">
+          <span *ngFor="let star of [].constructor(getCurrentReview().rating); let i = index"
+                [class.filled]="i < getCurrentReview().rating">
+            ★
+          </span>
+        </span>
+      </div>
+
+      <!-- Agregar dentro de review-card si quieres permitir editar/eliminar -->
+      <div class="review-actions" class="button-container" *ngIf="canEditReview(getCurrentReview())">
+        <button class="edit-btn" (click)="editReview(getCurrentReview())">Editar </button>
+        <button class="delete-btn" (click)="deleteReview(getCurrentReview().id)"> Eliminar</button>
+      </div>
+
+      <div class="review-counter">
+        {{ currentIndex + 1 }} / {{ getAllReviews().length }}
+      </div>
+
+    </div>
+
+    <button
+    class="nav-button next"
+    (click)="nextReview()"
+    [disabled]="currentIndex === getAllReviews().length - 1">
+    →
+  </button>
+
+  </div>
+
+</div>

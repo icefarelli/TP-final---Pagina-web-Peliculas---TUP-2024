@@ -1,0 +1,103 @@
+.perfil-details {
+  background-color: #7c2b2b;
+  padding: 20px;
+  color: #d4d3d3; 
+  margin: 20px auto 0; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
+.perfil-details h2 {
+  font-size: 2.5em; 
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.perfil-details p {
+  font-size: 1.1em; 
+  line-height: 1.6; 
+  margin-bottom: 10px;
+}
+.btn-eliminar {
+  background-color: #dc3545; 
+  color: #fff; 
+  padding: 10px 20px;
+  border: none; 
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em; 
+  transition: background-color 0.3s, transform 0.2s; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+}
+
+.btn-eliminar:hover {
+  background-color: #c82333; 
+  transform: scale(1.05); 
+}
+
+.btn-eliminar:active {
+  background-color: #bd2130; 
+  transform: scale(1); 
+}
+
+
+.btn-editar {
+  background-color: #ffc107;
+  color: #fff;
+  padding: 10px 20px;
+  border: none; 
+  border-radius: 5px;
+  cursor: pointer; 
+  font-size: 1.1em; 
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  margin-left: 15px;
+}
+
+.btn-editar:hover {
+  background-color: #ca9907; 
+  transform: scale(1.05); 
+}
+
+.btn-editar:active {
+  background-color: #ffc107; 
+  transform: scale(1);
+}
+
+.btn-cambioContra {
+  background-color: #0787ff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none; 
+  border-radius: 5px;
+  cursor: pointer; 
+  font-size: 1.1em; 
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  margin-left: 15px;
+}
+
+.btn-cambioContra:hover {
+  background-color: #075fb1; 
+  transform: scale(1.05); 
+}
+
+.btn-cambioContra:active {
+  background-color: #0787ff; 
+  transform: scale(1);
+}
+
+@media (max-width: 768px) {
+  .perfil-details {
+    padding: 15px; 
+    margin: 15px auto 0;
+  }
+
+  .perfil-details h2 {
+    font-size: 2em; 
+  }
+
+
+
+
+}

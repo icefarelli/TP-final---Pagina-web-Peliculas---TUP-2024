@@ -1,0 +1,17 @@
+<div class="actor-details">
+  <h1>{{ actor.name }}</h1>
+  <img [src]="obtenerUrlImagen(actor.profile_path)" alt="{{ actor.name }}" />
+  <p><strong>Biografía:</strong> {{ actor.biography }}</p>
+  <p><strong>Fecha de nacimiento:</strong> {{ actor.birthday | date:'longDate' }}</p>
+  <p><strong>Lugar de nacimiento:</strong> {{ actor.place_of_birth }}</p>
+
+  <h2>Películas</h2>
+  <div class="peliculas-grid">
+    <div *ngFor="let pelicula of peliculas">
+      <a [routerLink]="['/pelicula', pelicula.id]"> <!-- Enlace al detalle de la película -->
+        <img [src]="obtenerUrlImagen(pelicula.poster_path)" alt="{{ pelicula.title }}" />
+      </a>
+      <p>{{ pelicula.title }} ({{ pelicula.release_date | date: 'yyyy' }})</p>
+    </div>
+  </div>
+</div>
