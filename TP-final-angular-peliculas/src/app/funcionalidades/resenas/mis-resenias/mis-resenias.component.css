@@ -105,31 +105,6 @@
   font-size: 0.9em; /* Tamaño de fuente más pequeño */
 }
 
-/* Media Queries para pantallas pequeñas */
-@media (max-width: 768px) {
-  .mis-resenas-container {
-    padding: 15px; /* Ajustar espaciado en pantallas más pequeñas */
-    margin: 15px auto; /* Ajustar margen superior en pantallas más pequeñas */
-  }
-
-  .mis-resenas-container h2 {
-    font-size: 2em; /* Ajustar tamaño de fuente en pantallas más pequeñas */
-  }
-
-  .reseña-card {
-    flex-direction: column; /* Cambiar a columna en pantallas más pequeñas */
-    align-items: flex-start; /* Alinear elementos al inicio */
-  }
-
-  .movie-poster {
-    width: 80%; /* Ajustar el ancho de la imagen en pantallas más pequeñas */
-    margin: 10px 0; /* Margen superior e inferior */
-  }
-
-  .review-info {
-    margin-right: 0; /* Eliminar margen a la derecha en pantallas más pequeñas */
-  }
-}
 
 .review-form {
   background-color: #7c2b2b; /* Color de fondo similar al contenedor de reseñas */

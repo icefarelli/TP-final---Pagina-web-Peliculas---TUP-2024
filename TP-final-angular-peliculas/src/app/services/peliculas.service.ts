@@ -59,7 +59,7 @@ obtenerPeliculasPorActor(actorId: number): Observable<any> {
 }
 
 obtenerTodasLasPeliculas(): Observable<Pelicula[]> {
-  const totalPaginas = 250; // Cambia esto según el número total de páginas que esperas
+  const totalPaginas = 250; // Traemos un total de 250 paginas de la api para no hacer tan pesada la peticion
   const peticiones: Observable<PeliculaResponse>[] = [];
 
   for (let i = 1; i <= totalPaginas; i++) {
@@ -67,12 +67,9 @@ obtenerTodasLasPeliculas(): Observable<Pelicula[]> {
       `${this.baseUrl}/movie/popular?api_key=${this.apiKey}&language=es-ES&page=${i}`
     ));
   }
-
-  // Utiliza forkJoin para combinar todas las solicitudes
   return forkJoin(peticiones).pipe(
     map(respuestas => {
-      // Combina todos los resultados en un solo array
-      return respuestas.flatMap(respuesta => respuesta.results);
+      return respuestas.flatMap(respuesta => respuesta.results); //guardamos las respuestas en un array
     })
   );
 }

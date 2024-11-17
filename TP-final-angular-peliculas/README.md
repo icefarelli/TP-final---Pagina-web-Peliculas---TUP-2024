@@ -63,6 +63,10 @@ Sigue estos pasos para configurar y ejecutar el proyecto:
 5. **Accede a la aplicación**:
    Abre tu navegador y ve a [http://localhost:4200](http://localhost:4200).
 
+6. **Uso de la aplicación**:
+   El usuario "admin" contraseña "admin" ya está creado en el servidor JSON. Puedes crear nuevos usuarios y películas a través de
+   la interfaz de usuario de la aplicación, pero admin ya contiene preguntas y respuestas para el quiz que permiten probar las funcionalidades de este modulo. 
+
 ---
 
 ## 🎮 Funcionalidades principales

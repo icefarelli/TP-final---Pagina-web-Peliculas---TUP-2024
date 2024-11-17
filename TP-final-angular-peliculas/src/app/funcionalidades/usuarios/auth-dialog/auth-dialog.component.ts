@@ -53,7 +53,7 @@ export class AuthDialogComponent {
       this.cerrar();
     }
   }
-
+  //armamos un metodo que se llama en el html para que en base a lo que se quiera hacer, lleve al metodo correspondinete
   enviarFormulario() {
     if (this.modoRegistro) {
       this.registrar();
@@ -69,12 +69,10 @@ export class AuthDialogComponent {
       this.error = 'Por favor complete todos los campos obligatorios';
       return;
     }
-
     this.cargando = true;
     this.authService.registrarUsuario(this.usuario).subscribe({
       next: (exito) => {
         if (exito) {
-          /* this.mensaje = '¡Usuario registrado exitosamente!'; */
           this.error = '';
           setTimeout(() => this.cerrar(), 2000);
         }
@@ -92,7 +90,7 @@ export class AuthDialogComponent {
   iniciarSesion() {
     if (!this.usuario.usuario || !this.usuario.contrasenia) {
       this.error = 'Por favor complete todos los campos obligatorios';
-      this.mostrarRegistro = false; // Ocultar el boton de registro
+      this.mostrarRegistro = false;
       return;
     }
 
@@ -102,24 +100,23 @@ export class AuthDialogComponent {
         if (exito) {
           const usuarioActual = JSON.parse(localStorage.getItem('sesionActual') || '{}');
 
-          // Guardar el userId (ID del usuario) en localStorage como clave separada
+          
           if (usuarioActual && usuarioActual.id) {
-            localStorage.setItem('userId', usuarioActual.id.toString());
+            localStorage.setItem('userId', usuarioActual.id.toString());  // guardamos el ID en localstorage para usarlo dentro de la navegacion
           }
-          /* this.mensaje = '¡Inicio de sesión exitoso!'; */
           this.error = '';
-          this.mostrarRegistro = false; // Ocultar el botón de registro
+          this.mostrarRegistro = false; 
           setTimeout(() => this.cerrar(), 2000);
         } else {
           this.error = 'Usuario o contraseña incorrectos. ¿No tiene una cuenta?';
           this.mensaje = '';
-          this.mostrarRegistro = true; // Mostrar el botón de registro
+          this.mostrarRegistro = true;
         }
       },
       error: (error) => {
         this.error = 'Error al iniciar sesión';
         console.error(error);
-        this.mostrarRegistro = false; // Ocultar el botón de registro
+        this.mostrarRegistro = false;
       },
       complete: () => {
         this.cargando = false;
@@ -131,12 +128,10 @@ export class AuthDialogComponent {
       this.error = 'Por favor ingrese su email';
       return;
     }
-
     this.cargando = true;
     this.authService.recuperarContraseña(this.usuario.email).subscribe({
       next: (exito) => {
         if (exito) {
-          /* this.mensaje = 'Se ha enviado un email con instrucciones para recuperar tu contraseña'; */
           this.error = '';
           setTimeout(() => this.cerrar(), 2000);
         }
@@ -186,7 +181,7 @@ export class AuthDialogComponent {
         next: (exito) => {
           if (exito) {
             this.mensaje = 'Usuario eliminado exitosamente';
-            this.cerrar(); // Cerrar el diálogo
+            this.cerrar();
           } else {
             this.error = 'Error al eliminar el usuario';
           }

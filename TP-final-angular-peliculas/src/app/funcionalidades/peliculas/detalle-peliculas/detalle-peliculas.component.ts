@@ -19,7 +19,7 @@ import { Pelicula } from '../../../interfaces/pelicula.interface';
 })
 export class DetallePeliculasComponent implements OnInit {
   pelicula?: Pelicula;
-  elenco: any[] = []; // Nueva propiedad para el elenco
+  elenco: any[] = [];
   listasFavoritos: Favoritos[] = [];
   listaSeleccionada: Favoritos | null = null;
   userId: number;
@@ -41,8 +41,8 @@ export class DetallePeliculasComponent implements OnInit {
       this.peliculasService.obtenerDetallePelicula(id).subscribe(
         pelicula => {
           this.pelicula = pelicula;
-          this.cargarElenco(id); // Llama a cargar el elenco
-          this.cargarListasFavoritos(); // Llama a cargar listas de favoritos
+          this.cargarElenco(id); 
+          this.cargarListasFavoritos();
 
         }
       );
@@ -52,7 +52,7 @@ export class DetallePeliculasComponent implements OnInit {
   cargarElenco(id: number) {
     this.peliculasService.obtenerElencoPelicula(id).subscribe(
       response => {
-        this.elenco = response.cast; // Asigna el elenco a la propiedad
+        this.elenco = response.cast; 
       },
       error => {
         console.error('Error al cargar el elenco:', error);
@@ -72,9 +72,8 @@ export class DetallePeliculasComponent implements OnInit {
 
   agregarPeliculaAFavoritos() {
     if (this.listaSeleccionada && this.pelicula) {
-      // Verifico si la película ya está en la lista
-    const peliculaYaEnLista = this.listaSeleccionada.peliculas.some(
-      (p: Pelicula) => p.id === this.pelicula?.id
+    const peliculaYaEnLista = this.listaSeleccionada.peliculas.some(   
+      (p: Pelicula) => p.id === this.pelicula?.id // Verifico si la película ya está en la lista
     );
 
     if (peliculaYaEnLista) {

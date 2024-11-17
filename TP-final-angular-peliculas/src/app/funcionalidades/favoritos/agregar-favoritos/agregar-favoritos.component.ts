@@ -39,14 +39,11 @@ export class AgregarFavoritosComponent implements OnInit{
   // Método para agregar la lista de favoritos
   agregarLista() {
     if (this.listaForm.valid) {
-      // Primero, obtengo la lista actual de favoritos para calcular el siguiente ID
       this.favoritosService.getListasPorUsuario(this.userId).subscribe({
         next: (listas) => {
-          // Calcula el siguiente ID basado en el ID más alto de las listas existentes
           const maxId = listas.length > 0 ? Math.max(...listas.map(lista => parseInt(lista.id))) : 0;
           const nuevoId = (maxId + 1).toString();
 
-          // Crea la nueva lista con el ID incrementado
 
       const nuevaLista: Favoritos = {
         id: nuevoId,
@@ -56,12 +53,9 @@ export class AgregarFavoritosComponent implements OnInit{
         peliculas: [],
       };
 
-          // Llama a postListas para agregar la nueva lista
       this.favoritosService.postListasPorUsuario(this.userId,nuevaLista).subscribe({
         next: (lista) => {
-        //console.log('Lista agregada:', lista);
         this.alertService.mostrarAlerta('success', 'Lista agregada con éxito');
-        // Navegar de regreso a la página de listas de favoritos
          this.router.navigate(['/favoritos']);
             },
         error: (err) => {

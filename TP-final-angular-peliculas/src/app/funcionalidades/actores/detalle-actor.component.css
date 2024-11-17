@@ -56,16 +56,3 @@
   color: #ffffff;
 }
 
-@media (max-width: 768px) {
-  .actor-details {
-    padding: 15px;
-  }
-
-  .actor-details h1 {
-    font-size: 2em;
-  }
-
-  .peliculas-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  }
-}

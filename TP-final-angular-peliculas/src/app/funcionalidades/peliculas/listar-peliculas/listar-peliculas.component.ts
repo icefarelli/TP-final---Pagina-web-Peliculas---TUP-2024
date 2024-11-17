@@ -29,7 +29,10 @@ export class ListarPeliculasComponent implements OnInit, OnDestroy {
     anio: '',
     calificacionMinima: 0
   };
-  cantidadAMostrar: number = 200; //de aca se modifica la cantidad de peliculas que quiero mostrar por pantalla
+
+  //de aca se modifica la cantidad de peliculas que quiero mostrar por pantalla, esto es para reducir el tiempo de carga. 
+  //Las busquedas se hacen sobre el total de peliculas
+  cantidadAMostrar: number = 200; 
 
   constructor(
     private peliculasService: PeliculasService,
@@ -69,7 +72,7 @@ export class ListarPeliculasComponent implements OnInit, OnDestroy {
     this.peliculasService.obtenerTodasLasPeliculas().subscribe({
       next: (resultado) => {
         this.peliculas = resultado; 
-        this.peliculasFiltradas = this.peliculas.slice(0, this.cantidadAMostrar); // aca se modifica la cantidad que quiero mostrar
+        this.peliculasFiltradas = this.peliculas.slice(0, this.cantidadAMostrar);
       },
       error: (error) => {
         console.error('Error al cargar datos:', error);

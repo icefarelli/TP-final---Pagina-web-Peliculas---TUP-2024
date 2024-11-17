@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map, BehaviorSubject, of, forkJoin } from 'rxjs';
+import { Observable, map, BehaviorSubject, of, forkJoin, from } from 'rxjs';
+import { Question } from '../interfaces/question.interface';
 import { Usuario } from '../interfaces/auth.interface';
-import { Question, QuestionUser } from '../interfaces/question.interface';
+import { QuestionUser } from '../interfaces/question.interface';
 import { AuthService } from './auth.service';
-
 
 @Injectable({
   providedIn: 'root'
