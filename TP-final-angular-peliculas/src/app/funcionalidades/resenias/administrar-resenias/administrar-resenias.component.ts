@@ -102,7 +102,7 @@ export class AdministrarReseniasComponent implements OnInit {
   }
 
   submitReview() {
-    if (this.newReview.content && this.currentUser) {
+    if (this.newReview.content && this.currentUser ) {
       if (this.currentReviewId) {
         // Si hay un ID de reseña actual, significa que se está editando
         this.reseniasService.updateLocalReview(this.currentReviewId, this.newReview.content, this.newReview.rating).subscribe({
@@ -123,13 +123,13 @@ export class AdministrarReseniasComponent implements OnInit {
         // Crear una nueva reseña
         this.reseniasService.addLocalReview(
           this.movieId,
-          this.currentUser.usuario,
+          this.currentUser .usuario,
           this.newReview.content,
           this.newReview.rating
         ).subscribe({
           next: (newReview) => {
             this.localReviews.push(newReview);  // Agrega la nueva reseña a la lista local
-            this.alertService.mostrarAlerta('success', 'Reseña guardada con éxito');
+            this.alertService.mostrarAlerta('success', 'Reseña agregada con éxito'); // Mensaje modificado
             this.resetForm();  // Reinicia el formulario
           },
           error: (error) => {
@@ -149,8 +149,8 @@ resetForm() {
 
 // Opcional: Métodos para editar y eliminar reseñas
 canEditReview(review: any): boolean {
-  return review.isLocal && this.currentUser &&
-         review.author === this.currentUser.usuario;
+  return review.isLocal && this.currentUser  &&
+         review.author === this.currentUser .usuario;
 }
 
 deleteReview(reviewId: number) {
@@ -158,7 +158,7 @@ deleteReview(reviewId: number) {
     this.reseniasService.deleteReview(reviewId).subscribe({
       next: () => {
         this.loadLocalReviews();
-        this.alertService.mostrarAlerta('success', 'Reseña eliminada con éxito');
+        this.alertService.mostrarAlerta('success', 'Reseña eliminada con éxito'); // Mensaje de éxito
       },
       error: (error) => {
         this.alertService.mostrarAlerta('error', 'Error al eliminar la reseña');
@@ -174,6 +174,7 @@ editReview(review: any): void {
   this.newReview.rating = review.rating;   // Cargar la puntuación en el formulario
   this.showReviewForm = true;              // Mostrar el formulario de reseña para editar
   this.currentReviewId = review.id;        // Guardar el ID de la reseña actual
+  this.alertService.mostrarAlerta('info', 'Estás editando la reseña'); // Mensaje al editar
 }
 
 setRating(rating: number) {

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { QuizService } from '../services/quiz.service';
 import { CommonModule } from '@angular/common';
-import { style } from '@angular/animations';
 
 @Component({
   selector: 'app-quiz-resultados',
