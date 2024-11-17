@@ -1,22 +1,21 @@
-import { Routes } from "@angular/router";
+import {Routes } from "@angular/router";
 import { ListarPeliculasComponent } from './funcionalidades/peliculas/listar-peliculas/listar-peliculas.component';
 import { DetallePeliculasComponent } from './funcionalidades/peliculas/detalle-peliculas/detalle-peliculas.component';
 import { HomeComponent } from './pages/home/home.component';
-import { AdministrarReseniasComponent } from './funcionalidades/resenias/administrar-resenias/administrar-resenias.component';
-import { DetalleActorComponent } from './funcionalidades/actores/detalle-actor/detalle-actor.component';
+import { AdministrarReseniasComponent } from './funcionalidades/resenas/administrar-resenias/administrar-resenias.component';
 import { FavoritosComponent } from './pages/favoritos/favoritos.component';
 import { AgregarFavoritosComponent } from './funcionalidades/favoritos/agregar-favoritos/agregar-favoritos.component';
 import { ModificarFavoritosComponent } from './funcionalidades/favoritos/modificar-favoritos/modificar-favoritos.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { QuizComponent } from './quiz/quiz.component'
-import { QuizInicioComponent } from './quiz/quiz-inicio/quiz-inicio.component';
-import { QuizPreguntasComponent } from './quiz/quiz-preguntas/quiz-preguntas.component';
-import { QuizResultadosComponent } from './quiz/quiz-resultados/quiz-resultados.component';
-import { EditarPerfilComponent } from "./editar-perfil/editar-perfil.component";
-import { MisResenasComponent } from "./funcionalidades/resenas/mis-resenas/mis-resenas.component";
-import { CambioContraseniaComponent } from "./compartidos/cambio-contrasenia/cambio-contrasenia.component";
-import { QuizMakerComponent } from './quiz/quiz-maker/quiz-maker.component';
-
+import { UserProfileComponent } from './funcionalidades/usuarios/user-profile/user-profile.component';
+import { QuizComponent } from './funcionalidades/quiz/quiz.component'
+import { QuizInicioComponent } from './funcionalidades/quiz/quiz-inicio/quiz-inicio.component';
+import { QuizPreguntasComponent } from './funcionalidades/quiz/quiz-preguntas/quiz-preguntas.component';
+import { QuizResultadosComponent } from './funcionalidades/quiz/quiz-resultados/quiz-resultados.component';
+import { MisResenasComponent } from "./funcionalidades/resenas/mis-resenias/mis-resenias.component";
+import { QuizMakerComponent } from './funcionalidades/quiz/quiz-maker/quiz-maker.component';
+import { DetalleActorComponent } from "./funcionalidades/actores/detalle-actor.component";
+import { CambioContraseniaComponent } from "./funcionalidades/usuarios/cambio-contrasenia/cambio-contrasenia.component";
+import { EditarPerfilComponent } from "./funcionalidades/usuarios/editar-perfil/editar-perfil.component";
 
 export const routes: Routes = [
   { path: '',
@@ -42,6 +41,7 @@ export const routes: Routes = [
       { path: 'question', component: QuizPreguntasComponent }, // Ruta para las preguntas
       { path: 'result', component: QuizResultadosComponent }, // Ruta para los resultados
       { path: 'qMaker', component: QuizMakerComponent},
+
     ]
   },
   { path: 'actor/:id',

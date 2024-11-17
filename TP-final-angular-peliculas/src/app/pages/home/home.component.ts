@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { PeliculasService } from '../../nucleo/servicios/peliculas.service';
-import { Pelicula, PeliculaResponse } from '../../nucleo/modelos/pelicula.interface';
-import { RouterLink } from '@angular/router';
-import { ListarPeliculasComponent } from '../../funcionalidades/peliculas/listar-peliculas/listar-peliculas.component';
+import { Router, RouterModule } from '@angular/router';
+import { PeliculasService } from '../../services/peliculas.service';
 import { CarouselComponent } from '../../funcionalidades/carrusel/carrusel.component';
+import { PeliculaResponse } from '../../interfaces/pelicula.interface';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterModule, CarouselComponent],
+  imports: [CommonModule, RouterModule, CarouselComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

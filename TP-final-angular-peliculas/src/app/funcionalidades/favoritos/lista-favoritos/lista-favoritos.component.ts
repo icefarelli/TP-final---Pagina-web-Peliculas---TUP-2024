@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { Favoritos } from '../../../nucleo/modelos/favoritos';
-import { FavoritosService } from '../../../nucleo/servicios/favoritos.service';
+import { FavoritosService } from '../../../services/favoritos.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ModificarFavoritosComponent } from '../modificar-favoritos/modificar-favoritos.component';
-import { AlertService } from '../../../nucleo/servicios/alert.service';
+import { AlertService } from '../../../services/alert.service';
+import { Favoritos } from '../../../interfaces/favoritos.interface';
 
 @Component({
   selector: 'app-lista-favoritos',

@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Subject, debounceTime, distinctUntilChanged, switchMap, forkJoin } from 'rxjs';
-import { Genero, PeliculasService } from '../../../nucleo/servicios/peliculas.service';
-import { Pelicula } from '../../../nucleo/modelos/pelicula.interface';
+import { Genero } from '../../../interfaces/genero.interface';
+import { Pelicula } from '../../../interfaces/pelicula.interface';
+import { PeliculasService } from '../../../services/peliculas.service';
 
 
 @Component({
@@ -28,7 +29,10 @@ export class ListarPeliculasComponent implements OnInit, OnDestroy {
     anio: '',
     calificacionMinima: 0
   };
-  cantidadAMostrar: number = 200; //de aca se modifica la cantidad de peliculas que quiero mostrar por pantalla
+
+  //de aca se modifica la cantidad de peliculas que quiero mostrar por pantalla, esto es para reducir el tiempo de carga. 
+  //Las busquedas se hacen sobre el total de peliculas
+  cantidadAMostrar: number = 200; 
 
   constructor(
     private peliculasService: PeliculasService,
@@ -68,7 +72,7 @@ export class ListarPeliculasComponent implements OnInit, OnDestroy {
     this.peliculasService.obtenerTodasLasPeliculas().subscribe({
       next: (resultado) => {
         this.peliculas = resultado; 
-        this.peliculasFiltradas = this.peliculas.slice(0, this.cantidadAMostrar); // aca se modifica la cantidad que quiero mostrar
+        this.peliculasFiltradas = this.peliculas.slice(0, this.cantidadAMostrar);
       },
       error: (error) => {
         console.error('Error al cargar datos:', error);

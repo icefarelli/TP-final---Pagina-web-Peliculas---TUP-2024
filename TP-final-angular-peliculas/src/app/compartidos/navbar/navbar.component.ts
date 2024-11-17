@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AuthService } from '../../nucleo/servicios/auth.service';
-import { Usuario } from '../../nucleo/servicios/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
+import { Usuario } from '../../interfaces/auth.interface';
 
 
 

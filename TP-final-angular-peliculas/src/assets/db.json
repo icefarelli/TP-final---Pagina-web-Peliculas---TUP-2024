@@ -1,0 +1,2665 @@
+{
+  "usuarios": [
+    {
+      "id": "1731093925129",
+      "usuario": "admin",
+      "contrasenia": "admin",
+      "nombre": "admin",
+      "apellido": "admin",
+      "email": "admin@utn.com.ar",
+      "fechaNacimiento": "1955-12-31"
+    },
+    {
+      "id": "1731098826438",
+      "usuario": "icefarelli",
+      "contrasenia": "ivan1234",
+      "nombre": "Ivan Ernestoo",
+      "apellido": "Cefarelli",
+      "email": "ivan.cefarelli@gmail.com",
+      "fechaNacimiento": "1995-03-06"
+    },
+    {
+      "id": "1731432907075",
+      "usuario": "joseLuis",
+      "contrasenia": "1234",
+      "nombre": "Jose Luis",
+      "apellido": "Salas",
+      "email": "jlsalas86@hotmail.com",
+      "fechaNacimiento": "1986-08-18"
+    }
+  ],
+  "reseñas": [
+    {
+      "id": "e67e",
+      "movieId": 1184918,
+      "author": "admin",
+      "content": "asad",
+      "created_at": "2024-11-08T19:15:26.785Z",
+      "isLocal": true
+    },
+    {
+      "id": "b2a7",
+      "movieId": 1184918,
+      "author": "admin",
+      "content": "sadasdasd",
+      "created_at": "2024-11-08T19:18:23.373Z",
+      "isLocal": true
+    },
+    {
+      "id": "5bf3",
+      "movieId": 1034541,
+      "author": "admin",
+      "content": "reseña de prueba en pelicula Terrifier 3\n",
+      "created_at": "2024-11-08T20:39:05.507Z",
+      "isLocal": true
+    },
+    {
+      "id": "4d99",
+      "movieId": 1118031,
+      "author": "icefarelli",
+      "content": "ASDASDASDASDASDASDASD",
+      "created_at": "2024-11-16T18:58:54.684Z",
+      "rating": 2,
+      "isLocal": true,
+      "updated_at": "2024-11-16T18:59:01.614Z"
+    }
+  ],
+  "favoritos": [
+    {
+      "id": "3",
+      "userId": 1731098826438,
+      "nombre": "Peliculas",
+      "descripcion": "Todas las peliculas",
+      "peliculas": []
+    }
+  ],
+  "preguntas": [
+    {
+      "category": "Film & TV",
+      "question": "¿Qué significa TIE en referencia al TIE Fighter en 'Star Wars'?",
+      "correctAnswer": "Twin Ion Engine",
+      "incorrectAnswers": [
+        "Twin Iron Engine",
+        "Twin Interceptor Engine",
+        "Twin Inception Engine"
+      ],
+      "difficulty": "medium",
+      "id": "dbaf"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién dio voz al personaje Draco en la película 'DragonHeart' de 1996?",
+      "correctAnswer": "Sean Connery",
+      "incorrectAnswers": [
+        "Dennis Quaid",
+        "Pete Postlethwaite",
+        "Brian Thompson"
+      ],
+      "difficulty": "medium",
+      "id": "1eb4"
+    },
+    {
+      "category": "Film & TV",
+      "question": "En la película 'Interstellar', ¿cuánto tiempo pasaron en el planeta de Miller?",
+      "correctAnswer": "23 años, 4 meses y 8 días",
+      "incorrectAnswers": [
+        "15 años, 2 meses y 15 días",
+        "10 meses y 6 días",
+        "26 años, 4 meses y 10 días"
+      ],
+      "difficulty": "hard",
+      "id": "bf2e"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué tipo de queso, adorado por Wallace y Gromit, aumentó su precio de venta después de sus exitosos cortometrajes?",
+      "correctAnswer": "Wensleydale",
+      "incorrectAnswers": [
+        "Cheddar",
+        "Queso Lunar",
+        "Edam"
+      ],
+      "difficulty": "medium",
+      "id": "0b27"
+    },
+    {
+      "category": "Film & TV",
+      "question": "En Buscando a Nemo, ¿cuál era el nombre de la madre de Nemo?",
+      "correctAnswer": "Coral",
+      "incorrectAnswers": [
+        "Sandy",
+        "Pearl",
+        "Shelly"
+      ],
+      "difficulty": "medium",
+      "id": "96a9"
+    },
+    {
+      "category": "Film & TV",
+      "question": "En la película 'Requiem for a Dream', ¿a qué droga se vuelve adicto el personaje de Jared Leto?",
+      "correctAnswer": "Heroína",
+      "incorrectAnswers": [
+        "Cocaína",
+        "Marihuana",
+        "Oxycodona"
+      ],
+      "difficulty": "medium",
+      "id": "2e59"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué película animada dirigió Steven Lisberger en 1980 antes de pasar a dirigir Tron?",
+      "correctAnswer": "Animalympics",
+      "incorrectAnswers": [
+        "The Fox and the Hound",
+        "The Black Cauldron",
+        "The Great Mouse Detective"
+      ],
+      "difficulty": "medium",
+      "id": "2f02"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién dirigió las películas de Kill Bill?",
+      "correctAnswer": "Quentin Tarantino",
+      "incorrectAnswers": [
+        "Arnold Schwarzenegger",
+        "David Lean",
+        "Stanley Kubrick"
+      ],
+      "difficulty": "easy",
+      "id": "6d1c"
+    },
+    {
+      "category": "Film & TV",
+      "question": "En la serie de Viernes 13, ¿en qué año se ahogó Jason?",
+      "correctAnswer": "1957",
+      "incorrectAnswers": [
+        "1955",
+        "1953",
+        "1959"
+      ],
+      "difficulty": "hard",
+      "id": "e085"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál de las siguientes películas fue dirigida por Ivan Reitman, escrita por Gary Ross, protagonizada por Kevin Kline y lanzada en 1993?",
+      "correctAnswer": "Dave",
+      "incorrectAnswers": [
+        "John",
+        "Will",
+        "Carl"
+      ],
+      "difficulty": "hard",
+      "id": "fc53"
+    },
+    {
+      "category": "Film & TV",
+      "question": "La canción de Queen 'A Kind Of Magic' aparece en qué película de 1986?",
+      "correctAnswer": "Highlander",
+      "incorrectAnswers": [
+        "Flash Gordon",
+        "Labyrinth",
+        "Howard the Duck"
+      ],
+      "difficulty": "easy",
+      "id": "2a5c"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es la marca y modelo de los vehículos de tour en 'Jurassic Park' (1993)?",
+      "correctAnswer": "1992 Ford Explorer XLT",
+      "incorrectAnswers": [
+        "1992 Toyota Land Cruiser",
+        "1992 Jeep Wrangler YJ Sahar",
+        "Mercedes M-Class"
+      ],
+      "difficulty": "medium",
+      "id": "c099"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál era el primer nombre del personaje de Marilyn Monroe en la película 'Some Like It Hot'?",
+      "correctAnswer": "Sugar",
+      "incorrectAnswers": [
+        "Honey",
+        "Caramel",
+        "Candy"
+      ],
+      "difficulty": "medium",
+      "id": "35ad"
+    },
+    {
+      "category": "Film & TV",
+      "question": "En la película Fight Club (1999), ¿cuál de estas NO es una regla del 'club de la pelea'?",
+      "correctAnswer": "Siempre usar camiseta",
+      "incorrectAnswers": [
+        "No hablas del CLUB DE LA PELEA",
+        "Solo dos personas por pelea",
+        "Las peleas durarán lo que tengan que durar"
+      ],
+      "difficulty": "medium",
+      "id": "c067"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué película animada fue la primera en contar con una celebridad como actor de voz?",
+      "correctAnswer": "Aladdin",
+      "incorrectAnswers": [
+        "Toy Story",
+        "James and the Giant Peach",
+        "The Hunchback of Notre Dame"
+      ],
+      "difficulty": "easy",
+      "id": "6e2a"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál fue otro nombre sugerido para la película de 1985 'Back to the Future'?",
+      "correctAnswer": "Spaceman From Pluto",
+      "incorrectAnswers": [
+        "Hill Valley Time Travelers",
+        "The Time Travelers",
+        "The Lucky Man"
+      ],
+      "difficulty": "medium",
+      "id": "cc9a"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre del robot en la clásica película de ciencia ficción de 1951 'The Day the Earth Stood Still'?",
+      "correctAnswer": "Gort",
+      "incorrectAnswers": [
+        "Robby",
+        "Colossus",
+        "Box"
+      ],
+      "difficulty": "medium",
+      "id": "0b24"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién interpretó a Bruce Wayne y Batman en la película 'Batman' de 1989 de Tim Burton?",
+      "correctAnswer": "Michael Keaton",
+      "incorrectAnswers": [
+        "George Clooney",
+        "Val Kilmer",
+        "Adam West"
+      ],
+      "difficulty": "easy",
+      "id": "c9de"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál de los siguientes villanos de James Bond no está afiliado a la organización SPECTRE?",
+      "correctAnswer": "Auric Goldfinger",
+      "incorrectAnswers": [
+        "Dr. Julius No",
+        "Rosa Klebb",
+        "Emilio Largo"
+      ],
+      "difficulty": "medium",
+      "id": "fe20"
+    },
+    {
+      "category": "Film & TV",
+      "question": "En la película británica de 1979 'Quadrophenia', ¿cuál es el nombre del protagonista principal?",
+      "correctAnswer": "Jimmy Cooper",
+      "incorrectAnswers": [
+        "Pete Townshend",
+        "Franc Roddam",
+        "Archie Bunker"
+      ],
+      "difficulty": "medium",
+      "id": "7120"
+    },
+    {
+      "category": "Film & TV",
+      "question": "En la película de 1971 'Willy Wonka y la fábrica de chocolate', ¿quién interpretó a Willy Wonka?",
+      "correctAnswer": "Gene Wilder",
+      "incorrectAnswers": [
+        "Shia LaBeouf",
+        "Peter Ostrum",
+        "Johnny Depp"
+      ],
+      "difficulty": "medium",
+      "id": "11b2"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál de los siguientes NO es el nombre de una 'Chica Bond'?",
+      "correctAnswer": "Vanessa Kensington",
+      "incorrectAnswers": [
+        "Pam Bouvier",
+        "Mary Goodnight",
+        "Wai Lin"
+      ],
+      "difficulty": "easy",
+      "id": "fe74"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es la especie del 'Depredador' en la película de 1987 'Depredador'?",
+      "correctAnswer": "Yautja",
+      "incorrectAnswers": [
+        "Xenomorph",
+        "Praetorian",
+        "Phocrex"
+      ],
+      "difficulty": "hard",
+      "id": "7291"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién interpretó a Batman en la película de 1997 'Batman y Robin'?",
+      "correctAnswer": "George Clooney",
+      "incorrectAnswers": [
+        "Michael Keaton",
+        "Val Kilmer",
+        "Christian Bale"
+      ],
+      "difficulty": "medium",
+      "id": "3da3"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué película destronó Avatar de James Cameron como la película más taquillera de la historia?",
+      "correctAnswer": "Titanic",
+      "incorrectAnswers": [
+        "Star Wars",
+        "Gone with the Wind",
+        "Jaws"
+      ],
+      "difficulty": "medium",
+      "id": "d3b4"
+    },
+    {
+      "category": "Film & TV",
+      "question": "La frase 'La primera regla es: no hablas de ello' es una referencia a qué película?",
+      "correctAnswer": "Fight Club",
+      "incorrectAnswers": [
+        "The Island",
+        "Unthinkable",
+        "American Pie"
+      ],
+      "difficulty": "easy",
+      "id": "2f1b"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál fue la primera película de Alfred Hitchcock filmada en color?",
+      "correctAnswer": "Rope",
+      "incorrectAnswers": [
+        "Psycho",
+        "Vertigo",
+        "Rebecca"
+      ],
+      "difficulty": "hard",
+      "id": "a6ba"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuándo ocurre cronológicamente 'Rogue One: A Star Wars Story' en la serie?",
+      "correctAnswer": "Entre el Episodio 3 y 4",
+      "incorrectAnswers": [
+        "Después del Episodio 6",
+        "Antes del Episodio 1",
+        "Entre el Episodio 4 y 5"
+      ],
+      "difficulty": "easy",
+      "id": "7f17"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre del villano en la película ruso-estadounidense de ciencia ficción de 2015 'Hardcore Henry'?",
+      "correctAnswer": "Akan",
+      "incorrectAnswers": [
+        "Estelle",
+        "Jimmy",
+        "Henry"
+      ],
+      "difficulty": "medium",
+      "id": "0079"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál era el nombre del protagonista en la película 'Commando' (1985)?",
+      "correctAnswer": "John Matrix",
+      "incorrectAnswers": [
+        "Ben Richards",
+        "Douglas Quaid",
+        "Harry Tasker"
+      ],
+      "difficulty": "medium",
+      "id": "755c"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es la película de Disney más antigua?",
+      "correctAnswer": "Blanca Nieves y los siete enanitos",
+      "incorrectAnswers": [
+        "Pinocho",
+        "Dumbo",
+        "Fantasía"
+      ],
+      "difficulty": "easy",
+      "id": "cef5"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué mostraba la primera película en movimiento?",
+      "correctAnswer": "Un caballo galopando",
+      "incorrectAnswers": [
+        "Una mujer en un vestido",
+        "Un hombre caminando",
+        "Un fuego crepitante"
+      ],
+      "difficulty": "hard",
+      "id": "3f2d"
+    },
+    {
+      "category": "Film & TV",
+      "question": "Esta película contiene la frase: 'Lo que tenemos aquí es una falta de comunicación'.",
+      "correctAnswer": "Cool Hand Luke",
+      "incorrectAnswers": [
+        "Bonnie and Clyde",
+        "El Graduado",
+        "En el calor de la noche"
+      ],
+      "difficulty": "medium",
+      "id": "39bc"
+    },
+    {
+      "category": "Film & TV",
+      "question": "En el universo de 'Jurassic Park', ¿cuál fue el primer dinosaurio clonado por InGen en 1986?",
+      "correctAnswer": "Velociraptor",
+      "incorrectAnswers": [
+        "Triceratops",
+        "Troodon",
+        "Brachiosaurus"
+      ],
+      "difficulty": "hard",
+      "id": "9359"
+    },
+    {
+      "category": "Film & TV",
+      "question": "En la película 'Harry Potter y la Orden del Fénix', ¿por qué se silencia el grito de Harry Potter tras la muerte de Sirius Black?",
+      "correctAnswer": "Demasiado desgarrador",
+      "incorrectAnswers": [
+        "Demasiado fuerte",
+        "Demasiado agresivo",
+        "Demasiado violento"
+      ],
+      "difficulty": "hard",
+      "id": "3a7f"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre de la mascota de la reina en 'Bichos, una aventura en miniatura'?",
+      "correctAnswer": "Aphie",
+      "incorrectAnswers": [
+        "Flik",
+        "Hopper",
+        "Dot"
+      ],
+      "difficulty": "medium",
+      "id": "0ad1"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre del robot naranja y blanco en 'Star Wars: El despertar de la fuerza'?",
+      "correctAnswer": "BB-8",
+      "incorrectAnswers": [
+        "BB-3",
+        "AA-A",
+        "R2-D2"
+      ],
+      "difficulty": "easy",
+      "id": "7c66"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre del sistema de inteligencia artificial en la película de 1983 'WarGames'?",
+      "correctAnswer": "War Operation Plan Response",
+      "incorrectAnswers": [
+        "Self Evolving Thought Helix",
+        "Master Control Program",
+        "West Campus Analog Computer"
+      ],
+      "difficulty": "medium",
+      "id": "f82f"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién dirigió 'E.T. el extraterrestre' (1982)?",
+      "correctAnswer": "Steven Spielberg",
+      "incorrectAnswers": [
+        "Stanley Kubrick",
+        "James Cameron",
+        "Tim Burton"
+      ],
+      "difficulty": "easy",
+      "id": "4b53"
+    },
+    {
+      "category": "Film & TV",
+      "question": "En la película 'Blade Runner', ¿cuál es el término que se usa para referirse a los androides humanoides?",
+      "correctAnswer": "Replicantes",
+      "incorrectAnswers": [
+        "Cylons",
+        "Sintéticos",
+        "Skinjobs"
+      ],
+      "difficulty": "easy",
+      "id": "349f"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué película dice Humphrey Bogart la famosa frase, 'Aquí tienes, niña'?",
+      "correctAnswer": "Casablanca",
+      "incorrectAnswers": [
+        "El Halcón Maltés",
+        "El Tesoro de Sierra Madre",
+        "Ciudadano Kane"
+      ],
+      "difficulty": "easy",
+      "id": "3c9f"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actores conforman el trío en 'El bueno, el malo y el feo'?",
+      "correctAnswer": "Clint Eastwood, Eli Wallach y Lee Van Cleef",
+      "incorrectAnswers": [
+        "Sergio Leone, Ennio Morricone y Tonino Delli Colli",
+        "Yul Brynner, Steve McQueen y Charles Bronson",
+        "Aldo Giuffré, Mario Brega y Luigi Pistilli"
+      ],
+      "difficulty": "hard",
+      "id": "17fa"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál de estas películas NO se estrenó en 1996?",
+      "correctAnswer": "Gladiador",
+      "incorrectAnswers": [
+        "Día de la Independencia",
+        "La Roca",
+        "Misión Imposible"
+      ],
+      "difficulty": "easy",
+      "id": "f974"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál de los siguientes actores solo ha aparecido en una película dirigida por Quentin Tarantino?",
+      "correctAnswer": "John Travolta",
+      "incorrectAnswers": [
+        "Christoph Waltz",
+        "Harvey Keitel",
+        "Samuel L. Jackson"
+      ],
+      "difficulty": "easy",
+      "id": "8657"
+    },
+    {
+      "category": "Film & TV",
+      "question": "Antes de que se finalizara 'Jurassic Park III' y se eligiera el Spinosaurus, ¿qué dinosaurio iba a ser la estrella?",
+      "correctAnswer": "Baryonyx",
+      "incorrectAnswers": [
+        "Tyrannosaurus Rex",
+        "Velociraptor",
+        "Suchomimus"
+      ],
+      "difficulty": "hard",
+      "id": "a2f6"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué personaje icónico aparece en películas como 'The Enforcer', 'Impacto súbito' y 'La lista negra'?",
+      "correctAnswer": "Harry el sucio",
+      "incorrectAnswers": [
+        "Indiana Jones",
+        "James Bond",
+        "Harry Potter"
+      ],
+      "difficulty": "medium",
+      "id": "28c7"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién interpreta al personaje de Po en las películas de Kung Fu Panda?",
+      "correctAnswer": "Jack Black",
+      "incorrectAnswers": [
+        "Mirana Jonnes",
+        "McConahey Ramses",
+        "Jim Petersson"
+      ],
+      "difficulty": "easy",
+      "id": "a891"
+    },
+    {
+      "category": "Film & TV",
+      "question": "En Star Wars, ¿cuál es el nombre del nuevo gobierno creado después de la derrota del Imperio Galáctico?",
+      "correctAnswer": "La Nueva República",
+      "incorrectAnswers": [
+        "La Alianza Rebelde",
+        "El Amanecer Carmesí",
+        "La Primera Orden"
+      ],
+      "difficulty": "medium",
+      "id": "5819"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es la película de 1994 que Roger Ebert detestó famosamente, diciendo 'odié odié odié odié odié esta película'?",
+      "correctAnswer": "North",
+      "incorrectAnswers": [
+        "3 Ninjas Contraatacan",
+        "Santa Cláusula",
+        "Ricky Ricón"
+      ],
+      "difficulty": "hard",
+      "id": "95a5"
+    },
+    {
+      "category": "Film & TV",
+      "question": "La película de 1939 'El Mago de Oz' contenía un caballo que cambiaba de color, ¿qué material usaron para lograr este efecto?",
+      "correctAnswer": "Gelatina",
+      "incorrectAnswers": [
+        "Tinte",
+        "Pintura",
+        "Efecto CGI"
+      ],
+      "difficulty": "medium",
+      "id": "c5ac"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actor ha aparecido en películas como Harry Potter y la piedra filosofal y Gladiador?",
+      "correctAnswer": "Richard Harris",
+      "incorrectAnswers": [
+        "Sam Shepard",
+        "James Hong",
+        "Jon Bernthal"
+      ],
+      "difficulty": "medium",
+      "id": "8d91"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué película ganó el Oscar a Mejor Película en 2020?",
+      "correctAnswer": "Parasite",
+      "incorrectAnswers": [
+        "1917",
+        "Joker",
+        "Once Upon a Time in Hollywood"
+      ],
+      "difficulty": "medium",
+      "id": "7580"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre del personaje principal en Matrix?",
+      "correctAnswer": "Neo",
+      "incorrectAnswers": [
+        "Trinity",
+        "Morpheus",
+        "Smith"
+      ],
+      "difficulty": "easy",
+      "id": "07de"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué año se estrenó El Padrino?",
+      "correctAnswer": "1972",
+      "incorrectAnswers": [
+        "1970",
+        "1974",
+        "1976"
+      ],
+      "difficulty": "medium",
+      "id": "7793"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué clásico de Hitchcock de 1945 Gregory Peck no recuerda si cometió un asesinato?",
+      "correctAnswer": "Spellbound",
+      "incorrectAnswers": [
+        "Vertigo",
+        "Psycho",
+        "Rear Window"
+      ],
+      "difficulty": "hard",
+      "id": "5570"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál era la matrícula del Delorean en Back to the Future?",
+      "correctAnswer": "OUTATIME",
+      "incorrectAnswers": [
+        "GOINBACK",
+        "SEEYAL8R",
+        "NOROADS"
+      ],
+      "difficulty": "medium",
+      "id": "d9a1"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actor ha interpretado papeles importantes en películas como El lobo de Wall Street y Dallas Buyers Club?",
+      "correctAnswer": "Matthew McConaughey",
+      "incorrectAnswers": [
+        "Ryan Reynolds",
+        "Jim Carrey",
+        "Hugh Jackman"
+      ],
+      "difficulty": "medium",
+      "id": "aaf8"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué película aparece el personaje 'Gollum'?",
+      "correctAnswer": "El Señor de los Anillos",
+      "incorrectAnswers": [
+        "The Searchers",
+        "Ghost",
+        "My Favorite Year"
+      ],
+      "difficulty": "easy",
+      "id": "6fef"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actor interpretó a 'Mad' Max Rockatansky en Mad Max?",
+      "correctAnswer": "Mel Gibson",
+      "incorrectAnswers": [
+        "Michael Douglas",
+        "Al Pacino",
+        "Arnold Schwarzenegger"
+      ],
+      "difficulty": "medium",
+      "id": "39da"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actor interpretó a Howard Beale en la película Network?",
+      "correctAnswer": "Peter Finch",
+      "incorrectAnswers": [
+        "Jaye Davidson",
+        "Malcolm McDowell",
+        "Jeff Bridges"
+      ],
+      "difficulty": "hard",
+      "id": "c27d"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actor de Hollywood ha aparecido en programas de TV como Los Soprano y Boardwalk Empire?",
+      "correctAnswer": "Steve Buscemi",
+      "incorrectAnswers": [
+        "Christopher Lee",
+        "Arnold Schwarzenegger",
+        "Anthony Hopkins"
+      ],
+      "difficulty": "medium",
+      "id": "17fb"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué película aparece el personaje 'Lt. Col. Bill Kilgore'?",
+      "correctAnswer": "Apocalypse Now",
+      "incorrectAnswers": [
+        "Citizen Kane",
+        "Austin Powers: International Man of Mystery",
+        "Pirates of the Caribbean"
+      ],
+      "difficulty": "hard",
+      "id": "14de"
+    },
+    {
+      "category": "Film & TV",
+      "question": "En el Universo Cinematográfico de Marvel, ¿qué personaje es interpretado por Tom Hiddleston?",
+      "correctAnswer": "Loki",
+      "incorrectAnswers": [
+        "Iron Man",
+        "Black Panther",
+        "Spiderman"
+      ],
+      "difficulty": "easy",
+      "id": "70c1"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actor ha aparecido en películas como Harry Potter y la piedra filosofal y Gladiador?",
+      "correctAnswer": "Richard Harris",
+      "incorrectAnswers": [
+        "Sam Shepard",
+        "James Hong",
+        "Jon Bernthal"
+      ],
+      "difficulty": "medium",
+      "id": "0bb0"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actor ha protagonizado tanto Apollo 13 como X-Men: First Class?",
+      "correctAnswer": "Kevin Bacon",
+      "incorrectAnswers": [
+        "Richard Harris",
+        "Anthony Quinn",
+        "Hugo Weaving"
+      ],
+      "difficulty": "medium",
+      "id": "381b"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué popular sitcom apareció por primera vez en 1951 y se emitió hasta 1957?",
+      "correctAnswer": "I Love Lucy",
+      "incorrectAnswers": [
+        "The Brady Bunch",
+        "Sanford and Son",
+        "My Favourite Martian"
+      ],
+      "difficulty": "medium",
+      "id": "cba3"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién ganó el Premio de la Academia a Mejor Actriz de Reparto en 2005 por su papel de Tessa Quayle en The Constant Gardener?",
+      "correctAnswer": "Rachel Weisz",
+      "incorrectAnswers": [
+        "Amy Adams",
+        "Catherine Keener",
+        "Frances McDormand"
+      ],
+      "difficulty": "hard",
+      "id": "0df8"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué programa de televisión sigue al anfitrión Bear Grylls mientras sobrevive en entornos hostiles en distintas partes del mundo?",
+      "correctAnswer": "Man vs. Wild",
+      "incorrectAnswers": [
+        "Survivor",
+        "The Amazing Race",
+        "Naked and Afraid"
+      ],
+      "difficulty": "medium",
+      "id": "b8fd"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actor interpretó el papel de Sam Spade en El halcón maltés?",
+      "correctAnswer": "Humphrey Bogart",
+      "incorrectAnswers": [
+        "James Stewart",
+        "John Belushi",
+        "Kevin Spacey"
+      ],
+      "difficulty": "medium",
+      "id": "c8ee"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál de estas frases es de la película Scarface?",
+      "correctAnswer": "¡Saluda a mi pequeño amigo!",
+      "incorrectAnswers": [
+        "Soy el tipo que hace su trabajo. Debes ser el otro tipo.",
+        "¡Despierta!",
+        "Diles que salgan y lo den todo y ganen solo una vez para el Gipper."
+      ],
+      "difficulty": "easy",
+      "id": "9b53"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué popular serie de televisión estadounidense aparece el personaje Jesse Pinkman?",
+      "correctAnswer": "Breaking Bad",
+      "incorrectAnswers": [
+        "SpongeBob Squarepants",
+        "Brooklyn 99",
+        "American Vandals"
+      ],
+      "difficulty": "medium",
+      "id": "4f0b"
+    },
+    {
+      "category": "Film & TV",
+      "question": "Nombra la película que corresponde a la siguiente sinopsis: \"La historia de un oficial inglés que unió y lideró exitosamente a las tribus árabes durante la Primera Guerra Mundial.\"",
+      "correctAnswer": "Lawrence de Arabia",
+      "incorrectAnswers": [
+        "City Lights",
+        "Sunset Blvd.",
+        "Braveheart"
+      ],
+      "difficulty": "hard",
+      "id": "2c0d"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién ganó el Premio de la Academia a Mejor Actor Protagonista en 2007 por su papel de Daniel Plainview en There Will Be Blood?",
+      "correctAnswer": "Daniel Day-Lewis",
+      "incorrectAnswers": [
+        "George Clooney",
+        "Johnny Depp",
+        "Tommy Lee Jones"
+      ],
+      "difficulty": "medium",
+      "id": "e4c1"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actor ha interpretado papeles tanto en Twin Peaks como en Pulp Fiction?",
+      "correctAnswer": "Tim Roth",
+      "incorrectAnswers": [
+        "Paul Newman",
+        "Tobey Maguire",
+        "Elijah Wood"
+      ],
+      "difficulty": "medium",
+      "id": "d1d7"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién interpretó el papel de James Bond en Skyfall?",
+      "correctAnswer": "Daniel Craig",
+      "incorrectAnswers": [
+        "Sean Connery",
+        "Roger Moore",
+        "Timothy Dalton"
+      ],
+      "difficulty": "medium",
+      "id": "f798"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre de la película de la Segunda Guerra Mundial de 2008 con el lema 'Muchos vieron la maldad. Ellos se atrevieron a detenerla'?",
+      "correctAnswer": "Valkyrie",
+      "incorrectAnswers": [
+        "Dunkerque",
+        "Rescatando al Soldado Ryan",
+        "La Lista de Schindler"
+      ],
+      "difficulty": "hard",
+      "id": "b373"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál secuela de película de Keanu Reeves tiene el subtítulo '2: Control de Crucero'?",
+      "correctAnswer": "Speed",
+      "incorrectAnswers": [
+        "Matrix",
+        "John Wick",
+        "Las Alucinantes Aventuras de Bill y Ted"
+      ],
+      "difficulty": "medium",
+      "id": "86bb"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre de la película de 1972 en la que un viaje en canoa por el bosque de Georgia se convierte en una pesadilla para cuatro amigos?",
+      "correctAnswer": "Deliverance",
+      "incorrectAnswers": [
+        "La Cabaña en el Bosque",
+        "La Noche de los Muertos Vivientes",
+        "Saw"
+      ],
+      "difficulty": "hard",
+      "id": "babc"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué tema musical de James Bond fue interpretado por Chris Cornell?",
+      "correctAnswer": "Casino Royale",
+      "incorrectAnswers": [
+        "Alta Tensión",
+        "Sin Tiempo Para Morir",
+        "Operación Trueno"
+      ],
+      "difficulty": "medium",
+      "id": "32cf"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actriz ha aparecido en películas como American Horror Story y 12 Años de Esclavitud?",
+      "correctAnswer": "Sarah Paulson",
+      "incorrectAnswers": [
+        "Keira Knightley",
+        "Naomi Watts",
+        "Salma Hayek"
+      ],
+      "difficulty": "easy",
+      "id": "1639"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actriz interpreta a Shuri en el Universo Cinematográfico de Marvel?",
+      "correctAnswer": "Letitia Wright",
+      "incorrectAnswers": [
+        "Karen Gillan",
+        "Zendaya",
+        "Marisa Tomei"
+      ],
+      "difficulty": "medium",
+      "id": "40fa"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién ganó el Premio de la Academia a la Mejor Actriz de Reparto en 1990 por interpretar a Oda Mae Brown en Ghost?",
+      "correctAnswer": "Whoopi Goldberg",
+      "incorrectAnswers": [
+        "Annette Bening",
+        "Lorraine Bracco",
+        "Diane Ladd"
+      ],
+      "difficulty": "hard",
+      "id": "e2ff"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué popular programa de ciencia ficción incluye una máquina llamada La TARDIS?",
+      "correctAnswer": "Doctor Who",
+      "incorrectAnswers": [
+        "Star Trek",
+        "Expediente X",
+        "La Dimensión Desconocida"
+      ],
+      "difficulty": "easy",
+      "id": "3896"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué raza enemiga mortal en Star Trek era conocida por su frase: 'La resistencia es inútil'?",
+      "correctAnswer": "Los Borg",
+      "incorrectAnswers": [
+        "Los Klingon",
+        "Los Romulanos",
+        "El Dominio"
+      ],
+      "difficulty": "medium",
+      "id": "982d"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién interpretó el papel de James Bond en Skyfall?",
+      "correctAnswer": "Daniel Craig",
+      "incorrectAnswers": [
+        "Sean Connery",
+        "Roger Moore",
+        "Timothy Dalton"
+      ],
+      "difficulty": "medium",
+      "id": "e79c"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre de la película de la Segunda Guerra Mundial de 2008 con el lema 'Muchos vieron la maldad. Ellos se atrevieron a detenerla'?",
+      "correctAnswer": "Valkyrie",
+      "incorrectAnswers": [
+        "Dunkerque",
+        "Rescatando al Soldado Ryan",
+        "La Lista de Schindler"
+      ],
+      "difficulty": "hard",
+      "id": "27a9"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál secuela de película de Keanu Reeves tiene el subtítulo '2: Control de Crucero'?",
+      "correctAnswer": "Speed",
+      "incorrectAnswers": [
+        "Matrix",
+        "John Wick",
+        "Las Alucinantes Aventuras de Bill y Ted"
+      ],
+      "difficulty": "medium",
+      "id": "a53c"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre de la película de 1972 en la que un viaje en canoa por el bosque de Georgia se convierte en una pesadilla para cuatro amigos?",
+      "correctAnswer": "Deliverance",
+      "incorrectAnswers": [
+        "La Cabaña en el Bosque",
+        "La Noche de los Muertos Vivientes",
+        "Saw"
+      ],
+      "difficulty": "hard",
+      "id": "9464"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué tema musical de James Bond fue interpretado por Chris Cornell?",
+      "correctAnswer": "Casino Royale",
+      "incorrectAnswers": [
+        "Alta Tensión",
+        "Sin Tiempo Para Morir",
+        "Operación Trueno"
+      ],
+      "difficulty": "medium",
+      "id": "551b"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actriz ha aparecido en películas como American Horror Story y 12 Años de Esclavitud?",
+      "correctAnswer": "Sarah Paulson",
+      "incorrectAnswers": [
+        "Keira Knightley",
+        "Naomi Watts",
+        "Salma Hayek"
+      ],
+      "difficulty": "easy",
+      "id": "023e"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actriz interpreta a Shuri en el Universo Cinematográfico de Marvel?",
+      "correctAnswer": "Letitia Wright",
+      "incorrectAnswers": [
+        "Karen Gillan",
+        "Zendaya",
+        "Marisa Tomei"
+      ],
+      "difficulty": "medium",
+      "id": "d85e"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién ganó el Premio de la Academia a la Mejor Actriz de Reparto en 1990 por interpretar a Oda Mae Brown en Ghost?",
+      "correctAnswer": "Whoopi Goldberg",
+      "incorrectAnswers": [
+        "Annette Bening",
+        "Lorraine Bracco",
+        "Diane Ladd"
+      ],
+      "difficulty": "hard",
+      "id": "dd4c"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué popular programa de ciencia ficción incluye una máquina llamada La TARDIS?",
+      "correctAnswer": "Doctor Who",
+      "incorrectAnswers": [
+        "Star Trek",
+        "Expediente X",
+        "La Dimensión Desconocida"
+      ],
+      "difficulty": "easy",
+      "id": "87a7"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué raza enemiga mortal en Star Trek era conocida por su frase: 'La resistencia es inútil'?",
+      "correctAnswer": "Los Borg",
+      "incorrectAnswers": [
+        "Los Klingon",
+        "Los Romulanos",
+        "El Dominio"
+      ],
+      "difficulty": "medium",
+      "id": "c3e0"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre del superhéroe interpretado por Robert Downey Jr. en el Universo Cinematográfico de Marvel?",
+      "correctAnswer": "Iron Man",
+      "incorrectAnswers": [
+        "Thor",
+        "Capitán América",
+        "Hulk"
+      ],
+      "difficulty": "easy",
+      "id": "6f33"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué película del Universo Cinematográfico de Marvel aparece por primera vez el personaje de Thanos?",
+      "correctAnswer": "Los Vengadores",
+      "incorrectAnswers": [
+        "Iron Man",
+        "Thor: Un Mundo Oscuro",
+        "Guardianes de la Galaxia"
+      ],
+      "difficulty": "easy",
+      "id": "0097"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué personaje es conocido como el Dios del Trueno en las películas de Marvel?",
+      "correctAnswer": "Thor",
+      "incorrectAnswers": [
+        "Loki",
+        "Hulk",
+        "Capitán América"
+      ],
+      "difficulty": "easy",
+      "id": "9a24"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién es el villano principal en 'Black Panther'?",
+      "correctAnswer": "Erik Killmonger",
+      "incorrectAnswers": [
+        "Loki",
+        "Thanos",
+        "Ultron"
+      ],
+      "difficulty": "easy",
+      "id": "b4b4"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre de la hermana de T'Challa en las películas de Marvel?",
+      "correctAnswer": "Shuri",
+      "incorrectAnswers": [
+        "Nakia",
+        "Okoye",
+        "Ramonda"
+      ],
+      "difficulty": "easy",
+      "id": "2b77"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué superhéroe de Marvel lleva un escudo como su arma principal?",
+      "correctAnswer": "Capitán América",
+      "incorrectAnswers": [
+        "Iron Man",
+        "Thor",
+        "Hawkeye"
+      ],
+      "difficulty": "easy",
+      "id": "e95c"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cómo se llama el equipo de héroes al que pertenecen Iron Man, Thor, Hulk y Capitán América?",
+      "correctAnswer": "Los Vengadores",
+      "incorrectAnswers": [
+        "Los Defensores",
+        "Los Guardianes de la Galaxia",
+        "Los X-Men"
+      ],
+      "difficulty": "easy",
+      "id": "c0d7"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué superhéroe es conocido por su traje negro y su emblema de araña?",
+      "correctAnswer": "Spider-Man",
+      "incorrectAnswers": [
+        "Black Panther",
+        "Ant-Man",
+        "Iron Man"
+      ],
+      "difficulty": "easy",
+      "id": "d5f2"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre real del superhéroe conocido como Hulk?",
+      "correctAnswer": "Bruce Banner",
+      "incorrectAnswers": [
+        "Tony Stark",
+        "Peter Parker",
+        "Steve Rogers"
+      ],
+      "difficulty": "easy",
+      "id": "3985"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién es la agente de S.H.I.E.L.D. que trabaja estrechamente con los Vengadores?",
+      "correctAnswer": "Natasha Romanoff",
+      "incorrectAnswers": [
+        "Peggy Carter",
+        "Wanda Maximoff",
+        "Sharon Carter"
+      ],
+      "difficulty": "easy",
+      "id": "6955"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué película del Universo Cinematográfico de Marvel aparece por primera vez el personaje de Wanda Maximoff?",
+      "correctAnswer": "Capitán América: El Soldado del Invierno",
+      "incorrectAnswers": [
+        "Los Vengadores: La Era de Ultrón",
+        "Doctor Strange",
+        "Thor: Un Mundo Oscuro"
+      ],
+      "difficulty": "medium",
+      "id": "e77b"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre del planeta natal de Thanos?",
+      "correctAnswer": "Titán",
+      "incorrectAnswers": [
+        "Asgard",
+        "Xandar",
+        "Sakaar"
+      ],
+      "difficulty": "medium",
+      "id": "e785"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién destruyó el Mjolnir de Thor en 'Thor: Ragnarok'?",
+      "correctAnswer": "Hela",
+      "incorrectAnswers": [
+        "Loki",
+        "Thanos",
+        "Surtur"
+      ],
+      "difficulty": "medium",
+      "id": "d685"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre real de Star-Lord?",
+      "correctAnswer": "Peter Quill",
+      "incorrectAnswers": [
+        "Scott Lang",
+        "Stephen Strange",
+        "James Rhodes"
+      ],
+      "difficulty": "medium",
+      "id": "3e86"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué personaje de Marvel es conocido como 'El Soldado del Invierno'?",
+      "correctAnswer": "Bucky Barnes",
+      "incorrectAnswers": [
+        "Sam Wilson",
+        "Clint Barton",
+        "James Rhodes"
+      ],
+      "difficulty": "medium",
+      "id": "548a"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cómo se llama el metal ficticio del que está hecho el escudo del Capitán América?",
+      "correctAnswer": "Vibranium",
+      "incorrectAnswers": [
+        "Adamantium",
+        "Carbonadio",
+        "Prometeo"
+      ],
+      "difficulty": "medium",
+      "id": "4cd6"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué tipo de criatura es Rocket en 'Guardianes de la Galaxia'?",
+      "correctAnswer": "Mapache",
+      "incorrectAnswers": [
+        "Zorro",
+        "Ardilla",
+        "Gato"
+      ],
+      "difficulty": "medium",
+      "id": "99e5"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué piedra del Infinito es utilizada por Visión en su frente?",
+      "correctAnswer": "La Gema de la Mente",
+      "incorrectAnswers": [
+        "La Gema del Espacio",
+        "La Gema del Tiempo",
+        "La Gema del Poder"
+      ],
+      "difficulty": "medium",
+      "id": "d2a7"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién dirige la organización terrorista conocida como 'Los Diez Anillos' en 'Iron Man'?",
+      "correctAnswer": "El Mandarín",
+      "incorrectAnswers": [
+        "Red Skull",
+        "Loki",
+        "Ultrón"
+      ],
+      "difficulty": "medium",
+      "id": "f9ca"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué país encuentran el escudo congelado del Capitán América en las películas de Marvel?",
+      "correctAnswer": "Groenlandia",
+      "incorrectAnswers": [
+        "Islandia",
+        "Noruega",
+        "Finlandia"
+      ],
+      "difficulty": "medium",
+      "id": "1cd1"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué nombre utilizó Natasha Romanoff al infiltrarse como asistente de Tony Stark en 'Iron Man 2'?",
+      "correctAnswer": "Natalie Rushman",
+      "incorrectAnswers": [
+        "Natasha Roman",
+        "Nadine Ramos",
+        "Nina Rourke"
+      ],
+      "difficulty": "hard",
+      "id": "b289"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre del programa que Hydra desarrolló para rastrear y eliminar amenazas potenciales en 'Capitán América: El Soldado del Invierno'?",
+      "correctAnswer": "Proyecto Insight",
+      "incorrectAnswers": [
+        "Proyecto Overwatch",
+        "Proyecto Shield",
+        "Proyecto Excalibur"
+      ],
+      "difficulty": "hard",
+      "id": "3188"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién fue la voz original de Jarvis antes de que se convirtiera en Visión en el Universo Cinematográfico de Marvel?",
+      "correctAnswer": "Paul Bettany",
+      "incorrectAnswers": [
+        "Benedict Cumberbatch",
+        "Tom Hiddleston",
+        "Hugo Weaving"
+      ],
+      "difficulty": "hard",
+      "id": "c916"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre completo del personaje de Red Skull en el Universo Cinematográfico de Marvel?",
+      "correctAnswer": "Johann Schmidt",
+      "incorrectAnswers": [
+        "Erik Lehnsherr",
+        "Werner Reinhardt",
+        "Heinrich Zemo"
+      ],
+      "difficulty": "hard",
+      "id": "3ae5"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué planeta se encuentran los restos de la cabeza de un Celestial, conocido como Knowhere?",
+      "correctAnswer": "Knowhere",
+      "incorrectAnswers": [
+        "Xandar",
+        "Sakaar",
+        "Vormir"
+      ],
+      "difficulty": "hard",
+      "id": "2210"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién interpreta a Fandral, uno de los Tres Guerreros, en 'Thor: Un Mundo Oscuro'?",
+      "correctAnswer": "Zachary Levi",
+      "incorrectAnswers": [
+        "Josh Dallas",
+        "Ray Stevenson",
+        "Idris Elba"
+      ],
+      "difficulty": "hard",
+      "id": "81af"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué año fue congelado el Capitán América en el hielo según la línea de tiempo del Universo Cinematográfico de Marvel?",
+      "correctAnswer": "1945",
+      "incorrectAnswers": [
+        "1943",
+        "1944",
+        "1942"
+      ],
+      "difficulty": "hard",
+      "id": "4299"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cómo se llama el padre de Tony Stark, fundador de Stark Industries?",
+      "correctAnswer": "Howard Stark",
+      "incorrectAnswers": [
+        "Harold Stark",
+        "Henry Stark",
+        "Harry Stark"
+      ],
+      "difficulty": "hard",
+      "id": "89bb"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué arma usa Yondu para controlar su flecha en 'Guardianes de la Galaxia'?",
+      "correctAnswer": "Un silbido",
+      "incorrectAnswers": [
+        "Un bastón",
+        "Un control remoto",
+        "Un chip cerebral"
+      ],
+      "difficulty": "hard",
+      "id": "192e"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el lema de Hydra, la organización secreta en el Universo Cinematográfico de Marvel?",
+      "correctAnswer": "\"Corta una cabeza y dos crecerán en su lugar\"",
+      "incorrectAnswers": [
+        "\"Solo los fuertes sobrevivirán\"",
+        "\"Poder a través de la fuerza\"",
+        "\"Unidad y sacrificio\""
+      ],
+      "difficulty": "hard",
+      "id": "608f"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué película de culto aparece el personaje llamado 'El Nota'?",
+      "correctAnswer": "El Gran Lebowski",
+      "incorrectAnswers": [
+        "Pulp Fiction",
+        "Taxi Driver",
+        "Fight Club"
+      ],
+      "difficulty": "easy",
+      "id": "a7ca"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién dirigió la película de culto de 1982, 'Blade Runner'?",
+      "correctAnswer": "Ridley Scott",
+      "incorrectAnswers": [
+        "James Cameron",
+        "Steven Spielberg",
+        "George Lucas"
+      ],
+      "difficulty": "easy",
+      "id": "4934"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre del personaje interpretado por Brad Pitt en 'Fight Club'?",
+      "correctAnswer": "Tyler Durden",
+      "incorrectAnswers": [
+        "Edward Norton",
+        "Marla Singer",
+        "Jack"
+      ],
+      "difficulty": "easy",
+      "id": "9aea"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué película se repite la frase: 'Here’s Johnny!'?",
+      "correctAnswer": "El Resplandor",
+      "incorrectAnswers": [
+        "Psicosis",
+        "Carrie",
+        "Poltergeist"
+      ],
+      "difficulty": "easy",
+      "id": "9713"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actor interpretó al personaje principal en 'Beetlejuice'?",
+      "correctAnswer": "Michael Keaton",
+      "incorrectAnswers": [
+        "Johnny Depp",
+        "Tim Curry",
+        "Jeff Goldblum"
+      ],
+      "difficulty": "easy",
+      "id": "150c"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre del androide interpretado por Rutger Hauer en 'Blade Runner'?",
+      "correctAnswer": "Roy Batty",
+      "incorrectAnswers": [
+        "Deckard",
+        "Pris",
+        "Zhora"
+      ],
+      "difficulty": "medium",
+      "id": "0630"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué película de culto de ciencia ficción dice el personaje protagonista: 'Soy un hombre libre'?",
+      "correctAnswer": "Matrix",
+      "incorrectAnswers": [
+        "1984",
+        "Brazil",
+        "Gattaca"
+      ],
+      "difficulty": "medium",
+      "id": "e55f"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué película de culto de los 80 sigue a un grupo de amigos en busca de un cadáver?",
+      "correctAnswer": "Stand By Me",
+      "incorrectAnswers": [
+        "The Goonies",
+        "Cuenta conmigo",
+        "Los Cazafantasmas"
+      ],
+      "difficulty": "medium",
+      "id": "2140"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el apodo del personaje principal en 'Taxi Driver' interpretado por Robert De Niro?",
+      "correctAnswer": "Travis Bickle",
+      "incorrectAnswers": [
+        "Jake LaMotta",
+        "Jimmy Doyle",
+        "Max Cady"
+      ],
+      "difficulty": "medium",
+      "id": "1dc3"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre del club que los protagonistas de 'The Rocky Horror Picture Show' visitan accidentalmente?",
+      "correctAnswer": "El Castillo de Frank-N-Furter",
+      "incorrectAnswers": [
+        "El Club del Horror",
+        "El Club de la Ciencia",
+        "El Club del Extravagante"
+      ],
+      "difficulty": "medium",
+      "id": "4223"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre del vaquero protagonista en 'Toy Story'?",
+      "correctAnswer": "Woody",
+      "incorrectAnswers": [
+        "Buzz",
+        "Andy",
+        "Rex"
+      ],
+      "difficulty": "easy",
+      "id": "f460"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué película de Pixar los personajes son principalmente autos que hablan?",
+      "correctAnswer": "Cars",
+      "incorrectAnswers": [
+        "Toy Story",
+        "Ratatouille",
+        "Los Increíbles"
+      ],
+      "difficulty": "easy",
+      "id": "caff"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre del pez payaso en 'Buscando a Nemo'?",
+      "correctAnswer": "Nemo",
+      "incorrectAnswers": [
+        "Dory",
+        "Marlin",
+        "Bruce"
+      ],
+      "difficulty": "easy",
+      "id": "1381"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué película de Pixar sigue las aventuras de una rata que sueña con ser chef?",
+      "correctAnswer": "Ratatouille",
+      "incorrectAnswers": [
+        "Cars",
+        "Monsters, Inc.",
+        "Up"
+      ],
+      "difficulty": "easy",
+      "id": "90bf"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué película de Pixar aparece un personaje llamado Buzz Lightyear?",
+      "correctAnswer": "Toy Story",
+      "incorrectAnswers": [
+        "Los Increíbles",
+        "Buscando a Nemo",
+        "Ratatouille"
+      ],
+      "difficulty": "easy",
+      "id": "5241"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre del robot que protagoniza la película de Pixar 'WALL-E'?",
+      "correctAnswer": "WALL-E",
+      "incorrectAnswers": [
+        "EVE",
+        "Buzz",
+        "Woody"
+      ],
+      "difficulty": "easy",
+      "id": "5af5"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué personaje de 'Toy Story' grita la frase '¡Al infinito y más allá!'?",
+      "correctAnswer": "Buzz Lightyear",
+      "incorrectAnswers": [
+        "Woody",
+        "Rex",
+        "Slinky"
+      ],
+      "difficulty": "easy",
+      "id": "7b8e"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué película de Pixar un niño llamado Miguel viaja al Mundo de los Muertos?",
+      "correctAnswer": "Coco",
+      "incorrectAnswers": [
+        "Valiente",
+        "Toy Story",
+        "Los Increíbles"
+      ],
+      "difficulty": "easy",
+      "id": "46c6"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cómo se llama el dinosaurio protagonista en la película de Pixar 'El viaje de Arlo'?",
+      "correctAnswer": "Arlo",
+      "incorrectAnswers": [
+        "Spot",
+        "Rex",
+        "Dino"
+      ],
+      "difficulty": "easy",
+      "id": "3006"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre de la niña a la que intentan devolver a casa en 'Monsters, Inc.'?",
+      "correctAnswer": "Boo",
+      "incorrectAnswers": [
+        "Sally",
+        "Jessie",
+        "Andy"
+      ],
+      "difficulty": "easy",
+      "id": "92c9"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre del padre de Nemo en 'Buscando a Nemo'?",
+      "correctAnswer": "Marlin",
+      "incorrectAnswers": [
+        "Coral",
+        "Bruce",
+        "Nigel"
+      ],
+      "difficulty": "hard",
+      "id": "477a"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cómo se llama el chef humano que inspira a Remy en 'Ratatouille'?",
+      "correctAnswer": "Gusteau",
+      "incorrectAnswers": [
+        "Linguini",
+        "Django",
+        "Skinner"
+      ],
+      "difficulty": "hard",
+      "id": "3460"
+    },
+    {
+      "category": "Film & TV",
+      "question": "En 'Los Increíbles', ¿cuál es el nombre de superhéroe de Helen Parr?",
+      "correctAnswer": "Elastigirl",
+      "incorrectAnswers": [
+        "Violeta",
+        "Frozono",
+        "Sra. Increíble"
+      ],
+      "difficulty": "hard",
+      "id": "88a6"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el verdadero nombre del villano Síndrome en 'Los Increíbles'?",
+      "correctAnswer": "Buddy Pine",
+      "incorrectAnswers": [
+        "Dash Parr",
+        "Bob Parr",
+        "Lucius Best"
+      ],
+      "difficulty": "hard",
+      "id": "8e48"
+    },
+    {
+      "category": "Film & TV",
+      "question": "En 'Coco', ¿cuál es el nombre completo del famoso músico que Miguel admira?",
+      "correctAnswer": "Ernesto de la Cruz",
+      "incorrectAnswers": [
+        "Héctor Rivera",
+        "Luis Miguel",
+        "Julio Morales"
+      ],
+      "difficulty": "hard",
+      "id": "19d6"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué año fue lanzada la primera película de Pixar, 'Toy Story'?",
+      "correctAnswer": "1995",
+      "incorrectAnswers": [
+        "1993",
+        "1999",
+        "2000"
+      ],
+      "difficulty": "hard",
+      "id": "25af"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre de la niña protagonista en 'Intensa-Mente'?",
+      "correctAnswer": "Riley",
+      "incorrectAnswers": [
+        "Sadness",
+        "Joy",
+        "Sarah"
+      ],
+      "difficulty": "hard",
+      "id": "4aa5"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué tipo de pez es Dory en 'Buscando a Nemo'?",
+      "correctAnswer": "Pez cirujano azul",
+      "incorrectAnswers": [
+        "Pez payaso",
+        "Pez ángel",
+        "Pez damisela"
+      ],
+      "difficulty": "hard",
+      "id": "5996"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué banda sonora de 'Toy Story' ganó el Óscar a la Mejor Canción Original?",
+      "correctAnswer": "You've Got a Friend in Me",
+      "incorrectAnswers": [
+        "I Will Go Sailing No More",
+        "Strange Things",
+        "We Belong Together"
+      ],
+      "difficulty": "hard",
+      "id": "3987"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cómo se llama el robot femenino que aparece en la película 'WALL-E'?",
+      "correctAnswer": "EVE",
+      "incorrectAnswers": [
+        "AVA",
+        "EVO",
+        "LUCY"
+      ],
+      "difficulty": "hard",
+      "id": "5788"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actor protagoniza la película de 2020 'Tenet' dirigida por Christopher Nolan?",
+      "correctAnswer": "John David Washington",
+      "incorrectAnswers": [
+        "Robert Pattinson",
+        "Leonardo DiCaprio",
+        "Cillian Murphy"
+      ],
+      "difficulty": "medium",
+      "id": "7edf"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre de la inteligencia artificial en la película de 2021 'Finch' protagonizada por Tom Hanks?",
+      "correctAnswer": "Jeff",
+      "incorrectAnswers": [
+        "Robo",
+        "Sam",
+        "Max"
+      ],
+      "difficulty": "medium",
+      "id": "ccaf"
+    },
+    {
+      "category": "Film & TV",
+      "question": "En 'Spider-Man: No Way Home' (2021), ¿qué villano interpretado por Alfred Molina regresa a la serie?",
+      "correctAnswer": "Doctor Octopus",
+      "incorrectAnswers": [
+        "Green Goblin",
+        "Sandman",
+        "Lizard"
+      ],
+      "difficulty": "medium",
+      "id": "2721"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el título de la película de 2022 donde Michelle Yeoh interpreta a una mujer atrapada en un multiverso de posibilidades?",
+      "correctAnswer": "Everything Everywhere All at Once",
+      "incorrectAnswers": [
+        "Multiverse Madness",
+        "Another World",
+        "Infinite Possibilities"
+      ],
+      "difficulty": "medium",
+      "id": "506f"
+    },
+    {
+      "category": "Film & TV",
+      "question": "En la película 'Dune' (2021), ¿quién interpreta a Paul Atreides?",
+      "correctAnswer": "Timothée Chalamet",
+      "incorrectAnswers": [
+        "Oscar Isaac",
+        "Josh Brolin",
+        "Jason Momoa"
+      ],
+      "difficulty": "medium",
+      "id": "d43a"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué película de 2021 protagonizada por Daniel Craig es la última de su serie como James Bond?",
+      "correctAnswer": "No Time to Die",
+      "incorrectAnswers": [
+        "Spectre",
+        "Skyfall",
+        "Quantum of Solace"
+      ],
+      "difficulty": "medium",
+      "id": "a3e9"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué película animada de 2022 Chris Evans prestó su voz al personaje de Buzz Lightyear?",
+      "correctAnswer": "Lightyear",
+      "incorrectAnswers": [
+        "Buzz Returns",
+        "Toy Story 5",
+        "Space Mission"
+      ],
+      "difficulty": "medium",
+      "id": "105f"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién interpreta a Batman en la película de 2022 'The Batman'?",
+      "correctAnswer": "Robert Pattinson",
+      "incorrectAnswers": [
+        "Ben Affleck",
+        "Christian Bale",
+        "Michael Keaton"
+      ],
+      "difficulty": "medium",
+      "id": "caa6"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál fue la primera película de terror en ganar un premio Óscar desde 'El silencio de los inocentes' en 1991, destacada en los premios de 2020?",
+      "correctAnswer": "Parasite",
+      "incorrectAnswers": [
+        "Get Out",
+        "Hereditary",
+        "Us"
+      ],
+      "difficulty": "medium",
+      "id": "ef18"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En 'Encanto' (2021), cuál es el nombre de la canción que se volvió viral y gira en torno al personaje Bruno?",
+      "correctAnswer": "No se habla de Bruno",
+      "incorrectAnswers": [
+        "Un regalo de familia",
+        "La casa Madrigal",
+        "Mariposas"
+      ],
+      "difficulty": "medium",
+      "id": "a44d"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién interpreta al personaje de Shang-Chi en 'Shang-Chi y la leyenda de los Diez Anillos'?",
+      "correctAnswer": "Simu Liu",
+      "incorrectAnswers": [
+        "Benedict Wong",
+        "Awkwafina",
+        "Tony Leung"
+      ],
+      "difficulty": "medium",
+      "id": "ad11"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál fue el nombre del planeta desértico en el que se desarrollan los eventos principales de 'Dune'?",
+      "correctAnswer": "Arrakis",
+      "incorrectAnswers": [
+        "Caladan",
+        "Giedi Prime",
+        "Ix"
+      ],
+      "difficulty": "medium",
+      "id": "6d46"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué directora ganó el Óscar a Mejor Dirección en 2021 por la película 'Nomadland'?",
+      "correctAnswer": "Chloé Zhao",
+      "incorrectAnswers": [
+        "Greta Gerwig",
+        "Emerald Fennell",
+        "Regina King"
+      ],
+      "difficulty": "medium",
+      "id": "0b4f"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cómo se llama el superhéroe interpretado por Robert Pattinson en la película de 2022?",
+      "correctAnswer": "Batman",
+      "incorrectAnswers": [
+        "Iron Man",
+        "Spider-Man",
+        "Superman"
+      ],
+      "difficulty": "medium",
+      "id": "8522"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué película animada de Disney-Pixar presenta a un niño que se convierte en un monstruo marino en un pequeño pueblo italiano?",
+      "correctAnswer": "Luca",
+      "incorrectAnswers": [
+        "Soul",
+        "Encanto",
+        "Raya and the Last Dragon"
+      ],
+      "difficulty": "medium",
+      "id": "7132"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién interpreta al personaje principal en 'El Hombre Invisible' (2020)?",
+      "correctAnswer": "Elisabeth Moss",
+      "incorrectAnswers": [
+        "Anya Taylor-Joy",
+        "Lily James",
+        "Margot Robbie"
+      ],
+      "difficulty": "medium",
+      "id": "348c"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué famoso director estuvo a cargo de la película 'Tenet' lanzada en 2020?",
+      "correctAnswer": "Christopher Nolan",
+      "incorrectAnswers": [
+        "Steven Spielberg",
+        "Quentin Tarantino",
+        "James Cameron"
+      ],
+      "difficulty": "medium",
+      "id": "4a50"
+    },
+    {
+      "category": "Film & TV",
+      "question": "En la película 'Soul' de Pixar, ¿qué instrumento toca el personaje principal, Joe Gardner?",
+      "correctAnswer": "Piano",
+      "incorrectAnswers": [
+        "Guitarra",
+        "Saxofón",
+        "Violín"
+      ],
+      "difficulty": "medium",
+      "id": "621f"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En 'Spider-Man: No Way Home', qué villano de la trilogía original de Sam Raimi regresa para enfrentarse a Peter Parker?",
+      "correctAnswer": "Duende Verde",
+      "incorrectAnswers": [
+        "Sandman",
+        "Venom",
+        "Lagarto"
+      ],
+      "difficulty": "medium",
+      "id": "40cc"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué personaje de Marvel es interpretado por Angelina Jolie en 'Eternals'?",
+      "correctAnswer": "Thena",
+      "incorrectAnswers": [
+        "Sersi",
+        "Ajak",
+        "Makkari"
+      ],
+      "difficulty": "medium",
+      "id": "dbce"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién dirige la película 'Dune: Part 2' estrenada en 2024?",
+      "correctAnswer": "Denis Villeneuve",
+      "incorrectAnswers": [
+        "Christopher Nolan",
+        "James Cameron",
+        "Ridley Scott"
+      ],
+      "difficulty": "easy",
+      "id": "278e"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre del protagonista en 'The Fall Guy'?",
+      "correctAnswer": "Ryan Gosling",
+      "incorrectAnswers": [
+        "Tom Cruise",
+        "Chris Hemsworth",
+        "Mark Wahlberg"
+      ],
+      "difficulty": "easy",
+      "id": "685e"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué estudio de animación lanzó 'Inside Out 2' en 2024?",
+      "correctAnswer": "Pixar",
+      "incorrectAnswers": [
+        "DreamWorks",
+        "Illumination",
+        "Sony Pictures Animation"
+      ],
+      "difficulty": "easy",
+      "id": "d44d"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Quién protagoniza la película 'Furiosa: A Mad Max Saga'?",
+      "correctAnswer": "Anya Taylor-Joy",
+      "incorrectAnswers": [
+        "Charlize Theron",
+        "Emma Stone",
+        "Gal Gadot"
+      ],
+      "difficulty": "easy",
+      "id": "1552"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué universo cinematográfico se desarrolla 'Spider-Man: Beyond the Spider-Verse'?",
+      "correctAnswer": "Marvel",
+      "incorrectAnswers": [
+        "DC",
+        "Star Wars",
+        "Harry Potter"
+      ],
+      "difficulty": "easy",
+      "id": "d97e"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actriz protagoniza la película 'Poor Things' de 2024?",
+      "correctAnswer": "Emma Stone",
+      "incorrectAnswers": [
+        "Meryl Streep",
+        "Cate Blanchett",
+        "Margot Robbie"
+      ],
+      "difficulty": "easy",
+      "id": "c5ad"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué película de Disney lanzada en 2024 sigue la historia de Asha y el poder de los deseos?",
+      "correctAnswer": "Wish",
+      "incorrectAnswers": [
+        "Frozen 3",
+        "Encanto 2",
+        "Moana"
+      ],
+      "difficulty": "easy",
+      "id": "2888"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué tipo de ambiente se desarrolla 'Civil War', lanzada en 2024?",
+      "correctAnswer": "Distópico",
+      "incorrectAnswers": [
+        "Futurista",
+        "Histórico",
+        "Postapocalíptico"
+      ],
+      "difficulty": "easy",
+      "id": "15d2"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué actor protagoniza la película de comedia 'Next Goal Wins' de 2024?",
+      "correctAnswer": "Michael Fassbender",
+      "incorrectAnswers": [
+        "Brad Pitt",
+        "Will Ferrell",
+        "Jason Bateman"
+      ],
+      "difficulty": "easy",
+      "id": "8307"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué estudio produce 'Spider-Man: Beyond the Spider-Verse'?",
+      "correctAnswer": "Sony Pictures",
+      "incorrectAnswers": [
+        "Marvel Studios",
+        "Warner Bros",
+        "Paramount"
+      ],
+      "difficulty": "easy",
+      "id": "3c76"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál película de 2023, dirigida por Greta Gerwig, se convirtió en un fenómeno de la cultura pop y está protagonizada por Margot Robbie?",
+      "correctAnswer": "Barbie",
+      "incorrectAnswers": [
+        "Oppenheimer",
+        "The Flash",
+        "Spider-Man: Cruzando el multiverso"
+      ],
+      "difficulty": "easy",
+      "id": "06f8"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué película de 2023 dirigida por Christopher Nolan se narra la historia de J. Robert Oppenheimer y la creación de la bomba atómica?",
+      "correctAnswer": "Oppenheimer",
+      "incorrectAnswers": [
+        "Barbie",
+        "The Flash",
+        "Guardians of the Galaxy Vol. 3"
+      ],
+      "difficulty": "easy",
+      "id": "d721"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el título de la secuela animada de 'Spider-Man: Un nuevo universo' que se lanzó en 2023?",
+      "correctAnswer": "Spider-Man: Cruzando el multiverso",
+      "incorrectAnswers": [
+        "Guardians of the Galaxy Vol. 3",
+        "Ant-Man and the Wasp: Quantumania",
+        "Transformers: Rise of the Beasts"
+      ],
+      "difficulty": "easy",
+      "id": "a2de"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué película de 2023 trae de vuelta a Harrison Ford en el papel del famoso arqueólogo Indiana Jones?",
+      "correctAnswer": "Indiana Jones y el Dial del Destino",
+      "incorrectAnswers": [
+        "Mission: Impossible - Dead Reckoning Part One",
+        "Guardians of the Galaxy Vol. 3",
+        "Fast X"
+      ],
+      "difficulty": "easy",
+      "id": "cdf6"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué película de animación de 2023 basada en un famoso videojuego, un grupo de tortugas mutantes lucha contra el mal en la ciudad de Nueva York?",
+      "correctAnswer": "Tortugas Ninja: Caos Mutante",
+      "incorrectAnswers": [
+        "Spider-Man: Cruzando el multiverso",
+        "The Flash",
+        "Transformers: Rise of the Beasts"
+      ],
+      "difficulty": "easy",
+      "id": "e262"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué película de 2023 dirigida por Neill Blomkamp está basada en el videojuego de carreras 'Gran Turismo'?",
+      "correctAnswer": "Gran Turismo",
+      "incorrectAnswers": [
+        "Oppenheimer",
+        "Barbie",
+        "Indiana Jones y el Dial del Destino"
+      ],
+      "difficulty": "easy",
+      "id": "c6c0"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál película de 2023 narra la historia de un androide en un mundo de ciencia ficción dirigida por Gareth Edwards?",
+      "correctAnswer": "The Creator",
+      "incorrectAnswers": [
+        "Guardians of the Galaxy Vol. 3",
+        "Spider-Man: Cruzando el multiverso",
+        "Barbie"
+      ],
+      "difficulty": "easy",
+      "id": "6d66"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué película de DC estrenada en 2023 muestra a Ezra Miller en el papel de un superhéroe que viaja en el tiempo?",
+      "correctAnswer": "The Flash",
+      "incorrectAnswers": [
+        "Guardians of the Galaxy Vol. 3",
+        "Barbie",
+        "The Creator"
+      ],
+      "difficulty": "easy",
+      "id": "2f7f"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué película de 2023 protagonizada por Tom Cruise se presenta la primera parte de la conclusión de la saga 'Misión Imposible'?",
+      "correctAnswer": "Misión Imposible: Sentencia Mortal - Parte uno",
+      "incorrectAnswers": [
+        "Barbie",
+        "Spider-Man: Cruzando el multiverso",
+        "Indiana Jones y el Dial del Destino"
+      ],
+      "difficulty": "easy",
+      "id": "2c30"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué comedia romántica de 2023 protagonizada por Jennifer Lawrence trata sobre una mujer contratada para 'ayudar' a un joven introvertido?",
+      "correctAnswer": "No Hard Feelings (Sin malos rollos)",
+      "incorrectAnswers": [
+        "Guardians of the Galaxy Vol. 3",
+        "The Flash",
+        "Oppenheimer"
+      ],
+      "difficulty": "easy",
+      "id": "3985"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué película de 2023 dirigida por Martin Scorsese narra la historia de una serie de asesinatos ocurridos en la tribu Osage?",
+      "correctAnswer": "Killers of the Flower Moon",
+      "incorrectAnswers": [
+        "Oppenheimer",
+        "The Whale",
+        "Tár"
+      ],
+      "difficulty": "hard",
+      "id": "900a"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre del actor que interpreta a la versión joven de J. Robert Oppenheimer en la película 'Oppenheimer' de 2023?",
+      "correctAnswer": "Cillian Murphy",
+      "incorrectAnswers": [
+        "Robert Downey Jr.",
+        "Matt Damon",
+        "Tom Hiddleston"
+      ],
+      "difficulty": "hard",
+      "id": "485a"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué película de 2023, dirigida por Jonathan Glazer, ganó el Ojo de Oro en el Festival de Cannes?",
+      "correctAnswer": "The Zone of Interest",
+      "incorrectAnswers": [
+        "The Fabelmans",
+        "The Killer",
+        "The Flash"
+      ],
+      "difficulty": "hard",
+      "id": "ea07"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué película de 2023, dirigida por Yorgos Lanthimos, Olivia Colman interpreta a la madre de una mujer atrapada en una relación abusiva?",
+      "correctAnswer": "Poor Things",
+      "incorrectAnswers": [
+        "The Wonder",
+        "The Lost King",
+        "The Favourite"
+      ],
+      "difficulty": "hard",
+      "id": "210d"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Cuál es el nombre del director de la película de 2023 'The Killer', protagonizada por Michael Fassbender?",
+      "correctAnswer": "David Fincher",
+      "incorrectAnswers": [
+        "Christopher Nolan",
+        "Steven Spielberg",
+        "Quentin Tarantino"
+      ],
+      "difficulty": "hard",
+      "id": "1116"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué película de 2023 dirigida por Pedro Almodóvar, protagonizada por Penélope Cruz, explora la vida de una escritora?",
+      "correctAnswer": "Despedir al Sol",
+      "incorrectAnswers": [
+        "Pain and Glory",
+        "Parallel Mothers",
+        "Volver"
+      ],
+      "difficulty": "hard",
+      "id": "954c"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿En qué película de 2023 el personaje de Adam Driver es un astronauta que lucha por sobrevivir tras un accidente en un planeta desconocido?",
+      "correctAnswer": "65",
+      "incorrectAnswers": [
+        "Interstellar",
+        "The Martian",
+        "Gravity"
+      ],
+      "difficulty": "hard",
+      "id": "709f"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué película de 2023, dirigida por David Lowery, mezcla elementos de fantasía y drama histórico y cuenta con un joven protagonista llamado Gawain?",
+      "correctAnswer": "The Green Knight",
+      "incorrectAnswers": [
+        "The Whale",
+        "Oppenheimer",
+        "A Haunting in Venice"
+      ],
+      "difficulty": "hard",
+      "id": "fe23"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué famosa película de 2023, que se desarrolla en un mundo de fantasía, cuenta con la aparición de la actriz Jamie Lee Curtis en el papel de un ser mágico?",
+      "correctAnswer": "Everything Everywhere All at Once",
+      "incorrectAnswers": [
+        "The Fabelmans",
+        "The Flash",
+        "The Whale"
+      ],
+      "difficulty": "hard",
+      "id": "d0a7"
+    },
+    {
+      "category": "Film & TV",
+      "question": "¿Qué película de 2023 dirigida por Wes Anderson tiene un elenco de estrellas que incluye a Tom Hanks, Tilda Swinton y Scarlett Johansson?",
+      "correctAnswer": "Asteroid City",
+      "incorrectAnswers": [
+        "The Royal Tenenbaums",
+        "The French Dispatch",
+        "Moonrise Kingdom"
+      ],
+      "difficulty": "hard",
+      "id": "053c"
+    }
+  ],
+  "preguntasUsers": [
+    {
+      "id": "4732",
+      "question": "¿Que es Dory?",
+      "correctAnswer": "Un Pez",
+      "incorrectAnswers": [
+        "Un Avion",
+        "Un Murcielago",
+        "Un Dragon"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "usuarioCreador": "1731093925129",
+      "question": "¿Quien es Dory en la pelicula Buscando a Nemo?",
+      "correctAnswer": "Un pez",
+      "incorrectAnswers": [
+        "Un Tiburon",
+        "Un Caballito de mar",
+        "Un Cangrejo"
+      ],
+      "difficulty": "easy",
+      "idUsersVotos": [],
+      "contadorVotos": 0,
+      "id": "86e1"
+    },
+    {
+      "usuarioCreador": "1731432907075",
+      "question": "¿Qué actor interpreta a Ken en la película \"Barbie\" (2023)?",
+      "correctAnswer": "Ryan Gosling",
+      "incorrectAnswers": [
+        "Ryan Reynolds",
+        "Chris Evans",
+        "Henry Cavill"
+      ],
+      "difficulty": "easy",
+      "idUsersVotos": [],
+      "contadorVotos": 0,
+      "id": "c54f"
+    },
+    {
+      "usuarioCreador": "1731432907075",
+      "question": "¿En qué país se desarrolla la película \"Oppenheimer\" (2023)?",
+      "correctAnswer": "Estados Unidos",
+      "incorrectAnswers": [
+        "Japón",
+        "Alemania",
+        "Reino Unido"
+      ],
+      "difficulty": "easy",
+      "idUsersVotos": [],
+      "contadorVotos": 0,
+      "id": "0a9b"
+    },
+    {
+      "id": "4370",
+      "usuarioCreador": "1731432907075",
+      "question": "¿En qué película aparece el personaje Groot?",
+      "correctAnswer": "\"Guardianes de la Galaxia\"",
+      "incorrectAnswers": [
+        "\"Avengers: Endgame\"",
+        "\"Capitán América: Civil War\"",
+        "\"Thor: Ragnarok\""
+      ],
+      "difficulty": "easy",
+      "idUsersVotos": [],
+      "contadorVotos": 0
+    },
+    {
+      "id": "5a5c",
+      "usuarioCreador": "1731432907075",
+      "question": "¿Quién interpreta a Mario en la película animada \"Super Mario Bros.\" (2023)?",
+      "correctAnswer": "Chris Pratt",
+      "incorrectAnswers": [
+        "Tom Holland",
+        "Jack Black",
+        "Chris Evans"
+      ],
+      "difficulty": "easy",
+      "idUsersVotos": [],
+      "contadorVotos": 0
+    },
+    {
+      "id": "8f2b",
+      "usuarioCreador": "1731093925129",
+      "question": "¿Cómo se llama la película de Pixar estrenada en 2023 que trata sobre elementos de la naturaleza?",
+      "correctAnswer": "Elementos",
+      "incorrectAnswers": [
+        "Coco",
+        "Luca",
+        "Encanto"
+      ],
+      "difficulty": "easy",
+      "idUsersVotos": [],
+      "contadorVotos": 0
+    },
+    {
+      "id": "c590",
+      "usuarioCreador": "1731093925129",
+      "question": "¿Qué saga estrenó su décima película en 2023?",
+      "correctAnswer": "Rápidos y Furiosos",
+      "incorrectAnswers": [
+        "Transformers",
+        "Star Wars",
+        "Harry Potter"
+      ],
+      "difficulty": "easy",
+      "idUsersVotos": [],
+      "contadorVotos": 0
+    },
+    {
+      "id": "abab",
+      "usuarioCreador": "1731093925129",
+      "question": "¿Qué famosa película estrenada en 2023 trata sobre el creador de la bomba atómica?",
+      "correctAnswer": "Oppenheimer",
+      "incorrectAnswers": [
+        "Dunkerque",
+        "Los Fabelman",
+        "1917"
+      ],
+      "difficulty": "easy",
+      "idUsersVotos": [],
+      "contadorVotos": 0
+    },
+    {
+      "id": "025e",
+      "usuarioCreador": "1731093925129",
+      "question": "¿Qué personaje de Marvel es conocido por decir \"Soy Groot\"?",
+      "correctAnswer": "Groot",
+      "incorrectAnswers": [
+        "Rocket",
+        "Thor",
+        "Loki"
+      ],
+      "difficulty": "easy",
+      "idUsersVotos": [],
+      "contadorVotos": 0
+    }
+  ]
+}
