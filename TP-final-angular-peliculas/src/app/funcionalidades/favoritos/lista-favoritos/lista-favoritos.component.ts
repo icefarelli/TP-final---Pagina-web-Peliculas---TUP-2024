@@ -49,12 +49,10 @@ export class ListaFavoritosComponent implements OnInit{
   // Eliminar la lista seleccionada
   eliminarLista(id: string): void {
     if (confirm('¿Estás seguro de que deseas eliminar esta lista?')) {
-      console.log('Intentando eliminar lista con id:', id); // Verifico el id en consola
       this.favoritosService.deleteLista(id).subscribe({
         next: (resultado) => {
           if (resultado) {
             this.alertService.mostrarAlerta('success', 'Lista eliminada con éxito');
-            // Si se eliminó correctamente, recargo las listas
             this.cargarListas();
           } else {
             console.error('No se pudo eliminar la lista');
@@ -70,10 +68,7 @@ export class ListaFavoritosComponent implements OnInit{
 
 
   eliminarPeliculadeLista(lista: Favoritos, peliculaId: number): void {
-    // Filtrar las películas de la lista específica para quitar la que quiero eliminar
     lista.peliculas = lista.peliculas.filter(pelicula => pelicula.id !== peliculaId);
-
-    // Actualizo la lista en el servidor
     this.favoritosService.putLista(lista.id, lista).subscribe({
       next: () => {
         console.log('Película eliminada de la lista de favoritos');

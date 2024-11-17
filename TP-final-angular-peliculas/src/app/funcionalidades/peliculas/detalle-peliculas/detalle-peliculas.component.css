@@ -228,32 +228,3 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-@media (max-width: 768px) {
-  .content-wrapper {
-    flex-direction: column;
-  }
-
-  .left-column {
-    flex: 0 0 auto;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-
-  .favoritos-section {
-    padding: 20px;
-  }
-
-  .favoritos-section h2 {
-    font-size: 1.8em;
-  }
-
-  .favoritos-section select {
-    font-size: 1em;
-  }
-
-  .favoritos-section button {
-    padding: 10px 20px;
-    font-size: 1em;
-  }
-}

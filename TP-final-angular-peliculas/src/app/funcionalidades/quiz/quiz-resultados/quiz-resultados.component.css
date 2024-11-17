@@ -12,18 +12,15 @@
 }
 
 h1 {
-  /* background-color: rgba(0, 0, 0, 0.859); */
   color: #ffa600;
   font-size: 32px;
   margin: 0 150px 0 150px;
   padding: 0 10px;
   border-radius: 10px;
   text-shadow: -2px 2px 1px #000000;
-  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.823); */
 }
 
 .display-puntuacion {
-  /* background-color: rgba(0, 0, 0, 0.859); */
   color: #ffa600;
   font-size: 3.5em;
   font-weight: 600;
@@ -61,18 +58,6 @@ h1 {
   transform: scale3d(+5);
   font-weight: 700;
   box-shadow: 0 4px 10px rgba(255, 0, 0, 0.823);
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-20px);
-  }
-  60% {
-    transform: translateY(-10px);
-  }
 }
 
 .emoji {

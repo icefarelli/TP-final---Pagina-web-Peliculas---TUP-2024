@@ -26,6 +26,15 @@
       "apellido": "Salas",
       "email": "jlsalas86@hotmail.com",
       "fechaNacimiento": "1986-08-18"
+    },
+    {
+      "id": "1731432907076",
+      "usuario": "jobaum",
+      "contrasenia": "1234",
+      "nombre": "Josefina",
+      "apellido": "Baumgertner",
+      "email": "josefinabaumgertner@hotmail.com",
+      "fechaNacimiento": "1992-06-01"
     }
   ],
   "reseñas": [
@@ -2525,113 +2534,546 @@
   ],
   "preguntasUsers": [
     {
-      "id": "4732",
-      "question": "¿Que es Dory?",
-      "correctAnswer": "Un Pez",
+      "usuarioCreador": "1731098826438",
+      "question": "¿Qué famosa película estrenada en 1997 cuenta la historia del hundimiento del Titanic?",
+      "correctAnswer": "Titanic",
       "incorrectAnswers": [
-        "Un Avion",
-        "Un Murcielago",
-        "Un Dragon"
+        "El Señor de los Anillos",
+        "Jurassic Park",
+        "Avatar"
+      ],
+      "difficulty": "medium",
+      "idUsersVotos": [],
+      "contadorVotos": 0,
+      "id": "easy001"
+    },
+    {
+      "id": "easy002",
+      "usuarioCreador": "1731432907075",
+      "question": "¿Qué personaje lleva un látigo y sombrero en las películas de aventuras dirigidas por Steven Spielberg?",
+      "correctAnswer": "Indiana Jones",
+      "incorrectAnswers": [
+        "Han Solo",
+        "Jack Sparrow",
+        "Sherlock Holmes"
       ],
       "difficulty": "easy"
     },
     {
+      "id": "easy003",
       "usuarioCreador": "1731093925129",
-      "question": "¿Quien es Dory en la pelicula Buscando a Nemo?",
-      "correctAnswer": "Un pez",
+      "question": "¿Qué película animada de Disney cuenta la historia de Simba, el león?",
+      "correctAnswer": "El Rey León",
       "incorrectAnswers": [
-        "Un Tiburon",
-        "Un Caballito de mar",
-        "Un Cangrejo"
+        "Aladdín",
+        "Mulan",
+        "Pocahontas"
       ],
-      "difficulty": "easy",
-      "idUsersVotos": [],
-      "contadorVotos": 0,
-      "id": "86e1"
+      "difficulty": "easy"
     },
     {
-      "id": "8f2b",
+      "id": "easy004",
+      "usuarioCreador": "1731098826438",
+      "question": "¿Quién dirigió la trilogía de 'El Señor de los Anillos'?",
+      "correctAnswer": "Peter Jackson",
+      "incorrectAnswers": [
+        "Christopher Nolan",
+        "James Cameron",
+        "Steven Spielberg"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "easy005",
+      "usuarioCreador": "1731432907075",
+      "question": "¿Qué película de Pixar presenta a un grupo de juguetes liderados por Woody y Buzz Lightyear?",
+      "correctAnswer": "Toy Story",
+      "incorrectAnswers": [
+        "Buscando a Nemo",
+        "Los Increíbles",
+        "Monstruos S.A."
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "easy006",
       "usuarioCreador": "1731093925129",
-      "question": "¿Cómo se llama la película de Pixar estrenada en 2023 que trata sobre elementos de la naturaleza?",
-      "correctAnswer": "Elementos",
+      "question": "¿En qué película un tiburón gigante aterroriza a un pueblo costero?",
+      "correctAnswer": "Tiburón",
+      "incorrectAnswers": [
+        "Tornado",
+        "La Playa",
+        "Meg"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "easy007",
+      "usuarioCreador": "1731098826438",
+      "question": "¿Qué película sigue a una joven que viaja al País de las Maravillas?",
+      "correctAnswer": "Alicia en el País de las Maravillas",
+      "incorrectAnswers": [
+        "Peter Pan",
+        "El Mago de Oz",
+        "Cenicienta"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "easy008",
+      "usuarioCreador": "1731432907075",
+      "question": "¿Qué actor interpretó a Jack Sparrow en 'Piratas del Caribe'?",
+      "correctAnswer": "Johnny Depp",
+      "incorrectAnswers": [
+        "Orlando Bloom",
+        "Brad Pitt",
+        "Robert Downey Jr."
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "easy009",
+      "usuarioCreador": "1731093925129",
+      "question": "¿Cómo se llama el personaje principal de la saga 'Harry Potter'?",
+      "correctAnswer": "Harry Potter",
+      "incorrectAnswers": [
+        "Ron Weasley",
+        "Hermione Granger",
+        "Albus Dumbledore"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "easy010",
+      "usuarioCreador": "1731098826438",
+      "question": "¿Qué película animada presenta a un elefante con orejas enormes que puede volar?",
+      "correctAnswer": "Dumbo",
+      "incorrectAnswers": [
+        "Bambi",
+        "El Libro de la Selva",
+        "Pinocho"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "easy011",
+      "usuarioCreador": "1731432907075",
+      "question": "¿Qué película cuenta la historia de un pez payaso buscando a su hijo perdido?",
+      "correctAnswer": "Buscando a Nemo",
+      "incorrectAnswers": [
+        "La Sirenita",
+        "Shrek",
+        "Madagascar"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "easy012",
+      "usuarioCreador": "1731093925129",
+      "question": "¿Quién interpretó a la Mujer Maravilla en las películas del Universo DC estrenadas después de 2016?",
+      "correctAnswer": "Gal Gadot",
+      "incorrectAnswers": [
+        "Scarlett Johansson",
+        "Margot Robbie",
+        "Anne Hathaway"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "easy013",
+      "usuarioCreador": "1731098826438",
+      "question": "¿En qué película de 1939 Dorothy canta 'Somewhere Over the Rainbow'?",
+      "correctAnswer": "El Mago de Oz",
+      "incorrectAnswers": [
+        "La Bella Durmiente",
+        "Blancanieves",
+        "Cenicienta"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "easy014",
+      "usuarioCreador": "1731432907075",
+      "question": "¿Qué película de Disney tiene como protagonista a un ciervo llamado Bambi?",
+      "correctAnswer": "Bambi",
+      "incorrectAnswers": [
+        "Dumbo",
+        "El Zorro y el Sabueso",
+        "Tod y Toby"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "easy015",
+      "usuarioCreador": "1731093925129",
+      "question": "¿En qué película se escucha la famosa frase 'Luke, yo soy tu padre'?",
+      "correctAnswer": "Star Wars: El Imperio Contraataca",
+      "incorrectAnswers": [
+        "Star Wars: Una Nueva Esperanza",
+        "Star Wars: El Retorno del Jedi",
+        "Star Wars: La Amenaza Fantasma"
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "medium001",
+      "usuarioCreador": "1731098826438",
+      "question": "¿Qué director es conocido por sus películas como 'Pulp Fiction' y 'Kill Bill'?",
+      "correctAnswer": "Quentin Tarantino",
+      "incorrectAnswers": [
+        "Martin Scorsese",
+        "Christopher Nolan",
+        "David Fincher"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "medium002",
+      "usuarioCreador": "1731432907075",
+      "question": "¿Quién interpretó al Joker en 'The Dark Knight' (2008)?",
+      "correctAnswer": "Heath Ledger",
+      "incorrectAnswers": [
+        "Joaquin Phoenix",
+        "Jared Leto",
+        "Jack Nicholson"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "medium003",
+      "usuarioCreador": "1731093925129",
+      "question": "¿Qué película ganó el Oscar a Mejor Película en 2020?",
+      "correctAnswer": "Parasite",
+      "incorrectAnswers": [
+        "1917",
+        "Joker",
+        "Once Upon a Time in Hollywood"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "medium004",
+      "usuarioCreador": "1731098826438",
+      "question": "¿Qué película de 1994 cuenta con los personajes Forrest y Jenny?",
+      "correctAnswer": "Forrest Gump",
+      "incorrectAnswers": [
+        "Cadena Perpetua",
+        "Pulp Fiction",
+        "Philadelphia"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "medium005",
+      "usuarioCreador": "1731432907075",
+      "question": "¿Qué película de Christopher Nolan trata sobre sueños dentro de sueños?",
+      "correctAnswer": "Inception",
+      "incorrectAnswers": [
+        "Tenet",
+        "Memento",
+        "Interstellar"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "medium006",
+      "usuarioCreador": "1731093925129",
+      "question": "¿Qué actor interpretó al primer James Bond en la pantalla grande?",
+      "correctAnswer": "Sean Connery",
+      "incorrectAnswers": [
+        "Roger Moore",
+        "Daniel Craig",
+        "Pierce Brosnan"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "medium007",
+      "usuarioCreador": "1731098826438",
+      "question": "¿En qué película de 1982 aparecen los personajes de Elliot y un extraterrestre amistoso?",
+      "correctAnswer": "E.T. el extraterrestre",
+      "incorrectAnswers": [
+        "Encuentros Cercanos del Tercer Tipo",
+        "Star Wars",
+        "The Goonies"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "medium008",
+      "usuarioCreador": "1731432907075",
+      "question": "¿En qué saga cinematográfica encontramos al personaje Legolas?",
+      "correctAnswer": "El Señor de los Anillos",
+      "incorrectAnswers": [
+        "Harry Potter",
+        "Narnia",
+        "Percy Jackson"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "medium009",
+      "usuarioCreador": "1731093925129",
+      "question": "¿En qué año se estrenó 'Star Wars: Una Nueva Esperanza'?",
+      "correctAnswer": "1977",
+      "incorrectAnswers": [
+        "1980",
+        "1975",
+        "1979"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "medium010",
+      "usuarioCreador": "1731098826438",
+      "question": "¿Qué actriz protagonizó la película 'El Diario de Bridget Jones'?",
+      "correctAnswer": "Renée Zellweger",
+      "incorrectAnswers": [
+        "Sandra Bullock",
+        "Julia Roberts",
+        "Cameron Diaz"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "medium011",
+      "usuarioCreador": "1731432907075",
+      "question": "¿Qué película de Studio Ghibli presenta a un gato gigante y un bosque mágico?",
+      "correctAnswer": "Mi Vecino Totoro",
+      "incorrectAnswers": [
+        "El Viaje de Chihiro",
+        "La Princesa Mononoke",
+        "El Castillo Ambulante"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "medium012",
+      "usuarioCreador": "1731093925129",
+      "question": "¿Qué película ganó el Oscar a Mejor Película en 1998?",
+      "correctAnswer": "Titanic",
+      "incorrectAnswers": [
+        "Shakespeare in Love",
+        "Salvar al Soldado Ryan",
+        "El Paciente Inglés"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "medium013",
+      "usuarioCreador": "1731098826438",
+      "question": "¿Qué película animada de Pixar trata sobre una rata que sueña con ser chef?",
+      "correctAnswer": "Ratatouille",
       "incorrectAnswers": [
         "Coco",
-        "Luca",
-        "Encanto"
+        "Up",
+        "Toy Story 3"
       ],
-      "difficulty": "easy",
-      "idUsersVotos": [],
-      "contadorVotos": 0
+      "difficulty": "medium"
     },
     {
-      "id": "c590",
+      "id": "medium014",
+      "usuarioCreador": "1731432907075",
+      "question": "¿Qué director es conocido por su estilo gótico y películas como 'El Joven Manos de Tijera'?",
+      "correctAnswer": "Tim Burton",
+      "incorrectAnswers": [
+        "Guillermo del Toro",
+        "David Lynch",
+        "Wes Anderson"
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "medium015",
       "usuarioCreador": "1731093925129",
-      "question": "¿Qué saga estrenó su décima película en 2023?",
-      "correctAnswer": "Rápidos y Furiosos",
+      "question": "¿Qué película de Alfred Hitchcock tiene como escenario principal un motel aislado?",
+      "correctAnswer": "Psicosis",
       "incorrectAnswers": [
-        "Transformers",
-        "Star Wars",
-        "Harry Potter"
+        "Los Pájaros",
+        "La Ventana Indiscreta",
+        "Vértigo"
       ],
-      "difficulty": "easy",
-      "idUsersVotos": [],
-      "contadorVotos": 0
+      "difficulty": "medium"
     },
     {
-      "id": "abab",
+      "id": "hard001",
+      "usuarioCreador": "1731098826438",
+      "question": "¿En qué película de Stanley Kubrick se utiliza la canción 'Así habló Zaratustra'?",
+      "correctAnswer": "2001: Odisea del Espacio",
+      "incorrectAnswers": [
+        "La Naranja Mecánica",
+        "El Resplandor",
+        "Barry Lyndon"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "hard002",
+      "usuarioCreador": "1731432907075",
+      "question": "¿Qué director dirigió la trilogía original de 'Star Wars'?",
+      "correctAnswer": "George Lucas",
+      "incorrectAnswers": [
+        "Steven Spielberg",
+        "Irvin Kershner",
+        "Richard Marquand"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "hard003",
       "usuarioCreador": "1731093925129",
-      "question": "¿Qué famosa película estrenada en 2023 trata sobre el creador de la bomba atómica?",
-      "correctAnswer": "Oppenheimer",
+      "question": "¿Qué película fue la primera en ganar el Oscar a Mejor Película?",
+      "correctAnswer": "Wings",
       "incorrectAnswers": [
-        "Dunkerque",
-        "Los Fabelman",
-        "1917"
+        "Casablanca",
+        "Lo que el Viento se Llevó",
+        "Metrópolis"
       ],
-      "difficulty": "easy",
-      "idUsersVotos": [],
-      "contadorVotos": 0
+      "difficulty": "hard"
     },
     {
-      "usuarioCreador": "1731432907075",
-      "question": "asaaaaaaaaaaaaaaaaaaaaaa",
-      "correctAnswer": "vcxvxd",
+      "id": "hard004",
+      "usuarioCreador": "1731098826438",
+      "question": "¿Qué actriz protagonizó 'Gilda' en 1946?",
+      "correctAnswer": "Rita Hayworth",
       "incorrectAnswers": [
-        "vxvd",
-        "xvdv",
-        "xvdxv"
+        "Lauren Bacall",
+        "Ingrid Bergman",
+        "Greta Garbo"
       ],
-      "difficulty": "easy",
-      "idUsersVotos": [],
-      "contadorVotos": 0,
-      "id": "ab61"
+      "difficulty": "hard"
     },
     {
-      "id": "2816",
+      "id": "hard005",
       "usuarioCreador": "1731432907075",
-      "question": "ijoij",
-      "correctAnswer": "oijoij",
+      "question": "¿Qué película muda de 1927 dirigida por Fritz Lang es considerada una obra maestra del cine expresionista?",
+      "correctAnswer": "Metrópolis",
       "incorrectAnswers": [
-        "oijoij",
-        "oijo",
-        "ijo"
+        "Nosferatu",
+        "El Gabinete del Doctor Caligari",
+        "Amanecer"
       ],
-      "difficulty": "easy",
-      "idUsersVotos": [],
-      "contadorVotos": 0
+      "difficulty": "hard"
     },
     {
-      "id": "af09",
-      "usuarioCreador": "1731432907075",
-      "question": "lijlij",
-      "correctAnswer": "lijlij",
+      "id": "hard006",
+      "usuarioCreador": "1731093925129",
+      "question": "¿Qué director es conocido por su técnica de 'plano secuencia' en películas como 'El Arca Rusa'?",
+      "correctAnswer": "Aleksandr Sokurov",
       "incorrectAnswers": [
-        null,
-        null,
-        null
+        "Andrei Tarkovsky",
+        "Béla Tarr",
+        "Ingmar Bergman"
       ],
-      "difficulty": "medium",
-      "idUsersVotos": [],
-      "contadorVotos": 0
+      "difficulty": "hard"
+    },
+    {
+      "id": "hard007",
+      "usuarioCreador": "1731098826438",
+      "question": "¿Qué película japonesa de 1954 dirigida por Akira Kurosawa inspiró 'Los Siete Magníficos'?",
+      "correctAnswer": "Los Siete Samuráis",
+      "incorrectAnswers": [
+        "Rashomon",
+        "Ran",
+        "Yojimbo"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "hard008",
+      "usuarioCreador": "1731432907075",
+      "question": "¿Qué película de 2014 ganó el Oscar por sus efectos visuales innovadores y ambientación espacial?",
+      "correctAnswer": "Interstellar",
+      "incorrectAnswers": [
+        "Gravity",
+        "The Martian",
+        "Ad Astra"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "hard009",
+      "usuarioCreador": "1731093925129",
+      "question": "¿Qué director italiano es conocido por 'La Dolce Vita' y '8½'?",
+      "correctAnswer": "Federico Fellini",
+      "incorrectAnswers": [
+        "Luchino Visconti",
+        "Pier Paolo Pasolini",
+        "Michelangelo Antonioni"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "hard010",
+      "usuarioCreador": "1731098826438",
+      "question": "¿Qué película tiene el récord de más nominaciones a los Oscar sin ganar ninguno?",
+      "correctAnswer": "The Turning Point",
+      "incorrectAnswers": [
+        "El Color Púrpura",
+        "Gangs of New York",
+        "La Reina"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "hard011",
+      "usuarioCreador": "1731432907075",
+      "question": "¿Qué película dirigida por Ingmar Bergman presenta un duelo de ajedrez con la Muerte?",
+      "correctAnswer": "El Séptimo Sello",
+      "incorrectAnswers": [
+        "Fanny y Alexander",
+        "Persona",
+        "Gritos y Susurros"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "hard012",
+      "usuarioCreador": "1731093925129",
+      "question": "¿En qué año se estrenó la película 'Blade Runner'?",
+      "correctAnswer": "1982",
+      "incorrectAnswers": [
+        "1979",
+        "1984",
+        "1990"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "hard013",
+      "usuarioCreador": "1731098826438",
+      "question": "¿Qué película tiene el récord de más Oscars ganados en la historia?",
+      "correctAnswer": "Titanic",
+      "incorrectAnswers": [
+        "El Señor de los Anillos: El Retorno del Rey",
+        "Ben-Hur",
+        "Lo que el Viento se Llevó"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "hard014",
+      "usuarioCreador": "1731432907075",
+      "question": "¿Qué película francesa de 1931 dirigida por René Clair es considerada pionera en el cine sonoro?",
+      "correctAnswer": "Bajo los Techos de París",
+      "incorrectAnswers": [
+        "La Gran Ilusión",
+        "Napoleón",
+        "El Atalante"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "hard015",
+      "usuarioCreador": "1731093925129",
+      "question": "¿Qué director soviético es famoso por la película 'El Acorazado Potemkin'?",
+      "correctAnswer": "Sergei Eisenstein",
+      "incorrectAnswers": [
+        "Andrei Tarkovsky",
+        "Dziga Vertov",
+        "Vsevolod Pudovkin"
+      ],
+      "difficulty": "hard"
     }
   ]
 }

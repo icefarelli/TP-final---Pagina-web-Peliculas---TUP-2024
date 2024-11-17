@@ -22,7 +22,7 @@ export class MisResenasComponent implements OnInit {
   constructor(
     private reseniasService: ReseniasService,
     private authService: AuthService,
-    private alertService: AlertService// Inyección del servicio AlertService
+    private alertService: AlertService
 
   ) {}
 
@@ -38,13 +38,12 @@ export class MisResenasComponent implements OnInit {
       const author = this.usuarioActual.usuario;
       try {
         this.resenas = await this.reseniasService.getReviewsByAuthor(author);
-        // Obtener detalles de la película para cada reseña
         for (const resena of this.resenas) {
           try {
             resena.movieDetails = await this.reseniasService.getMovieDetails(resena.movieId).toPromise();
           } catch (error) {
             console.error(`Error al obtener detalles de la película para movieId ${resena.movieId}:`, error);
-            resena.movieDetails = null; // Manejar el error según sea necesario
+            resena.movieDetails = null;
           }
         }
       } catch (error) {
@@ -59,8 +58,8 @@ export class MisResenasComponent implements OnInit {
     if (confirm('¿Estás seguro de que deseas eliminar esta reseña?')) {
       this.reseniasService.deleteReview(reviewId).subscribe({
         next: () => {
-          this.cargarResenas(); // Recargar las reseñas locales
-          this.alertService.mostrarAlerta('success', 'Reseña eliminada con éxito'); // Mensaje de éxito
+          this.cargarResenas();
+          this.alertService.mostrarAlerta('success', 'Reseña eliminada con éxito');
         },
         error: (error) => {
           this.alertService.mostrarAlerta('error', 'Error al eliminar la reseña');
@@ -70,16 +69,16 @@ export class MisResenasComponent implements OnInit {
   }
 
   editReview(resena: any) {
-    this.editingReview = { ...resena }; // Clonamos la reseña para editar
+    this.editingReview = { ...resena };
   }
 
   saveEdit() {
     if (this.editingReview) {
       this.reseniasService.updateReview(this.editingReview.id, this.editingReview.content, this.editingReview.rating).subscribe({
         next: () => {
-          this.cargarResenas(); // Recargar las reseñas después de la edición
+          this.cargarResenas(); 
           this.alertService.mostrarAlerta('success', 'Reseña editada con éxito');
-          this.editingReview = null; // Reiniciar el formulario de edición
+          this.editingReview = null;
         },
         error: (error) => {
           this.alertService.mostrarAlerta('error', 'Error al editar la reseña');
@@ -89,11 +88,11 @@ export class MisResenasComponent implements OnInit {
   }
 
   cancelEdit() {
-    this.editingReview = null; // Reiniciar el formulario de edición
+    this.editingReview = null;
   }
 
   setRating(rating: number): void {
-    this.editingReview.rating = rating; // Actualiza la calificación en la reseña en edición
+    this.editingReview.rating = rating;
   }
 }
 

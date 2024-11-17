@@ -7,13 +7,13 @@
 }
 
 .pregunta {
-  background-color: rgb(255, 187, 0); /* Color naranja con transparencia */
+  background-color: rgb(255, 187, 0); 
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
   font-size: 1.5em;
   color: rgb(0, 0, 0);
-  min-height: 125px; /* Altura mínima fija */
+  min-height: 125px; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,35 +74,23 @@ button:disabled {
 }
 
 button.seleccion {
-  background-color: #ff8c00; /* Color naranja oscuro */
+  background-color: #ff8c00; 
   color: #333;
   font-size: large;
 }
 
 button.correcta {
-  background-color: #00ff08; /* Verde para respuesta correcta */
+  background-color: #00ff08; 
   color: #333;
   font-size: large;
   box-shadow: 0 4px 15px #81fd85c2;
 }
 
 button.incorrecta {
-  background-color: #ff1100; /* Rojo para respuesta incorrecta */
+  background-color: #ff1100; 
   color: #333;
   font-size: large;
   box-shadow: 0 4px 15px #ff887fc9;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 
 button.seleccion {

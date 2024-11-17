@@ -86,18 +86,3 @@
   background-color: #0787ff; 
   transform: scale(1);
 }
-
-@media (max-width: 768px) {
-  .perfil-details {
-    padding: 15px; 
-    margin: 15px auto 0;
-  }
-
-  .perfil-details h2 {
-    font-size: 2em; 
-  }
-
-
-
-
-}

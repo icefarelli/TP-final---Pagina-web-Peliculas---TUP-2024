@@ -1,4 +1,3 @@
-// En detalle-actor.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';

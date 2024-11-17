@@ -40,7 +40,6 @@ export class ModificarFavoritosComponent implements OnInit{
  cargarListaFavoritos(): void {
 
   const id = this.route.snapshot.paramMap.get('id') || '';
-  console.log('Intentando modificar lista con id:', id); // Verifico el id en consola
   this.favoritosService.getListaporId(id).subscribe({
     next: (lista) => {
       if(lista){
@@ -51,13 +50,13 @@ export class ModificarFavoritosComponent implements OnInit{
         });
       } else {
         this.alertService.mostrarAlerta('error', 'No se encontró la lista de favoritos con el ID especificado');
-        this.router.navigate(['/favoritos']); // por si no se encuentra la lista
+        this.router.navigate(['/favoritos']);
       }
     },
     error: (err) => {
       console.error('Error al cargar la lista de favoritos', err);
       this.alertService.mostrarAlerta('error', 'Error al cargar la lista de favoritos');
-      this.router.navigate(['/favoritos']); //  en caso de error
+      this.router.navigate(['/favoritos']); 
     }
   });
 }

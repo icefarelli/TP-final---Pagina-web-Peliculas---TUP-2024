@@ -18,7 +18,6 @@ export class NavbarComponent {
   usuarioActual: Usuario | null = null;
 
   constructor(private authService: AuthService) {
-    // Suscribirse al observable para obtener el usuario actual
     this.authService.getUsuarioActual().subscribe(usuario => {
       this.usuarioActual = usuario;
     });
