@@ -39,46 +39,20 @@
   ],
   "reseñas": [
     {
-      "id": "e67e",
-      "movieId": 1184918,
-      "author": "admin",
-      "content": "asad",
-      "created_at": "2024-11-08T19:15:26.785Z",
-      "isLocal": true
-    },
-    {
-      "id": "b2a7",
-      "movieId": 1184918,
-      "author": "admin",
-      "content": "sadasdasd",
-      "created_at": "2024-11-08T19:18:23.373Z",
-      "isLocal": true
-    },
-    {
       "id": "5bf3",
       "movieId": 1034541,
       "author": "admin",
       "content": "reseña de prueba en pelicula Terrifier 3\n",
       "created_at": "2024-11-08T20:39:05.507Z",
       "isLocal": true
-    },
-    {
-      "id": "4d99",
-      "movieId": 1118031,
-      "author": "icefarelli",
-      "content": "ASDASDASDASDASDASDASD",
-      "created_at": "2024-11-16T18:58:54.684Z",
-      "rating": 2,
-      "isLocal": true,
-      "updated_at": "2024-11-16T18:59:01.614Z"
     }
   ],
   "favoritos": [
     {
       "id": "3",
-      "userId": 1731098826438,
+      "userId": 1731093925129,
       "nombre": "Peliculas",
-      "descripcion": "Todas las peliculas",
+      "descripcion": "Lista de favoritos de usuario admin",
       "peliculas": []
     }
   ],
