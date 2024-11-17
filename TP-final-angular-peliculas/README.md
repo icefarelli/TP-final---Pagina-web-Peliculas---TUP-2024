@@ -1,7 +1,7 @@
 
-# Cinemax UTN 🎥
+# CINEMA MAX UTN 🎥
 
-¡Bienvenido a **Cinemax UTN**!  
+¡Bienvenido a **CINEMA MAX UTN**!  
 Una aplicación web que ofrece una experiencia cinematográfica única. Puedes explorar detalles de películas, agregar tus favoritas, escribir reseñas, calificar películas y disfrutar de un divertido juego de preguntas y respuestas sobre cine.
 
 ---
@@ -37,49 +37,31 @@ Antes de comenzar, asegúrate de tener instalado en tu sistema:
 
 Sigue estos pasos para configurar y ejecutar el proyecto:
 
-1. **Clona el repositorio**:
-   ```bash
-   git clone https://github.com/tu_usuario/cinemax-utn.git
-   cd cinemax-utn
+1. **Clona el repositorio y posicionamiento en la carpeta del proyecto**:
+   ```
+   git clone https://github.com/icefarelli/TP-final---Pagina-web-Peliculas---TUP-2024.git
+   cd TP-final-angular-peliculas
    ```
 
 2. **Instala las dependencias**:
-   ```bash
+   ```
    npm install
    ```
 
 3. **Ejecuta el servidor JSON**:
    Inicia el servidor simulado para manejar usuarios y datos:
-   ```bash
-   npm run json-server-usuario
+   ```
+   npm run json-server
    ```
 
 4. **Inicia el servidor Angular**:
    Ejecuta el servidor de desarrollo para la aplicación:
-   ```bash
-   ng serve
+   ```
+   ng serve -o
    ```
 
 5. **Accede a la aplicación**:
    Abre tu navegador y ve a [http://localhost:4200](http://localhost:4200).
-
----
-
-## 🧩 Estructura del proyecto
-
-```
-cinemax-utn/
-├── src/
-│   ├── app/               # Componentes principales
-│   ├── assets/            # Imágenes y recursos estáticos
-│   ├── environments/      # Configuraciones de entorno
-│   ├── styles.css         # Estilos globales
-│   └── index.html         # Página principal
-├── package.json           # Dependencias y scripts
-├── angular.json           # Configuración de Angular CLI
-├── db.json                # Base de datos simulada
-└── README.md              # Documentación del proyecto
-```
 
 ---
 
@@ -99,4 +81,4 @@ cinemax-utn/
 
 ---
 
-¡Gracias por visitar **Cinemax UTN**! 🎬
+¡Gracias por visitar **CINEMA MAX UTN**! 🎬

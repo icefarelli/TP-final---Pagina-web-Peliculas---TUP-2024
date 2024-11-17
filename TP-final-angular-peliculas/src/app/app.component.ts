@@ -1,11 +1,12 @@
 import { Component, ComponentRef, ViewContainerRef } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
-import { AuthService, Usuario } from './nucleo/servicios/auth.service';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { AlertComponent } from './compartidos/alert/alert.component';
 import { NavbarComponent } from './compartidos/navbar/navbar.component';
-import { AuthDialogComponent } from './compartidos/auth-dialog/auth-dialog/auth-dialog.component';
+import { AuthDialogComponent } from './funcionalidades/usuarios/auth-dialog/auth-dialog.component';
+import { Usuario } from './interfaces/auth.interface';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',

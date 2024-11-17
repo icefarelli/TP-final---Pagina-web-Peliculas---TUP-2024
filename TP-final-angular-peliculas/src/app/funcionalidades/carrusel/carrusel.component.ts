@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PeliculasService } from './../../nucleo/servicios/peliculas.service';
+import { PeliculasService } from '../../services/peliculas.service';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 

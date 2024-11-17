@@ -2,7 +2,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
-import { AlertService } from '../../nucleo/servicios/alert.service';
+import { AlertService } from '../../services/alert.service';
 
 @Component({
   selector: 'app-alert',

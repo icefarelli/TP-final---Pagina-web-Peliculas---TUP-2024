@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Subject, debounceTime, distinctUntilChanged, switchMap, forkJoin } from 'rxjs';
-import { Genero, PeliculasService } from '../../../nucleo/servicios/peliculas.service';
-import { Pelicula } from '../../../nucleo/modelos/pelicula.interface';
+import { Genero } from '../../../interfaces/genero.interface';
+import { Pelicula } from '../../../interfaces/pelicula.interface';
+import { PeliculasService } from '../../../services/peliculas.service';
 
 
 @Component({

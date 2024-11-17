@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { FavoritosService } from '../../../nucleo/servicios/favoritos.service';
-import { Favoritos } from '../../../nucleo/modelos/favoritos';
+import { FavoritosService } from '../../../services/favoritos.service';
 import { CommonModule } from '@angular/common';
-import { AlertService } from '../../../nucleo/servicios/alert.service';
+import { AlertService } from '../../../services/alert.service';
+import { Favoritos } from '../../../interfaces/favoritos.interface';
 
 @Component({
   selector: 'app-agregar-favoritos',

@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { PeliculasService } from '../../../nucleo/servicios/peliculas.service';
-import { Pelicula } from '../../../nucleo/modelos/pelicula.interface';
-import { AdministrarReseniasComponent } from "../../resenias/administrar-resenias/administrar-resenias.component";
+import { PeliculasService } from '../../../services/peliculas.service';
+import { AdministrarReseniasComponent } from "../../resenas/administrar-resenias/administrar-resenias.component";
 import { CommonModule } from '@angular/common';
-import { Favoritos } from '../../../nucleo/modelos/favoritos';
-import id from '@angular/common/locales/id';
-import { FavoritosService } from '../../../nucleo/servicios/favoritos.service';
+import { FavoritosService } from '../../../services/favoritos.service';
 import { FormsModule } from '@angular/forms';
-import { AuthService } from '../../../nucleo/servicios/auth.service';
-import { AlertService } from '../../../nucleo/servicios/alert.service';
+import { AuthService } from '../../../services/auth.service';
+import { AlertService } from '../../../services/alert.service';
+import { Favoritos } from '../../../interfaces/favoritos.interface';
+import { Pelicula } from '../../../interfaces/pelicula.interface';
 
 @Component({
   selector: 'app-detalle-peliculas',
