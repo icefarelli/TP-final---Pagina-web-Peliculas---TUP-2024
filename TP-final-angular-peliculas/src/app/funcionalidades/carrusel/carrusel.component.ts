@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [CommonModule, RouterModule], // Asegúrate de importar RouterModule aquí
+  imports: [CommonModule, RouterModule],
   templateUrl: './carrusel.component.html',
   styleUrls: ['./carrusel.component.css']
 })
