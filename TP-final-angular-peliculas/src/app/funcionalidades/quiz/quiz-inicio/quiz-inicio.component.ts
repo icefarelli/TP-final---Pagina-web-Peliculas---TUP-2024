@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
 import { QuizService } from '../../../services/quiz.service';
 
@@ -9,11 +10,12 @@ import { QuizService } from '../../../services/quiz.service';
   templateUrl: './quiz-inicio.component.html',
   styleUrls: ['./quiz-inicio.component.css'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule, FormsModule]
 })
 export class QuizInicioComponent {
   dificultadBase: string = 'medium';
   esUsuario = false;
+  fuentePreguntas: string = 'predefinidas';
 
   constructor(private router: Router, private quizService: QuizService, private authService: AuthService) {}
 
@@ -27,15 +29,13 @@ export class QuizInicioComponent {
 
   startQuiz() {
     this.quizService.setDificultad(this.dificultadBase);
-    this.router.navigate(['./quiz/question']);
+    this.quizService.loadPreguntasPorFuente(this.fuentePreguntas).subscribe(() => {
+      this.router.navigate(['./quiz/question']);
+    });
   }
 
   startMaker(){
     this.router.navigate(['./quiz/qMaker']);
-  }
-
-  startVote(){
-    this.router.navigate(['./quiz']);
   }
 
 }

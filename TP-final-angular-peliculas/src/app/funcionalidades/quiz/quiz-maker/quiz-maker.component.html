@@ -13,7 +13,7 @@
           <label for="question">Pregunta:</label>
           <input id="question" formControlName="question" type="text" class="form-input" placeholder="Escribe la pregunta aquí"/>
           <div *ngIf="quizForm.get('question')?.invalid && quizForm.get('question')?.touched">
-            <p class="errorPregunta">La pregunta es requerida.</p>
+            <p class="errorPregunta">Campo Obligatorio.</p>
           </div>
         </div>
 
@@ -21,18 +21,16 @@
           <label for="correctAnswer">Respuesta Correcta:</label>
           <input id="correctAnswer" formControlName="correctAnswer" type="text" class="form-input" placeholder="Escribe la respuesta correcta aquí"/>
           <div *ngIf="quizForm.get('correctAnswer')?.invalid && quizForm.get('correctAnswer')?.touched">
-            <p class="errorRespuestaCor">La respuesta correcta es requerida.</p>
+            <p class="errorRespuestaCor">Campo Obligatorio.</p>
           </div>
         </div>
 
-        <div class="form-group">
-          <label>Respuestas Incorrectas:</label>
-          <div formArrayName="incorrectAnswers">
-            <div *ngFor="let incorrectAnswer of getIncorrectAnswersControls(); let i = index">
-              <input [formControlName]="i" type="text" class="form-input" placeholder="Respuesta Incorrecta {{ i + 1 }}"/>
-              <div *ngIf="incorrectAnswer?.invalid && incorrectAnswer?.touched">
-                <p class="errorRespuestaInc">La respuesta incorrecta es requerida.</p>
-              </div>
+        <div formArrayName="incorrectAnswers" *ngFor="let control of getIncorrectAnswersControls(); let i = index">
+          <div class="form-group">
+            <label [attr.for]="'incorrectAnswer' + i">Respuesta Incorrecta {{ i + 1 }}:</label>
+            <input [attr.id]="'incorrectAnswer' + i" [formControlName]="i" type="text" class="form-input" placeholder="Escribe la respuesta incorrecta aquí" required/>
+            <div *ngIf="control.invalid && control.touched">
+              <p class="errorRespuestaCor">Campo Obligatorio.</p>
             </div>
           </div>
         </div>
@@ -63,13 +61,21 @@
       </form>
     </div>
   </div>
+
+  <!-- Diálogo de confirmación -->
+  <div class="confirm-dialog" *ngIf="showConfirmDialog">
+    <h1>¿Está seguro?</h1>
+    <p>¡No podrás recuperar esta pregunta después de eliminarla!</p>
+    <button class="delete-button" (click)="confirmDelete(true)">Eliminar</button>
+    <button class="edit-button" (click)="confirmDelete(false)">Cancelar</button>
+  </div>
 </div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 <div *ngIf="questions.length > 0; else noQuestions" class="questions-container">
   <h2 class="title">Mis Preguntas</h2>
   <div *ngFor="let question of questions" class="question-card">
     <h3 class="question-title">{{ question.question }}</h3>
-    <div class="answer-section">
+    <div class=" answer-section">
       <p class="correct-answer"><strong>✔ Respuesta Correcta:</strong> {{ question.correctAnswer }}</p>
       <p class="incorrect-answers"><strong>✘ Respuestas Incorrectas:</strong> {{ question.incorrectAnswers?.join(', ') }}</p>
     </div>
@@ -78,7 +84,8 @@
       {{
         question.difficulty === 'easy' ? 'Fácil' :
         question.difficulty === 'medium' ? 'Media' :
-        'Difícil'
+        question.difficulty === 'hard' ? 'Difícil' :
+        ''
       }}
     </p>
     <div class="actions">
@@ -90,7 +97,3 @@
 <ng-template #noQuestions>
   <p class="no-questions-message">No tienes preguntas creadas.</p>
 </ng-template>
-
-
-
-
