@@ -15,7 +15,11 @@
           id="content"
           [(ngModel)]="newReview.content"
           name="content"
-          required></textarea>
+          required
+          #contentCtrl="ngModel"></textarea>
+          <div *ngIf="contentCtrl?.errors?.['required'] && contentCtrl?.touched" class="error-message">
+            La reseña es requerida.
+          </div>
       </div>
 
       <!-- Puntuación con estrellas -->
@@ -33,9 +37,14 @@
       <button
         type="submit"
         [disabled]="!reviewForm.valid || newReview.rating === 0"
-        class="edit-btn">
+        class="edit-btn"
+        (click)="reviewForm.form.markAllAsTouched()">
         Publicar Reseña
       </button>
+
+      <div class="error-message" *ngIf="newReview.rating === 0 && reviewForm.submitted">
+        ¡Selecciona una puntuación antes de enviar!
+      </div>
     </form>
   </div>
 
