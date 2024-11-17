@@ -71,7 +71,13 @@ export class QuizService {
     });
   }
 
-  crearPregunta(pregunta: QuestionUser ): Observable<QuestionUser > {
+  crearPregunta(pregunta: QuestionUser ): Observable<QuestionUser | null > {
+    // Verificar que el ID no sea null o undefined
+    if (!pregunta.id) {
+      console.error('El ID de la pregunta no puede ser null o undefined.');
+      return of(null); // Retornar un observable vacío o null
+    }
+
     return this.http.post<QuestionUser >(this.apiUrlpreguntasUsers, pregunta).pipe(
       map((nuevaPregunta) => {
         this.loadUserQuestions(); // Actualiza las preguntas del usuario después de crear
