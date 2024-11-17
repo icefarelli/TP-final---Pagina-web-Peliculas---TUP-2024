@@ -67,8 +67,8 @@ export class AuthService {
           return of(false);
         }
 
-        if (this.validarFechaNacimiento(usuario.fechaNacimiento) === 'Fecha>hace10anos') {
-          this.alertService.mostrarAlerta('error', 'La fecha de nacimiento no puede ser menor a 10 años');
+        if (this.validarFechaNacimiento(usuario.fechaNacimiento) === 'Fecha>mayorEdad') {
+          this.alertService.mostrarAlerta('error', 'Debes tener al menos 18 años para registrarte');
           return of(false);
         } 
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -172,8 +172,8 @@ export class AuthService {
     const hoy = new Date();
     hoy.setHours(0, 0, 0, 0);
 
-    const hace10Anos = new Date();
-    hace10Anos.setFullYear(hace10Anos.getFullYear() - 10);
+    const mayorEdad = new Date();
+    mayorEdad.setFullYear(mayorEdad.getFullYear() - 18);
 
     const hace100Anos = new Date();
     hace100Anos.setFullYear(hace100Anos.getFullYear() - 100);
@@ -184,8 +184,8 @@ export class AuthService {
     if(fecha < hace100Anos){
       return 'Fecha<hace100anos'
       }
-    if(fecha > hace10Anos){
-      return 'Fecha>hace10anos'
+    if(fecha > mayorEdad){
+      return 'Fecha>mayorEdad'
       }
       return 'fechaOK'
     ;
