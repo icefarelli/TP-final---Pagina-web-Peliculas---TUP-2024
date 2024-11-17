@@ -1,4 +1,4 @@
-import {Routes } from "@angular/router";
+import { Routes } from "@angular/router";
 import { ListarPeliculasComponent } from './funcionalidades/peliculas/listar-peliculas/listar-peliculas.component';
 import { DetallePeliculasComponent } from './funcionalidades/peliculas/detalle-peliculas/detalle-peliculas.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -16,7 +16,7 @@ import { EditarPerfilComponent } from "./editar-perfil/editar-perfil.component";
 import { MisResenasComponent } from "./funcionalidades/resenas/mis-resenas/mis-resenas.component";
 import { CambioContraseniaComponent } from "./compartidos/cambio-contrasenia/cambio-contrasenia.component";
 import { QuizMakerComponent } from './quiz/quiz-maker/quiz-maker.component';
-import { VisualUserComponent } from "./quiz/quiz-visual-user/quiz-visual-user.component";
+
 
 export const routes: Routes = [
   { path: '',
@@ -42,8 +42,6 @@ export const routes: Routes = [
       { path: 'question', component: QuizPreguntasComponent }, // Ruta para las preguntas
       { path: 'result', component: QuizResultadosComponent }, // Ruta para los resultados
       { path: 'qMaker', component: QuizMakerComponent},
-      { path: 'userVisual', component: VisualUserComponent },
-
     ]
   },
   { path: 'actor/:id',

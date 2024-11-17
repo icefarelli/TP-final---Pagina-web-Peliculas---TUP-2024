@@ -18,12 +18,12 @@ export class QuizPreguntasComponent implements OnInit {
   esCorrecta: boolean | null = null;
   preguntaNro: number = 1;
   totalPreguntas: number = 10;
-  colorFondoPreguntas: string = ''; // Asegúrate de que esta propiedad esté definida.
+  colorFondoPreguntas: string = '';
 
   constructor(private quizService: QuizService, private router: Router) {}
 
   ngOnInit() {
-    this.quizService.loadPreguntas().subscribe(() => {
+    this.quizService.loadPreguntasPorFuente('todas').subscribe(() => {
       this.loadPregunta();
     });
   }

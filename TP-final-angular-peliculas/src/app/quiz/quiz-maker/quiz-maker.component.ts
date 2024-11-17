@@ -5,7 +5,7 @@ import { AuthService } from '../../nucleo/servicios/auth.service';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormArray } from '@angular/forms';
 import { QuestionUser  } from '../models/question.model';
 import { QuizService } from '../services/quiz.service';
-
+import { AlertService } from '../../nucleo/servicios/alert.service';
 
 @Component({
   selector: 'app-preguntas-maker',
@@ -23,12 +23,11 @@ export class QuizMakerComponent implements OnInit {
   questions: Partial<QuestionUser >[] = [];
   currentQuestionId: string | null = null;
 
-  // Inyección de dependencias
   private http = inject(HttpClient);
   private authService = inject(AuthService);
   private quizService = inject(QuizService);
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private alertService : AlertService) {}
 
   ngOnInit() {
     this.initializeForm();
@@ -50,11 +49,11 @@ export class QuizMakerComponent implements OnInit {
       next: (user) => {
         if (user) {
           this.usuarioId = user.id;
-          this.fetchQuestions(); // Cargar preguntas después de obtener el usuario
+          this.fetchQuestions();
         }
       },
       error: (error) => {
-        console.error('Error al obtener el usuario actual:', error);
+        this.alertService.mostrarAlerta("error", "Error al obtener el usuario actual");
       }
     });
   }
@@ -62,17 +61,16 @@ export class QuizMakerComponent implements OnInit {
   private subscribeToQuizService() {
     this.quizService.preguntas$.subscribe(questions => {
       this.questions = questions;
-      console.log('Preguntas actualizadas:', questions);
     });
   }
 
   fetchQuestions(): void {
     if (!this.usuarioId) {
-      console.error('El usuario ID no está definido.');
+      this.alertService.mostrarAlerta("error", "El usuario ID no está definido.");
       return;
     }
 
-    this.http.get<QuestionUser []>('http://localhost:3000/revision').subscribe({
+    this.http.get<QuestionUser []>('http://localhost:3000/preguntasUsers').subscribe({
       next: (data) => {
         if (Array.isArray(data)) {
           this.questions = data
@@ -89,6 +87,7 @@ export class QuizMakerComponent implements OnInit {
         }
       },
       error: (error) => {
+        this.alertService.mostrarAlerta("error", "Error al cargar las preguntas.");
         console.error('Error al cargar las preguntas:', error);
       }
     });
@@ -99,7 +98,8 @@ export class QuizMakerComponent implements OnInit {
 
     if (this.quizForm.invalid) {
         this.errorMessage = this.getInvalidFieldsMessage();
-        return;
+
+        return
     }
 
     const pregunta: QuestionUser  = {
@@ -120,15 +120,15 @@ export class QuizMakerComponent implements OnInit {
         this.quizService.actualizarPregunta(pregunta).subscribe({
             next: (response) => {
                 console.log('Pregunta actualizada con éxito', response);
-                this.successMessage = 'Pregunta actualizada correctamente!';
+                this.alertService.mostrarAlerta("success","Pregunta actualizada correctamente!")
                 this.quizForm.reset();
                 this.currentQuestionId = null; // Reiniciar el ID de la pregunta actual
                 this.hideSuccessMessageAfterDelay();
                 this.fetchQuestions(); // Actualizar la lista de preguntas después de actualizar
             },
             error: (error) => {
+                this.alertService.mostrarAlerta("error", "Ocurrió un error al actualizar la pregunta. Intenta de nuevo más tarde.");
                 console.error('Error al actualizar pregunta', error);
-                this.errorMessage = 'Ocurrió un error al actualizar la pregunta. Intenta de nuevo más tarde.';
             },
         });
     } else {
@@ -137,14 +137,14 @@ export class QuizMakerComponent implements OnInit {
         this.quizService.crearPregunta(pregunta).subscribe({
             next: (response) => {
                 console.log('Pregunta creada con éxito', response);
-                this.successMessage = 'Pregunta guardada correctamente!';
+                this.alertService.mostrarAlerta("success", "Pregunta guardada correctamente!");
                 this.quizForm.reset();
                 this.hideSuccessMessageAfterDelay();
                 this.fetchQuestions(); // Actualizar la lista de preguntas después de crear
             },
             error: (error) => {
                 console.error('Error al crear pregunta', error);
-                this.errorMessage = 'Ocurrió un error al crear la pregunta. Intenta de nuevo más tarde.';
+                this.alertService.mostrarAlerta("error", "Ocurrió un error al crear la pregunta. Intenta de nuevo más tarde.");
             },
         });
     }
@@ -184,24 +184,36 @@ export class QuizMakerComponent implements OnInit {
     return (this.quizForm.get('incorrectAnswers') as FormArray).controls;
   }
 
-  eliminarPregunta(id: string | undefined): void {
-    if (!id) {
-      console.error('El ID de la pregunta no está definido.');
-      this.errorMessage = 'No se pudo eliminar la pregunta. ID no válido.';
-      return;
-    }
+  showConfirmDialog: boolean = false;
+questionToDeleteId: string | null = null;
 
-    this.quizService.deleteQuestion(id).subscribe({
+eliminarPregunta(id: string | undefined): void {
+  if (!id) {
+    this.alertService.mostrarAlerta("error", "No se pudo eliminar la pregunta. ID no válido.");
+    console.error('El ID de la pregunta no está definido.');
+    return;
+  }
+
+  this.showConfirmDialog = true; // Mostrar el diálogo de confirmación
+  this.questionToDeleteId = id; // Guardar el ID de la pregunta a eliminar
+}
+
+confirmDelete(confirm: boolean): void {
+  if (confirm && this.questionToDeleteId) {
+    this.quizService.deleteQuestion(this.questionToDeleteId).subscribe({
       next: () => {
-        this.successMessage = 'Pregunta eliminada correctamente!';
+        this.alertService.mostrarAlerta("success", "Pregunta eliminada correctamente!");
         this.fetchQuestions(); // Actualiza la lista de preguntas después de eliminar
         this.hideSuccessMessageAfterDelay();
       },
       error: (error) => {
-        this.errorMessage = 'Ocurrió un error al eliminar la pregunta. Intenta de nuevo más tarde.';
+        this.alertService.mostrarAlerta("error", "Ocurrió un error al eliminar la pregunta. Intenta de nuevo más tarde.");
       },
     });
   }
+  this.showConfirmDialog = false; // Ocultar el diálogo de confirmación
+  this.questionToDeleteId = null; // Reiniciar el ID de la pregunta
+}
 
   editarPregunta(question: any) {
     this.quizForm.patchValue({
@@ -220,5 +232,7 @@ export class QuizMakerComponent implements OnInit {
     this.showForm = true; // Mostrar el formulario
     this.currentQuestionId = question.id; // Guardar el ID de la pregunta actual
   }
+
+
 
 }
