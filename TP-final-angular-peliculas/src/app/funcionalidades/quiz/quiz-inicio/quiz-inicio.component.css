@@ -6,20 +6,45 @@
     text-align: center;
 }
 
+label{
+  font-size: 20px;
+  color: #ffffff;
+  font-family: Calibri;
+  font-style: italic;
+  font-variant: small-caps;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+select{
+  display: flex;
+  justify-self: center;
+  font-size: large;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 10px;
+  background-color: #333;
+  color: #d50000;
+  border-radius: 8px;
+  padding: 0 20px;
+  font-style: italic;
+  font-variant: small-caps;
+}
+
 h1 {
-    color: #ffa600;
+    color: #d50000;
     font-size: 3em;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     font-family: 'Roboto', sans-serif;
+    font-variant: small-caps;
+    font-style: italic;
 }
 
 p {
     color: #cccccc;
     font-size: 1.2em;
     margin-bottom: 30px;
-    font-family: 'Roboto', sans-serif
-
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
 }
 
 .opcion-dificultad {
@@ -31,6 +56,9 @@ p {
 .opcion-dificultad h3 {
     color: #78e800;
     margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-variant: small-caps;
+    font-style: italic;
 }
 .opcion-dificultad button {
     padding: 15px 40px;
@@ -43,7 +71,7 @@ p {
     font-size: 1.1em;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 10px #ffa600;
+
 }
 
 .opcion-dificultad button:hover {
@@ -77,26 +105,27 @@ p {
 }
 
 .start-button:hover {
-    background-color: #5732ff;
+    background-color: #66ff00;
     transform: translateY(-2px);
-    box-shadow:  0 4px 15px rgba(187, 0, 255, 0.5);
+    box-shadow:  0 4px 15px rgba(94, 255, 0, 0.5);
     font-weight: 600;
     color: #333;
 }
-.maker-vote{
+
+.maker{
   position: absolute;
   display: flex;
 }
 
 .boton-maker {
-  background: #333;
-  color: #ffa600;
-  border: 2px solid #ffa600;
+  background: hsl(0, 0%, 20%);
+  color: #ff0000;
+  border: 2px solid #ff0000;
   padding: 10px 40px;
   margin: 0 10px;
   border-radius: 8px;
   position: absolute;
-  top: 10px;
+  top: 20px;
   left: 10px;
   z-index: 1;
   overflow: hidden;
@@ -109,7 +138,7 @@ p {
 }
 .boton-maker::after {
   content: "";
-  background: #ffa600;
+  background: #ff0000;
   position: absolute;
   z-index: -1;
   padding: 16px 20px;
@@ -172,16 +201,17 @@ p {
   transition: all 0.35s;
 }
 
-.p-mensaje{
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  border: 2px solid #ffa600;
-  background-color: #333;
-  border-radius: 10px;
-  font-size: small;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  width: 200px;
-  height: 200px;
-  text-align:center;
+.info-message {
+  color: #fff; /* Texto blanco para mejor contraste */
+  font-size: 1.2em; /* Tamaño de fuente ligeramente más grande */
+  margin: 20px 0; /* Espaciado superior e inferior */
+  padding: 15px; /* Más espacio interno */
+  border: 1px solid #ff6600; /* Color de borde vibrante */
+  border-radius: 10px; /* Bordes más redondeados */
+  background: linear-gradient(145deg, rgba(0, 0, 0, 0.7), rgba(50, 50, 50, 0.9)); /* Fondo con degradado elegante */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra para efecto de profundidad */
+  text-align: center; /* Texto centrado */
+  font-family: 'Roboto', sans-serif; /* Fuente moderna */
+  line-height: 1.5; /* Mejor legibilidad */
 }
+
