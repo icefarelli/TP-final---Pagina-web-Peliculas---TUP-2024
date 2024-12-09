@@ -202,16 +202,16 @@ p {
 }
 
 .info-message {
-  color: #fff; /* Texto blanco para mejor contraste */
-  font-size: 1.2em; /* Tamaño de fuente ligeramente más grande */
-  margin: 20px 0; /* Espaciado superior e inferior */
-  padding: 15px; /* Más espacio interno */
-  border: 1px solid #ff6600; /* Color de borde vibrante */
-  border-radius: 10px; /* Bordes más redondeados */
-  background: linear-gradient(145deg, rgba(0, 0, 0, 0.7), rgba(50, 50, 50, 0.9)); /* Fondo con degradado elegante */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra para efecto de profundidad */
-  text-align: center; /* Texto centrado */
-  font-family: 'Roboto', sans-serif; /* Fuente moderna */
-  line-height: 1.5; /* Mejor legibilidad */
+  color: #fff;
+  font-size: 1.2em;
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #ff6600;
+  border-radius: 10px;
+  background: linear-gradient(145deg, rgba(0, 0, 0, 0.7), rgba(50, 50, 50, 0.9));
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
 }
 
