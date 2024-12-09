@@ -30,7 +30,7 @@
             <label [attr.for]="'incorrectAnswer' + i">Respuesta Incorrecta {{ i + 1 }}:</label>
             <input [attr.id]="'incorrectAnswer' + i" [formControlName]="i" type="text" class="form-input" placeholder="Escribe la respuesta incorrecta aquí" required/>
             <div *ngIf="control.invalid && control.touched">
-              <p class="errorRespuestaCor">Campo Obligatorio.</p>
+              <p class="errorRespuestaIncor">Las Respuestas incorrectas son Campos Obligatorios.</p>
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@
     </div>
   </div>
 
-  <!-- Diálogo de confirmación -->
+  <!-- Dialogo de confirmacion -->
   <div class="confirm-dialog" *ngIf="showConfirmDialog">
     <h1>¿Está seguro?</h1>
     <p>¡No podrás recuperar esta pregunta después de eliminarla!</p>

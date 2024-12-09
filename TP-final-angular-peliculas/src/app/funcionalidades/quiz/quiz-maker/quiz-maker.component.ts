@@ -96,7 +96,7 @@ export class QuizMakerComponent implements OnInit {
   onSubmit() {
     this.errorMessage = '';
 
-    // Verifica si el formulario es inválido
+    // Verifica si el formulario es invalido
     if (this.quizForm.invalid) {
         this.errorMessage = this.getInvalidFieldsMessage();
         return;
@@ -113,7 +113,6 @@ export class QuizMakerComponent implements OnInit {
     };
 
     if (this.currentQuestionId) {
-        // Si hay un ID de pregunta actual, se está editando
         pregunta.id = this.currentQuestionId;
 
         this.quizService.actualizarPregunta(pregunta).subscribe({
@@ -131,7 +130,6 @@ export class QuizMakerComponent implements OnInit {
             },
         });
     } else {
-        // Si no hay un ID de pregunta actual, se está creando una nueva
         this.quizService.crearPregunta(pregunta).subscribe({
             next: (response) => {
                 console.log('Pregunta creada con éxito', response);
@@ -226,6 +224,6 @@ export class QuizMakerComponent implements OnInit {
     });
 
     this.showForm = true;
-    this.currentQuestionId = question.id; // Guardar el ID de la pregunta actual
+    this.currentQuestionId = question.id; // Guardar el id de la pregunta actual
   }
 }

@@ -43,7 +43,7 @@ export class QuizService {
             apiUrl = this.apiUrlpreguntasUsers;
             break;
         default:
-            return of([]); // Retornar un observable vacío si la fuente no es válida
+            return of([]); // Retornar un observable vacio si la fuente no es valida
     }
     this.resetContadorPreguntas();
 
@@ -74,7 +74,7 @@ export class QuizService {
   crearPregunta(pregunta: QuestionUser ): Observable<QuestionUser > {
     return this.http.post<QuestionUser >(this.apiUrlpreguntasUsers, pregunta).pipe(
       map((nuevaPregunta) => {
-        this.loadUserQuestions(); // Actualiza las preguntas del usuario después de crear
+        this.loadUserQuestions(); // Actualiza las preguntas del usuario despues de crear
         return nuevaPregunta;
       })
     );
@@ -144,7 +144,7 @@ export class QuizService {
   deleteQuestion(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrlpreguntasUsers}/${id}`).pipe(
       map(() => {
-        this.loadUserQuestions(); // Actualiza la lista de preguntas del usuario después de eliminar
+        this.loadUserQuestions(); // Actualiza la lista de preguntas del usuario despues de eliminar
       })
     );
   }
@@ -152,7 +152,7 @@ export class QuizService {
   actualizarPregunta(pregunta: QuestionUser ): Observable<QuestionUser > {
     return this.http.put<QuestionUser >(`${this.apiUrlpreguntasUsers}/${pregunta.id}`, pregunta).pipe(
         map((preguntaActualizada) => {
-            this.loadUserQuestions(); // Actualiza las preguntas del usuario después de actualizar
+            this.loadUserQuestions(); // Actualiza las preguntas del usuario despues de actualizar
             return preguntaActualizada;
         })
     );
