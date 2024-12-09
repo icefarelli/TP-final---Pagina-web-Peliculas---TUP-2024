@@ -17,6 +17,7 @@ import { DetalleActorComponent } from "./funcionalidades/actores/detalle-actor.c
 import { CambioContraseniaComponent } from "./funcionalidades/usuarios/cambio-contrasenia/cambio-contrasenia.component";
 import { EditarPerfilComponent } from "./funcionalidades/usuarios/editar-perfil/editar-perfil.component";
 import { authGuard } from "./auth.guard";
+import { ListarActoresComponent } from "./funcionalidades/actores/listar-actores/listar-actores.component";
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -36,6 +37,8 @@ export const routes: Routes = [
       },
     ]
   },
+  { path: 'actores',
+    component: ListarActoresComponent },
   { path: 'actor/:id',
     component: DetalleActorComponent },
   {

@@ -1,0 +1,33 @@
+<div class="peliculas-container">
+  <div class="header-section">
+    <h2>Actores</h2>
+    <div class="buscador">
+      <input
+        type="text"
+        placeholder="Buscar actores..."
+        [(ngModel)]="terminoBusqueda"
+        (input)="buscarActores()"
+        class="buscador-input"
+      >
+      <span class="icono-buscar">🔍</span>
+    </div>
+  </div>
+
+
+  <div class="peliculas-grid">
+    <div *ngFor="let actor of actoresFiltrados" class="pelicula-card" (click)="verDetalle(actor.id)">
+      <img [src]="obtenerUrlImagen(actor.profile_path)" [alt]="actor.name">
+      <div class="pelicula-info">
+        <h3>{{actor.name}}</h3>
+        <p class="rating">⭐ Popularidad: {{actor.popularity | number:'1.1-1'}}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mensaje cuando no hay resultados -->
+  <div *ngIf="actoresFiltrados.length === 0" class="no-resultados">
+    <p>No se encontraron actores que coincidan con la busqueda.</p>
+  </div>
+
+
+

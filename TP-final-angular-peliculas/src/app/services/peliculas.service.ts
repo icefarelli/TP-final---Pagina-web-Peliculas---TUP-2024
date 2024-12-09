@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { forkJoin, map, Observable } from 'rxjs';
 import { Pelicula, PeliculaResponse } from '../interfaces/pelicula.interface';
 import { Genero } from '../interfaces/genero.interface';
+import { Actor } from '../interfaces/actor';
 
 
 
@@ -51,6 +52,11 @@ export class PeliculasService {
     `${this.baseUrl}/person/${id}?api_key=${this.apiKey}&language=es-ES`
   );
 }
+buscarActores(query: string): Observable<{results: Actor[]}> {
+  return this.http.get<{results : Actor[]}>(
+    `${this.baseUrl}/search/person?api_key=${this.apiKey}&language=es-ES&query=${query}`
+  );
+}
 
 obtenerPeliculasPorActor(actorId: number): Observable<any> {
   return this.http.get<any>(
@@ -73,5 +79,5 @@ obtenerTodasLasPeliculas(): Observable<Pelicula[]> {
     })
   );
 }
-  
+
 }
