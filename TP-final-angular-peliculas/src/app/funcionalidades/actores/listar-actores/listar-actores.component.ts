@@ -6,11 +6,10 @@ import { Router } from '@angular/router';
 import { Actor } from '../../../interfaces/actor';
 
 @Component({
-  selector: 'app-listar-actores',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
-  templateUrl: './listar-actores.component.html',
-  styleUrl: './listar-actores.component.css'
+    selector: 'app-listar-actores',
+    imports: [CommonModule, FormsModule],
+    templateUrl: './listar-actores.component.html',
+    styleUrl: './listar-actores.component.css'
 })
 export class ListarActoresComponent implements OnInit{
   terminoBusqueda: string = '';

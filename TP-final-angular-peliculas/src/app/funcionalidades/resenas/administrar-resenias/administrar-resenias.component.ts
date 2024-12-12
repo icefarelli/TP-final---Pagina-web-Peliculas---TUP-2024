@@ -7,11 +7,11 @@ import { ReseniasService } from '../../../services/resenias.service';
 
 
 @Component({
-  selector: 'app-administrar-resenias',
-  templateUrl: './administrar-resenias.component.html',
-  styleUrls: ['./administrar-resenias.component.css'],
-  standalone: true,
-  imports: [CommonModule, FormsModule]
+    selector: 'app-administrar-resenias',
+    templateUrl: './administrar-resenias.component.html',
+    styleUrls: ['./administrar-resenias.component.css'],
+    standalone:true,
+    imports: [CommonModule, FormsModule]
 })
 export class AdministrarReseniasComponent implements OnInit {
   @Input() movieId!: number;
@@ -158,7 +158,7 @@ deleteReview(reviewId: number) {
     this.reseniasService.deleteReview(reviewId).subscribe({
       next: () => {
         this.loadLocalReviews();
-        this.alertService.mostrarAlerta('success', 'Reseña eliminada con éxito'); 
+        this.alertService.mostrarAlerta('success', 'Reseña eliminada con éxito');
       },
       error: (error) => {
         this.alertService.mostrarAlerta('error', 'Error al eliminar la reseña');
@@ -167,11 +167,11 @@ deleteReview(reviewId: number) {
   }
 }
 
-currentReviewId: number | null = null; 
+currentReviewId: number | null = null;
 
 editReview(review: any): void {
-  this.newReview.content = review.content; 
-  this.newReview.rating = review.rating; 
+  this.newReview.content = review.content;
+  this.newReview.rating = review.rating;
   this.showReviewForm = true;
   this.currentReviewId = review.id;
   this.alertService.mostrarAlerta('info', 'Estás editando la reseña');

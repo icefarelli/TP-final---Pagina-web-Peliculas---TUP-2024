@@ -8,11 +8,11 @@ import { QuizService } from '../../../services/quiz.service';
 import { AlertService } from '../../../services/alert.service';
 
 @Component({
-  selector: 'app-preguntas-maker',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './quiz-maker.component.html',
-  styleUrls: ['./quiz-maker.component.css']
+    selector: 'app-preguntas-maker',
+    imports: [CommonModule, ReactiveFormsModule],
+    standalone:true,
+    templateUrl: './quiz-maker.component.html',
+    styleUrls: ['./quiz-maker.component.css']
 })
 export class QuizMakerComponent implements OnInit {
   usuarioId?: string | null = null;

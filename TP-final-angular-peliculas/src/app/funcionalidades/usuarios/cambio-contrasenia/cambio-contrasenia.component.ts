@@ -5,19 +5,19 @@ import { AlertService } from '../../../services/alert.service';
 import { AuthService } from '../../../services/auth.service';
 
 @Component({
-  selector: 'app-cambio-contrasenia',
-  standalone: true,
-  imports: [ReactiveFormsModule],
-  templateUrl: './cambio-contrasenia.component.html',
-  styleUrl: './cambio-contrasenia.component.css'
+    selector: 'app-cambio-contrasenia',
+    imports: [ReactiveFormsModule],
+    standalone:true,
+    templateUrl: './cambio-contrasenia.component.html',
+    styleUrl: './cambio-contrasenia.component.css'
 })
 export class CambioContraseniaComponent {
 /*   @Input() userId!: string; // Recibimos el ID del usuario
  */  userId: string|null = localStorage.getItem('userId');
   changePasswordForm: FormGroup;
 
-  constructor(private fb: FormBuilder, 
-    private authService: AuthService, 
+  constructor(private fb: FormBuilder,
+    private authService: AuthService,
     private alertService: AlertService,
     private router: Router) {
 

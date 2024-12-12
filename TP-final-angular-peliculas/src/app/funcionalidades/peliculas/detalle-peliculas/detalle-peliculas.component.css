@@ -228,3 +228,68 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.share-options {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.share-options button {
+  margin: 5px 0;
+}
+.recomendar-button {
+  background-color: #1877f2;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.recomendar-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.share-options {
+  background-color: #2c0404;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.share-options button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.share-options button.whatsapp {
+  background-color: #25d366;
+}
+
+.share-options button.facebook {
+  background-color: #1877f2;
+}
+
+.share-options button.copy {
+  background-color: #6c757d;
+}
+
+.share-options button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

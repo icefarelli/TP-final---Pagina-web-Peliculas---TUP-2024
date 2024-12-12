@@ -7,11 +7,11 @@ import { AlertService } from '../../../services/alert.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Usuario } from '../../../interfaces/auth.interface';
 @Component({
-  selector: 'app-user-profile',
-  templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.css'],
-  standalone: true,
-  imports: [RouterModule, CommonModule, ReactiveFormsModule]
+    selector: 'app-user-profile',
+    templateUrl: './user-profile.component.html',
+    styleUrls: ['./user-profile.component.css'],
+    standalone:true,
+    imports: [RouterModule, CommonModule, ReactiveFormsModule]
 })
 export class UserProfileComponent implements OnInit {
   userInfo: Usuario | null = null;
@@ -22,7 +22,7 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUser ();
-    
+
   }
 
   getUser (): void {

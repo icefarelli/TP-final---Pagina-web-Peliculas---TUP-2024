@@ -4,11 +4,11 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-carousel',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
-  templateUrl: './carrusel.component.html',
-  styleUrls: ['./carrusel.component.css']
+    selector: 'app-carousel',
+    imports: [CommonModule, RouterModule],
+    standalone:true,
+    templateUrl: './carrusel.component.html',
+    styleUrls: ['./carrusel.component.css']
 })
 export class CarouselComponent implements OnInit {
   popularMovies: any[] = [];

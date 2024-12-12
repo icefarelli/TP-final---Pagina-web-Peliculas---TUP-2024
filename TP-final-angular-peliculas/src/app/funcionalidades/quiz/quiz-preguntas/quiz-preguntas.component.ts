@@ -5,11 +5,11 @@ import { Question } from '../../../interfaces/question.interface';
 import { QuizService } from '../../../services/quiz.service';
 
 @Component({
-  selector: 'app-quiz-preguntas',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './quiz-preguntas.component.html',
-  styleUrls: ['./quiz-preguntas.component.css']
+    selector: 'app-quiz-preguntas',
+    imports: [CommonModule],
+    standalone:true,
+    templateUrl: './quiz-preguntas.component.html',
+    styleUrls: ['./quiz-preguntas.component.css']
 })
 export class QuizPreguntasComponent implements OnInit {
   preguntaActual!: Question;

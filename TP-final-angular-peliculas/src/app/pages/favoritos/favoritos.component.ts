@@ -4,11 +4,11 @@ import { ListaFavoritosComponent } from './../../funcionalidades/favoritos/lista
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-favoritos',
-  standalone: true,
-  imports: [ListaFavoritosComponent,CommonModule,RouterModule],
-  templateUrl: './favoritos.component.html',
-  styleUrl: './favoritos.component.css'
+    selector: 'app-favoritos',
+    imports: [ListaFavoritosComponent, CommonModule, RouterModule],
+    standalone:true,
+    templateUrl: './favoritos.component.html',
+    styleUrl: './favoritos.component.css'
 })
 export class FavoritosComponent {
   constructor(private router: Router) {}

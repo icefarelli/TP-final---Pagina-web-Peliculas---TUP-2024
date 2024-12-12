@@ -7,11 +7,11 @@ import { AlertService } from '../../../services/alert.service';
 import { Favoritos } from '../../../interfaces/favoritos.interface';
 
 @Component({
-  selector: 'app-agregar-favoritos',
-  standalone: true,
-  imports: [ReactiveFormsModule,CommonModule,RouterModule],
-  templateUrl: './agregar-favoritos.component.html',
-  styleUrl: './agregar-favoritos.component.css'
+    selector: 'app-agregar-favoritos',
+    imports: [ReactiveFormsModule, CommonModule, RouterModule],
+    standalone:true,
+    templateUrl: './agregar-favoritos.component.html',
+    styleUrl: './agregar-favoritos.component.css'
 })
 export class AgregarFavoritosComponent implements OnInit{
   listaForm: FormGroup;

@@ -6,11 +6,11 @@ import { CarouselComponent } from '../../funcionalidades/carrusel/carrusel.compo
 import { PeliculaResponse } from '../../interfaces/pelicula.interface';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [CommonModule, RouterModule, CarouselComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+    selector: 'app-home',
+    imports: [CommonModule, RouterModule, CarouselComponent],
+    standalone:true,
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.css'
 })
 export class HomeComponent {
   pelicula?: PeliculaResponse;

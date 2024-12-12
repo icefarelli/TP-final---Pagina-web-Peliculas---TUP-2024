@@ -4,11 +4,11 @@ import { CommonModule } from '@angular/common';
 import { PeliculasService } from '../../services/peliculas.service';
 
 @Component({
-  selector: 'app-detalle-actor',
-  standalone:true,
-  imports:[RouterLink, CommonModule],
-  templateUrl: './detalle-actor.component.html',
-  styleUrls: ['./detalle-actor.component.css']
+    selector: 'app-detalle-actor',
+    imports: [RouterLink, CommonModule],
+    standalone:true,
+    templateUrl: './detalle-actor.component.html',
+    styleUrls: ['./detalle-actor.component.css']
 })
 export class DetalleActorComponent implements OnInit {
   actor: any;
