@@ -7,11 +7,11 @@ import { AlertService } from '../../../services/alert.service';
 import { Favoritos } from '../../../interfaces/favoritos.interface';
 
 @Component({
-  selector: 'app-lista-favoritos',
-  standalone: true,
-  imports: [CommonModule,FormsModule,RouterModule],
-  templateUrl: './lista-favoritos.component.html',
-  styleUrl: './lista-favoritos.component.css'
+    selector: 'app-lista-favoritos',
+    imports: [CommonModule, FormsModule, RouterModule],
+    standalone:true,
+    templateUrl: './lista-favoritos.component.html',
+    styleUrl: './lista-favoritos.component.css'
 })
 export class ListaFavoritosComponent implements OnInit{
   listas: Favoritos[] = [];

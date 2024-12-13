@@ -7,11 +7,11 @@ import { AlertService } from '../../../services/alert.service';
 import { Favoritos } from '../../../interfaces/favoritos.interface';
 
 @Component({
-  selector: 'app-modificar-favoritos',
-  standalone: true,
-  imports: [ReactiveFormsModule,CommonModule,RouterModule],
-  templateUrl: './modificar-favoritos.component.html',
-  styleUrl: './modificar-favoritos.component.css'
+    selector: 'app-modificar-favoritos',
+    imports: [ReactiveFormsModule, CommonModule, RouterModule],
+    standalone:true,
+    templateUrl: './modificar-favoritos.component.html',
+    styleUrl: './modificar-favoritos.component.css'
 })
 export class ModificarFavoritosComponent implements OnInit{
 
@@ -56,7 +56,7 @@ export class ModificarFavoritosComponent implements OnInit{
     error: (err) => {
       console.error('Error al cargar la lista de favoritos', err);
       this.alertService.mostrarAlerta('error', 'Error al cargar la lista de favoritos');
-      this.router.navigate(['/favoritos']); 
+      this.router.navigate(['/favoritos']);
     }
   });
 }

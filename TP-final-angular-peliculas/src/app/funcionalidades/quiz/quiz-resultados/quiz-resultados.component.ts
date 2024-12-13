@@ -4,11 +4,10 @@ import { CommonModule } from '@angular/common';
 import { QuizService } from '../../../services/quiz.service';
 
 @Component({
-  selector: 'app-quiz-resultados',
-  templateUrl: './quiz-resultados.component.html',
-  styleUrls: ['./quiz-resultados.component.css'],
-  standalone: true,
-  imports: [CommonModule]
+    selector: 'app-quiz-resultados',
+    templateUrl: './quiz-resultados.component.html',
+    styleUrls: ['./quiz-resultados.component.css'],
+    imports: [CommonModule]
 })
 export class QuizResultadosComponent implements OnInit {
   puntuacion: number = 0;

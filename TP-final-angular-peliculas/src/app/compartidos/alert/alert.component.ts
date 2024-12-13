@@ -4,11 +4,11 @@ import { Subscription } from 'rxjs';
 import { AlertService } from '../../services/alert.service';
 
 @Component({
-  selector: 'app-alert',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './alert.component.html',
-  styleUrls: ['./alert.component.css']
+    selector: 'app-alert',
+    imports: [CommonModule],
+    standalone:true,
+    templateUrl: './alert.component.html',
+    styleUrls: ['./alert.component.css']
 })
 export class AlertComponent implements OnInit, OnDestroy {
   mensaje = '';

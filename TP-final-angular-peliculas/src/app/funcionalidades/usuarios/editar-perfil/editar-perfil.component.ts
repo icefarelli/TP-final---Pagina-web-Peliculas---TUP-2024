@@ -8,11 +8,11 @@ import { AlertService } from '../../../services/alert.service';
 import { AuthService } from '../../../services/auth.service';
 
 @Component({
-  selector: 'app-editar-perfil',
-  standalone:true,
-  imports:[ReactiveFormsModule, CommonModule],
-  templateUrl: './editar-perfil.component.html',
-  styleUrls: ['./editar-perfil.component.css']
+    selector: 'app-editar-perfil',
+    imports: [ReactiveFormsModule, CommonModule],
+    standalone:true,
+    templateUrl: './editar-perfil.component.html',
+    styleUrls: ['./editar-perfil.component.css']
 })
 export class EditarPerfilComponent implements OnInit {
   perfilForm!: FormGroup;

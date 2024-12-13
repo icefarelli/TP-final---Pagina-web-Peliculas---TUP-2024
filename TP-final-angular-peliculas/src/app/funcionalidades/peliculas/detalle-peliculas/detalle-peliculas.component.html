@@ -10,6 +10,13 @@
         <span class="fecha">{{ pelicula.release_date | date:'yyyy' }}</span>
       </div>
       <button class="volver" routerLink="/peliculas">Volver a la lista</button>
+
+      <button (click)="openShareOptions()" class="recomendar-button">Recomendar</button>
+      <div *ngIf="showShareOptions" class="share-options">
+        <button (click)="shareOnWhatsApp()" class="whatsapp">Compartir por WhatsApp</button>
+        <button (click)="shareOnFacebook()" class="facebook">Compartir en Facebook</button>
+        <button (click)="copyLink()" class="copy">Copiar enlace</button>
+      </div>
     </div>
 
 
@@ -38,7 +45,7 @@
     <button (click)="agregarPeliculaAFavoritos()" class="btn btn-primary">Agregar a Lista</button>
   </div>
       }
-      
+
       <!-- Sección de Elenco -->
       <div class="elenco-section">
         <h2>Elenco</h2>

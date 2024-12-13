@@ -6,11 +6,11 @@ import { AuthService } from '../../../services/auth.service';
 import { QuizService } from '../../../services/quiz.service';
 
 @Component({
-  selector: 'app-quiz-inicio',
-  templateUrl: './quiz-inicio.component.html',
-  styleUrls: ['./quiz-inicio.component.css'],
-  standalone: true,
-  imports: [CommonModule, FormsModule]
+    selector: 'app-quiz-inicio',
+    templateUrl: './quiz-inicio.component.html',
+    styleUrls: ['./quiz-inicio.component.css'],
+    standalone:true,
+    imports: [CommonModule, FormsModule]
 })
 export class QuizInicioComponent {
   dificultadBase: string = 'medium';

@@ -7,11 +7,11 @@ import { AuthService } from '../../../services/auth.service';
 import { ReseniasService } from '../../../services/resenias.service';
 
 @Component({
-  selector: 'app-mis-resenas',
-  templateUrl: './mis-resenias.component.html',
-  styleUrls: ['./mis-resenias.component.css'],
-  standalone: true,
-  imports: [CommonModule, FormsModule]
+    selector: 'app-mis-resenas',
+    templateUrl: './mis-resenias.component.html',
+    styleUrls: ['./mis-resenias.component.css'],
+    standalone:true,
+    imports: [CommonModule, FormsModule]
 })
 export class MisResenasComponent implements OnInit {
   resenas: any[] = [];
@@ -76,7 +76,7 @@ export class MisResenasComponent implements OnInit {
     if (this.editingReview) {
       this.reseniasService.updateReview(this.editingReview.id, this.editingReview.content, this.editingReview.rating).subscribe({
         next: () => {
-          this.cargarResenas(); 
+          this.cargarResenas();
           this.alertService.mostrarAlerta('success', 'Reseña editada con éxito');
           this.editingReview = null;
         },

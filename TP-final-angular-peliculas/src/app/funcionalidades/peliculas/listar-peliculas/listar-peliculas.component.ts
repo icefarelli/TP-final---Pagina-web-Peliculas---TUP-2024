@@ -9,11 +9,11 @@ import { PeliculasService } from '../../../services/peliculas.service';
 
 
 @Component({
-  selector: 'app-listar-peliculas',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
-  templateUrl: './listar-peliculas.component.html',
-  styleUrls: ['./listar-peliculas.component.css']
+    selector: 'app-listar-peliculas',
+    imports: [CommonModule, FormsModule],
+    standalone:true,
+    templateUrl: './listar-peliculas.component.html',
+    styleUrls: ['./listar-peliculas.component.css']
 })
 export class ListarPeliculasComponent implements OnInit, OnDestroy {
   peliculas: Pelicula[] = [];
@@ -30,9 +30,9 @@ export class ListarPeliculasComponent implements OnInit, OnDestroy {
     calificacionMinima: 0
   };
 
-  //de aca se modifica la cantidad de peliculas que quiero mostrar por pantalla, esto es para reducir el tiempo de carga. 
+  //de aca se modifica la cantidad de peliculas que quiero mostrar por pantalla, esto es para reducir el tiempo de carga.
   //Las busquedas se hacen sobre el total de peliculas
-  cantidadAMostrar: number = 200; 
+  cantidadAMostrar: number = 200;
 
   constructor(
     private peliculasService: PeliculasService,
@@ -71,7 +71,7 @@ export class ListarPeliculasComponent implements OnInit, OnDestroy {
   cargarPeliculasYGeneros() {
     this.peliculasService.obtenerTodasLasPeliculas().subscribe({
       next: (resultado) => {
-        this.peliculas = resultado; 
+        this.peliculas = resultado;
         this.peliculasFiltradas = this.peliculas.slice(0, this.cantidadAMostrar);
       },
       error: (error) => {
@@ -82,7 +82,7 @@ export class ListarPeliculasComponent implements OnInit, OnDestroy {
 
     this.peliculasService.obtenerGeneros().subscribe({
       next: (resultado) => {
-        this.generos = resultado.genres; 
+        this.generos = resultado.genres;
       },
       error: (error) => {
         console.error('Error al cargar géneros:', error);
@@ -131,7 +131,7 @@ export class ListarPeliculasComponent implements OnInit, OnDestroy {
       }
 
       return cumpleFiltros;
-    }).slice(0, this.cantidadAMostrar); 
+    }).slice(0, this.cantidadAMostrar);
   }
 
   limpiarFiltros() {

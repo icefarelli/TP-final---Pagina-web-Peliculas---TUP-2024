@@ -5,11 +5,11 @@ import { Usuario } from '../../../interfaces/auth.interface';
 import { AuthService } from '../../../services/auth.service';
 
 @Component({
-  selector: 'app-auth-dialog',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
-  templateUrl: './auth-dialog.component.html',
-  styleUrl: './auth-dialog.component.css'
+    selector: 'app-auth-dialog',
+    imports: [CommonModule, FormsModule],
+    standalone:true,
+    templateUrl: './auth-dialog.component.html',
+    styleUrl: './auth-dialog.component.css'
 })
 export class AuthDialogComponent {
   modoRegistro = false;
@@ -100,12 +100,12 @@ export class AuthDialogComponent {
         if (exito) {
           const usuarioActual = JSON.parse(localStorage.getItem('sesionActual') || '{}');
 
-          
+
           if (usuarioActual && usuarioActual.id) {
             localStorage.setItem('userId', usuarioActual.id.toString());  // guardamos el ID en localstorage para usarlo dentro de la navegacion
           }
           this.error = '';
-          this.mostrarRegistro = false; 
+          this.mostrarRegistro = false;
           setTimeout(() => this.cerrar(), 2000);
         } else {
           this.error = 'Usuario o contraseña incorrectos. ¿No tiene una cuenta?';

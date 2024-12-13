@@ -7,11 +7,11 @@ import { Usuario } from '../../interfaces/auth.interface';
 
 
 @Component({
-  selector: 'app-navbar',
-  standalone: true,
-  imports: [RouterModule, CommonModule],
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+    selector: 'app-navbar',
+    imports: [RouterModule, CommonModule],
+    standalone:true,
+    templateUrl: './navbar.component.html',
+    styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
   isMenuOpen = false;
