@@ -8,6 +8,7 @@ import { Actor } from '../../../interfaces/actor';
 @Component({
     selector: 'app-listar-actores',
     imports: [CommonModule, FormsModule],
+    standalone:true,
     templateUrl: './listar-actores.component.html',
     styleUrl: './listar-actores.component.css'
 })
