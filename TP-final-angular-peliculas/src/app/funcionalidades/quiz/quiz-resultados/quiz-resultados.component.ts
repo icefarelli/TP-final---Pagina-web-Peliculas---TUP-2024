@@ -7,7 +7,8 @@ import { QuizService } from '../../../services/quiz.service';
     selector: 'app-quiz-resultados',
     templateUrl: './quiz-resultados.component.html',
     styleUrls: ['./quiz-resultados.component.css'],
-    imports: [CommonModule]
+    imports: [CommonModule],
+    standalone:true,
 })
 export class QuizResultadosComponent implements OnInit {
   puntuacion: number = 0;
