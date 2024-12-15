@@ -229,6 +229,78 @@
           "vote_count": 729
         }
       ]
+    },
+    {
+      "nombre": "Actores favoritos ",
+      "descripcion": "Lista de mis actores favoritos",
+      "peliculas": [],
+      "actores": [
+        {
+          "id": 192,
+          "nombre": "Morgan Freeman",
+          "profile_path": "/jPsLqiYGSofU4s6BjrxnefMfabb.jpg",
+          "adult": false,
+          "also_known_as": [
+            "Morgan Porterfield Freeman Jr.",
+            "Morgan J. Freeman",
+            "مورغان فريمان",
+            "모건 프리먼",
+            "モーガン・フリーマン",
+            "Морган Фриман",
+            "มอร์แกน ฟรีแมน",
+            "摩根·弗里曼",
+            "Μόργκαν Φρίμαν",
+            "مورگان فریمن",
+            "Μόργκαν Πόρτερφιλντ Φρίμαν Τζούνιορ",
+            "מורגן פרימן",
+            "摩根·費里曼",
+            "Морган Фрімен"
+          ],
+          "biography": "Morgan Freeman (1 de junio de 1937) es un actor y director estadounidense, ganador del premio Óscar en 2005 por Million Dollar Baby. Además ha recibido otras nominaciones por sus actuaciones en El reportero de la calle 42 (1987), Paseando a Miss Daisy (1989), Cadena perpetua (1994) e Invictus (2009). También ha ganado los premios Globo de Oro y SAG. Es el narrador de Through the Wormhole.\n\nSu extensa carrera incluye otros éxitos de taquilla como Brubaker (1980), Sin perdón (1992), Tiempos de gloria (1989), Se7en (1995), Deep Impact (1998), Pánico nuclear (2002), Bruce Almighty (2003), The Bucket List (2007), Wanted (2008), tres entregas de la saga de Batman (Batman Begins, 2005; The Dark Knight, 2008 y The Dark Knight Rises, 2012) Lucy (2014) y la comedia Ted 2 (2015).",
+          "birthday": "1937-06-01",
+          "deathday": null,
+          "gender": 2,
+          "homepage": null,
+          "imdb_id": "nm0000151",
+          "known_for_department": "Acting",
+          "name": "Morgan Freeman",
+          "place_of_birth": "Memphis, Tennessee, USA",
+          "popularity": 95.37
+        },
+        {
+          "id": 1253360,
+          "nombre": "Pedro Pascal",
+          "profile_path": "/9VYK7oxcqhjd5LAH6ZFJ3XzOlID.jpg",
+          "adult": false,
+          "also_known_as": [
+            "Jose Pedro Balmaceda Pascal",
+            "Alexander Pascal",
+            "Pedro Balmaceda",
+            "José Pedro Balmaceda Pascal",
+            "페드로 파스칼",
+            "Πέδρο Πασκάλ",
+            "佩德罗·帕斯卡",
+            "佩德羅·帕斯卡",
+            "ペドロ・パスカル",
+            "Педро Паскал",
+            "פדרו פסקל",
+            "Pablo Pascal",
+            "Πέντρο Πασκάλ"
+          ],
+          "biography": "Pascal nació en Santiago de Chile, de madre psicóloga infantil y padre, José Balmaceda, que es médico de fertilidad. Es nieto de un matrimonio español, una abuela nacida en la isla de Mallorca y un abuelo nacido en el País Vasco.​\n\nSus padres fueron simpatizantes del presidente Salvador Allende,​ y estuvieron involucrados en el movimiento de oposición contra la dictadura militar de Augusto Pinochet alrededor de la fecha de su nacimiento. Poco después de su nacimiento, su familia obtuvo asilo político en Dinamarca donde vivieron un tiempo.​ Posteriormente se trasladaron a Estados Unidos. Pascal se crio en San Antonio (Texas) y en Orange County (California) y vive en Nueva York desde 1993. Estuvo involucrado en natación competitiva durante sus primeros años, participando en los campeonatos estatales en Texas a la edad de once años, pero inmediatamente dejó de nadar competitivo después de entrar en la clase de teatro.\n\nEstudió arte dramático en la Orange County High School of the Arts y la Tisch School of the Arts de la New York University y ha vivido en la ciudad de Nueva York durante más de 20 años.",
+          "birthday": "1975-04-02",
+          "deathday": null,
+          "gender": 2,
+          "homepage": null,
+          "imdb_id": "nm0050959",
+          "known_for_department": "Acting",
+          "name": "Pedro Pascal",
+          "place_of_birth": "Santiago, Chile",
+          "popularity": 81.691
+        }
+      ],
+      "userId": 1731093925129,
+      "id": "4"
     }
   ],
   "preguntas": [

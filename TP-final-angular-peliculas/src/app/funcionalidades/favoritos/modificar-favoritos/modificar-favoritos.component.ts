@@ -69,6 +69,7 @@ export class ModificarFavoritosComponent implements OnInit{
         nombre: this.listaForm.value.nombre,
         descripcion: this.listaForm.value.descripcion,
         peliculas: this.listaFavoritos.peliculas,
+        actores: this.listaFavoritos.actores,
         userId: this.listaFavoritos.userId,
       };
 

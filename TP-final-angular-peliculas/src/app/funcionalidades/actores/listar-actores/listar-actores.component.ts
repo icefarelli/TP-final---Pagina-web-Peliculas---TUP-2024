@@ -15,6 +15,7 @@ import { Actor } from '../../../interfaces/actor';
 export class ListarActoresComponent implements OnInit{
   terminoBusqueda: string = '';
   actoresFiltrados: any[] = [];
+  actoresMezclados: any[] = [];
   actoresOriginales: any[] = [];
 
   filtros = {
@@ -26,7 +27,18 @@ export class ListarActoresComponent implements OnInit{
   constructor(private peliculasService: PeliculasService, private router: Router) { }
 
   ngOnInit(): void {
-    this.buscarActores();
+    this.cargarActoresPopulares();
+  }
+  cargarActoresPopulares(): void {
+    this.peliculasService.obtenerPrimerosActoresComunes().subscribe((actores) => {
+      // Filtrar actores válidos
+      const actoresValidos = actores.filter(
+        (actor: Actor) => actor.profile_path && actor.name && actor.popularity > 0
+      );
+
+
+      this.actoresMezclados = this.mezclarArray(actoresValidos).slice(0, 100);
+    });
   }
 
   buscarActores(): void {
@@ -40,6 +52,10 @@ export class ListarActoresComponent implements OnInit{
         actor.profile_path && actor.name && actor.popularity > 0
       );
     });
+  }
+
+  mezclarArray(array: Actor[]): Actor[] {
+    return array.sort(() => Math.random() - 0.5);
   }
 
 

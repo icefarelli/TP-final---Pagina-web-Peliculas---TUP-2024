@@ -80,5 +80,21 @@ export class ListaFavoritosComponent implements OnInit{
       }
     });
   }
+
+  eliminarActordeLista(lista: any, actorId: number) {
+    const actoresActualizados = lista.actores.filter((actor: any) => actor.id !== actorId);
+    const listaActualizada = { ...lista, actores: actoresActualizados };
+
+    this.favoritosService.putLista(lista.id, listaActualizada).subscribe({
+      next: () => {
+        this.alertService.mostrarAlerta('success', 'Actor eliminado de la lista con éxito');
+        this.cargarListas();
+      },
+      error: (err) => {
+        console.error('Error al eliminar el actor de la lista:', err);
+        this.alertService.mostrarAlerta('error', 'Ocurrió un problema al eliminar el actor. Inténtelo nuevamente.');
+      }
+    });
+  }
 }
 

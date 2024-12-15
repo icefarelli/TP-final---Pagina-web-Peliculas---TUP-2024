@@ -1,3 +1,4 @@
+import { Actor } from "./actor";
 import { Pelicula } from "./pelicula.interface";
 
 export interface Favoritos {
@@ -6,4 +7,5 @@ export interface Favoritos {
   nombre: string;
   descripcion: string;
   peliculas: Pelicula[];
+  actores: Actor[];
 }
