@@ -12,6 +12,19 @@
       <span class="icono-buscar">🔍</span>
     </div>
   </div>
+  <!-- Actores mezclados (solo se muestran si no hay término de búsqueda) -->
+  <div *ngIf="terminoBusqueda === '' && actoresMezclados.length > 0" class="mezclados-section">
+    <h3>Actores Populares Mezclados</h3>
+    <div class="peliculas-grid">
+      <div *ngFor="let actor of actoresMezclados" class="pelicula-card" (click)="verDetalle(actor.id)">
+        <img [src]="obtenerUrlImagen(actor.profile_path)" [alt]="actor.name">
+        <div class="pelicula-info">
+          <h3>{{actor.name}}</h3>
+          <p class="rating">⭐ Popularidad: {{actor.popularity | number:'1.1-1'}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <div class="peliculas-grid">
@@ -24,9 +37,10 @@
     </div>
   </div>
 
-  <!-- Mensaje cuando no hay resultados -->
-  <div *ngIf="actoresFiltrados.length === 0" class="no-resultados">
-    <p>No se encontraron actores que coincidan con la busqueda.</p>
+    <!-- Mensaje cuando no hay resultados -->
+    <div *ngIf="terminoBusqueda !== '' && actoresFiltrados.length === 0" class="no-resultados">
+      <p>No se encontraron actores que coincidan con la búsqueda.</p>
+    </div>
   </div>
 
 

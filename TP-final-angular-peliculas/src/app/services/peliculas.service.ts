@@ -80,4 +80,23 @@ obtenerTodasLasPeliculas(): Observable<Pelicula[]> {
   );
 }
 
+obtenerPrimerosActoresComunes(): Observable<Actor[]> {
+  const paginasNecesarias = 5; // Cada página tiene 20 resultados, 5 páginas traerán 100 actores.
+  const peticiones: Observable<{ results: Actor[] }>[] = [];
+
+  for (let i = 1; i <= paginasNecesarias; i++) {
+    peticiones.push(
+      this.http.get<{ results: Actor[] }>(
+        `${this.baseUrl}/person/popular?api_key=${this.apiKey}&language=es-ES&page=${i}`
+      )
+    );
+  }
+
+  return forkJoin(peticiones).pipe(
+    map(respuestas => {
+      return respuestas.flatMap(respuesta => respuesta.results); // Combina los resultados de todas las páginas.
+    })
+  );
+}
+
 }

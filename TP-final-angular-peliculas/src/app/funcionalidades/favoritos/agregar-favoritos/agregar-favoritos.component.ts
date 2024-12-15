@@ -51,6 +51,7 @@ export class AgregarFavoritosComponent implements OnInit{
         nombre: this.listaForm.value.nombre,
         descripcion: this.listaForm.value.descripcion,
         peliculas: [],
+        actores: []
       };
 
       this.favoritosService.postListasPorUsuario(this.userId,nuevaLista).subscribe({

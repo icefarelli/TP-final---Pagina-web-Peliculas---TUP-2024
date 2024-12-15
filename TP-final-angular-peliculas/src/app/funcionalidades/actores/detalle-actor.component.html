@@ -5,6 +5,21 @@
   <p><strong>Fecha de nacimiento:</strong> {{ actor.birthday | date:'longDate' }}</p>
   <p><strong>Lugar de nacimiento:</strong> {{ actor.place_of_birth }}</p>
 
+  @if(usuarioConectado() == true) {
+
+  <div class="favoritos-section">
+  <h2>Agregar a Favoritos</h2>
+  <div class="form-group">
+    <label for="listaFavoritos">Selecciona una lista:</label>
+    <select id="listaFavoritos" [(ngModel)]="listaSeleccionada" class="form-control">
+      <option *ngFor="let lista of listasFavoritos" [ngValue]="lista">
+        {{ lista.nombre }}
+      </option>
+    </select>
+  </div>
+  <button (click)="agregarActorAFavoritos()" class="btn btn-primary">Agregar a Lista</button>
+  </div>
+    }
   <h2>Películas</h2>
   <div class="peliculas-grid">
     <div *ngFor="let pelicula of peliculas">
