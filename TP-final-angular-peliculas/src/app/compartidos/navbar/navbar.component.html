@@ -1,6 +1,14 @@
 <nav class="navbar">
   <div class="navbar-container">
-    <ul [class.active]="isMenuOpen" class="nav-menu">
+
+    <div class="menu-icon" (click)="toggleMenu()">
+      <div class="hamburger"></div>
+      <div class="hamburger"></div>
+      <div class="hamburger"></div>
+    </div>
+
+    <!-- Menú de navegación -->
+    <ul class="nav-menu" [class.active]="isMenuOpen">
       <li class="nav-item">
         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-links">Menu</a>
       </li>
@@ -11,9 +19,7 @@
         <a routerLink="/actores" routerLinkActive="active" class="nav-links">Actores</a>
       </li>
       <li class="nav-item">
-        <a routerLink="/quiz" routerLinkActive="active" class="nav-links quiz-link">
-          Movie Challenge
-        </a>
+        <a routerLink="/quiz" routerLinkActive="active" class="nav-links quiz-link">Movie Challenge</a>
       </li>
       <!-- Botón 'Mis datos' -->
       <li class="nav-item" *ngIf="usuarioActual">

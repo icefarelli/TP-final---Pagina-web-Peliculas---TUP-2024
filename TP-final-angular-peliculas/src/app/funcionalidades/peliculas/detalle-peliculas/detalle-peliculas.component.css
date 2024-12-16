@@ -28,11 +28,6 @@
   height: auto;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.poster img:hover {
-  transform: scale(1.02);
 }
 
 .metadata {
