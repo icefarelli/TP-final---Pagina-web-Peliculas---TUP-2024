@@ -45,6 +45,15 @@
       "content": "reseña de prueba en pelicula Terrifier 3\n",
       "created_at": "2024-11-08T20:39:05.507Z",
       "isLocal": true
+    },
+    {
+      "id": "f530",
+      "movieId": 1034541,
+      "author": "admin",
+      "content": "ASDASD",
+      "created_at": "2024-12-16T22:19:39.805Z",
+      "rating": 7,
+      "isLocal": true
     }
   ],
   "favoritos": [
@@ -228,7 +237,8 @@
           "vote_average": 6.432,
           "vote_count": 729
         }
-      ]
+      ],
+      "actores": []
     },
     {
       "nombre": "Actores favoritos ",
@@ -297,6 +307,37 @@
           "name": "Pedro Pascal",
           "place_of_birth": "Santiago, Chile",
           "popularity": 81.691
+        },
+        {
+          "id": 3896,
+          "nombre": "Liam Neeson",
+          "profile_path": "/sRLev3wJioBgun3ZoeAUFpkLy0D.jpg",
+          "adult": false,
+          "also_known_as": [
+            "連恩·尼遜",
+            "เลียม นีสัน",
+            "リーアム・ニーソン",
+            "리암 니슨",
+            "ليام نيسون",
+            "Вільям Джон Нісон",
+            "连姆·尼森",
+            "William John \"Liam\" Neeson OBE",
+            "Λίαμ Νίσον",
+            "连姆·尼森饰",
+            "Liams Nīsons",
+            "Lijam Nison",
+            "Лијам Нисон"
+          ],
+          "biography": "Liam Neeson nació el 7 de junio de 1952 en Ballymena, Irlanda del Norte, de Katherine (Brown), una cocinera, y Bernard Neeson, un cuidador de la escuela. Fue criado en una casa católica. Durante sus primeros años, Liam trabajó como operador de montacargas para Guinness, un camionero, un arquitecto asistente y un boxeador aficionado. Originalmente había buscado una carrera como maestro asistiendo a St. Mary's Teaching College, Newcastle. Sin embargo, en 1976, Neeson se unió al Belfast Lyric Players 'Theatre e hizo su debut como actor profesional en la obra \"The Risen People\". Después de dos años, Neeson se mudó al Teatro Abbey de Dublín, donde interpretó los clásicos. Fue aquí donde fue visto por el director John Boorman y fue elegido para la película Excalibur (1981) como Sir Gawain, su primer papel cinematográfico de alto perfil.\n\nDurante la década de 1980, Neeson apareció en un puñado de películas y series de televisión británicas, incluyendo Motín a bordo (1984), Toda una mujer (1984), La misión (1986) y Ansias de vivir (1986), pero no fue hasta que él se mudó a Hollywood para buscar papeles más grandes que comenzó a hacerse notar.  Protagonizó la muy esperada Star Wars: Episodio I - La amenaza fantasma (1999) como Qui-Gon Jinn, recibió una nominación al Globo de Oro por Kinsey (2004), interpretó la misteriosa Ducard en Batman Begins de Christopher Nolan (2005), y proporcionó la voz de Aslan en Las crónicas de Narnia: El león, la bruja y el armario (2005).\n\nNeeson encontró una segunda carrera sorpresa como protagonista de la acción con el lanzamiento de Venganza (2008) a principios de 2009, un éxito inesperado de taquilla sobre un agente retirado de la CIA que intentaba rescatar a su hija de ser vendida a la prostitución. Sin embargo, menos de dos meses después del lanzamiento de la película, ocurrió una tragedia cuando su esposa, Natasha Richardson, sufrió una herida mortal en la cabeza mientras esquiaba y falleció días después. Neeson volvió a papeles de alto perfil en 2010 con dos películas consecutivas de gran presupuesto, Furia de titanes (2010) y El equipo A (2010), y regresó al género de acción con Sin identidad (2011), Infierno blanco (2011), Battleship (2012) y Venganza: Conexión Estambul (2012), así como la secuela Ira de titanes (2012).\n\nNeeson fue galardonado con el Oficial de la Orden del Imperio Británico en la Lista de Honores de Año Nuevo de la Reina de 1999 por sus servicios al drama. Tiene dos hijos de su matrimonio con Richardson: Micheal Richard Antonio Neeson (nacido el 22 de junio de 1995) y Daniel Jack Neeson (nacido el 27 de agosto de 1996).",
+          "birthday": "1952-06-07",
+          "deathday": null,
+          "gender": 2,
+          "homepage": null,
+          "imdb_id": "nm0000553",
+          "known_for_department": "Acting",
+          "name": "Liam Neeson",
+          "place_of_birth": "Ballymena, County Antrim, Northern Ireland, UK",
+          "popularity": 56.319
         }
       ],
       "userId": 1731093925129,
