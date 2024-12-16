@@ -48,7 +48,7 @@ export class DetallePeliculasComponent implements OnInit {
           this.cargarElenco(id);
           this.cargarListasFavoritos();
 
-          this.title.setTitle(`¡Te recomiendo esta película! - ${this.pelicula.title}`);
+          //this.title.setTitle(`¡Te recomiendo esta película! - ${this.pelicula.title}`);
 
           // Establecer las etiquetas Open Graph dinámicamente
           const imageUrl = `https://image.tmdb.org/t/p/w500${this.pelicula.poster_path}`;
@@ -170,7 +170,7 @@ export class DetallePeliculasComponent implements OnInit {
   copyLink() {
     const url = this.obtenerUrlActual(); // Obtén la URL actual
     navigator.clipboard.writeText(url).then(() => {
-      alert('Enlace copiado al portapapeles');
+      this.alertService.mostrarAlerta('success', 'Enlace copiado al portapapeles');
     }, (err) => {
       console.error('Error al copiar el enlace: ', err);
     });
