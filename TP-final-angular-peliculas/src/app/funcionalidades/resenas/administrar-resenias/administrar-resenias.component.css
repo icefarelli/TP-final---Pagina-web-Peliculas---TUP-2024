@@ -282,3 +282,102 @@
   font-size: 0.9rem;
   margin-top: 4px;
 }
+
+.confirm-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(73, 45, 45);
+  border: 1px solid #9c0000;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  text-align: center;
+}
+
+.confirm-dialog h1 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.confirm-dialog p {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.confirm-dialog .delete-button {
+  background: #333;
+  color: #ff0000;
+  border: 2px solid #ff0000;
+  padding: 0 20px;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  height: 40px;
+  width: 170px;
+  margin-right: 10px;
+}
+
+.confirm-dialog .delete-button:hover {
+  color: #fff;
+}
+
+.confirm-dialog .delete-button::after {
+  content: "";
+  background: #ff0000;
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  right: -100%;
+  transition: all 0.35s;
+}
+
+.confirm-dialog .delete-button:hover::after {
+  left: 0;
+  right: 0;
+}
+
+.confirm-dialog .edit-button {
+  background: #333;
+  color: #0077ff;
+  border: 2px solid #0077ff;
+  padding: 0 20px;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  height: 40px;
+  width: 170px;
+}
+
+.confirm-dialog .edit-button:hover {
+  color: #fff;
+}
+
+.confirm-dialog .edit-button::after {
+  content: "";
+  background: #0077ff;
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  right: -100%;
+  transition: all 0.35s;
+}
+
+.confirm-dialog .edit-button:hover::after {
+  left: 0;
+  right: 0;
+}

@@ -33,7 +33,7 @@ export class AuthService {
       this.alertService.mostrarAlerta('error', 'El nombre de usuario debe tener al menos 4 caracteres');
       return of(false);
     }
-  
+
     if (usuario.contrasenia.length < 4) {
       this.alertService.mostrarAlerta('error', 'La contraseña debe tener al menos 4 caracteres');
       return of(false);
@@ -70,7 +70,7 @@ export class AuthService {
         if (this.validarFechaNacimiento(usuario.fechaNacimiento) === 'Fecha>mayorEdad') {
           this.alertService.mostrarAlerta('error', 'Debes tener al menos 18 años para registrarte');
           return of(false);
-        } 
+        }
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(usuario.email)) {
           this.alertService.mostrarAlerta('error', 'El correo electrónico no es válido');
@@ -105,13 +105,13 @@ export class AuthService {
           this.alertService.mostrarAlerta('error', 'Usuario no encontrado');
           return false;
         }
-  
+
         const usuarioEncontrado = usuarios[0];
         if (usuarioEncontrado.contrasenia !== contraseña) {
           this.alertService.mostrarAlerta('error', 'Contraseña incorrecta');
           return false;
         }
-  
+
         this.usuarioActual.next(usuarioEncontrado);
         localStorage.setItem('sesionActual', JSON.stringify(usuarioEncontrado));
         this.alertService.mostrarAlerta('success', '¡Inicio de sesión exitoso!');
@@ -127,7 +127,6 @@ export class AuthService {
   cerrarSesion(): void {
     this.usuarioActual.next(null);
     localStorage.removeItem('sesionActual');
-    this.alertService.mostrarAlerta('info', 'Sesión cerrada');
   }
 
   getUsuarioActual(): Observable<Usuario | null> {
@@ -177,7 +176,7 @@ export class AuthService {
 
     const hace100Anos = new Date();
     hace100Anos.setFullYear(hace100Anos.getFullYear() - 100);
-    
+
     if(fecha > hoy){
       return 'Fecha>hoy'
     }

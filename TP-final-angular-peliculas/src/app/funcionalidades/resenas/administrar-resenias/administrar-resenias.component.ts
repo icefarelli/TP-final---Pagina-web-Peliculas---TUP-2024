@@ -27,6 +27,8 @@ export class AdministrarReseniasComponent implements OnInit {
   };
   currentUser: any = null;
   stars: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  showConfirmDialog: boolean = false;
+  reviewToDeleteId: number | null = null;
 
   constructor(
     private reseniasService: ReseniasService,
@@ -153,9 +155,14 @@ canEditReview(review: any): boolean {
          review.author === this.currentUser .usuario;
 }
 
-deleteReview(reviewId: number) {
-  if (confirm('¿Estás seguro de que deseas eliminar esta reseña?')) {
-    this.reseniasService.deleteReview(reviewId).subscribe({
+deleteReview(reviewId: number): void {
+  this.showConfirmDialog = true;
+  this.reviewToDeleteId = reviewId;
+}
+
+confirmDelete(confirm: boolean): void {
+  if (confirm && this.reviewToDeleteId !== null) {
+    this.reseniasService.deleteReview(this.reviewToDeleteId).subscribe({
       next: () => {
         this.loadLocalReviews();
         this.alertService.mostrarAlerta('success', 'Reseña eliminada con éxito');
@@ -165,6 +172,8 @@ deleteReview(reviewId: number) {
       }
     });
   }
+  this.showConfirmDialog = false;
+  this.reviewToDeleteId = null;
 }
 
 currentReviewId: number | null = null;

@@ -11,8 +11,21 @@
   <button routerLink="/editar-perfil" class="btn btn-editar">Modificar Datos</button>
   <button routerLink="/cambiar-contrasenia" class="btn btn-cambioContra">Cambiar contraseña</button>
 
+  <!-- Dialogo de confirmacion -->
+  <div class="confirm-dialog" *ngIf="showConfirmDialog">
+    <h1>¿Está seguro?</h1>
+    <p>¡No podrás recuperar esta cuenta <br> después de eliminarla!</p>
+    <button class="delete-button" (click)="confirmDelete(true)">Eliminar</button>
+    <button class="edit-button" (click)="confirmDelete(false)">Cancelar</button>
+  </div>
+
+  <!-- Mensaje de éxito -->
+  <div *ngIf="successMessage" class="success">
+    {{ successMessage }}
+  </div>
+
   <!-- Sección para cambiar contraseña -->
-  
+
 </div>
 <ng-template #loading>
   <p>Cargando...</p>

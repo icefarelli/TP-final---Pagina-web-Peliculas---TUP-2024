@@ -164,7 +164,7 @@ export class QuizMakerComponent implements OnInit {
     setTimeout(() => {
       this.successMessage = null;
       this.showForm = false;
-    }, 3000);
+    },0);
   }
 
   toggleForm() {

@@ -16,6 +16,8 @@ import { Favoritos } from '../../../interfaces/favoritos.interface';
 export class ListaFavoritosComponent implements OnInit{
   listas: Favoritos[] = [];
   userId: number;
+  showConfirmDialog: boolean = false;
+  listaToDeleteId: string | null = null;
 
   constructor(private favoritosService: FavoritosService,
     private router: Router,
@@ -48,8 +50,13 @@ export class ListaFavoritosComponent implements OnInit{
 
   // Eliminar la lista seleccionada
   eliminarLista(id: string): void {
-    if (confirm('¿Estás seguro de que deseas eliminar esta lista?')) {
-      this.favoritosService.deleteLista(id).subscribe({
+    this.showConfirmDialog = true;
+    this.listaToDeleteId = id;
+  }
+
+  confirmDelete(confirm: boolean): void {
+    if (confirm && this.listaToDeleteId) {
+      this.favoritosService.deleteLista(this.listaToDeleteId).subscribe({
         next: (resultado) => {
           if (resultado) {
             this.alertService.mostrarAlerta('success', 'Lista eliminada con éxito');
@@ -64,8 +71,9 @@ export class ListaFavoritosComponent implements OnInit{
         },
       });
     }
+    this.showConfirmDialog = false;
+    this.listaToDeleteId = null;
   }
-
 
   eliminarPeliculadeLista(lista: Favoritos, peliculaId: number): void {
     lista.peliculas = lista.peliculas.filter(pelicula => pelicula.id !== peliculaId);

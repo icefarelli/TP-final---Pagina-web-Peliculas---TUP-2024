@@ -1,43 +1,43 @@
 .perfil-details {
   background-color: #7c2b2b;
   padding: 20px;
-  color: #d4d3d3; 
-  margin: 20px auto 0; 
+  color: #d4d3d3;
+  margin: 20px auto 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
 }
 
 .perfil-details h2 {
-  font-size: 2.5em; 
+  font-size: 2.5em;
   margin-bottom: 20px;
   color: #ffffff;
 }
 
 .perfil-details p {
-  font-size: 1.1em; 
-  line-height: 1.6; 
+  font-size: 1.1em;
+  line-height: 1.6;
   margin-bottom: 10px;
 }
 .btn-eliminar {
-  background-color: #dc3545; 
-  color: #fff; 
+  background-color: #dc3545;
+  color: #fff;
   padding: 10px 20px;
-  border: none; 
+  border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1.1em; 
-  transition: background-color 0.3s, transform 0.2s; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  font-size: 1.1em;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .btn-eliminar:hover {
-  background-color: #c82333; 
-  transform: scale(1.05); 
+  background-color: #c82333;
+  transform: scale(1.05);
 }
 
 .btn-eliminar:active {
-  background-color: #bd2130; 
-  transform: scale(1); 
+  background-color: #bd2130;
+  transform: scale(1);
 }
 
 
@@ -45,22 +45,22 @@
   background-color: #ffc107;
   color: #fff;
   padding: 10px 20px;
-  border: none; 
+  border: none;
   border-radius: 5px;
-  cursor: pointer; 
-  font-size: 1.1em; 
+  cursor: pointer;
+  font-size: 1.1em;
   transition: background-color 0.3s, transform 0.2s;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   margin-left: 15px;
 }
 
 .btn-editar:hover {
-  background-color: #ca9907; 
-  transform: scale(1.05); 
+  background-color: #ca9907;
+  transform: scale(1.05);
 }
 
 .btn-editar:active {
-  background-color: #ffc107; 
+  background-color: #ffc107;
   transform: scale(1);
 }
 
@@ -68,21 +68,129 @@
   background-color: #0787ff;
   color: #fff;
   padding: 10px 20px;
-  border: none; 
+  border: none;
   border-radius: 5px;
-  cursor: pointer; 
-  font-size: 1.1em; 
+  cursor: pointer;
+  font-size: 1.1em;
   transition: background-color 0.3s, transform 0.2s;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   margin-left: 15px;
 }
 
 .btn-cambioContra:hover {
-  background-color: #075fb1; 
-  transform: scale(1.05); 
+  background-color: #075fb1;
+  transform: scale(1.05);
 }
 
 .btn-cambioContra:active {
-  background-color: #0787ff; 
+  background-color: #0787ff;
   transform: scale(1);
+}
+
+.confirm-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(73, 45, 45);
+  border: 1px solid #9c0000;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  text-align: center;
+}
+
+.success {
+  transform: translate(-50%, -50%);
+  background-color: rgb(73, 45, 45);
+  border: 1px solid #9c0000;
+  border-radius: 5px;
+  padding: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  color: #ffffff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+
+.delete-button {
+  background: #333;
+  color: #ff0000;
+  border: 2px solid #ff0000;
+  padding: 0 20px;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  height: 40px;
+  width: 170px;
+}
+
+.delete-button:hover {
+  color: #fff;
+}
+
+.delete-button::after {
+  content: "";
+  background: #ff0000;
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  right: -100%;
+  transition: all 0.35s;
+}
+
+.delete-button:hover::after {
+  left: 0;
+  right: 0;
+}
+
+.edit-button {
+  background: #333;
+  color: #0077ff;
+  border: 2px solid #0077ff;
+  padding: 0 20px 0 20px;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  height: 40px;
+  width: 170px;
+  left: 10px;
+  margin-right: 10px;
+}
+
+.edit-button:hover {
+  color: #333;
+}
+
+.edit-button::after {
+  content: "";
+  background: #0077ff;
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  right: -100%;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.edit-button:hover::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
 }

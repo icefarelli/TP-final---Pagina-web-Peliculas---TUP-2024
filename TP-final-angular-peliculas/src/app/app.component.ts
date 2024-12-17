@@ -8,6 +8,7 @@ import { AuthDialogComponent } from './funcionalidades/usuarios/auth-dialog/auth
 import { Usuario } from './interfaces/auth.interface';
 import { AuthService } from './services/auth.service';
 import { UrlService } from './services/url.service';
+import { AlertService } from './services/alert.service';
 
 @Component({
     selector: 'app-root',
@@ -24,7 +25,7 @@ export class AppComponent implements OnInit {
 
   private authDialogRef: ComponentRef<AuthDialogComponent> | null = null;
 
-  constructor(private authService: AuthService, private viewContainerRef: ViewContainerRef, private router: Router, private urlService: UrlService) {
+  constructor(private authService: AuthService, private viewContainerRef: ViewContainerRef, private router: Router, private urlService: UrlService, private alertService: AlertService) {
 
     this.usuarioActual$ = this.authService.getUsuarioActual();
 
@@ -55,6 +56,7 @@ ngOnInit() {
 
   cerrarSesion() {
     this.authService.cerrarSesion();
+    this.alertService.mostrarAlerta('info', 'Sesión cerrada');
     this.router.navigate(['']);
   }
 

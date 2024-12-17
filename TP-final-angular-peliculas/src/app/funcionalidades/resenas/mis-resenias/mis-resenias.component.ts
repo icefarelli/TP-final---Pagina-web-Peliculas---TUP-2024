@@ -18,6 +18,8 @@ export class MisResenasComponent implements OnInit {
   usuarioActual: Usuario | null = null;
   editingReview: any = null;
   stars: number[] = [1, 2, 3, 4, 5,6,7,8,9,10]; // Array para las estrellas
+  showConfirmDialog: boolean = false;
+  reviewToDeleteId: number | null = null;
 
   constructor(
     private reseniasService: ReseniasService,
@@ -54,9 +56,14 @@ export class MisResenasComponent implements OnInit {
     }
   }
 
-  deleteReview(reviewId: number) {
-    if (confirm('¿Estás seguro de que deseas eliminar esta reseña?')) {
-      this.reseniasService.deleteReview(reviewId).subscribe({
+  deleteReview(reviewId: number): void {
+    this.showConfirmDialog = true;
+    this.reviewToDeleteId = reviewId;
+  }
+
+  confirmDelete(confirm: boolean): void {
+    if (confirm && this.reviewToDeleteId !== null) {
+      this.reseniasService.deleteReview(this.reviewToDeleteId).subscribe({
         next: () => {
           this.cargarResenas();
           this.alertService.mostrarAlerta('success', 'Reseña eliminada con éxito');
@@ -66,6 +73,8 @@ export class MisResenasComponent implements OnInit {
         }
       });
     }
+    this.showConfirmDialog = false;
+    this.reviewToDeleteId = null;
   }
 
   editReview(resena: any) {

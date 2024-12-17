@@ -105,4 +105,12 @@
     →
     </button>
   </div>
+
+  <!-- Dialogo de confirmacion -->
+  <div class="confirm-dialog" *ngIf="showConfirmDialog">
+    <h1>¿Está seguro?</h1>
+    <p>¡No podrás recuperar esta reseña después de eliminarla!</p>
+    <button class="delete-button" (click)="confirmDelete(true)">Eliminar</button>
+    <button class="edit-button" (click)="confirmDelete(false)">Cancelar</button>
+  </div>
 </div>

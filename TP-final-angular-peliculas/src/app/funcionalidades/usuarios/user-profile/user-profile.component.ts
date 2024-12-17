@@ -16,7 +16,8 @@ import { Usuario } from '../../../interfaces/auth.interface';
 export class UserProfileComponent implements OnInit {
   userInfo: Usuario | null = null;
   private userSubscription: Subscription | null = null; // Para gestionar la suscripción
-
+  showConfirmDialog: boolean = false;
+  successMessage: string | null = null;
 
   constructor(private authService: AuthService, private router: Router, private alertService: AlertService) {}
 
@@ -33,13 +34,20 @@ export class UserProfileComponent implements OnInit {
   }
 
   eliminarCuenta(): void {
-    if (this.userInfo && confirm('¿Estás seguro de que deseas eliminar tu cuenta? Esta acción no se puede deshacer.')) {
+    if (this.userInfo) {
+      this.showConfirmDialog = true;
+    }
+  }
+
+  confirmDelete(confirm: boolean): void {
+    if (confirm && this.userInfo) {
       this.authService.eliminarUsuario(this.userInfo.id).subscribe({
         next: (exito) => {
           if (exito) {
-            alert('Usuario eliminado exitosamente');
-            this.authService.cerrarSesion();
+            this.alertService.mostrarAlerta("success", "Usuario eliminado exitosamente!");
             this.router.navigate(['']);
+            this.hideSuccessMessageAfterDelay();
+            this.authService.cerrarSesion();
           } else {
             alert('Error al eliminar el usuario');
           }
@@ -50,6 +58,13 @@ export class UserProfileComponent implements OnInit {
         }
       });
     }
+    this.showConfirmDialog = false;
+  }
+
+  private hideSuccessMessageAfterDelay() {
+    setTimeout(() => {
+      this.successMessage = null;
+    }, 2000);
   }
 
   ngOnDestroy(): void {

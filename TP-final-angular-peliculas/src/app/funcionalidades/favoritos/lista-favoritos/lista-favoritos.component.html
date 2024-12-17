@@ -31,24 +31,24 @@
         <p class="text-muted">No hay películas en esta lista.</p>
       </div>
 
-          <!-- Listado de Actores -->
-          <div *ngIf="lista.actores && lista.actores.length > 0">
-            <h6>Actores en la lista:</h6>
-            <ul class="peliculas-lista">
-              <li *ngFor="let actor of lista.actores">
-                <!-- Enlace al detalle del actor -->
-                <a [routerLink]="['/actor', actor.id]" class="pelicula-link">
-                  🎭 {{ actor.name || 'Nombre no disponible' }}
-                </a>
-                <span (click)="eliminarActordeLista(lista, actor.id)" class="eliminar-cruz" title="Eliminar actor">
-                  ✖️
-                </span>
-              </li>
-            </ul>
-          </div>
-          <div *ngIf="!lista.actores || lista.actores.length === 0">
-            <p class="text-muted">No hay actores en esta lista.</p>
-          </div>
+      <!-- Listado de Actores -->
+      <div *ngIf="lista.actores && lista.actores.length > 0">
+        <h6>Actores en la lista:</h6>
+        <ul class="peliculas-lista">
+          <li *ngFor="let actor of lista.actores">
+            <!-- Enlace al detalle del actor -->
+            <a [routerLink]="['/actor', actor.id]" class="pelicula-link">
+              🎭 {{ actor.name || 'Nombre no disponible' }}
+            </a>
+            <span (click)="eliminarActordeLista(lista, actor.id)" class="eliminar-cruz" title="Eliminar actor">
+              ✖️
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="!lista.actores || lista.actores.length === 0">
+        <p class="text-muted">No hay actores en esta lista.</p>
+      </div>
 
       <!-- Botón Eliminar -->
       <button (click)="eliminarLista(lista.id)" class="btn btn-danger">Eliminar</button>
@@ -58,4 +58,12 @@
 
     </div>
   </div>
+</div>
+
+<!-- Dialogo de confirmacion -->
+<div class="confirm-dialog" *ngIf="showConfirmDialog">
+  <h1>¿Está seguro?</h1>
+  <p>¡No podrás recuperar esta lista después de eliminarla!</p>
+  <button class="delete-button" (click)="confirmDelete(true)">Eliminar</button>
+  <button class="edit-button" (click)="confirmDelete(false)">Cancelar</button>
 </div>
